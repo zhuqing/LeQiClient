@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--检验/病理学诊断-->
+    <bean id="createServiceItemSpcobs" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createSpcobsInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/SpcobsInfo.fxml"></property>
+    </bean>
+     <bean id="createParentController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController">
+<!--           <property name="createParentController" value="createParentController">
+           </property>-->
+     </bean>
+       <bean id="createServiceItemParent" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController" ref="createParentController" >          
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/ServiceItemInfoParent.fxml"></property>
+    </bean>
+    
+    
+        <bean id="createServiceItemParentDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+       <property name="title" value=""></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    
+    
+    <bean id="updateServiceItemSpcobs" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateSpcobsInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/SpcobsInfo.fxml"></property>
+    </bean>
+    <bean id="createServiceItemSpcobsDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增检验或病理学诊断项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemSpcobsDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改检验或病理学诊断项目"></property>
+        <property name="subBusinessId" value="updateServiceItemSpcobs"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--检查-->
+    <bean id="createServiceItemDgimg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createDgimgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/DgimgInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemDgimg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateDgimgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/DgimgInfo.fxml"></property>
+    </bean>
+   <bean id="createServiceItemDgimgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增检查项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemDgimgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改检查项目"></property>
+        <property name="subBusinessId" value="updateServiceItemDgimg"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--临床诊断-->
+    <bean id="createServiceItemDiag" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createDiagInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/DiagInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemDiag" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateDiagInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/DiagInfo.fxml"></property>
+    </bean>
+    <bean id="createServiceItemDiagDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增临床诊断项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemDiagDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改临床诊断项目"></property>
+        <property name="subBusinessId" value="updateServiceItemDiag"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--手术治疗-->
+    <bean id="createServiceItemSurg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createSurgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/SurgInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemSurg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateSurgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/SurgInfo.fxml"></property>
+    </bean>
+   <bean id="createServiceItemSurgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增手术治疗项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemSurgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改手术治疗项目"></property>
+        <property name="subBusinessId" value="updateServiceItemSurg"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--非手术治疗-->
+    <bean id="createServiceItemNoSurg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createNoSurgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/NoSurgInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemNoSurg" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateNoSurgInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/NoSurgInfo.fxml"></property>
+    </bean>
+  <bean id="createServiceItemNoSurgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增非手术治疗项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemNoSurgDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改非手术治疗项目"></property>
+        <property name="subBusinessId" value="updateServiceItemNoSurg"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--物理治疗/康复治疗-->
+    <bean id="createServiceItemPhy" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createPhyInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/PhyInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemPhy" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updatePhyInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/PhyInfo.fxml"></property>
+    </bean>
+   <bean id="createServiceItemPhyDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增物理治疗项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemPhyDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改物理治疗项目"></property>
+        <property name="subBusinessId" value="updateServiceItemPhy"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <!--综合医疗服务/其他-->
+    <bean id="createServiceItemComp" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="createCompInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/CompInfo.fxml"></property>
+    </bean>
+    <bean id="updateServiceItemComp" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoModel">
+        <property name="fxmlController">
+            <bean id="updateCompInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.item.info.uf.ServiceItemInfoController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/service/item/info/uf/CompInfo.fxml"></property>
+    </bean>
+    <bean id="createServiceItemCompDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增综合或其他项目"></property>
+        <property name="subBusinessId" value="createServiceItemParent"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="createServiceItemOkCommand" />
+    </bean>
+    <bean id="updateServiceItemCompDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改综合或其他项目"></property>
+        <property name="subBusinessId" value="updateServiceItemComp"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceItemOkCommand" />
+    </bean>
+    
+    <bean id="addServiceNursingItemModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.nursing.uf.ServiceNursingItemModel">
+        <property name="fxmlController">
+            <bean id="addServiceNursingItemController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.nursing.uf.ServiceNursingItemController"/>
+        </property>
+    </bean>
+    
+    <bean id="updateServiceNursingItemModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.nursing.uf.ServiceNursingItemModel">
+        <property name="fxmlController">
+            <bean id="updateServiceNursingItemController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.nursing.uf.ServiceNursingItemController"/>
+        </property>
+    </bean>
+    
+    <bean id="addServiceNursingItemDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增护理明细"></property>
+        <property name="subBusinessId" value="addServiceNursingItemModel"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="addServiceNursingItemDialogCommand" />
+    </bean>
+    <bean id="updateServiceNursingItemDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改护理明细"></property>
+        <property name="subBusinessId" value="updateServiceNursingItemModel"></property>
+        <property name="width" value="650"></property>
+        <property name="heigh" value="430"></property>
+        <property name="okBtnText" value="保存"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="updateServiceNursingItemDialogCommand" />
+    </bean>
+    
+    <bean id="sdlocTreeSourceCallback" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.bed.cf.SdlocTreeSourceCallback">
+    </bean>
+    
+    <bean id="setSdlocNameConsumer" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.bed.cf.SetSdlocNameConsumer">
+    </bean>
+    
+    <bean id="execStatusCodeSourceCallback" lazy-init="true" class="com.bjgoodwill.hip.client.app.clinic.exec.cf.ExecStatusCodeSourceCallback">
+    </bean>
+</beans>

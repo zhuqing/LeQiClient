@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.combobox.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import java.lang.*?>
+<?import java.util.ArrayList?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.entity.dict.DictElement?>
+<?import com.bjgoodwill.hip.client.app.service.item.util.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.ets.*?>
+<?import com.bjgoodwill.hip.client.function.*?>
+
+<BorderPane   xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+            <HipFormView fx:id="systemTypeFormId">
+                <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67" text="系统分类:" />                  
+                        <HipEtsFilterableComboBoxFormCell fx:id="systemTypeId" propertyName="systemType" dictCode="SystemType" prefWidth="137" GridPane.columnIndex="1"/>
+            </children>
+            </HipFormView>  
+        </HBox>
+    </top>
+    <center>
+        <BorderPane  fx:id="serviceInfoBorderPane" prefHeight="360.0" prefWidth="600.0" >
+            <center>
+                
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>

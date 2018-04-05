@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="FWConfig" class="com.bjgoodwill.hip.client.fw.config.AppConfig">
+        <property name="width" value="715D"></property>
+        <property name="high" value="237D"></property>
+        <property name="cpuThread" value="4"></property>
+    </bean>
+    
+</beans>

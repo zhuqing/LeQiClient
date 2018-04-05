@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.sample.entity.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" >
+   <fx:define>
+        <javafx.scene.image.ImageView fx:id="imageView" >
+               <image>
+                     <Image url="@img/custom/iphone.png"/>
+               </image>
+           </javafx.scene.image.ImageView>
+    </fx:define>
+    <Person fx:id="person" id="1" name="张全蛋"  ></Person>
+    <Button text="text">
+        <graphic>
+            <fx:reference source="imageView"/>
+        </graphic>
+    </Button>
+</HBox>

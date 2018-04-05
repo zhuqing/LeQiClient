@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="hipObjectDialog" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="关联导航"></property>
+        <property name="subBusinessId" value="hipObjectDialogModel"></property>
+        <property name="width" value="800"></property>
+        <property name="heigh" value="500"></property>
+        <property name="okCommand" ref="selectHipObjectDialogCommand" />
+        <!--<property name="okClose" value="false" />-->
+    </bean>
+    
+</beans>

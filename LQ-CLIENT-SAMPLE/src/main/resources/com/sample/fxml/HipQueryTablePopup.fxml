@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.sample.control.querypop.*?>
+<?import  com.bjgoodwill.hip.client.fx.control.query.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.sample.table.callback.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+
+<HipQueryTablePopup>
+    <commitCallback>
+        <CommitCallback/>
+    </commitCallback>
+    <queryCallback>
+        <QueryCallback/>
+    </queryCallback>
+    <content>
+        <HipTableView>
+            <columns>
+                <HipTableColumn propertyName="id" text="id"  >
+                    <tableCell>
+                        <HipTableTextCell  >
+                    
+                        </HipTableTextCell>
+                    </tableCell>
+                </HipTableColumn>
+                <HipTableColumn propertyName="name" text="Name"  >
+                    <tableCell>
+                        <HipTableTextCell >
+                    
+                        </HipTableTextCell>
+                    </tableCell>
+                </HipTableColumn>
+                <HipTableColumn propertyName="age" text="age"  >
+                    <tableCell>
+                        <HipTableTextCell >
+                    
+                        </HipTableTextCell>
+                    </tableCell>
+                </HipTableColumn>
+                <HipTableColumn propertyName="gender" text="gender"  >
+                    <tableCell>
+                        <HipTableTextCell >
+                    
+                        </HipTableTextCell>
+                    </tableCell>
+                </HipTableColumn>
+            </columns>
+        </HipTableView>
+    </content>
+</HipQueryTablePopup>

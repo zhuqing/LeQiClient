@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context  
+            http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+            http://www.springframework.org/schema/cache  
+            http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
+            http://activemq.apache.org/schema/core
+            http://activemq.apache.org/schema/core/activemq-core-5.9.0.xsd">
+    <context:component-scan base-package="com.bjgoodwill.hip.client.fw.amq" />
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+    
+    <bean id="jmsFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL">
+            <!-- 北京消息服务器 -->
+            <value>tcp://192.168.50.10:61616</value>
+            <!-- 遵义消息服务器 -->
+            <!--<value>tcp://192.168.123.28:61616</value>-->
+        </property>
+        <property name="userName" value="admin"/>
+        <property name="password" value="admin"/>
+        <property name="useAsyncSend" value="true" />
+        <property name="trustAllPackages" value="true" />
+    </bean>
+    
+    <bean id="singleConnectionFactory"
+          class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="clientId" value="PRODUCER-${user.hostName}" />
+        <property name="targetConnectionFactory" ref="jmsFactory"/>
+    </bean>
+    
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg index="0" value="HipClientMessage" />
+    </bean>
+    <!-- spring 使用jmsTemplate来实现消息的发送和接受 -->  
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">  
+        <property name="connectionFactory" ref="singleConnectionFactory"></property>  
+        <property name="defaultDestination" ref="topicDestination"></property>  
+        <!-- 进行持久化 -->  
+        <property name="deliveryMode" value="2" />  
+        <!-- 开启订阅模式 -->
+        <property name="pubSubDomain" value="true" />
+    </bean>
+    
+    <bean id="consumerSessionAwareMessageListener" class="com.bjgoodwill.hip.client.fw.sf.cache.amq.ConsumerSessionAwareMessageListener"/>
+    
+    <bean id="sessionAwareListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsFactory" />
+        <property name="destination" ref="topicDestination" />
+        <property name="messageListener" ref="consumerSessionAwareMessageListener" />
+        <property name="pubSubDomain" value="true" />
+        <!-- 持久化消息 -->  
+        <property name="subscriptionDurable" value="true" />
+        <!-- 接收者ID -->  
+        <property name="clientId" value="CONSUMER-${user.hostName}" />
+        <!-- 这里名字可以任意改变，A 领取了，你可以改成B 还可以领取，可以举例不是很恰当 -->  
+        <property name="durableSubscriptionName" value="CONSUMER-${user.hostName}"/> 
+    </bean>
+</beans>

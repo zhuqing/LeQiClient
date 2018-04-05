@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="hipCache">
+    <defaultCache
+        maxEntriesLocalHeap="100"
+        maxEntriesLocalDisk="0"
+        eternal="true">
+    </defaultCache>
+    <diskStore path="user.home/cache"/>
+    <cache name="dict"
+           maxEntriesLocalHeap="100"
+           maxEntriesLocalDisk="0"
+           eternal="true"
+           memoryStoreEvictionPolicy="LRU"
+           diskPersistent="true"
+           clearOnFlush="true"
+           overflowToDisk="true"
+    />
+ 
+</ehcache>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : log4j.xml hipapp-log
+    Author     : raomingxian
+    Description:
+        This XML document is purposed for logs configuration
+-->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <appender name="FILE" class="org.apache.log4j.FileAppender">  
+        <param name="File" value="${FilePath}"/>  
+        <!--<param name="File" value="logs/client.log"/>-->  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                   value="[%-5p] %d(%r) --> [%t] %c: %m %x %n" />  
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMax" value="FATAL"/>  
+            <param name="LevelMin" value="INFO"/>  
+        </filter>  
+    </appender> 
+    <!--
+           (rollingFile)
+    -->
+    <appender name="rollingFile" class="org.apache.log4j.RollingFileAppender">  
+        <param name="File" value="${FilePath}"/>
+        <!--<param name="File" value="logs/client.log"/>-->
+        <param name="Threshold" value="DEBUG"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="5KB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                   value="[%-5p] %d(%r) --> [%t] %c: %m %x %n" />  
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMax" value="FATAL"/>  
+            <param name="LevelMin" value="INFO"/>  
+        </filter>  
+    </appender>  
+    
+    <!--
+        (dailyFile)
+    -->
+    <appender name="dailyFile" class="org.apache.log4j.DailyRollingFileAppender">  
+        <param name="File" value="${FilePath}"/>  
+        <!--<param name="File" value="logs/client.log"/>-->
+        <param name="ImmediateFlush" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"  
+                   value="[%-5p] %d(%r) --> [%t] %c: %m %x %n" />  
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMax" value="FATAL"/>  
+            <param name="LevelMin" value="INFO"/>  
+        </filter>  
+    </appender>
+
+
+    
+    
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">  
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"  
+                   value="[%-5p] %d(%r) --> [%t] %c : %m %x %n" />  
+            
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMax" value="FATAL"/>  
+            <param name="LevelMin" value="INFO"/>
+        </filter>  
+    </appender>
+    
+    <!-- 
+            socket
+    -->
+    
+   <appender name="SOCKET" class="org.apache.log4j.net.SocketAppender">
+        <param name="RemoteHost" value="${RemoteHost}"/> 
+        <param name="Port" value="${Port}"/> 
+        <param name="LocationInfo" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern"  
+                       value="[%-5p] %d(%r) --> [%t] %c: %m %x %n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMax" value="FATAL"/>  
+            <param name="LevelMin" value="ERROR"/>  
+        </filter>  
+    </appender>
+    
+    
+<!--      Perf4J appenders 
+       AsyncCoalescingStatisticsAppender-->
+    
+<!--    <appender name="CoalescingStatistics"
+              class="org.perf4j.log4j.AsyncCoalescingStatisticsAppender">
+        <param name="TimeSlice" value="10000"/>
+        <appender-ref ref="fileAppender"/>
+        <appender-ref ref="graphExecutionTimes"/>
+        <appender-ref ref="graphExecutionTPS"/>
+    </appender>
+    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="File" value="e:/logs/perfStats.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <appender name="graphExecutionTimes"
+              class="org.perf4j.log4j.GraphingStatisticsAppender">
+        <param name="GraphType" value="Mean"/>
+        <param name="TagNamesToGraph" value="firstBlock,secondBlock"/>
+        <appender-ref ref="graphsFileAppender"/>
+    </appender>
+    <appender name="graphExecutionTPS"
+              class="org.perf4j.log4j.GraphingStatisticsAppender">
+        <param name="GraphType" value="TPS"/>
+        <param name="TagNamesToGraph" value="firstBlock,secondBlock"/>
+        <appender-ref ref="graphsFileAppender"/>
+    </appender>
+    <appender name="graphsFileAppender" class="org.apache.log4j.FileAppender">
+        <param name="File" value="e:/logs/perfGraphs.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <logger name="org.perf4j.TimingLogger" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="CoalescingStatistics"/>
+    </logger>-->
+    <root>
+         <!--<level value="DEBUG" />-->
+        <!--<appender-ref ref="FILE"/>-->
+        <appender-ref ref="rollingFile"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="SOCKET"/>
+    </root>
+
+</log4j:configuration>

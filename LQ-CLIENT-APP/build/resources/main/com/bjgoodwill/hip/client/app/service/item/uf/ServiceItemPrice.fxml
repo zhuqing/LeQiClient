@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.pop.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.number.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.app.service.item.util.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.key.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <HipFormView fx:id="serviceItemPriceView" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+            <children>
+                <HipFormTitleCell prefHeight="30.0" text="名      称：" />
+                <HipTableViewChooseFormCell id="priceItemName" propertyName="priceItemName" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="1" >
+                    <commitPropertyName>
+                        <String fx:value="priceItemName"/>
+                    </commitPropertyName>
+                    <commitCallback>
+                        <PriceCommitCallback />
+                    </commitCallback>
+                    <queryCallback>
+                        <PriceQueryCallback />
+                    </queryCallback>
+                    <hipTableView>
+                        <HipTableView maxHeight="196" prefWidth="590" maxWidth="590" styleClass="service-item-dialog">
+                            <columns>
+                                <HipTableColumn propertyName="priceItemName" prefWidth="180" text="项目名称" >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="packageSpec" prefWidth="140" text="规格" >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="price" prefWidth="75" text="单价" >
+                                    <tableCell>
+                                        <HipNumberTableCell numberFormat="0.00"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="unit" prefWidth="75" text="单位" >
+                                    <tableCell>
+                                        <HipEtsTableCell dictCode="Measures"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="gbCode" prefWidth="100" text="国家编码"  >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                            </columns>
+                        </HipTableView>
+                    </hipTableView>
+                </HipTableViewChooseFormCell>
+                <HipFormTitleCell prefHeight="30.0" text="规      格：" GridPane.columnIndex="2" />
+                <HipFormCell propertyName="packageSpec" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="3" />
+                <HipFormTitleCell prefHeight="30.0" text="单      价：" GridPane.rowIndex="2" />
+                <HipFormCell propertyName="unitPrice" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <HipFormTitleCell prefHeight="30.0" text="单      位：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <HipUnEditableEtsFormCell propertyName="unit" dictCode="Measures" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <HipFormTitleCell prefHeight="30.0" text="数      量：" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                <HipNumberFormCell id="priceNumCell" fx:id="priceNumCell" numberFormat="#####" propertyName="quantity" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="9" GridPane.rowIndex="2">
+                    <!--                    <fx:define>
+                        <HipShortCutKeyEvent keyCode="ENTER" fx:id="quantityEnter" >
+                            <eventHandler>
+                                <PriceSaveEvent />
+                            </eventHandler>
+                        </HipShortCutKeyEvent>
+                    </fx:define>
+                    <properties SHORTCUT_KEY="$quantityEnter"/>-->
+                </HipNumberFormCell>
+                <HipFormTitleCell prefHeight="30.0" text="国家编码：" GridPane.columnIndex="8" />
+                <HipFormCell propertyName="gbCode" prefHeight="30.0" prefWidth="120.0" GridPane.columnIndex="9" />
+            </children>
+        </HipFormView>
+    </center>
+</BorderPane>

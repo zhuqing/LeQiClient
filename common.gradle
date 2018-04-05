@@ -1,0 +1,86 @@
+//
+// This file is to be applied to every subproject.
+//
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+String mavenGroupId = 'HIP-CLIENT'
+String mavenVersion = '1.0-SNAPSHOT'
+
+//遵义现场maven库
+//String nexusSnapshotsUrl = 'http://192.168.1.139:8081/repository/maven-snapshots/'
+//String nexusReleasesUrl = 'http://192.168.1.139:8081/repository/maven-releases/'
+//String nexusPublicUrl = 'http://192.168.1.139:8081/repository/maven-public/'
+//北京研发maven库
+String nexusSnapshotsUrl = 'http://192.168.50.11:8081/nexus/content/repositories/snapshots/'
+String nexusReleasesUrl = 'http://192.168.50.11:8081/nexus/content/repositories/releases/'
+String nexusPublicUrl = 'http://192.168.50.11:8081/nexus/content/groups/public/'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    maven {
+        credentials {
+            username 'admin'
+            password 'admin123'
+        }
+        url "${nexusSnapshotsUrl}"
+    }
+    maven {
+        credentials {
+            username 'admin'
+            password 'admin123'
+        }
+        url "${nexusReleasesUrl}"
+    }
+    maven {
+        credentials {
+            username 'admin'
+            password 'admin123'
+        }
+        url "${nexusPublicUrl}"
+    }
+}
+
+dependencies {
+    // Adding dependencies here will add the dependencies to each subproject.
+    testCompile group: 'junit', name: 'junit', version: '4.10'
+}
+
+String mavenArtifactId = name
+
+group = mavenGroupId
+version = mavenVersion
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes, description: 'Creates a jar from the source files.') {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives jar
+    archives sourcesJar
+}
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        groupId = mavenGroupId
+        artifactId = mavenArtifactId
+        version = mavenVersion
+    }
+}
+
+task createFolders(description: 'Creates the source folders if they do not exist.') doLast {
+    sourceSets*.allSource*.srcDirs*.each { File srcDir ->
+        if (!srcDir.isDirectory()) {
+            println "Creating source folder: ${srcDir}"
+            srcDir.mkdirs()
+        }
+    }
+}

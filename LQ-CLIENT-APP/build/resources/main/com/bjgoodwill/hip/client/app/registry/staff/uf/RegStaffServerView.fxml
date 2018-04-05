@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.box.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.item.*?>
+<?import com.bjgoodwill.hip.client.app.registry.staff.util.*?>
+<HipFormView fx:id="regStaffServerView" prefHeight="70.0" prefWidth="300" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="服务地点:" textOverrun="CLIP" />
+        <HipCustomDataSourceFilterableComboBoxFormCell prefHeight="25.0" prefWidth="200.0" propertyName="orgCode" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <customDataSourceCallback>
+                <StaffServerCallback/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceFilterableComboBoxFormCell>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints minWidth="10.0" prefWidth="150.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="50.0" />
+    </rowConstraints>
+</HipFormView>

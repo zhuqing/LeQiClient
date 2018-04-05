@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.box.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.combobox.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.app.registry.staff.util.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import javafx.scene.image.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<ScrollPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane prefHeight="550.0" prefWidth="780.0" >
+        <center>
+            <HBox styleClass="split-hbox" prefHeight="230.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                <children>
+                    <SplitPane dividerPositions="0.5" prefHeight="330.0" prefWidth="800.0">
+                        <items>
+                            <VBox prefHeight="330.0">
+                                <children>
+                                    <HipButton onAction="#addEmployeeRole" prefHeight="36.0" prefWidth="74.0" text="新增" styleClass="add-button" >
+                                        <graphic>
+                                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                                        </graphic>
+                                    </HipButton>
+                                    <HipTableView fx:id="employeeRoleTable" prefHeight="220.0" prefWidth="390.0">
+                                        <columns>
+                                            <HipTableColumn editable="false" prefWidth="200.0" propertyName="roleCode" text="角色">
+                                                <tableCell>
+                                                    <HipCustomDataSourceTableCell>
+                                                        <customDataSourceCallback>
+                                                            <StaffRoleCallback/>
+                                                        </customDataSourceCallback>
+                                                    </HipCustomDataSourceTableCell>
+                                                </tableCell>
+                                            </HipTableColumn>
+                                            <HipTableColumn editable="false" prefWidth="150.0" text="操作">
+                                                <tableCell>
+                                                    <HipTableButtonCell>
+                                                        <buttonList>
+                                                            <ArrayList>
+                                                                <HipButton onAction="#deleteRegStaffRole" text="删除" styleClass="delete-button" >
+                                                                    <graphic>
+                                                                        <ImageView pickOnBounds="true" preserveRatio="true" />
+                                                                    </graphic>
+                                                                </HipButton>
+                                                            </ArrayList>
+                                                        </buttonList>
+                                                    </HipTableButtonCell>
+                                                </tableCell>
+                                            </HipTableColumn>
+                                        </columns>
+                                    </HipTableView>
+                                </children>
+                            </VBox>
+                            <VBox prefHeight="330.0">
+                                <children>
+                                    <HipButton onAction="#addEmployeeService" prefHeight="36.0" prefWidth="74.0" text="新增" styleClass="add-button" >
+                                        <graphic>
+                                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                                        </graphic>
+                                    </HipButton>
+                                    <HipTableView fx:id="employeeServerTable" prefHeight="220.0" prefWidth="390.0">
+                                        <columns>
+                                            <HipTableColumn editable="false" prefWidth="200.0" propertyName="orgCode" text="服务地点">
+                                                <tableCell>
+                                                    <HipCustomDataSourceTableCell>
+                                                        <customDataSourceCallback>
+                                                            <StaffServerCallback/>
+                                                        </customDataSourceCallback>
+                                                    </HipCustomDataSourceTableCell>
+                                                </tableCell>
+                                            </HipTableColumn>
+                                            <HipTableColumn editable="false" prefWidth="150.0" text="操作">
+                                                <tableCell>
+                                                    <HipTableButtonCell>
+                                                        <buttonList>
+                                                            <ArrayList>
+                                                                <HipButton onAction="#deleteeRegStaffService" prefWidth="40" styleClass="delete-button" text="删除">
+                                                                    <graphic>
+                                                                        <ImageView pickOnBounds="true" preserveRatio="true" />
+                                                                    </graphic>
+                                                                </HipButton>
+                                                            </ArrayList>
+                                                        </buttonList>
+                                                    </HipTableButtonCell>
+                                                </tableCell>
+                                            </HipTableColumn>
+                                        </columns>
+                                    </HipTableView>
+                                </children>
+                            </VBox>
+                        </items>
+                    </SplitPane>
+                </children>
+            </HBox>
+        
+        </center>
+        <top>
+            <StackPane prefHeight="360.0">
+                <children>
+                    <HipFormView fx:id="employeeBasicsView" prefWidth="700.0" styleClass="patientBasicsView" BorderPane.alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints maxWidth="135.0" minWidth="77.0" prefWidth="108.0" />
+                            <ColumnConstraints maxWidth="155.0" minWidth="97.0" prefWidth="152.0" />
+                            <ColumnConstraints maxWidth="111.0" minWidth="45.0" prefWidth="106.0" />
+                            <ColumnConstraints maxWidth="156.0" minWidth="94.0" prefWidth="152.0" />
+                            <ColumnConstraints maxWidth="115.0" minWidth="50.0" prefWidth="100.0" />
+                            <ColumnConstraints maxWidth="175.0" minWidth="72.0" prefWidth="140.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="2.0" prefHeight="2.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                            <RowConstraints minHeight="20.0" prefHeight="30.0" />
+                        </rowConstraints>
+                        <children>
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="员工编号" textFill="#252525" GridPane.columnIndex="0" />
+                            <HipTextInputFormCell fx:id="staffCode" prefHeight="25.0" prefWidth="140.0" propertyName="staffCode" GridPane.columnIndex="1" >
+                                <commitType>COMMIT_BY_DELAY</commitType>
+                                <commitConsumer>
+                                    <StaffCodeCommitConsumer/>
+                                </commitConsumer> 
+                            </HipTextInputFormCell>
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="账户密码" textFill="#1b1a1a" GridPane.columnIndex="2" />
+                            <!--                        <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="password" GridPane.columnIndex="3" />-->
+                            <HipFormTitleCell alignment="CENTER" prefWidth="140.0" text="账号密码为初始密码" textFill="#1b1a1a" GridPane.columnIndex="3" />   
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="身份证" textFill="#1b1a1a" GridPane.columnIndex="4" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" fx:id="idNo" GridPane.columnIndex="5" propertyName="idNo">
+                                <commitType>COMMIT_BY_DELAY</commitType>
+                                <commitConsumer>
+                                    <StaffdataCommitConsumer/>
+                                </commitConsumer> 
+                            </HipTextInputFormCell>
+                            
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="出生日期" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                            <HipCalendarFormCell id="birthDate" prefHeight="25.0" prefWidth="140.0" propertyName="birthDate" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="员工姓名" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="性别" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                            <HipEtsFilterableComboBoxFormCell id="sex" dictCode="AdministrativeGender" prefHeight="25.0" prefWidth="140.0" propertyName="sex" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="民族" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="Nation" prefHeight="25.0" prefWidth="140.0" propertyName="nation" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="国籍" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                            <HipEtsFilterableComboBoxFormCell  dictCode="CountryRegion" prefHeight="25.0" prefWidth="140.0" propertyName="nationality" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="婚姻" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="MaritalStatus" prefHeight="25.0" prefWidth="140.0" propertyName="maritalStatus" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="学历" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="RecordOfFormalSchooling" prefHeight="25.0" prefWidth="140.0" propertyName="education" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="手机" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="人员类型" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="Duty" prefHeight="25.0" prefWidth="140.0" propertyName="staffType" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="tel" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="籍贯" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <HipAddressFormCell prefHeight="25.0" id="nativePlaceAddr" prefWidth="140.0" propertyName="nativePlaceAddr" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="100.0" text="现住地" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                            <HipAddressFormCell prefHeight="25.0" prefWidth="140.0" propertyName="liveAddr" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="邮编" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="postalCode" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="所属组织" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                            <!--                        <HipFormCell  prefHeight="25.0" prefWidth="140.0" propertyName="orgId" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                  <toTextCallback>
+                                    <OrgNameCallback/>
+                                </toTextCallback>
+                            </HipFormCell>-->
+                        
+                            <HipCascadeFieldFormCell textPropertyName="display" valuePropertyName="value" defTabName="所属组织"  prefWidth="140.0" propertyName="orgCode" GridPane.columnIndex="1" GridPane.rowIndex="5" >
+                                <customDataSourceCallback>
+                                    <OrgTreeSourceCallback/>
+                                </customDataSourceCallback>
+                            </HipCascadeFieldFormCell>
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="专业技术职务" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="ProfessionalTechnicalPosition" prefHeight="25.0" prefWidth="140.0" propertyName="technicalJob" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="行政职务" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="Position" prefHeight="25.0" prefWidth="140.0" propertyName="adminJob" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                            <HipBooleanRadioFormCell alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="140.0" propertyName="staffStatus" text="有效标记" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        
+                            <HipFormTitleCell styleClass="splitLine" alignment="CENTER_LEFT" prefWidth="1000.0" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="6" />
+                        
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="参加工作时间" GridPane.rowIndex="8" />
+                            <HipCalendarFormCell prefHeight="25.0" prefWidth="140.0" propertyName="workStartDate" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="职称" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="Title" prefHeight="25.0" prefWidth="140.0" propertyName="title" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="职称聘用日期" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                            <HipCalendarFormCell prefHeight="25.0" prefWidth="140.0" propertyName="titleDate" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="到本院时间" GridPane.rowIndex="9" />
+                            <HipCalendarFormCell prefHeight="25.0" prefWidth="140.0" propertyName="arrivalHosptialDate" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="执业范围" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="MILicensedPhysician(Mediastinus)PracticScope" prefHeight="25.0" prefWidth="140.0" propertyName="practiceScoper" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="第一学历" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="RecordOfFormalSchooling" prefHeight="25.0" prefWidth="140.0" propertyName="firstEducation" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="第一专业" GridPane.rowIndex="10" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="Normal&amp;Short-cycleSpeciality" prefHeight="25.0" prefWidth="140.0" propertyName="firstSpecialized" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="第一学历毕业院校" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="firstSchool" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" propertyName="" text="最高学历" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="RecordOfFormalSchooling" prefHeight="25.0" prefWidth="140.0" propertyName="highestEducation" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="最高学历专业" GridPane.rowIndex="11" />
+                            <HipEtsFilterableComboBoxFormCell dictCode="RecordOfFormalSchooling" prefHeight="25.0" prefWidth="140.0" propertyName="highestSpecialized" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="从事专业" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                            <HipTextInputFormCell prefHeight="25.0" prefWidth="140.0" propertyName="doingSpecialized" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                            <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="100.0" text="是否编制内人员" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+                        
+                            <HipEtsFilterableComboBoxFormCell dictCode="BedApprovedType" prefHeight="25.0" prefWidth="140.0" propertyName="approved" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+                        </children>
+                    </HipFormView>
+                </children>
+            </StackPane>
+        </top>
+    </BorderPane>
+</ScrollPane>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.date.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.combobox.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.app.registry.patient.util.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox prefWidth="1024.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox styleClass="control-bar-pane">
+                    <children>
+                        <HipButton mnemonicParsing="false" styleClass="search-button" onAction="#queryPatient" prefHeight="30.0" prefWidth="100.0" text="患者查询">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" styleClass="save-button" onAction="#savePatient" prefHeight="30.0" prefWidth="100.0" text="保    存">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" styleClass="delete-button" onAction="#clearPatientView" prefHeight="30.0" prefWidth="100.0" text="清    空">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                        </HipButton>
+                    </children>
+                </HBox>
+                <StackPane prefHeight="34" styleClass="form-view-group">
+                    <Label text="【基本信息】" styleClass="table-title-label"/>
+                </StackPane>
+                <HipFormView fx:id="patientBasicsView" prefWidth="1024.0" >
+                    <HipFormTitleCell prefWidth="62" text="姓      名:" alignment="CENTER_RIGHT" textFill="RED" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <HipTextInputFormCell prefWidth="160" promptText="请输入患者姓名" propertyName="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="性      别:" alignment="CENTER_RIGHT" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="sex" GridPane.columnIndex="3" GridPane.rowIndex="1"  dictCode="AdministrativeGender"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="出生日期:" alignment="CENTER_RIGHT" textFill="RED" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <HipCalendarFormCell prefWidth="160" propertyName="birthDate" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="费      别:" alignment="CENTER_RIGHT" textFill="RED" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="feeType" GridPane.columnIndex="7" GridPane.rowIndex="1" dictCode="ChargeType"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="证件类型:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="cardType" GridPane.columnIndex="1" GridPane.rowIndex="2" dictCode="IdentifierName"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="证 件  号:" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <HipTextInputFormCell prefWidth="387" propertyName="cardCode" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="民      族:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="nation" GridPane.columnIndex="7" GridPane.rowIndex="2" dictCode="Nation"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="国      籍:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="nationality" GridPane.columnIndex="1" GridPane.rowIndex="3" dictCode="CountryRegion"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="婚      姻:" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="maritalStatus" GridPane.columnIndex="3" GridPane.rowIndex="3" dictCode="MaritalStatus"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="职      业:" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="work" GridPane.columnIndex="5" GridPane.rowIndex="3" dictCode="Occupation"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="电话号码:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="tel" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="现 住  址:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <HipAddressFormCell prefWidth="387" propertyName="liveAddr" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="3"/>
+                      
+                    <HipFormTitleCell prefWidth="62" text="详细地址:" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="liveExactAddr" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+                      
+                    <HipFormTitleCell prefWidth="62" text="邮政编码:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="livePostalCode" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="户口地址:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <HipAddressFormCell prefWidth="387" propertyName="regAddr" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="3"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="详细地址:" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="regExactAddr" GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+                      
+                    <HipFormTitleCell prefWidth="62" text="邮政编码:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="regPostalCode" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                    
+                    <HipFormTitleCell prefWidth="62" text="工作单位:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="companyName" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        
+                    <HipFormTitleCell prefWidth="62" text="单位地址:" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    <HipAddressFormCell prefWidth="387" propertyName="companyAddr" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.columnSpan="3"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="单位电话:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="companyTel" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                </HipFormView>
+                <StackPane prefHeight="34" styleClass="form-view-group">
+                    <Label text="【联系人信息】" styleClass="table-title-label"/>
+                </StackPane>
+                <HipFormView fx:id="patientRealtionView" prefWidth="1024.0">
+                    <HipFormTitleCell prefWidth="62" text="联系关系:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="relationTypeCode" GridPane.columnIndex="1" GridPane.rowIndex="1" dictCode="FamilyRelationship"/>
+                      
+                    <HipFormTitleCell prefWidth="62" text="联 系 人:" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="name" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                    
+                    <HipFormTitleCell prefWidth="62" text="电话号码:" alignment="CENTER_RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="tel" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                      
+                    <HipFormTitleCell prefWidth="62" text="联系地址:" alignment="CENTER_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="exactAddr" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+                        
+                    <HipFormTitleCell prefWidth="62" text="邮政编码:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="postalCode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                
+                    <HipButton mnemonicParsing="false" onAction="#insterPatientRealtion" styleClass="add-button" prefHeight="30.0" prefWidth="160.0" text="添加联系人" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                        </graphic>
+                    </HipButton>
+                    <HipButton mnemonicParsing="false" onAction="#savePatientRealtion" styleClass="save-button" prefHeight="30.0" prefWidth="120.0" text="保    存" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                        <graphic>
+                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                        </graphic>
+                    </HipButton>
+                </HipFormView>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane prefHeight="2.0" prefWidth="1024.0" />
+                <HipTableView fx:id="patientRealtionTable" prefHeight="102" minHeight="102" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                    <columns>
+                        <HipTableColumn editable="false" prefWidth="90.0" propertyName="relationTypeId" text="关系" >
+                            <tableCell>
+                                <HipEtsTableCell dictCode="FamilyRelationship"/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="90.0" propertyName="name" text="姓名">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="120.0" propertyName="tel" text="联系电话">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="200.0" propertyName="exactAddr" text="联系地址">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="150.0" propertyName="postalCode" text="邮编">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        
+                    </columns>
+                </HipTableView>
+                <StackPane prefHeight="34" styleClass="form-view-group">
+                    <Label text="【 卡 信 息 】" styleClass="table-title-label"/>
+                </StackPane>
+                <HipFormView fx:id="patientCardView" >
+                    <HipFormTitleCell prefWidth="62.0" text="卡  类 型:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <HipEtsFilterableComboBoxFormCell prefWidth="160" propertyName="type" GridPane.columnIndex="1" GridPane.rowIndex="1" dictCode="IdentifierName"/>
+                    <HipFormTitleCell prefWidth="62" text="卡      号:" alignment="CENTER_RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <HipTextInputFormCell prefWidth="160" propertyName="cardCode" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                    <HipFormTitleCell prefWidth="62" text="    " GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    <HipButton mnemonicParsing="false" onAction="#insterPatientCard" styleClass="add-button" prefHeight="30.0" prefWidth="160.0" text="添 加 卡" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <graphic>
+                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                        </graphic>
+                    </HipButton>
+                    <HipButton mnemonicParsing="false" onAction="#savePatientCard" styleClass="save-button" prefHeight="30.0" prefWidth="120.0" text="保    存" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                        <graphic>
+                            <ImageView pickOnBounds="true" preserveRatio="true" />
+                        </graphic>
+                    </HipButton>
+                </HipFormView>
+                
+                <StackPane prefHeight="2.0" prefWidth="1024.0"/>
+                <!--styleClass="line"-->
+                
+                <HipTableView fx:id="patientCardTable" prefHeight="102" minHeight="102" tableMenuButtonVisible="true" BorderPane.alignment="CENTER" >
+                    <columns>
+                        <HipTableColumn editable="false" prefWidth="80.0" propertyName="regPatMI.name" text="姓名">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="60.0" propertyName="regPatMI.sex" text="性别">
+                            <tableCell>
+                                <HipEtsTableCell  dictCode="AdministrativeGender"/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="60.0" propertyName="regPatMI.birthDate" text="年龄">
+                            <tableCell>
+                                <HipTableTextCell>
+                                    <toText>
+                                        <PatientAgeCallback/>
+                                    </toText>
+                                </HipTableTextCell>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="90.0" propertyName="regPatMI.cardType" text="证件类型">
+                            <tableCell>
+                                <HipEtsTableCell dictCode="IdentifierName"/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="150.0" propertyName="regPatMI.cardCode" text="证件号">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="120.0" propertyName="regPatMI.companyName" text="工作单位">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="200.0" propertyName="regPatMI.liveAddr" text="现住址">
+                            <tableCell>
+                                <HipAddressTableCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="90.0" propertyName="regPatCard.type" text="卡类型">
+                            <tableCell>
+                                <HipEtsTableCell dictCode="IdentifierName"/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="150.0" propertyName="regPatCard.cardCode" text="就诊卡号">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                    </columns>
+                </HipTableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

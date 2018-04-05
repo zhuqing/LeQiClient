@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="dictAddInfoModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.info.uf.DictInfoModel">
+        <property name="fxmlController">
+            <bean id="dictAddInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.info.uf.DictInfoController"/>
+        </property>
+    </bean>
+    <bean id="dictUpdateInfoModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.info.uf.DictInfoModel">
+        <property name="fxmlController">
+            <bean id="dictUpdateInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.info.uf.DictInfoController"/>
+        </property>
+    </bean>
+    <bean id="dictAddElementInfoModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.element.info.uf.DictElementInfoModel">
+        <property name="fxmlController">
+            <bean id="dictAddElementInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.element.info.uf.DictElementInfoController"/>
+        </property>
+    </bean>
+    <bean id="dictUpdateElementInfoModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.element.info.uf.DictElementInfoModel">
+        <property name="fxmlController">
+            <bean id="dictUpdateElementInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.ets.element.info.uf.DictElementInfoController"/>
+        </property>
+    </bean>
+    <bean id="regStaffUpdateDialogModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.staff.uf.RegStaffDialogModel">
+        <property name="fxmlController">
+            <bean id="regStaffUpdateDialogController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.staff.uf.RegStaffDialogController"/>
+        </property>
+    </bean>
+    <bean id="DICT_ADD_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加字典"></property>
+        <property name="subBusinessId" value="dictAddInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="230"></property>
+        <property name="okCommand" ref="dictAddOkCommand" />
+        <property name="cancelCommand" ref="dictCancelCommand"/>
+    </bean>
+    <bean id="DICT_UPDATE_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改字典"></property>
+        <property name="subBusinessId" value="dictUpdateInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="230"></property>
+        <property name="okCommand" ref="dictUpdateOkCommand" />
+        <!--<property name="cancelCommand" ref="dictCancelCommand"/>-->
+    </bean>
+    <bean id="DICT_ELEMENT_ADD_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增字典项"></property>
+        <property name="subBusinessId" value="dictAddElementInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="300"></property>
+        <property name="okCommand" ref="dictElementAddOkCommand" />
+        <!--<property name="cancelCommand" ref="dictElementCancelCommand"/>-->
+    </bean>
+    <bean id="DICT_ELEMENT_UPDATE_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改字典项"></property>
+        <property name="subBusinessId" value="dictUpdateElementInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="300"></property>
+        <property name="okCommand" ref="dictElementUpdateOkCommand" />
+        <!--<property name="cancelCommand" ref="dictElementCancelCommand"/>-->
+    </bean>
+    <bean id="EMP_ADD_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="新增人员"></property>
+        <property name="subBusinessId" value="regStaffDialogModel"></property>
+        <property name="width" value="800"></property>
+        <property name="heigh" value="600"></property>
+        <property name="okCommand" ref="saveRegStaffCommand" />
+        <property name="okClose" value="false" />
+    </bean>
+    <bean id="EMP_UPDATE_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改人员"></property>
+        <property name="subBusinessId" value="regStaffUpdateDialogModel"></property>
+        <property name="width" value="800"></property>
+        <property name="heigh" value="600"></property>
+        <property name="okCommand" ref="saveUpdateStaffCommand" />
+        <property name="okClose" value="false" />
+    </bean>
+    <bean id="StaffRole_Add_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加角色"></property>
+        <property name="subBusinessId" value="regStaffRoleModel"></property>
+        <property name="width" value="400"></property>
+        <property name="heigh" value="400"></property>
+        <property name="okCommand" ref="selectRegstaffRoleCommand" />
+    </bean>
+    <bean id="StaffServer_Add_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加服务"></property>
+        <property name="subBusinessId" value="regStaffServerModel"></property>
+        <property name="width" value="250"></property>
+        <property name="heigh" value="130"></property>
+        <property name="okCommand" ref="selectRegstaffServerCommand" />
+    </bean>
+    <bean id="IPA_ADD_REGORG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加服务科室"></property>
+        <property name="subBusinessId" value="orgTreeDialogModel"></property>
+        <property name="width" value="400"></property>
+        <property name="heigh" value="600"></property>
+        <property name="okCommand" ref="saveIpaOrgCommand" />
+    </bean>
+    <bean id="IPA_ADD_STORAGE_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加服务库房"></property>
+        <property name="subBusinessId" value="storageTableDialogModel"></property>
+        <property name="width" value="200"></property>
+        <property name="heigh" value="200"></property>
+        <property name="okCommand" ref="saveIpaStorageCommand" />
+    </bean>
+    <bean id="priceItemUpdateInfoModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.price.uf.PriceItemAddInfoModel">
+        <property name="fxmlController">
+            <bean id="priceItemUpdateInfoController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.price.uf.PriceItemAddInfoController"/>
+        </property>
+    </bean>
+    <bean id="PRICEITEM_ADD_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加分类"></property>
+        <property name="subBusinessId" value="priceItemAddInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="200"></property>
+        <property name="okCommand" ref="priceItemAddOkCommand" />
+    </bean>
+    <bean id="PRICEITEM_UPDATE_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改分类"></property>
+        <property name="subBusinessId" value="priceItemUpdateInfoModel"></property>
+        <property name="width" value="300"></property>
+        <property name="heigh" value="200"></property>
+        <property name="okCommand" ref="priceItemUpdateOkCommand" />
+    </bean>
+    <bean id="priceListInfoUpdateModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.price.uf.PriceListInfoModel">
+        <property name="fxmlController">
+            <bean id="priceListInfoUpdateController" lazy-init="true" class="com.bjgoodwill.hip.client.app.service.price.uf.PriceListInfoController"/>
+        </property>
+    </bean>
+    <bean id="PRICELIST_ADD_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="添加明细"></property>
+        <property name="subBusinessId" value="priceListInfoModel"></property>
+        <property name="width" value="660"></property>
+        <property name="heigh" value="340"></property>
+        <property name="okCommand" ref="priceListAddOkCommand" />
+    </bean>
+    <bean id="PRICELIST_UPDATE_DIALOG_MODEL" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="修改明细"></property>
+        <property name="subBusinessId" value="priceListInfoUpdateModel"></property>
+        <property name="width" value="660"></property>
+        <property name="heigh" value="340"></property>
+        <property name="okCommand" ref="priceListUpdateOkCommand" />
+    </bean>
+    
+    <bean id="regOrgOfficeChildrenModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenModel">
+        <property name="fxmlController">
+            <bean id="regOrgOfficeChildrenController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/registry/org/uf/RegOrgOfficeChildren.fxml"></property>
+    </bean>
+    
+     <bean id="regOrgWarehouseChildrenModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenModel">
+        <property name="fxmlController">
+            <bean id="regOrgWarehouseChildrenController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/registry/org/uf/RegOrgWarehouseChildren.fxml"></property>
+    </bean>
+    
+     <bean id="regOrgInpatientChildrenModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenModel">
+        <property name="fxmlController">
+            <bean id="regOrgInpatientChildrenController" lazy-init="true" class="com.bjgoodwill.hip.client.app.registry.org.uf.RegOrgOfficeChildrenController"/>
+        </property>
+        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/registry/org/uf/RegOrgInpatientChildren.fxml"></property>
+    </bean>
+</beans>

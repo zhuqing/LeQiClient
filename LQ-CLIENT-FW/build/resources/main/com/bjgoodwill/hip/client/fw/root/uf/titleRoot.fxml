@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.control.menu.*?>
+
+<StackPane fx:id="root" styleClass="businessRoot" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <StackPane fx:id="loginPane" />
+        <BorderPane fx:id="businessPane">
+            <center>
+                <StackPane fx:id="rootPane" BorderPane.alignment="CENTER" />
+            </center>
+            <top>
+                <BorderPane fx:id="navRoot" prefHeight="45" styleClass="primary-navigation" BorderPane.alignment="CENTER">
+                    <left>
+                        <ImageView fx:id="logoImage" fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="logoImage" BorderPane.alignment="CENTER" />
+                    </left>
+                    <center>
+                        <HipMenuBar fx:id="navItem" styleClass="hip-menu-bar"  BorderPane.alignment="CENTER" />
+                    </center>
+                    <right>
+                        <StackPane>
+                            <HBox alignment="CENTER_LEFT" styleClass="login-org-info" prefWidth="320" >
+                                <children>
+                                    <MenuBar fx:id="loginuserBar" BorderPane.alignment="CENTER" />
+                                    <ComboBox fx:id="loginServerComboBox" prefWidth="150.0" />
+                                </children>
+                            </HBox>
+                        </StackPane>
+                    </right>
+                </BorderPane>
+            </top>
+            <bottom>
+                <BorderPane styleClass="navigation-bottom">
+                    <left>
+                        <StackPane>
+                            <children>
+                                <Label fx:id="versionLabel" styleClass="version-label" prefWidth="550" alignment="CENTER_LEFT"/>
+                            </children>
+                        </StackPane>
+                    </left>
+                    <right>
+                        <StackPane>
+                            <HBox alignment="CENTER_RIGHT" prefWidth="350">
+                                <children>
+                                    <Label fx:id="loginOrgLabel" alignment="CENTER_RIGHT" prefWidth="150.0" />
+                                    <HipButton tipText="消息" onAction="#messageShow" prefWidth="30.0" styleClass="message-button">
+                                        <graphic>
+                                            <ImageView/>
+                                        </graphic>
+                                    </HipButton>
+                                    <HipButton tipText="刷新" onAction="#refeshBusiness" prefWidth="30.0" styleClass="refesh-button">
+                                        <graphic>
+                                            <ImageView/>
+                                        </graphic>
+                                    </HipButton>
+                                    <HipButton tipText="换肤" onAction="#refeshStyle" prefWidth="30.0" styleClass="cloth-button">
+                                        <graphic>
+                                            <ImageView/>
+                                        </graphic>
+                                    </HipButton>
+                                </children>
+                            </HBox>
+                        </StackPane>
+                    </right>
+                </BorderPane>
+            </bottom>
+        </BorderPane>
+        <HBox fx:id="winBtnBar" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="90.0" StackPane.alignment="TOP_RIGHT">
+            <children>
+                <Button fx:id="minBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="minimize" textOverrun="CLIP" />
+                <Button fx:id="maxBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="maximize" textOverrun="CLIP" />
+                <Button fx:id="closeBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="close" textOverrun="CLIP" />
+            </children>
+        </HBox>
+    </children>
+</StackPane>

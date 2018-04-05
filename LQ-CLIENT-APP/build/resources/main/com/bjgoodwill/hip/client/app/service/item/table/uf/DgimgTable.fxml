@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.combobox.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.ArrayList?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.number.*?>
+<?import com.bjgoodwill.hip.client.app.service.item.util.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.entity.dict.DictElement?>
+<?import com.bjgoodwill.hip.client.function.*?>
+
+<HipTableView fx:id="serviceItemTableView" prefHeight="355.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <columns>
+        <HipTableColumn propertyName="systemType" prefWidth="62" text="系统分类" >
+            <tableCell>
+                <HipEtsTableCell dictCode="SystemType"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="serviceItemCode" prefWidth="80.0" text="项目编码" >
+            <tableCell>
+                <HipTableCell />
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="serviceItemName" prefWidth="188.0" text="项目名称" >
+            <tableCell>
+                <HipTableCell/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="price" prefWidth="80.0" text="价格">
+            <tableCell>
+                <HipNumberTableCell numberFormat="0.00"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="gbCode" prefWidth="85" text="国家编码" >
+            <tableCell>
+                <HipTableCell/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="humanOrgans" prefWidth="75" text="部位" >
+            <tableCell>
+                <HipEtsTableCell dictCode="HumanOrgans"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="range" prefWidth="100.0" text="范围" >
+            <tableCell>
+                <HipEtsTableCell dictCode="DgimgRange"/>
+            </tableCell>
+        </HipTableColumn> 
+        <HipTableColumn propertyName="direction" prefWidth="100.0" text="方位" >
+            <tableCell>
+                <HipEtsTableCell dictCode="DgimgDirection"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="layer" prefWidth="80" text="层数" >
+            <tableCell>
+                <HipEtsTableCell dictCode="CheckNum"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="frequency" prefWidth="80" text="频次" >
+            <tableCell>
+                <HipCustomDataSourceTableCell>
+                    <customDataSourceCallback>
+                        <HipCallback beanId="serviceFreqItemSourceCallback"/>
+                    </customDataSourceCallback>
+                </HipCustomDataSourceTableCell>   
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="defaultExecOrgCode" prefWidth="70" text="执行科室" >
+            <tableCell>
+                <HipCustomDataSourceTableCell>
+                    <customDataSourceCallback>
+                        <HipCallback beanId="executeOrgCallback"/>
+                    </customDataSourceCallback>
+                </HipCustomDataSourceTableCell>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="deviceType" prefWidth="80" text="设备类型" >
+            <tableCell>
+                <HipEtsTableCell dictCode="DgimgDeviceType"/>
+            </tableCell>
+        </HipTableColumn>
+        <HipTableColumn propertyName="statusCode" prefWidth="50" text="状态" >
+            <tableCell>
+                <HipCustomDataSourceTableCell >
+                    <customDataSourceCallback>
+                        <CustomStatusDataSourceCallback >
+                            <dictElementList>
+                                <ArrayList>
+                                    <DictElement elementCode='ACTIVE' elementName='有效' />
+                                    <DictElement elementCode='NULLIFIED' elementName='无效' />
+                                </ArrayList>
+                            </dictElementList>
+                        </CustomStatusDataSourceCallback>
+                    </customDataSourceCallback>
+                </HipCustomDataSourceTableCell>
+            </tableCell>
+        </HipTableColumn>
+    </columns>
+</HipTableView>

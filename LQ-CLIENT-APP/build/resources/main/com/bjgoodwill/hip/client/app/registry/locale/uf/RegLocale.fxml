@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import javafx.scene.image.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.entity.dict.*?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <SplitPane dividerPositions="0.2" BorderPane.alignment="CENTER">
+            <items>
+                <HipTreeView fx:id="hipLocaleTreeView" maxWidth="600" minWidth="248">
+                    <hipTreeCell>
+                        <HipTreeCell propertyName="localeName">
+                        </HipTreeCell>
+                    </hipTreeCell>
+                </HipTreeView>
+                <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                    <items>
+                        <HipTableView fx:id="hipLocaleTableView">
+                            <columns>
+                                <HipTableColumn editable="false" prefWidth="200.0" propertyName="localeCode" text="地点编码">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn editable="false" prefWidth="200.0" propertyName="localeName" text="地点名称">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn editable="false" prefWidth="200.0" propertyName="localeTypeCode" text="地点类型">
+                                    <tableCell>
+                                        <HipEtsTableCell dictCode="PlaceType"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn editable="false" prefWidth="140.0" propertyName="statusCode" text="地点状态">
+                                    <tableCell>
+                                        <HipCustomDataSourceTableCell >
+                                            <customDataSourceCallback>
+                                                <CustomStatusDataSourceCallback >
+                                                    <dictElementList>
+                                                        <ArrayList>
+                                                            <DictElement elementCode='ACTIVE' elementName='有效' />
+                                                            <DictElement elementCode='NULLIFIED' elementName='无效' />
+                                                        </ArrayList>
+                                                    </dictElementList>
+                                                </CustomStatusDataSourceCallback>
+                                            </customDataSourceCallback>
+                                        </HipCustomDataSourceTableCell>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <!--                                <HipTableColumn editable="false" prefWidth="150.0" text="操作">
+                                    <tableCell>
+                                        <HipTableButtonCell>
+                                            <buttonList>
+                                                <ArrayList>
+                                                                                                        <HipButton text="启用" onAction="#activeLocale">
+                                                    </HipButton>
+                                                    <HipButton text="停用" onAction="#completedLocale">
+                                                    </HipButton>
+                                                    <HipButton onAction="#deleteLocale" text="删除">
+                                                    </HipButton>
+                                                </ArrayList>
+                                            </buttonList>
+                                        </HipTableButtonCell>
+                                    </tableCell>
+                                </HipTableColumn>-->
+                            </columns>
+                        </HipTableView>
+                        <BorderPane>
+                            <top>
+                                <HBox styleClass="control-bar-pane">
+                                    <children>
+                                        <HipButton onAction="#createLocale" prefHeight="36.0" prefWidth="74.0" text="新增" styleClass="add-button" >
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                        <HipButton onAction="#saveLocale" prefHeight="36.0" prefWidth="74.0" text="保存" styleClass="save-button" >
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                    </children>
+                                </HBox>
+                            </top>
+                            <center>
+                                <HipFormView fx:id="hipLocaleFormView" prefHeight="329.0" prefWidth="732.0">
+                                    <children>
+                                        <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="地点编码：" />
+                                        <HipFormCell prefHeight="30.0" prefWidth="200.0" propertyName="localeCode" GridPane.columnIndex="1" />
+                                        <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="地点名称：" GridPane.columnIndex="2" />
+                                        <HipPhoneticizeFormCell promptText="请输入机构名称" prefHeight="30.0" prefWidth="200.0" propertyName="localeName" phoneticizeName="inputPy" GridPane.columnIndex="3" />      
+                                        <!--                                        <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="拼音码" GridPane.columnIndex="4" />-->
+                                        <!--                                        <HipTextInputFormCell prefHeight="30.0" prefWidth="200.0" propertyName="mnemonicCode" GridPane.columnIndex="5" />-->
+                                        <!--                                        <HipPhoneticizeFormCell promptText="请输入机构名称" prefHeight="30.0" prefWidth="200.0" propertyName="localeName" phoneticizeName="mnemonicCode" GridPane.columnIndex="5" />           -->
+                                        <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="地点类型：" GridPane.rowIndex="1" />
+                                        <HipEtsFilterableComboBoxFormCell dictCode="PlaceType" prefHeight="30.0" prefWidth="200.0" propertyName="localeTypeCode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="助记码：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <HipTextInputFormCell prefHeight="30.0" prefWidth="200.0" propertyName="mnemonicCode" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                        <!--<HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="70.0" text="有效标记：" GridPane.rowIndex="2" />-->
+                                        <HipBooleanRadioFormCell alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0" propertyName="localeStatus" text="有效标记" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </children>
+                                </HipFormView>
+                            </center>
+                        </BorderPane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

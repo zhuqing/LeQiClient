@@ -1,0 +1,3397 @@
+/*******************************************************************************
+ *项目名：HIP-嘉和医疗信息平台     版本：v2.0                                   *
+ *具体的颜色示例可以看《HIP-嘉和医疗信息平台界面规范v1.3.docx》                   *
+ *注释说明：                                                                    *
+ *         1.以方框标注的是JavaFX原生组件的样式                                  *       
+ *         2.以*==xxx==*标注的是系统自定义的组件样式                             *   
+ *                                                                             *
+ ******************************************************************************/
+.root{
+    /*========================== 常用字体,及字体颜色 ==========================*/
+    -fx-custom-text-color-darkgray:#222222;/*默认字体深灰色*/
+    -fx-default-text-fill:#3B3B3B;/*普通文本字体灰色*/
+    -fx-custom-text-color-lightgray:#b5b5b5;/*默认字体浅灰色*/
+    -fx-custom-text-default-color:#2481ce;/*透明按钮的字体颜色*/
+    /* ====================== 导航菜单字体样式 ================================*/
+    -fx-custom-primary-navigation-text-fill:#83bbd2;/*一级导航菜单*/
+    -fx-custom-list-view-hover:#4488ac;/*二级导航获取焦点的时候*/
+    /*========================= 输入框的样式所需要的值 ========================*/
+    -fx-custom-text-field-hover-border-color:#f1ca7e;/*输入域获取焦点时边框的颜色*/
+    -fx-custom-text-field-disable-background-color:#dadde3;/*输入域边框的颜色*/
+    /*============================= 挂号管理 =================================*/
+    -fx-custom-register-form-cell-selected-color:#f97769;
+    -fx-custom-register-form-cell-background-color:#f5f5f5;
+    -fx-custom-register-moon-background-color:#92bcd3;/*默认背景色*/
+
+    /*============================== 常用颜色设置 =============================*/
+    -fx-custom-border-color:#dddddd;  /*默认边框颜色*/
+    -fx-custom-border-hover-color:#1993e9;/*默认按钮表框聚焦颜色 */ 
+    -fx-custom-background-top-color:#b9dffa;/*默认按钮聚焦渐变颜色1*/
+    -fx-custom-background-bottom-color:#b3d7f1;/*默认按钮聚焦渐变颜色2 */
+    -fx-custom-Tab-background-color:#e1edf3;/*默认流程一级导航颜色*/
+    -fx-custom-Tab-focused-color:#67a7c9;/*默认流程一级导航颜色*/
+    -fx-Navigation-hover:#7FB5DB;/*导航聚焦背景色*/
+    -fx-custom-coummon-button-hover-background:#4589ad;/*深蓝色*/
+    -fx-custom-button-default-background-hover:#b6daf5; /*tree-cell的hover背景色*/
+    -fx-custom-image-button-background-hover:#c9d9e8;/*图标按钮点击背景色*/
+    -fx-custom-background-default-hover-color:#0093ff;/*勾选框鼠标划过时边框颜色*/
+    -fx-custom-popup-select-bg:#f0f0f0;/*弹出框选择项背景色*/
+    -fx-custom-dot-color:#e86841;       /*单选按钮选中后中心的颜色*/
+    -fx-custom-selected-color:#DBE3E9;/*默认选中状态颜色*/
+    -fx-custom-hover-color:#F9F9FA;/*默认鼠标滑过状态颜色*/
+    -fx-custom-focused-color:#E6F6FF;/**默认聚焦状态颜色*/
+    -fx-custom-default-background-color:#FFFFFF;/*默认背景色 白色*/
+    -fx-custom-line-color:#adadad;/*默认分割线颜色 */
+    -fx-custom-button-top-color:#fefefe;/*按钮渐变色1*/
+    -fx-custom-tree-background-color:#fafafa;/*tree组件操作面板背景色*/
+    -fx-custom-tree-border-color:#e9e9e9;/*tree组件操作面板边框颜色*/
+    -fx-custom-error-background-color:#e24433;/*错误信息背景色*/
+    /****************诊疗table行颜色*************************/
+    -fx-business-commit-table-row-color:#C9C9C9;/*提交和停止后的颜色*/
+    -fx-business-cancel-table-row-color:#FDD5C4;/*取消后的颜色*/
+    -fx-business-execute-table-row-color:#e4e4e4;/*执行时的颜色*/
+    -fx-default-radio-style-text-fill:#8D9298;/*医嘱中频次等单选样式的字体色*/
+    -fx-process-undo-NavigationCell-background-color:#CBCBCB;/*表示进度的导航未执行时的背景色*/
+    -fx-dialog-border-color:#989898;
+
+    /*================================ 全局属性 ===============================*/
+    -fx-font-size:12px;
+    -fx-font-family:"Microsoft YaHei";
+    -fx-disabled-opacity:0.95;
+    -fx-text-fill:#3B3B3B;
+    -fx-prompt-text-fill:#b5b5b5;
+    -fx-background-color:-fx-custom-default-background-color;
+}
+.businessRoot{
+    -fx-border-width:1px;
+    -fx-background-radius:2px;
+    -fx-border-color:#dddddd;
+}
+/*******************************************************************************
+ *                                                                 *
+ * Label标签                                                                   *
+ *                                                                            *
+ ******************************************************************************/
+.label {
+    -fx-pref-height:24px;
+    -fx-label-padding:0px 2px 0px 0px;
+    -fx-text-fill:#3B3B3B;
+}
+
+/*粗体字*/
+.boldlabel{
+    -fx-font-weight:bold;
+    -fx-text-fill:#222222;
+}
+.labelBorder{
+    -fx-background-color:#dddddd;
+    -fx-border-color:#dddddd;
+    -fx-border-width:1; 
+    -fx-border-radius:0.8;
+    -fx-start-margin:80;
+    -fx-padding:4;
+}
+.red-label{
+    -fx-text-fill:red;
+}
+/*******************************************************************************
+ *                                                                             *
+ * TextInput                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+/*文本输入框样式*/
+.text-input {
+    -fx-text-fill: #3B3B3B;
+    -fx-highlight-fill: derive(#FFFFFF,-20%);
+    -fx-highlight-text-fill: #3B3B3B;
+}
+.text-input:hover {
+    -fx-highlight-fill:#338fff;
+    -fx-highlight-text-fill: #FFFFFF;
+    -fx-background-color: #67A7C9, #67A7C9, #FFFFFF;
+}
+/*文本输入框聚焦状态下的样式*/
+.text-input:focused {
+    -fx-highlight-fill:#338fff;
+    -fx-highlight-text-fill: #FFFFFF;
+    -fx-background-color: -fx-custom-text-field-hover-border-color, -fx-custom-text-field-hover-border-color, #FFFFFF;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TextField                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.text-field,
+.text-area{
+    -fx-cursor: text;
+    -fx-padding: 3 2 4 2; 
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-text-fill: #3B3B3B;
+    -fx-prompt-text-fill: derive(#FFFFFF,-30%);
+    -fx-background-color: #b5b5b5, #FFFFFF, #FFFFFF;
+}
+.text-field:hover,
+.text-area:hover{
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+    -fx-background-color: #67A7C9, #67A7C9, #FFFFFF;
+}
+.text-field:focused,
+.text-area:focused{
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+    -fx-background-color: -fx-custom-text-field-hover-border-color, -fx-custom-text-field-hover-border-color, #FFFFFF;
+}
+.text-field:disabled,
+.text-area:disabled{
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TextArea 文本输入域                                                          *
+ *                                                                             *
+ ******************************************************************************/
+.text-area .content{
+    -fx-padding: 0; 
+    -fx-cursor: text;
+    -fx-background-color:#FFFFFF;
+}
+.text-area:focused .content {
+    -fx-background-color:#FFFFFF;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Button    按钮                                                       *
+ *                                                                             *
+ ******************************************************************************/
+.button{
+    -fx-background-radius:5px;
+    -fx-border-radius:5px;
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+    -fx-graphic-text-gap:5px;
+    -fx-padding:5px;
+    -fx-wrap-text:true;
+    -fx-text-alignment:center;
+    -fx-text-fill:#222222;
+    -fx-background-insets:0px;
+    -fx-background-color:linear-gradient(to bottom,-fx-custom-button-top-color,-fx-custom-register-form-cell-background-color);
+}
+.button:hover,
+.button:focused:hover{
+    -fx-cursor:hand;
+    -fx-border-color:#1993e9;
+    -fx-background-color:linear-gradient(to bottom,-fx-custom-background-top-color,-fx-custom-background-bottom-color);
+}
+.button:focused{
+    -fx-border-color:#1993e9;
+    -fx-background-color:linear-gradient(to top,-fx-custom-background-top-color,-fx-custom-background-bottom-color);
+}
+.button:armed {
+    -fx-background-color: -fx-custom-button-default-background-hover;
+}
+.button:default {
+    -fx-background-color: -fx-custom-coummon-button-hover-background;
+}
+.button:cancel {
+}
+.button:disabled {
+    -fx-background-color:#FFFFFF;
+    -fx-text-fill:#b5b5b5;
+}
+.line-button{
+    -fx-alignment:CENTER;
+    -fx-pref-width:1px;
+    -fx-min-width:1px;
+    -fx-max-width:1px;
+    -fx-background-color:-fx-custom-line-color;
+}
+.businessbutton{
+    -fx-background-radius:5px;
+    -fx-border-radius:5px;
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+    -fx-graphic-text-gap:5px;
+    -fx-padding:5px;
+    -fx-pref-height:25px;
+    -fx-text-fill:#222222;
+    -fx-background-insets:0px;
+    -fx-alignment:CENTER_LEFT;
+    -fx-background-color:linear-gradient(to bottom,-fx-custom-button-top-color,-fx-custom-register-form-cell-background-color);
+}
+/*******************************************************************************
+ *                                                                             *
+ * ArrowButton   箭头按钮                                                      *
+ *                                                                             *
+ ******************************************************************************/
+.arrow-button:focused,
+.arrow-button:hover{
+    -fx-background-color:transparent;
+}
+.arrow-button:focused .arrow,
+.arrow-button:hover .arrow{
+    -fx-background-color:-fx-custom-coummon-button-hover-background;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * RadioButton    单选按钮                                                     *
+ *                                                                             *
+ ******************************************************************************/
+.radio-button {
+    -fx-label-padding: 0px 0px 0px 5px;
+    -fx-text-fill: #3B3B3B;
+}
+.radio-button:hover{
+    -fx-cursor:hand;
+}
+.radio-button > .radio  {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0,  0,  1,  2;
+    -fx-background-radius: 12px; /* large value to make sure this remains circular */
+    -fx-padding: 3px; /*  -- padding from outside edge to the inner black dot */
+}
+.radio-button:hover > .radio,
+.radio-button:focused > .radio{
+    -fx-background-color: -fx-custom-text-field-hover-border-color,-fx-custom-text-field-hover-border-color, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+.radio-button > .radio > .dot {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 12px;  /*large value to make sure this remains circular */
+}
+.radio-button:selected > .radio > .dot {
+    -fx-background-color: -fx-custom-dot-color;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * CheckBox  勾选框                                                             *
+ *                                                                             *
+ ******************************************************************************/
+.check-box{
+    -fx-text-fill:#3B3B3B;
+}
+.check-box .box{
+    -fx-background-insets: 2px;
+    -fx-background-radius: 0;
+    -fx-border-color:#b5b5b5;
+    -fx-background-color:#FFFFFF;
+    -fx-effect: innershadow(three-pass-box,#b5b5b5, 2, 0.5, 0, 0);
+}
+.check-box:hover .box,
+.check-box:focused .box{
+    -fx-effect: innershadow(three-pass-box,-fx-custom-background-default-hover-color, 4, 0.6, 0, 0);
+}
+.check-box:selected > .box > .mark{
+    -fx-background-color:-fx-custom-coummon-button-hover-background;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * tree-view   树形视图                                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+.tree-view,
+.tree-view:focused{
+    -fx-border-color:#e9e9e9;
+    -fx-background-color:transparent;
+}
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell .label{
+    -hip-isBindToParentWidth:true;
+}
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell .button{
+    -fx-padding:2px 5px 2px 5px;
+    -fx-pref-height:20px;
+    -fx-min-height:20px;
+    -fx-max-height:20px;
+}
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused{
+    -fx-background-color:-fx-custom-focused-color;
+}
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected,
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected{
+    -fx-background-color:-fx-custom-selected-color;
+}
+.tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected .arrow{
+    -fx-background-color:#333333;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell{
+    -fx-padding:0 0 0 4px;
+    -fx-pref-height:28px;
+    -fx-pref-width:204px;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell .leftPane{
+    -fx-alignment:CENTER_LEFT;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell .tree-disclosure-node .arrow,
+.treeRootPane .tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell .tree-disclosure-node .arrow,
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:focused:selected .tree-disclosure-node .arrow{
+    -fx-background-color:black;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected,
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected{
+    -fx-background-color:#E1E1E1;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell .label{
+    -fx-text-fill:#5C5C5C;
+}
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:hover .label,
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected .label,
+.treeRootPane .tree-view > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected:hover .label{
+    -fx-text-fill:#3C7493;
+}
+.treeRootPane .tree-view,
+.treeRootPane .tree-view:focused{
+    -fx-background-color:#FFFFFF;
+    -fx-border-color:#e9e9e9;
+}
+.treeRootPane .topControlBar .buttonBar >*{
+    -fx-padding:0px 5px 0px 0px;
+    -fx-alignment:CENTER_RIGHT;
+}
+.treeRootPane .queryBar{
+    -fx-padding:0px 10px 0px 10px;
+    -fx-background-color:#fafafa;
+    -fx-pref-height:48px;
+    -fx-min-height:48px;
+    -fx-max-height:48px;
+    -fx-border-width: 1 1 0 1;
+    -fx-border-color:#e9e9e9;
+}
+.treeRootPane .queryBar .buttonBar{
+    -fx-padding:0px 0 0 10px;
+}
+.treeRootPane .queryBar .buttonBar .controlbar-button{
+    -fx-padding:2px;
+    -fx-pref-width:70px;
+    -fx-min-width:70px;
+    -fx-graphic-text-gap:1px;
+}
+
+.treeRootPane .topControlBar{
+    -fx-pref-height:37px;
+    -fx-min-height:37px;
+    -fx-max-height:37px; 
+    -fx-padding:0px 0px 0px 10px;
+    -fx-border-width:1 1 0 1;
+    -fx-border-color:#e9e9e9;
+    -fx-background-color:#FFFFFF;
+}
+.treeRootPane .botControlBar{
+    -fx-background-color:#fafafa;
+    -fx-pref-height:46px;
+    -fx-min-height:46px;
+    -fx-max-height:46px;
+    -fx-border-color:transparent #e9e9e9 #e9e9e9 #e9e9e9;
+    -fx-padding:8px;
+}
+.treeRootPane .botControlBar .buttonBar{
+    -fx-padding:9px;
+}
+.treeRootPane .botControlBar .buttonBar .controlbar-button-skip{
+    -fx-padding:13px;
+}
+/*******************************************************************************
+ *                                                                             *
+ * ListView and ListCell    列表视图及列表单元格                                         *
+ *                                                                             *
+ ******************************************************************************/
+.list-view {
+    -fx-background-insets: 0, 1;
+    -fx-padding: 1;
+    -fx-effect:dropshadow( three-pass-box , transparent , 0, 0 , 0 , 0 );
+}
+.list-view:focused{
+    -fx-background-color:#dddddd,#FFFFFF,#FFFFFF;
+    -fx-background-radius: 0;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused{
+    -fx-background-color:-fx-custom-focused-color;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected,
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected {
+    -fx-background-color:-fx-custom-popup-select-bg;
+    -fx-text-fill:-fx-custom-list-view-hover;
+    -fx-background-insets: 0, 1, 2;
+}
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell .label{
+    -fx-alignment:CENTER_LEFT;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ComboBox  下拉框                                                             *
+ *                                                                             *
+ ******************************************************************************/
+.combo-box {
+    -fx-background-insets: 0, 1, 2;
+    -fx-border-insets: 0, 1, 2;
+    -fx-border-radius: 3.4, 2, 2;
+    -fx-background-radius: 3.4, 2, 2;
+    -fx-text-overrun:clip;
+    -fx-pref-height:24px;
+    -fx-min-height:24px;
+}
+.combo-box .arrow-button:focused,
+.combo-box .arrow-button:hover{
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+}
+.combo-box:editable {
+    -fx-border-width:1px;
+    -fx-background-insets: 0, 1, 2;
+    -fx-border-color:#b5b5b5;
+    -fx-background-color:#b5b5b5,#FFFFFF,#FFFFFF;
+}
+
+.combo-box:editable .text-field{
+    -fx-border-radius:3.4 0 0 3.4;
+    -fx-background-radius: 3.4 0 0 3.4;
+    -fx-background-insets:0px;
+    -fx-border-width:0px;
+    -fx-padding:0 0 0 2px;
+    -fx-background-color:#FFFFFF,#FFFFFF,#FFFFFF;
+}
+.combo-box:editable .arrow-button{
+    -fx-border-radius: 0 3.4 3.4 0, 2, 2;
+    -fx-background-radius:  0 3.4 3.4 0, 2, 2;
+    -fx-background-insets:0px;
+    -fx-border-width:0px;
+    -fx-max-width:12px;
+    -fx-min-width:12px;
+    -fx-padding:4px;
+    -fx-background-color:#FFFFFF,#FFFFFF,#FFFFFF;
+}
+.combo-box > .list-cell,
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell{
+    -fx-padding:5px 5px 5px 2px;
+}
+.custom .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover, 
+.custom .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-text-fill:#FFFFFF;
+    -fx-background-color: #0097c9;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected,
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-text-fill:-fx-custom-list-view-hover;
+    -fx-background-color: -fx-custom-popup-select-bg;
+}
+.combo-box:editable:hover{
+    -fx-border-color:#67A7C9;
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-color:#67A7C9 ,#67A7C9,#FFFFFF;
+}
+.combo-box:editable:focused {
+    -fx-border-color:-fx-custom-text-field-hover-border-color;
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-color:-fx-custom-text-field-hover-border-color ,-fx-custom-text-field-hover-border-color,#FFFFFF;
+}
+.combo-box:editable:hover .text-field,
+.combo-box:editable:focused .text-field {
+    -fx-background-insets:1 0 1 1;
+}
+.combo-box:editable:hover .arrow-button,
+.combo-box:editable:focused .arrow-button {
+    -fx-background-insets:1 1 1 0;
+}
+.combo-box:disabled{
+    -fx-opacity: -fx-disabled-opacity;
+}
+/*******************************************************************************
+ *                                                                             *
+ * TableView   表格视图                                                        *
+ *                                                                             *
+ ******************************************************************************/
+.table-view,
+.tree-table-view,
+.table-view:focused,
+.tree-table-view:focused{
+    -fx-border-width:0 1px 1px 1px;
+    -fx-border-color:#e9e9e9;
+    -fx-background-radius:4 0 0 0;
+    -fx-background-color:transparent;
+}
+
+.table-view:row-selection .filler,
+.tree-table-view .filler{
+    -fx-border-width:0px;
+    -fx-background-color: transparent;
+}
+.table-view >.column-header-background,
+.tree-table-view > .column-header-background{
+    -fx-border-width:1px 1px 1px 0;
+    -fx-border-color:#E4E5E7;
+    -fx-background-insets:0px;
+    -fx-border-insets:0px;
+    -fx-padding:0px;
+    -fx-background-color:#67A7C9;
+}
+
+.table-view:row-selection  > .column-header-background .nested-column-header,
+.tree-table-view > .column-header-background .nested-column-header{
+    -fx-border-width:0 ;
+    -fx-border-radius:4 0 0 0;
+    -fx-background-radius:4 0 0 0;
+    -fx-border-color: #67A7C9;
+}
+.table-view:row-selection > .column-header-background .nested-column-header .column-header,
+.tree-table-view > .column-header-background .nested-column-header .column-header{
+    -fx-padding: 0;
+    -fx-pref-height:28px;
+    -fx-border-width:0px 1px 0px 0px;
+    -fx-border-color:transparent #E4E5E7 transparent transparent;
+    -fx-background-color: #67A7C9;
+}
+.table-view:row-selection > .column-header-background .nested-column-header .column-header .label,
+.tree-table-view > .column-header-background .nested-column-header .column-header .label{
+    -fx-font-weight:bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment:center;
+    -fx-font-size:116.7%;
+}
+.table-view .scroll-bar{
+    -fx-pref-width:20px;
+    -fx-pref-height:20px;
+}
+.table-view .scroll-bar:horizontal .decrement-button .decrement-arrow,
+.table-view .scroll-bar:horizontal .increment-button .increment-arrow{
+    -fx-pref-width:7px;
+    -fx-pref-height:15px;
+}
+.table-view .scroll-bar:vertical .decrement-button .decrement-arrow,
+.table-view .scroll-bar:vertical .increment-button .increment-arrow{
+    -fx-pref-width:15px;
+    -fx-pref-height:7px;
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-table-cell{
+    -fx-padding: 0;
+    -fx-pref-height:22px;
+    -fx-text-fill: #3B3B3B;
+    -fx-border-width:0px 1px 1px 0px;
+    -fx-border-color:transparent #E4E5E7 #E4E5E7 transparent;
+    -fx-background-color:transparent;
+}
+.CUSTOM-INSERT-TABLE-ROW > .table-cell{
+    -fx-boder-width:2px 1px 1px 0;
+    -fx-border-color:blue #E4E5E7 #E4E5E7 transparent;
+}
+.index-cell-hover:hover{
+    -fx-background-insets:0 ,3px;
+    -fx-background-color: -fx-custom-text-field-hover-border-color, #FFFFFF;
+}
+.index-cell-selected{
+    -fx-text-fill:#FFFFFF;
+    -fx-background-color:-fx-custom-selected-color;
+}
+.index-cell-selected:hover{
+    -fx-background-color: -fx-custom-text-field-hover-border-color, -fx-custom-selected-color;
+}
+
+.table-row-cell .button,
+.tree-table-row-cell .button{
+    -fx-border-width:0px;
+    -fx-font-size:100%;
+    -fx-text-fill:#3B3B3B;
+    -fx-background-color:transparent;
+}
+.button-cell{
+    -fx-alignment:center;
+}
+.table-row-cell .button:hover,
+.table-row-cell .button:focused,
+.tree-table-row-cell .button:hover,
+.tree-table-row-cell .button:focused{
+    -fx-text-fill:#FFFFFF;
+    -fx-border-color:-fx-custom-primary-navigation-text-fill;
+    -fx-background-color: -fx-custom-primary-navigation-text-fill;
+    /*-fx-effect:dropshadow(three-pass-box,-fx-custom-primary-navigation-text-fill,0,0,0,0);*/
+}
+
+.table-row-cell .serious-button:hover,
+.table-row-cell .serious-button:focused,
+.table-row-cell .danger-button:hover,
+.table-row-cell .danger-button:focused,
+.table-row-cell .baby-button:hover,
+.table-row-cell .baby-button:focused,
+.table-row-cell .emergency-button:hover,
+.table-row-cell .emergency-button:focused,
+.table-row-cell .normal-button:hover,
+.table-row-cell .normal-button:focused{
+    -fx-cursor:null;
+    -fx-border-color:transparent;
+    -fx-background-color: transparent;
+    -fx-effect:dropshadow(three-pass-box,transparent,0,0,0,0);
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell{
+    /*-fx-border-color: transparent transparent #E4E5E7 transparent;*/
+    -fx-background-color:#F9F9FA;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:even{
+    -fx-background-color:#FFFFFF;
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:selected,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:selected,
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:focused:selected,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:focused:selected,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:selected > .table-cell,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:selected > .tree-table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:focused:selected > .table-cell,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:focused:selected > .tree-table-cell {
+    -fx-background-color:-fx-custom-selected-color;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:selected {
+    -fx-effect:innershadow(one-pass-box,#0096C9,4,0.7,0 ,0);
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell .schedulefield,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-table-cell,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-table-cell .schedulefield{
+    /*-fx-alignment:center-left;*/
+    -fx-wrap-text:true;
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .tick-table-cell{
+    -fx-alignment:CENTER;
+}
+
+.table-view .combo-box-popup > .list-view{
+    -fx-effect:dropshadow( two-pass-box , #b5b5b5, 20, 0.2 , 0 ,4 );
+}
+
+.clinic-nursing-table:row-selection > .column-header-background > .nested-column-header .column-header{
+    -fx-padding: 0;
+    -fx-pref-height:57px;
+    -fx-border-width:0px 1px 0px 0px;
+    -fx-border-color:transparent #E4E5E7 transparent transparent;
+    -fx-background-color: #67A7C9;
+}
+.clinic-nursing-table:row-selection > .column-header-background > .nested-column-header .column-header .label{
+    -fx-wrap-text:true;
+}
+.orderTable > .virtual-flow > .clipped-container > .sheet > .table-row-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-HELD,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NEW,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-TEMPORARY{
+    -fx-background-color:transparent;
+}
+
+/*.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-BACK,*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ABORTED,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-SUSPENDED,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NULLIFIED,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-OBSOLETE,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-CANCELLED,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-COMPLETED,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ACTIVE,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NORMAL,
+/*.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-BACK:even,*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ABORTED:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-SUSPENDED:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NULLIFIED:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-OBSOLETE:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-CANCELLED:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-COMPLETED:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ACTIVE:even,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NORMAL:even{
+    -fx-background-color:#E6FFEC;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-BACK .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ABORTED .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NULLIFIED .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-SUSPENDED .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-OBSOLETE .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-CANCELLED .table-cell{
+    -fx-text-fill:red;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-OBSOLETE .table-cell .text{
+    -fx-strikethrough:true;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-HELD .table-cell{
+    -fx-text-fill:#0681D7;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-ACTIVE .table-cell,
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-ORDER-STATUS-NORMAL .table-cell{
+    -fx-text-fill:#0015A6;
+}
+.table-view:row-selection > .column-header-background > .nested-column-header .nested-column-header .column-header,
+.table-view:row-selection > .column-header-background > .nested-column-header .nested-column-header .column-header .label{
+    -fx-max-height:0px;
+    -fx-pref-height:0px;
+    -fx-min-height:0px;
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-insets:0px;
+    -fx-border-insets:0px;
+    -fx-label-padding:0px ;
+    -fx-graphic-text-gap:0px;
+}
+.table-view:row-selection > .column-header-background > .nested-column-header .nested-column-header{
+    -fx-border-width:0 1 0 0px;
+    -fx-border-color:transparent #E4E5E7 transparent transparent;
+}
+.table-view:row-selection > .column-header-background > .nested-column-header .nested-column-header .table-span-column,
+.table-view:row-selection > .column-header-background > .nested-column-header .nested-column-header .table-span-column .label{
+    -fx-max-height:-1px;
+    -fx-pref-height:-1px;
+    -fx-min-height:-1px;
+}
+
+.table-view .virtual-flow .clipped-container .sheet .table-row-cell .table-cell .button-cell .hip-button{
+    -fx-padding:0px;
+}
+/*******************************************************************************
+ *                                                                             *
+ * PopupMenu     菜单弹窗                                                       *
+ *                                                                             *
+ ******************************************************************************/
+.context-menu{
+    -fx-background-insets:0px;
+    -fx-background-radius:0px;
+    -fx-effect:dropshadow(three-pass-box,#b5b5b5,5,0.1,0,0);
+}
+
+.context-menu .menu-item:hover,
+.context-menu .menu-item:focused{
+    -fx-background-color:-fx-custom-popup-select-bg;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * hyperlink    超链接                                                        *
+ *                                                                             *
+ ******************************************************************************/
+.hyperlink{
+    -fx-text-fill:-fx-custom-text-default-color;
+    -fx-padding:0px;
+}
+.hyperlink:hover{
+    -fx-text-fill:-fx-custom-primary-navigation-text-fill;
+}
+/*******************************************************************************
+ *                                                                             *
+ * tooltip                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.tooltip{
+    -fx-font-size:100%;
+    -fx-text-fill:#3B3B3B;
+    -fx-background-color:#f5f5f5;
+}
+/*============================= ListSpinner ===================================*/
+.ListSpinner { 
+    -fx-skin: "com.leqienglish.client.fx.control.date.listspinner.ListSpinnerCaspianSkin";
+    -fx-background-color: #fafafa;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 1;
+    -fx-padding: 0;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1; 
+    -fx-border-radius: 1;
+}
+/*箭头的背景颜色*/
+.ListSpinner .idle {
+    -fx-background-color:transparent;
+}
+/*向左的箭头*/
+.ListSpinner .left-arrow { 
+    /*-fx-shape: "M4,-4 L0,0 L4,4 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/3.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-width:0 1 0 0;
+    -fx-border-color:#dddddd;
+}
+/*向右的箭头*/
+.ListSpinner .right-arrow { 
+    /*-fx-shape: "M0,-4 L4,0 L0,4 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/5.png");
+    -fx-scale-shape: false;
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-width:0 0 0 1;
+    -fx-border-color:#dddddd;
+}
+/*向下的箭头*/
+.ListSpinner .down-arrow { 
+    /*-fx-shape: "M-4,-2 L0,2 L4,-2 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/1.png");
+    -fx-scale-shape: false;
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-width:0px;
+    -fx-background-color:#FFFFFF;
+}
+.ListSpinner .left-arrow:hover { 
+    /*-fx-shape: "M4,-4 L0,0 L4,4 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/4.png");
+}          
+/*向右的箭头*/
+.ListSpinner .right-arrow:hover { 
+    /*-fx-shape: "M0,-4 L4,0 L0,4 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/6.png");
+}
+/*向下的箭头*/
+.ListSpinner .down-arrow:hover { 
+    /*-fx-shape: "M-4,-2 L0,2 L4,-2 Z";*/
+    -fx-background-image:url("../img/control/pane/calendar/2.png");
+}
+/*向上的箭头*/
+.ListSpinner .up-arrow { 
+    -fx-shape: "M4,2 L-4,2 L0,-2 Z";
+    -fx-scale-shape: false;
+    -fx-background-color: gray;
+}
+.ListSpinner .up-arrow:hover { 
+    -fx-background-color: #4589ad;
+}
+/*============================= pageBar ======================================*/
+.pageBar .toggle-button{
+    -fx-padding:5px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.pageBar .page_pre_btn,
+.pageBar .page_next_btn{
+    -fx-padding:5px 0px 5px 0px;
+}
+.hbox-pagebar {
+    -fx-padding: 20px 6px 20px 6px;
+    -fx-spacing: 15px;
+    -fx-alignmen:center;
+}
+.hbox-page{
+    -fx-padding: 0 6 0 0;
+    -fx-spacing: 0;
+    -fx-alignmen:center;
+}
+.text-field-unclick{
+    /*-fx-text-fill: #3B3B3B;*/
+    -fx-pref-width:75px;
+    -fx-max-width:75px;
+    -fx-min-width:75px;
+    -fx-pref-height: 25px;
+    -fx-padding:6px;
+}
+.text-field-unclick:selected{
+    -fx-border-color:-fx-custom-text-field-disable-background-color;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 3, 0.0 , 0 , 2 );
+}
+.image-view-pagebar{
+    -fx-image:url("../img/navigationpagebar/enter.png");
+    -fx-pref-height: 25px;
+    -fx-pref-width:25px;
+}
+
+
+/*======================= buttonPanme ========================================*/
+.ButtonPane { 
+    -fx-skin: "com.leqienglish.client.fx.control.buttonpane.ButtonPaneSkin";
+}
+
+/*=======================  日历 =================================*/
+.label .date-picker .arrow-button,
+.label .combo-box-base .arrow-button,
+.label .date-picker .arrow-button:hover,
+.label .date-picker:focused .arrow-button:hover,
+.label .combo-box-base:focused .arrow-button:hover,
+.label .date-picker:focused:editable .arrow-button:hover,
+.label .combo-box-base:focused:editable .arrow-button:hover{
+    -fx-background-color:#FFFFFF;
+}
+
+.label .date-picker .arrow-button:hover > .arrow,
+.label .date-picker:showing .arrow-button:hover > .arrow,
+.label .date-picker:focused .arrow-button:hover > .arrow,
+.label .date-picker .arrow-button:selected:hover > .arrow{
+    -fx-background-color:#4589ad;
+}
+
+.date-picker-popup{
+    -fx-padding:10px 8px 10px 8px; 
+    -fx-pref-width:302px;
+    -fx-pref-height:245px;
+    -fx-spacing:10px;
+    -fx-border-color:#dddddd;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0;
+    -fx-padding:0px;
+}
+
+.date-picker-popup > * > .spinner{
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+}
+.date-picker-popup > * > .spinner > .left-button{
+    -fx-border-width: 0px 1px 0px 0px;;
+}
+.date-picker-popup > * > .spinner > .right-button{
+    -fx-border-width: 0px 0px 0px 1px;
+}
+.date-picker-popup > * > .spinner > .left-button,
+.date-picker-popup > * > .spinner > .right-button{
+    -fx-border-color:#dddddd;
+    -fx-border-radius:0px;
+    -fx-border-insets:0px;
+    -fx-background-radius:0px;
+    -fx-background-insets:0px;
+    -fx-background-color:transparent;
+}
+.date-picker-popup > * > .spinner > .left-button:hover,
+.date-picker-popup > * > .spinner > .right-button:hover{
+    -fx-background-color:#4589ad;
+}
+.date-picker-popup > * > .spinner > .left-button:hover > .left-arrow,
+.date-picker-popup > * > .spinner > .right-button:hover > .right-arrow{
+    -fx-background-color:#FFFFFF;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup > * > .day-name-cell {
+    -fx-pref-height:30px;
+    -fx-background-color:#F7F8FA;
+    -fx-border-width:1px 0 0 1px;
+    -fx-border-color:#dddddd;
+}
+
+.date-picker-popup > * > .day-cell:hover,
+.date-picker-popup > * > .selected,
+.date-picker-popup > * > .previous-month.selected,
+.date-picker-popup > * > .next-month.selected {
+    -fx-background-color: #4589ad;
+}
+.date-picker-popup > * > .today:hover,
+.date-picker-popup > * > .today.selected {
+    -fx-background-color: #4589ad;
+}
+.date-picker-popup > * > .day-cell:focused,
+.date-picker-popup > * > .today:focused {
+    -fx-background-color: #4589ad;
+}
+.date-picker-popup > * > .day-cell:focused:hover,
+.date-picker-popup > * > .today:focused:hover,
+.date-picker-popup > * > .today.selected:focused,
+.date-picker-popup > * > .selected:focused {
+    -fx-background-color: #4589ad;
+}
+.date-picker-popup > * > .previous-month:hover,
+.date-picker-popup > * > .next-month:hover {
+    -fx-background-color:#D3D3D3;
+}
+/*日期选择组件的弹出按钮样式*/
+.no-background-button {
+    -fx-border-width:0px;
+    -fx-background-insets:15px;
+    -fx-background-color:transparent;
+    -fx-graphic:url("../img/control/pane/calendar/13.png"); 
+}
+.no-background-button:focused,
+.no-background-button:hover{
+    -fx-background-insets:15px;
+    -fx-background-color:transparent;
+    -fx-graphic:url("../img/control/pane/calendar/14.png"); 
+}
+/*日历选择面板的背景*/
+.CalendarPicker >.calendar-backcolor{ 
+    -fx-background-color:#FFFFFF;
+    -fx-padding: 10 8 10 8;
+    -fx-pref-width: 302;
+    -fx-pref-height:245;
+    -fx-border-color: #dddddd;
+    -fx-border-width:0px;
+    -fx-border-radius: 0;
+    -fx-background-radius:0px;
+}
+.CalendarPicker{
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1; 
+    -fx-border-radius: 0;
+    -fx-effect: dropshadow(three-pass-box , #dddddd , 0, 0.3 , 2 , 2 );
+}
+/*GridPane的宽度和间隔*/
+.CalendarPicker > .calendar-backcolor > .baseGridPane{ 
+    -fx-vgap:10;
+}
+/*最上面的年月今天所在的gridpane*/
+.CalendarPicker *.top_gridpane{ 
+    -fx-hgap:10px;
+    -fx-alignment:CENTER;
+    -fx-max-width: 286;
+    -fx-min-width:286;
+    -fx-pref-width: 286;
+    -fx-pref-height: 22;
+    -fx-min-height: 22;
+    -fx-max-height: 22;
+}
+/*年月中的文本框*/
+.CalendarPicker *.top_gridpane .yearListSpinner{
+    -fx-pref-width:121px;
+    -fx-min-width:121px;
+    -fx-max-width:121px;
+}
+.CalendarPicker *.top_gridpane .monthListSpinner{
+    -fx-pref-width:109px;
+    -fx-min-width:109px;
+    -fx-max-width:109px;
+}
+.CalendarPicker *.top_gridpane .yearListSpinner .text-field,
+.CalendarPicker *.top_gridpane .monthListSpinner .text-field,
+.CalendarPicker *.top_gridpane .yearListSpinner .text-field:hover,
+.CalendarPicker *.top_gridpane .monthListSpinner .text-field:hover,
+.CalendarPicker *.top_gridpane .yearListSpinner .text-field:focused,
+.CalendarPicker *.top_gridpane .monthListSpinner .text-field:focused{
+    -fx-border-width:0px;
+    -fx-background-insets:0;
+    -fx-background-color:#FFFFFF;
+}
+/*今天按钮的样式*/
+.CalendarPicker *.today-button{
+    -fx-background-color:transparent;
+    -fx-text-fill:#2481ce;
+    -fx-background-radius:0;
+    -fx-border-radius: 0;
+    -fx-max-width: 46;
+    -fx-min-width:46;
+    -fx-pref-width: 46;
+    -fx-pref-height: 24;
+    -fx-min-height: 24;
+    -fx-max-height: 24;
+    -fx-padding: 0;
+}
+.CalendarPicker *.today-button:focused,
+.CalendarPicker *.today-button:hover{
+    -fx-background-color:#4589ad;
+    -fx-text-fill:#FFFFFF;
+}
+/*星期几文本的样式*/
+.CalendarPicker *.weekdayLabel_GridPane{
+    -fx-background-color:#f5f5f5;
+    -fx-hgap:8;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1; 
+    -fx-max-width: 286;
+    -fx-min-width:286;
+    -fx-pref-width: 286;
+    -fx-pref-height:30;
+}
+/*设置CalendarPicker中星期的文本样式*/
+.CalendarPicker .weekday-label {
+    -fx-alignment: CENTER;
+    -fx-max-width:34;
+    -fx-min-width:  34;
+    -fx-pref-width: 34;
+    -fx-min-height: 24;
+    -fx-max-height: 24;
+    -fx-pref-height: 24;
+}
+.CalendarPicker .weekend{
+    -fx-text-fill:#e24433;
+}
+/*“天”的选择面板GridPane样式*/ 
+.CalendarPicker .baseGridPane .btnPn_Root{
+    -fx-hgap:10;
+    -fx-vgap:12;
+}
+/*“天”的按钮样式*/
+.CalendarPicker  *.toggle-button{
+    -fx-padding: 0 0 0 0;
+    -fx-font-size:116.7%;
+    -fx-text-fill:#3B3B3B;
+    -fx-background-color:#FFFFFF;
+    -fx-border-width: 0;
+    -fx-pref-width: 32;
+    -fx-max-width:  32;
+    -fx-min-width:  32;
+    -fx-pref-height:22;
+    -fx-min-height: 22;
+    -fx-max-height: 22;
+}
+.CalendarPicker *.toggle-button:focused,
+.CalendarPicker *.toggle-button:hover,
+.CalendarPicker  *.toggle-button:selected{
+    -fx-font-weight:bold;
+    -fx-background-color:#4589ad;
+    -fx-text-fill:#FFFFFF;
+}
+/*年和月的面板*/
+.YearAndMonthPanel { 
+    -fx-alignment:CENTER;
+    -fx-background-color:#FFFFFF;
+    -fx-skin: "com.leqienglish.client.fx.control.calendarpicker.YearAndMonthSkin";
+    /*-fx-text-fill:#4f331f;*/
+    -fx-hgap:5px;
+}
+.YearAndMonthPanel .btnPn_Root{
+    -fx-hgap:2px;
+    -fx-vgap:0px;
+}
+
+/*年选择弹出面板*/
+.YearAndMonthPanel .year-vbox{
+    -fx-border-color: #dddddd;
+    -fx-pref-height: 182;
+    -fx-pref-width: 76;
+    -fx-min-height: 182;
+    -fx-max-height: 182;
+    -fx-max-width:  76;
+    -fx-min-width:  76;
+    -fx-padding:0 2 0 2;
+}
+/*年选择按钮*/
+.YearAndMonthPanel .year-vbox .toggle-button{
+    -fx-pref-height: 16;
+    -fx-pref-width: 34;
+    -fx-min-height: 16;
+    -fx-max-height: 16;
+    -fx-max-width:  34;
+    -fx-min-width:  34;
+    -fx-padding:0px;
+    -fx-background-color:transparent;
+}
+/*月选择弹出面板*/
+.YearAndMonthPanel .month-pane{
+    -fx-border-color: #dddddd;
+    -fx-pref-width:60;
+    -fx-pref-height: 120;
+    -fx-padding:2px;
+}
+/*月选择按钮*/
+.YearAndMonthPanel .month-pane .toggle-button{
+    -fx-pref-height:18;
+    -fx-pref-width: 32;
+    -fx-min-height: 18;
+    -fx-max-height: 18;
+    -fx-max-width:  32;
+    -fx-min-width:  32;
+    -fx-padding:0px;
+    -fx-background-color:transparent;
+}
+.YearAndMonthPanel .year-vbox .toggle-button:focused,
+.YearAndMonthPanel .year-vbox .toggle-button:hover,
+.YearAndMonthPanel .year-vbox .toggle-button:selected,
+.YearAndMonthPanel .year-vbox .toggle-button:selected:hover,
+.YearAndMonthPanel .month-pane .toggle-button:hover,
+.YearAndMonthPanel .month-pane .toggle-button:selected,
+.YearAndMonthPanel .month-pane .toggle-button:selected:hover{
+    -fx-font-weight:normal;
+    -fx-background-color:#4589ad;
+    -fx-text-fill:#FFFFFF;
+}
+.YearAndMonthPanel .pageBar .hbox-pagebar{
+    -fx-padding: 0;
+    -fx-spacing: 4;
+}
+.YearAndMonthPanel .pageBar .toggle-button,
+.YearAndMonthPanel .pageBar .toggle-button:hover,
+.YearAndMonthPanel .pageBar .toggle-button:focused,
+.YearAndMonthPanel .pageBar .toggle-button:selected{
+    -fx-background-color:#FFFFFF;
+    -fx-max-width:30;
+    -fx-min-width:30;
+    -fx-pref-width: 30;
+    -fx-pref-height: 20;
+    -fx-min-height: 20;
+    -fx-max-height: 20;
+    -fx-border-width: 0;
+    -fx-text-fill:transparent;
+}
+.YearAndMonthPanel .pageBar .page_pre_btn{
+    -fx-background-image:url("../img/control/pane/calendar/7.png");
+}
+.YearAndMonthPanel .pageBar .page_pre_btn:hover{
+    -fx-background-image:url("../img/control/pane/calendar/8.png");
+}
+.YearAndMonthPanel .pageBar .page_next_btn{
+    -fx-background-image:url("../img/control/pane/calendar/9.png");
+}
+.YearAndMonthPanel .pageBar .page_next_btn:hover{
+    -fx-background-image:url("../img/control/pane/calendar/10.png");
+}
+/*======================= TimePicker 时间面板 =================================*/
+.TimePicker { 
+    -fx-skin: "com.leqienglish.client.fx.control.calendarpicker.TimePickerSkin";
+    -fx-background-color:#FFFFFF;
+    -fx-padding:8 10 8 10;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1; 
+    -fx-border-radius: 0;
+    -fx-effect: dropshadow(three-pass-box , #dddddd , 0, 0.3 , 2 , 2 );
+    -fx-max-width: 272;
+    -fx-min-width:272;
+    -fx-pref-width: 272;
+    -fx-min-height: 250;
+    -fx-max-height: 250;
+    -fx-pref-height: 250;
+}
+.TimePicker .orderPane_top_label{
+    -fx-padding: 0 0 0 15;
+    -fx-border-color:#dddddd;
+    -fx-max-width: 250;
+    -fx-min-width:250;
+    -fx-pref-width: 250;
+    -fx-min-height: 32;
+    -fx-max-height: 32;
+    -fx-pref-height: 32;
+}
+.TimePicker .TimePicker-CenterHour {
+    -fx-border-color:#dddddd;
+    -fx-max-width: 156;
+    -fx-min-width:156;
+    -fx-pref-width: 156;
+    -fx-min-height: 185;
+    -fx-max-height: 185;
+    -fx-pref-height: 185;
+}
+.TimePicker .TimePicker-CenterMinute{
+    -fx-border-color:#dddddd;
+    -fx-max-width: 79;
+    -fx-min-width:79;
+    -fx-pref-width: 79;
+    -fx-min-height: 185;
+    -fx-max-height: 185;
+    -fx-pref-height: 185;
+}
+.TimePicker  *.ButtonPane *.btnPn_Root{
+    -fx-grid-lines-visible:false;
+    -fx-hgap:13;
+    -fx-vgap:6;
+    -fx-padding:10;
+    -fx-font-size:116.7%;
+}
+.TimePicker .TimePicker-CenterHBox{
+    -fx-spacing:15;
+    -fx-padding:10 0 0 0;
+}
+.TimePicker .orderPane_top_labe_hour,
+.TimePicker .orderPane_top_labe_minute{
+    -fx-alignment:CENTER;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color:#dddddd;
+    -fx-min-height: 27;
+    -fx-max-height: 27;
+    -fx-pref-height: 27;
+    -fx-font-size:116.7%;
+    -fx-font-weight:bold;
+}
+.buttonTime,
+.buttonTime:selected{
+    -fx-padding:-10;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-color:transparent;
+}
+.buttonTime:focused,
+.buttonTime:hover{
+    -fx-background-color:#4589ad;
+    -fx-text-fill:#FFFFFF;
+}
+/*=========================== NumberPicker ===================================*/
+.NumberPicker { 
+    -fx-style-pane:1;/*设置样式类型*/
+}
+.NumberPicker *.number_vbox1 {
+    -fx-background-color:#FFFFFF;
+    -fx-border-color: #dddddd;
+    -fx-padding: 10px;
+    -fx-max-width: 92px;
+    -fx-min-width:92px;
+    -fx-pref-width:92px;
+    -fx-pref-height: 119px;
+    -fx-min-height: 119px;
+    -fx-max-height: 119px;
+}
+.NumberPicker *.number_vbox2 {
+    -fx-background-color:#FFFFFF;
+    -fx-border-color: #dddddd;
+    -fx-padding: 10px 15px 10px 15px;
+    -fx-max-width: 182px;
+    -fx-min-width:182px;
+    -fx-pref-width:182px;
+    -fx-pref-height: 69px;
+    -fx-min-height: 69px;
+    -fx-max-height: 69px;
+}
+.NumberPicker *.number_pane{
+    -fx-hgap:8px;
+    -fx-vgap:10px;
+}
+.NumberPicker .button{
+    -fx-background-color:#FFFFFF;
+    -fx-padding: 0px;
+    -fx-border-width:0px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-font-size: 116.7%;
+    -fx-font-weight:bold;
+    -fx-text-fill:#3B3B3B;
+    -fx-max-width: 19px;
+    -fx-min-width:19px;
+    -fx-pref-width:19px;
+    -fx-pref-height: 18px;
+    -fx-min-height: 18px;
+    -fx-max-height: 18px;
+}
+.NumberPicker .button:focused,
+.NumberPicker .button:hover{
+    -fx-background-color:#4589ad;
+    -fx-text-fill:#FFFFFF;
+}
+.viewPopup-hbox .pageBar,
+.viewPopup-hbox .column-header{
+    -fx-pref-height:0px;
+    -fx-min-height:0px;
+    -fx-max-height:0px;
+}
+/*================================ 工具条样式 =================================*/
+.hip-button{
+    -fx-border-width:0px;
+    -fx-graphic-text-gap:1px;
+    -fx-padding:3px;
+    -fx-background-radius:5px;
+    -fx-background-color:transparent;
+    -fx-font-size:15px;
+    -fx-text-fill:#0681D7;
+}
+.hip-button:hover,
+.hip-button:focused,
+.hip-button:focused:hover{
+    -fx-text-fill:#FFFFFF;
+    -fx-background-color:#4589ad;
+}
+.no-backgroun-style:hover,
+.no-backgroun-style:focused,
+.no-backgroun-style:focused:hover{
+    -fx-background-color:transparent;
+}
+/*保存按钮图标*/
+.save-button .image-view{
+    -fx-image:url("../img/controlbar/save.png");
+}
+.save-button:focused .image-view,
+.save-button:hover .image-view{
+    -fx-image:url("../img/controlbar/save_2.png");
+}
+/*编辑按钮图标*/
+.edit-button .image-view{
+    -fx-image:url("../img/controlbar/edit.png");
+}
+.edit-button:focused .image-view,
+.edit-button:hover .image-view{
+    -fx-image:url("../img/controlbar/edit_2.png");
+}
+/*新增按钮“+”图标*/
+.add-button .image-view{
+    -fx-image:url("../img/controlbar/add.png");
+}
+.add-button:focused .image-view,
+.add-button:hover .image-view{
+    -fx-image:url("../img/controlbar/add_2.png");
+}
+/*新增按钮文件夹图标*/
+.Fnode-button .image-view{
+    -fx-image:url("../img/controlbar/Fnode.png");
+}
+.Fnode-button:focused .image-view,
+.Fnode-button:hover .image-view{
+    -fx-image:url("../img/controlbar/Fnode_2.png");
+}
+/*新增按钮文件图标*/
+.node-button .image-view{
+    -fx-image:url("../img/controlbar/node.png");
+}
+.node-button:focused .image-view,
+.node-button:hover .image-view{
+    -fx-image:url("../img/controlbar/node_2.png");
+}
+/*下一个 图标*/
+.next-button .image-view{
+    -fx-image:url("../img/controlbar/next.png");
+}
+.next-button:focused .image-view,
+.next-button:hover .image-view{
+    -fx-image:url("../img/controlbar/next_2.png");
+}
+/*上一个 图标*/
+.last-button .image-view{
+    -fx-image:url("../img/controlbar/last.png");
+}
+.last-button:focused .image-view,
+.last-button:hover .image-view{
+    -fx-image:url("../img/controlbar/last_2.png");
+}
+/*删除按钮图标*/
+.delete-button .image-view{
+    -fx-image:url("../img/controlbar/delete.png");
+}
+.delete-button:focused .image-view,
+.delete-button:hover .image-view{
+    -fx-image:url("../img/controlbar/delete_2.png");
+}
+/*退出按钮图标*/
+.exit-button .image-view{
+    -fx-image:url("../img/controlbar/exit.png");
+}
+.exit-button:focused .image-view,
+.exit-button:hover .image-view{
+    -fx-image:url("../img/controlbar/exit_2.png");
+}
+/*放大按钮图标*/
+.expand-button .image-view{
+    -fx-image:url("../img/controlbar/expand.png");
+}
+.expand-button:focused .image-view,
+.expand-button:hover .image-view{
+    -fx-image:url("../img/controlbar/expand_2.png");
+}
+/*撤销按钮图标*/
+.retract-button .image-view{
+    -fx-image:url("../img/controlbar/retract.png");
+}
+.retract-button:focused .image-view,
+.retract-button:hover .image-view{
+    -fx-image:url("../img/controlbar/retract_2.png");
+}
+/*反向选择按钮图标*/
+.inverse-button .image-view{
+    -fx-image:url("../img/controlbar/inverse.png");
+}
+.inverse-button:focused .image-view,
+.inverse-button:hover .image-view{
+    -fx-image:url("../img/controlbar/inverse_2.png");
+}
+/*排序按钮图标*/
+.rank-button .image-view{
+    -fx-image:url("../img/controlbar/rank.png");
+}
+.rank-button:focused .image-view,
+.rank-button:hover .image-view{
+    -fx-image:url("../img/controlbar/rank_2.png");
+}
+/*跳转 图标*/
+.jump-button .image-view{
+    -fx-image:url("../img/controlbar/jump.png");
+}
+.jump-button:focused .image-view,
+.jump-button:hover .image-view{
+    -fx-image:url("../img/controlbar/jump_2.png");
+}
+/*刷新 图标*/
+.refresh-button .image-view{
+    -fx-image:url("../img/controlbar/refresh.png");
+}
+.refresh-button:focused .image-view,
+.refresh-button:hover .image-view{
+    -fx-image:url("../img/controlbar/refresh_2.png");
+}
+/*导出 图标*/
+.export-button .image-view{
+    -fx-image:url("../img/controlbar/export.png");
+}
+.export-button:focused .image-view,
+.export-button:hover .image-view{
+    -fx-image:url("../img/controlbar/export_2.png");
+}
+/*生成文档 图标*/
+.generate-button .image-view{
+    -fx-image:url("../img/controlbar/generate.png");
+}
+.generate-button:focused .image-view,
+.generate-button:hover .image-view{
+    -fx-image:url("../img/controlbar/generate_2.png");
+}
+/*设置 图标*/
+.set-button .image-view{
+    -fx-image:url("../img/controlbar/set.png");
+}
+.set-button:focused .image-view,
+.set-button:hover .image-view{
+    -fx-image:url("../img/controlbar/set_2.png");
+}
+/*合并 图标*/
+.clip-button .image-view{
+    -fx-image:url("../img/controlbar/clip.png");
+}
+.clip-button:focused .image-view,
+.clip-button:hover .image-view{
+    -fx-image:url("../img/controlbar/clip_2.png");
+}
+/*取消合并 图标*/
+.cancel-button .image-view{
+    -fx-image:url("../img/controlbar/cancel.png");
+}
+.cancel-button:focused .image-view,
+.cancel-button:hover .image-view{
+    -fx-image:url("../img/controlbar/cancel_2.png");
+}
+/*读卡 图标*/
+.read-button .image-view{
+    -fx-image:url("../img/controlbar/read.png");
+}
+.read-button:focused .image-view,
+.read-button:hover .image-view{
+    -fx-image:url("../img/controlbar/read_2.png");
+}
+
+/*更多 图标*/
+.more-button .image-view{
+    -fx-image:url("../img/controlbar/more.png");
+}
+.more-button:focused .image-view,
+.more-button:hover .image-view{
+    -fx-image:url("../img/controlbar/more_2.png");
+}
+
+/*会诊 图标*/
+.huizhen-button .image-view{
+    -fx-image:url("../img/controlbar/huizhen.png");
+}
+.huizhen-button:focused .image-view,
+.huizhen-button:hover .image-view{
+    -fx-image:url("../img/controlbar/huizhen_2.png");
+}
+
+/*帐户 图标*/
+.account-button .image-view{
+    -fx-image:url("../img/controlbar/account.png");
+}
+.account-button:focused .image-view,
+.account-button:hover .image-view{
+    -fx-image:url("../img/controlbar/account_2.png");
+}
+
+/*事件 图标*/
+.affair-button .image-view{
+    -fx-image:url("../img/controlbar/affair.png");
+}
+.affair-button:focused .image-view,
+.affair-button:hover .image-view{
+    -fx-image:url("../img/controlbar/affair_2.png");
+}
+
+/*返回 图标*/
+.back-button .image-view{
+    -fx-image:url("../img/controlbar/back.png");
+}
+.back-button:focused .image-view,
+.back-button:hover .image-view{
+    -fx-image:url("../img/controlbar/back_2.png");
+}
+
+/*检查 图标*/
+.check-button .image-view{
+    -fx-image:url("../img/controlbar/check.png");
+}
+.check-button:focused .image-view,
+.check-button:hover .image-view{
+    -fx-image:url("../img/controlbar/check_2.png");
+}
+
+/*打印 图标*/
+.print-button .image-view{
+    -fx-image:url("../img/controlbar/print.png");
+}
+.print-button:focused .image-view,
+.print-button:hover .image-view{
+    -fx-image:url("../img/controlbar/print_2.png");
+}
+
+/*提交 图标*/
+.commit-button .image-view{
+    -fx-image:url("../img/controlbar/commit.png");
+}
+.commit-button:focused .image-view,
+.commit-button:hover .image-view{
+    -fx-image:url("../img/controlbar/commit_2.png");
+}
+
+/*合并 图标*/
+.hb-button .image-view{
+    -fx-image:url("../img/controlbar/hb.png");
+}
+.hb-button:focused .image-view,
+.hb-button:hover .image-view{
+    -fx-image:url("../img/controlbar/hb_2.png");
+}
+
+/*影像 图标*/
+.image-button .image-view{
+    -fx-image:url("../img/controlbar/image.png");
+}
+.image-button:focused .image-view,
+.image-button:hover .image-view{
+    -fx-image:url("../img/controlbar/image_2.png");
+}
+
+/*加入 图标*/
+.join-button .image-view{
+    -fx-image:url("../img/controlbar/join.png");
+}
+.join-button:focused .image-view,
+.join-button:hover .image-view{
+    -fx-image:url("../img/controlbar/join_2.png");
+}
+
+/*钱 图标*/
+.money-button .image-view{
+    -fx-image:url("../img/controlbar/money.png");
+}
+.money-button:focused .image-view,
+.money-button:hover .image-view{
+    -fx-image:url("../img/controlbar/money_2.png");
+}
+
+/*模具 图标*/
+.mould-button .image-view{
+    -fx-image:url("../img/controlbar/mould.png");
+}
+.mould-button:focused .image-view,
+.mould-button:hover .image-view{
+    -fx-image:url("../img/controlbar/mould_2.png");
+}
+
+/*取消合并 图标*/
+.qxhb-button .image-view{
+    -fx-image:url("../img/controlbar/qxhb.png");
+}
+.qxhb-button:focused .image-view,
+.qxhb-button:hover .image-view{
+    -fx-image:url("../img/controlbar/qxhb_2.png");
+}
+
+/*寄存器 图标*/
+.register-button .image-view{
+    -fx-image:url("../img/controlbar/register.png");
+}
+.register-button:focused .image-view,
+.register-button:hover .image-view{
+    -fx-image:url("../img/controlbar/register_2.png");
+}
+
+/*移除 图标*/
+.remove-button .image-view{
+    -fx-image:url("../img/controlbar/remove.png");
+}
+.remove-button:focused .image-view,
+.remove-button:hover .image-view{
+    -fx-image:url("../img/controlbar/remove_2.png");
+}
+
+/*筛选 图标*/
+.screening-button .image-view{
+    -fx-image:url("../img/controlbar/screening.png");
+}
+.screening-button:focused .image-view,
+.screening-button:hover .image-view{
+    -fx-image:url("../img/controlbar/screening_2.png");
+}
+
+/*查询 图标*/
+.search-image,
+.search-button .image-view{
+    -fx-image:url("../img/controlbar/search.png");
+}
+.search-button:focused .image-view,
+.search-button:hover .image-view{
+    -fx-image:url("../img/controlbar/search_2.png");
+}
+
+.no-backgroun-style .image-view{
+    -fx-image:url("../img/controlbar/search_01.png");
+}
+.no-backgroun-style:focused .image-view,
+.no-backgroun-style:hover .image-view{
+    -fx-image:url("../img/controlbar/search.png");
+}
+
+/*统计 图标*/
+.statistics-button .image-view{
+    -fx-image:url("../img/controlbar/statistics.png");
+}
+.statistics-button:focused .image-view,
+.statistics-button:hover .image-view{
+    -fx-image:url("../img/controlbar/statistics_2.png");
+}
+
+/*通过 图标*/
+.tongguo-button .image-view{
+    -fx-image:url("../img/controlbar/tongguo.png");
+}
+.tongguo-button:focused .image-view,
+.tongguo-button:hover .image-view{
+    -fx-image:url("../img/controlbar/tongguo_2.png");
+}
+/*退回 图标*/
+.tuihui-button .image-view{
+    -fx-image:url("../img/controlbar/tuihui.png");
+}
+.tuihui-button:focused .image-view,
+.tuihui-button:hover .image-view{
+    -fx-image:url("../img/controlbar/tuihui_2.png");
+}
+/*列表按钮 图标*/
+.table-button .image-view{
+    -fx-image:url("../img/controlbar/table.png");
+}
+.table-button:focused .image-view,
+.table-button:hover .image-view{
+    -fx-image:url("../img/controlbar/table_2.png");
+}
+/*折线图按钮 图标*/
+.linechart-button .image-view{
+    -fx-image:url("../img/controlbar/linechart.png");
+}
+.linechart-button:focused .image-view,
+.linechart-button:hover .image-view{
+    -fx-image:url("../img/controlbar/linechart_2.png");
+}
+
+/*医嘱 图标*/
+.advice-button .image-view{
+    -fx-image:url("../img/controlbar/advice.png");
+}
+.advice-button:focused .image-view,
+.advice-button:hover .image-view{
+    -fx-image:url("../img/controlbar/advice_2.png");
+}
+
+/*护理 图标*/
+.nursing-button .image-view{
+    -fx-image:url("../img/controlbar/Nursing.png");
+}
+.nursing-button:focused .image-view,
+.nursing-button:hover .image-view{
+    -fx-image:url("../img/controlbar/Nursing_2.png");
+}
+
+/*重 图标*/
+.serious-button .image-view,
+.serious-button:focused .image-view,
+.serious-button:hover .image-view{
+    -fx-image:url("../img/controlbar/serious.png");
+}
+
+/*危 图标*/
+
+.danger-button .image-view,
+.danger-button:focused .image-view,
+.danger-button:hover .image-view{
+    -fx-image:url("../img/controlbar/danger.png");
+}
+
+/*一般 图标*/
+.normal-button .image-view,
+.normal-button:focused .image-view,
+.normal-button:hover .image-view{
+    -fx-image:url("../img/controlbar/normal.png");
+}
+/*急 图标*/
+.emergency-button .image-view,
+.emergency-button:focused .image-view,
+.emergency-button:hover .image-view{
+    -fx-image:url("../img/controlbar/emergency.png");
+}
+/*婴儿 图标*/
+.baby-button .image-view,
+.baby-button:focused .image-view,
+.baby-button:hover .image-view{
+    -fx-image:url("../img/controlbar/baby.png");
+}
+
+/*first 图标*/
+.first-button .image-view,
+.first-button:focused .image-view,
+.first-button:hover .image-view{
+    -fx-image:url("../img/controlbar/level_1.png");
+}
+/*second 图标*/
+.second-button .image-view,
+.second-button:focused .image-view,
+.second-button:hover .image-view{
+    -fx-image:url("../img/controlbar/level_2.png");
+}
+/*third 图标*/
+.third-button .image-view,
+.third-button:focused .image-view,
+.third-button:hover .image-view{
+    -fx-image:url("../img/controlbar/level_3.png");
+}
+
+/*系统 图标*/
+.xitong-button .image-view{
+    -fx-image:url("../img/controlbar/xitong.png");
+}
+.xitong-button:focused .image-view,
+.xitong-button:hover .image-view{
+    -fx-image:url("../img/controlbar/xitong_01.png");
+}
+
+/*============================ 错误提示 =======================================*/
+.error,
+.error .label{
+    -fx-text-fill:#e24433;
+}
+.error .text-field,
+.error .text-input,
+.error .combo-box:editable{
+    -fx-background-color: #e24433, #FFFFFF, #FFFFFF;
+}
+.error .text-field:hover,
+.error .text-input:hover,
+.error .combo-box:editable:hover,
+.error .text-field:focused,
+.error .text-input:focused,
+.error .combo-box:editable:focused{
+    -fx-background-color: #e24433, #e24433, #FFFFFF;
+}
+
+.error .combo-box:editable{
+    -fx-border-color: #e24433;
+}
+.warning,
+.warning .label{
+    -fx-text-fill:#FFB941;
+}
+.warning .text-field,
+.warning .text-input,
+.warning .combo-box:editable{
+    -fx-background-color: #FFB941, #FFFFFF, #FFFFFF;
+}
+.warning .text-field:hover,
+.warning .text-input:hover,
+.warning .combo-box:editable:hover,
+.warning .text-field:focused,
+.warning .text-input:focused,
+.warning .combo-box:editable:focused{
+    -fx-background-color: #FFB941, #FFB941, #FFFFFF;
+}
+
+.warning .combo-box:editable{
+    -fx-border-color:#FFB941;
+}
+.error .menu-item .label,
+.warning .menu-item .label{
+    -fx-text-fill:#3B3B3B;
+}
+.warning .header-panel .label,
+.warning .content{
+    -fx-text-fill:#3B3B3B;
+}
+
+/*=========================== 最大化最小化 ====================================*/
+.message-button,
+.refesh-button,
+.cloth-button{
+    -fx-padding:1px 1px 2px 2px ;
+}
+.close,
+.maximize,
+.minimize,
+.message-button,
+.close:focused,
+.maximize:focused,
+.minimize:focused,
+.message-button:focused,
+.cloth-button:focused,
+.refesh-button:focused{
+    -fx-background-radius:0px;
+    -fx-border-radius:0px;
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+    -fx-background-position:bottom;
+}
+.minimize:focused:hover,
+.minimize:hover,
+.maximize:focused:hover,
+.maximize:hover,
+.message-button:focused:hover,
+.message-button:hover,
+.cloth-button:focused:hover,
+.cloth-button:hover,
+.refesh-button:focused:hover,
+.refesh-button:hover{
+    -fx-background-color:linear-gradient(to bottom,#2e91bf,#e5eef7);
+}
+.close:focused:hover,
+.close:hover{
+    -fx-background-color:linear-gradient(to bottom,#e34a17,#eeeaf1);
+}
+/*消息 图标*/
+.message-button .image-view{
+    -fx-image:url("../img/controlbar/message.png");
+}
+/*刷新 图标*/
+.refesh-button .image-view{
+    -fx-image:url("../img/controlbar/refresh_2.png");
+}
+/*换肤 图标*/
+.cloth-button .image-view{
+    -fx-image:url("../img/controlbar/cloth.png");
+}
+/*============================ 流程导航 =======================================*/
+.tool-bar{
+    -fx-spacing:1px;
+    -fx-background-color:transparent;
+}
+.virtual-flow{
+    -fx-spacing:1px;
+    -fx-background-color:transparent;
+}
+
+/********************************************************************************
+ *                                                                              *
+ * 业务                                                                         *
+ *                                                                              *
+ ********************************************************************************/
+/*========================= Login用户名输入框 =================================*/
+.logStackPane{
+    -fx-background-radius:2px;
+    /*-fx-border-radius:2px;*/
+    -fx-border-width:0px;
+    -fx-background-color:#4589AD;
+}
+.loginHbox{
+    -fx-background-radius: 10px;
+    -fx-background-color: -fx-custom-coummon-button-hover-background;
+}
+.loginHbox .label{
+    -fx-font-size:133.3%;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-weight:bold;
+}
+.loginHbox .menu-item .label{
+    -fx-text-fill:#3B3B3B;
+}
+.loginHbox .text-field{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, #FFFFFF;
+    -fx-font-weight:bold;
+    -fx-font-family:"Arial";
+    -fx-font-size:133.3%;
+    -fx-min-height:38px;
+    -fx-min-width:246px;
+    -fx-pref-height:38px;
+    -fx-pref-width:246px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding:4 5 4 35;
+}
+
+.loginHbox .text-field:focused{
+    -fx-background-color: -fx-custom-text-field-hover-border-color, -fx-custom-text-field-hover-border-color, #FFFFFF;
+}
+.loginHbox .check-box{
+    -fx-text-fill:#FFFFFF;
+    -fx-text-alignment:left;
+}
+.loginHbox .button,
+.loginHbox .button:focused{
+    -fx-border-width:0px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-min-height:38px;
+    -fx-max-height:38px;
+    -fx-min-width:246px;
+    -fx-max-width:246px;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:133.3%;
+    -fx-font-weight:bold;
+    -fx-background-color: #67A7C9;
+}
+.loginHbox .button:hover,
+.loginHbox .button:focused:hover{
+    -fx-background-color: #92BCD3;
+}
+.loginHbox .version{
+    -fx-font-family:"Microsoft YaHei";
+    -fx-text-fill:#FFFFFF;
+}
+.loginHbox .combo-box{
+    -fx-min-height:38px;
+    -fx-pref-height:38px;
+    -fx-min-width:246px;
+    -fx-pref-width:246px;
+}
+.logoImage{
+    -fx-image:url("../img/fw/login/logo.png");
+}
+
+#errPane{
+    -fx-pref-height:32px;
+    -fx-min-height:32px;
+    -fx-max-height:32px;
+}
+#errLabel{
+    -fx-pref-height:32px;
+    -fx-min-height:32px;
+    -fx-max-height:32px;
+    -fx-pref-width:244px;
+    -fx-min-width:244px;
+    -fx-max-width:244px;
+    -fx-text-fill:#FFFFFF;
+    -fx-graphic:url("../img/fw/login/warning.png");
+    -fx-background-image:url("../img/fw/login/warning_bj.png");
+}
+/*========================= 密码输入框的样样 ==================================*/
+.password-field:disabled{
+    -fx-background-color: -fx-custom-text-field-disable-background-color;
+}
+.loginHbox .text-field:readonly,
+.password-field:readonly{
+    -fx-background-color: #E8F2F8;
+}
+.welcome-page{
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+    -fx-background-image:url("../img/fw/window/welcome.png");
+
+}
+/*========================= 主框架导航样式 ====================================*/
+.primary-navigation{
+    -fx-min-height: 40px;
+    -fx-padding:0 0 0 8px;
+    -fx-background-color:#3c7493;
+}
+.hip-menu-bar,
+.menu-bar{
+    -fx-padding:0 0 0 20px;
+    -fx-min-width:580px;
+    -fx-background-color:transparent;
+    -fx-alignment:CENTER_LEFT;
+}
+
+.login-org-info .menu-bar{
+    -fx-min-width:40px;
+    -fx-pref-width:55px;
+    -fx-padding:3px;
+}
+.login-org-info .menu-bar .menu-button{
+    -fx-padding:0px;
+}
+
+.primary-navigation .logoImage{
+    -fx-image:url("../img/fw/navigation/logo.png");
+}
+.hip-menu-bar .button,
+.primary-navigation .menu-bar .container .menu-button >.label{
+    -fx-text-fill:#FFFFFF;
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+    -fx-font-size:120%;
+}
+.hip-menu-bar .button{
+    -fx-padding:5px 8px 5px 8px;
+    -fx-border-radius:0px;
+    -fx-backgrounc-radius:0px;
+}
+.hip-menu-bar .button:hover{
+    -fx-border-width:0px 0px 1px 0px;  
+    -fx-border-color:white;
+}
+.hip-menu-bar-popup{
+    -fx-border-width:1px;
+    -fx-border-color:-fx-dialog-border-color;
+    -fx-background-color:#FFFFFF;
+    -fx-effect:dropshadow(three-pass-box,-fx-dialog-border-color,2,0.5,0,0);
+}
+.hip-menu-bar-popup .hip-menu-item{
+    -fx-padding:6px 0 4px 0;
+}
+.hip-menu-bar-popup .hip-menu-item .button{
+    -fx-min-width:160px;
+    -fx-pref-height:24px;
+    -fx-padding:2px 0 2 16px;
+    -fx-background-color:transparent;
+    -fx-border-width:0px 0px 1px 0px;  
+    -fx-border-color:transparent;
+    -fx-border-radius:0px;
+    -fx-backgrounc-radius:0px;
+    -fx-font-size:110%;
+    /*-fx-text-fill:-fx-custom-text-default-color;*/
+    -fx-text-fill:#3C7493;
+    -fx-alignment:center-left;
+}
+.hip-menu-bar-popup .hip-menu-item .button:hover{
+    /*    -fx-text-fill:#82BAD2;
+        -fx-border-color:#82BAD2;*/
+    -fx-text-fill:#2480CE;
+    -fx-border-color:#2480CE;
+}
+.hip-menu-bar-popup .hip-menu{
+    -fx-padding:2px 0px 2px 0px;
+}
+.hip-menu-bar-popup .hip-menu > .button{
+    -fx-font-weight:bold;
+    -fx-pref-height:24px;
+    -fx-pref-width:-1px;
+    -fx-padding:2px;
+    -fx-text-fill:#222222;
+
+}
+.hip-menu-bar-popup .hip-menu > .button:hover{
+    -fx-cursor:null;
+    -fx-text-fill:#222222;
+    -fx-border-color:transparent;
+}
+/*.hip-menu-bar-popup .hip-menu .hip-menu-item .button{
+    -fx-text-fill:-fx-custom-text-default-color;
+    -fx-font-weight:normal;
+}
+.hip-menu-bar-popup .hip-menu .hip-menu-item .button:hover{
+    -fx-text-fill:#82BAD2;
+    -fx-font-weight:normal;
+    -fx-border-color:#82BAD2;
+}*/
+.hip-menu .separator:horizontal .line{
+    -fx-pref-height:2px;
+    -fx-max-height:2px;
+}
+.primary-navigation .menu-bar .container{
+    -fx-spacing:0px;
+    -fx-padding:7px 0px 5px 0px;
+}
+.primary-navigation .menu-bar .container .menu-button{
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+}
+.primary-navigation .menu-bar .container .menu-button:selected{
+    -fx-border-color:#FFFFFF;
+}
+.primary-navigation .menu-bar .container .menu-button:hover{
+    -fx-cursor:hand;
+    -fx-border-color:#FFFFFF;
+}
+
+.primary-navigation .menu-button > .context-menu{
+    -fx-pref-width:134px;
+    -fx-effect:dropshadow(three-pass-box,#FFFFFF,0,0,0,0);
+}
+.login-org-info .menu-button > .context-menu{
+    -fx-pref-width:80px;
+    -fx-effect:dropshadow(three-pass-box,#FFFFFF,0,0,0,0);
+}
+.deptBox{
+    -fx-alignment:CENTER;
+}
+.primary-navigation .menu-bar .container .menu-button .context-menu{
+    -fx-pref-width:134px;
+}
+.login-org-info .menu-bar .container .menu-button .context-menu{
+    -fx-pref-width:80px;
+}
+.primary-navigation .menu-button .context-menu .combo-box{
+    -fx-pref-width:134px;
+}
+.primary-navigation .menu-button .context-menu .combo-box .list-view{
+    -fx-pref-width:134px;
+}
+.primary-navigation .menu-button .context-menu .combo-box .list-cell{
+    -fx-padding:0 0 0 6;
+}
+.primary-navigation .menu-button .context-menu .menu-item{
+    -fx-pref-height: 36px;
+    -fx-padding:11 0 11 20; 
+}
+.login-org-info .menu-button .context-menu .menu-item{
+    -fx-pref-height: 36px;
+    -fx-padding:11 5 11 5; 
+}
+.primary-navigation .menu-button .context-menu .menu-item:hover,
+.primary-navigation .menu-button .context-menu .menu-item:focused,
+.primary-navigation .menu-button .context-menu .menu-item:selected{
+    -fx-background-color:-fx-custom-popup-select-bg;  
+}
+.primary-navigation .menu-button .context-menu .menu-item:selected .label,
+.primary-navigation .menu-button .context-menu .menu-item:focused .label,
+.primary-navigation .menu-button .context-menu .menu-item:hover .label{
+    -fx-text-fill:-fx-custom-list-view-hover;
+}
+.primary-navigation .menu-button >.label > .navigationBtnHbox > .label{
+    -fx-padding: 0px; 
+    -fx-font-size:116.7%;
+    -fx-text-fill:#FFFFFF;
+}
+.primary-navigation .menu-button >.label > .navigationBtnHbox{
+    -fx-spacing:3px;
+}
+
+/*========================= 导航突出的箭头表示 ================================*/
+.primary-navigation .menu-button > .arrow-button{
+    -fx-max-height: 1px;
+    -fx-max-width: 1px; 
+    -fx-min-height: 1px;
+    -fx-min-width: 1px;
+    -fx-padding: 0em; /* 3 */
+}
+.primary-navigation .menu-button > .arrow-button > .arrow{
+    -fx-background-insets: 0;
+    -fx-padding: 0em;  
+    -fx-shape: "";
+}
+.site-label .arrowImage,
+.primary-navigation .menu-button .navigationBtnHbox .arrowImage{
+    -fx-image:url(../img/fw/navigate/arrow_d.png);
+    -fx-color:#e24433;
+}
+.site-label:showing .arrowImage,
+.primary-navigation .menu-button:showing  >.label > .navigationBtnHbox >.arrowImage{
+    -fx-image:url(../img/fw/navigate/arrow_u.png);
+}
+.primary-navigation .menu-button:hover  >.label > .navigationBtnHbox >.label{
+    -fx-text-fill:#FFFFFF;
+}
+.login-org-info{
+    -fx-spacing:2px;
+}
+.login-org-info .combo-box,
+.login-org-info .combo-box .list-cell{
+    -fx-font-size:120%;
+    -fx-pref-height:30px;
+    -fx-alignment:CENTER;
+    -fx-cursor:hand;
+}
+.login-org-info .combo-box .list-cell:selected {
+    -fx-text-fill:white;
+}
+
+.login-org-info .combo-box .arrow-button .arrow{
+    -fx-background-color:white;
+}
+.login-org-info .combo-box {
+    -fx-background-color:transparent;
+    -fx-border-width:0px;
+    -fx-background-radius:2;
+    -fx-border-color:white;
+}
+.login-org-info .hip-button,
+.login-org-info .hip-button:hover,
+.login-org-info .hip-button:focused{
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:120%;
+    -fx-alignment:CENTER_RIGHT;
+    -fx-background-color:transparent;
+    -fx-border-width: 0px 1px 0px 0px;
+    -fx-border-radius:0px;
+    -fx-pref-height:30px;
+    -fx-border-color:#FFFFFF;
+}
+.navigation-bottom{
+    -fx-background-color:#DEE0E3;
+}
+.navigation-bottom,
+.navigation-bottom .label{
+    -fx-pref-height:23px;
+    -fx-text-fill:#222222;
+}
+.navigation-bottom .version-label{
+    -fx-text-fill:#ACAEB0;
+}
+/*============================ 主索引管理 =====================================*/
+.hip-boolean-field{
+    -fx-max-width:20px;
+}
+.grid-view{
+    -fx-vertical-cell-spacing:4px;
+    -fx-horizontal-cell-spacing:4px;
+}
+/*================================== 挂号管理 =================================*/
+.popupNodeRoot{
+    -fx-pref-height:210px;
+    -fx-min-height:210px;
+    -fx-max-height:210px;
+    -fx-padding:10;
+    -fx-border-width:1 1 2 1;
+    -fx-border-color:-fx-custom-register-form-cell-selected-color;
+    -fx-background-color:-fx-custom-register-form-cell-background-color;
+}
+.popupNodeRoot .time{
+    visibility: visible;
+}
+/******************************服务定义****************************************/
+/*密码修改*/
+.pwdBox{
+    -fx-spacing:10px;
+}
+.pwdBox .hbox{
+    -fx-spacing:15px;
+}
+.filter-Text{
+    -fx-pref-height:36px;
+    -fx-min-height:36px;
+}
+.pwdBox .text-field{
+    -fx-min-height:30px;
+    -fx-pref-height:30px;
+}
+.pwdBox .buttonPane{
+    -fx-padding:0 0 20 0;
+}
+/**********************HipCascade样式****************************************/
+.cascade-pane{
+    -fx-border-color:#B5BBBB;
+}
+.cascade-pane .tab-content-area .table-view .column-header-background{
+    -fx-max-height:0px;
+    -fx-min-height:0px;
+    -fx-pref-height:0px;
+    visibility:hidden;
+}
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell, 
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell{
+    -fx-background-color:#FFFFFF;
+    -fx-font-size:116.7%;
+    -fx-pref-height:27px;
+    -fx-border-width:0px;
+    -fx-text-fill:#3B3B3B;
+}
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell{
+    -fx-padding:0 0 0 25px;
+}
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .project-cell > .table-cell{
+    -fx-padding:0 0 0 10px;
+}
+
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused,
+.cascade-pane .tab-content-area .table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused > .table-cell{
+    -fx-background-color:-fx-custom-focused-color;
+}
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:hover,
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:hover .table-cell{
+    -fx-background-color:#C9E6F6;
+}
+
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused:selected,
+.cascade-pane .tab-content-area .table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected > .table-cell,
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused:selected > .table-cell{
+    -fx-background-color:#328FFF;
+    -fx-text-fill:#FFFFFF;
+}
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .project-cell:filled, 
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .project-cell:filled > .table-cell,
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .project-cell:filled:hover, 
+.cascade-pane .tab-content-area .table-view > .virtual-flow > .clipped-container > .sheet > .project-cell:filled > .table-cell:hover{
+    -fx-pref-height:23px;
+    -fx-text-fill:#070606;
+    -fx-background-color:#E8E8E8;
+}
+/*************************tableRow样式追加****************************************/
+/*特级护理*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .serious:hover > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .serious:focused > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .serious:focused:selected > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .serious > .NursingClass{
+    -fx-text-fill:#FF00FF;
+}
+/*一级护理*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .Severe:hover > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Severe:focused > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Severe:focused:selected > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Severe > .NursingClass{
+    -fx-text-fill:#FF0000;
+}
+/*二级护理*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .Moderate:hover > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Moderate:focused > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Moderate:focused:selected > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Moderate > .NursingClass{
+    -fx-text-fill:#0000FF;
+}
+/*三级护理*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .Mildly:hover > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Mildly:focused > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Mildly:focused:selected > .NursingClass,
+.table-view > .virtual-flow > .clipped-container > .sheet > .Mildly > .NursingClass{
+    -fx-text-fill:#008000;
+}
+
+.hipCalendar{
+    -fx-border-color:#dddddd; 
+    -fx-padding:0px 8px 10px 8px;
+    -fx-background-color:#FFFFFF;
+    -fx-pref-height:245px;
+    -fx-min-height:245px;
+}
+.layoutPane{
+    -fx-vgap:10px;
+}
+.weekPart{
+    -fx-min-height:30px;
+    -fx-background-color:#F7F8FA;
+}
+.weekPart .toggle-button,
+.weekPart .toggle-button:hover,
+.weekPart .toggle-button:focused,
+.weekPart .toggle-button:selected{
+    -fx-text-fill:#3B3B3B;
+    -fx-background-color:transparent;
+}
+.labelForMonthPart,
+.labelForMinutePart{
+    -fx-min-width:24px;
+    -fx-alignment:CENTER_RIGHT;
+}
+.yearPart,
+.monthPart{
+    -fx-border-color:#dddddd; 
+    -fx-padding:5px 10px 5px 10px;
+    -fx-background-color:#FFFFFF;
+}
+.monthPart{
+    -fx-padding:5px 0px 5px 0px;
+    -fx-pref-height:120px;
+    -fx-min-height:120px;
+    -fx-pref-width:90px;
+    -fx-min-width:90px;
+}
+.yearPart{
+    -fx-pref-height:190px;
+    -fx-min-height:190px;
+}
+.yearPart .toggle-button{
+    -fx-pref-height:16px;
+    -fx-min-height:16px;
+    -fx-pref-width:34px;
+    -fx-min-width:34px;
+}
+.monthPart .toggle-button{
+    -fx-pref-height:18px;
+    -fx-min-height:18px;
+}
+.compound-up{
+    -fx-background-repeat:no-repeat;
+    -fx-background-image:url("../img/controlbar/icon_compound_up.png");
+}
+.compound-middle{
+    -fx-background-repeat:no-repeat;
+    -fx-background-image:url("../img/controlbar/icon_compound_middle.png");
+}
+.compound-down{
+    -fx-background-repeat:no-repeat;
+    -fx-background-image:url("../img/controlbar/icon_compound_down.png");
+}
+.translate-pane-hbox,
+.translate-pane-hbox .tab-pane{
+    -fx-pref-width:2000px;
+}
+.translate-pane-hbox .translate-pane{
+    -fx-translate-x:-100;
+    -fx-min-width:0px;
+    -fx-max-width:0px;
+    -fx-pref-width:0px;
+    -fx-pref-height:47px;
+    -fx-max-height:47px;
+    -fx-min-height:47px;
+}
+.translate-pane-hbox .translate-pane .button-bar{
+    -fx-padding:9 0 8 0;
+    -fx-pref-height:47px;
+    -fx-max-height:47px;
+    -fx-min-height:47px;
+}
+.translate-pane-hbox .translate-pane .button-bar .controlbar-button{
+    -fx-text-fill:#FFFFFF;
+    -fx-pref-width:64px;
+    -fx-min-width:64px;
+}
+.translate-pane-hbox .translate-pane .button-bar .controlbar-button .save_image,
+.translate-pane-hbox .translate-pane .button-bar .controlbar-button:hover .save_image{
+    -fx-image:url("../img/controlbar/save_2.png");
+}
+.translate-pane-hbox .translate-pane .button-bar .controlbar-button .commit_image,
+.translate-pane-hbox .translate-pane .button-bar .controlbar-button:hover .commit_image{
+    -fx-image:url("../img/controlbar/commit_2.png");
+}
+
+.big-font-label .label{
+    -fx-font-size:133.3%;
+}
+/*******************************经济模块样式配置************************************************/
+.font-size18 .label{
+    -fx-padding:0 0 0 5px;
+    -fx-font-size:150%;
+    -fx-alignment:center-left;
+}
+.font-size12 .label{
+    -fx-padding:0 0 0 5px;
+    -fx-alignment:center-left;
+}
+.font-size16 .label{
+    -fx-padding:0 0 0 5px;
+    -fx-font-size:133.3%;
+}
+.font-red .label{
+    -fx-text-fill:#e24433;
+}
+.font-bold .label{
+    -fx-font-weight:bold;
+}
+.font-bold .title{
+    -fx-font-weight:normal;
+}
+.check-radio-box{
+    -fx-border-width:2px;
+    -fx-border-color:#F2F2F2;
+}
+.check-radio-box .check-box .box,
+.check-radio-box .check-box:hover .box,
+.check-radio-box .check-box:focused .box{
+    -fx-background-radius: 18px;
+    -fx-pref-width:36px;
+    -fx-pref-height:36px;
+    -fx-background-color:transparent;
+    -fx-border-color:#CED9F2;
+    -fx-border-width:2px;
+    -fx-border-radius:18px;
+    -fx-border-style:segments(4px,4px);
+    -fx-effect: innershadow(three-pass-box,transparent, 4, 0.6, 0, 0);
+}
+.check-radio-box .check-box:selected > .box{
+    -fx-background-color: #B5DE70;
+    -fx-border-color:#B5DE70;
+    -fx-border-style:solid;
+}
+.check-radio-box .check-box:selected > .box > .mark{
+    -fx-shape:"M0,4H2L3,6L6,0H8L4,8H2Z";
+    -fx-background-color: #FFFFFF;
+    -fx-border-color:#FFFFFF;
+    -fx-pref-width:20px;
+    -fx-pref-height:20px;
+}
+.check-radio-box .title{
+    -fx-alignment:center-left;
+}
+.top-right .leftbar .button-bar .buttonBarRoot{
+    -fx-alignment:top-right;
+}
+
+.enc-imp-bar .formView .gridPane{
+    -fx-padding:5px 0px 5px 0px;
+}
+
+/*********************************库存管理*****************************************/
+.stock .formView .gridPane{
+    -fx-alignment:center-left;
+}
+.colorTitle .label{
+    -fx-font-size:116.7%;
+}
+.colorTitle .title{
+    -fx-text-fill:#2E8FBB;
+}
+/*====================== 单选按钮的多选类型的样式 ==============================*/
+.radio-checkBox .radio-button .dot{
+    -fx-background-color: transparent;
+    -fx-background-radius: 1 0 0 0, 0;
+    -fx-padding: 5 5 6 6; /* 4 -- this is half the size of the mark */
+    -fx-shape: "M0,4H2L3,6L6,0H8L4,8H2Z";
+}
+.radio-checkBox .radio-button:selected .dot{
+    -fx-background-color: transparent,-fx-custom-coummon-button-hover-background;
+    -fx-background-insets: 1 0 0 0, 0;
+    -fx-background-radius: 1 0 0 0, 0;
+}
+.radio-checkBox .radio-button .radio{
+    -fx-background-insets: 2px;
+    -fx-background-radius: 0;
+    -fx-pref-width:18px;
+    -fx-pref-height:18px;
+    -fx-padding: 2 2 3 3;
+    -fx-border-color:#b5b5b5;
+    -fx-background-color:#FFFFFF;
+    -fx-effect: innershadow(three-pass-box,#b5b5b5, 2, 0.5, 0, 0);
+}
+.radio-checkBox .radio-button:hover > .radio,
+.radio-checkBox .radio-button:focused > .radio{
+    -fx-effect: innershadow(three-pass-box,-fx-custom-background-default-hover-color, 4, 0.6, 0, 0);
+}
+.diseditChargeType .label,
+.diseditField .label{
+    -fx-padding:3 5 4 6 ;
+    -fx-border-width:1px;
+    -fx-border-color:#b5b5b5;
+    -fx-border-insets: 0, 1, 2;
+    -fx-border-radius: 3, 2, 2;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+}
+.diseditChargeType .title,
+.diseditField .title{
+    -fx-padding:0;
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+}
+/*********************************模板服务**************************************/
+
+.column-header-background .nested-column-header .column-header .label .button,
+.column-header-background .nested-column-header .column-header .label .button:hover,
+.column-header-background .nested-column-header .column-header .label .button:focused,
+.column-header-background .nested-column-header .column-header .label .button:selected{
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+}
+
+.filter-column .label{
+    -fx-content-display:right;
+}
+.filter-column .text-field{
+    -fx-pref-width:70px;
+}
+.filter-pane{
+    -fx-pref-height:80px;
+    -fx-pref-width:116px;
+    -fx-background-color:#FFFFFF;
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+}
+.filter-pane .combo-box .arrow-button{
+    -fx-padding:5px 5px 5px 0px;
+}
+.filter-pane .choseBox,
+.filter-pane .combo-box,
+.filter-pane .hipfield{
+    -fx-pref-width:116px;
+}
+.filter-pane .button{
+    -fx-pref-width:58px;
+}
+
+.filter-pane .between-filter-value-pane .hipfield{
+    -fx-pref-width:80px;
+}
+.filter-pane .between-filter-value-pane .combo-box{
+    -fx-min-width:36px;
+    -fx-pref-width:36px;
+}
+.title-left-field{
+    -fx-padding:0 0 0 10px;
+}
+.title-left-field .title{
+    -fx-alignment:center-left;
+}
+.table-row-cell .hip-form-view{
+    -fx-padding:0px;
+
+}
+.table-row-cell .hip-form-view .label{
+    -fx-background-color:#DBE3E9;
+}
+
+.table-row-cell .formView .gridPane{
+    -fx-hgap:0px;
+}
+.radio-button-style .choseBox .flowPane{
+    -fx-hgap:0px;
+}
+.radio-button-style .choseBox .flowPane .radio-button{
+    -fx-label-padding:4px;
+    -fx-border-width:1px;
+    -fx-text-fill:-fx-default-radio-style-text-fill;
+    -fx-border-color:derive(#B3B6BA,53%);
+    -fx-padding:0 8px 0 8px;
+    -fx-background-color:linear-gradient(to bottom, #F0F1F2, #F9F9F9);
+}
+
+.radio-button-style .choseBox .flowPane .radio-button:hover{
+    -fx-cursor:hand;
+    -fx-background-color:linear-gradient(to bottom, #F7F7F8, #FFFFFF);
+}
+.radio-button-style .choseBox .flowPane .radio-button:selected{
+    -fx-cursor:hand;
+    -fx-text-fill:#4E555F;
+    -fx-background-color:linear-gradient(to bottom, #D7D9DB, #D4D7D9);
+}
+.radio-button-style .choseBox .flowPane .radio-button .radio{
+    -fx-pref-width:0px;
+    -fx-min-width:0px;
+    -fx-max-width:0px;
+}
+.radio-button-style .choseBox .flowPane .radio-button .radio,
+.radio-button-style .choseBox .flowPane .radio-button .radio .dot{
+    visibility: hidden;
+}
+.combo-box-button .combo-box{
+    -fx-pref-height:27px;
+    -fx-min-height:27px;
+    -fx-max-height:27px;
+    -fx-border-width:1px;
+    -fx-border-color:derive(#B3B6BA,53%);
+    -fx-background-insets:0;
+    -fx-background-color:linear-gradient(to bottom, #F0F1F2, #F9F9F9);
+}
+.combo-box-button .combo-box:hover{
+    -fx-background-color:linear-gradient(to bottom, #F7F7F8, #FFFFFF);
+}
+.combo-box-button .combo-box .text-input{
+    -fx-text-fill:-fx-default-radio-style-text-fill;
+    -fx-prompt-text-fill:-fx-default-radio-style-text-fill;
+    -fx-border-width:0px;
+    -fx-padding:0px 0px 0px 10px;
+    -fx-background-color:transparent;
+}
+.combo-box-button .combo-box .arrow-button{
+    -fx-border-width:0px;
+    -fx-background-color:transparent;
+}
+.combo-box-button .combo-box:focused,
+.combo-box-button:selected .combo-box{
+    -fx-background-color:linear-gradient(to bottom, #D7D9DB, #D4D7D9);
+}
+.combo-box-button:selected .combo-box .text-input{
+    -fx-text-fill:#4E555F;
+    -fx-background-color:transparent;
+}
+.combo-box-button .combo-box-popup >.list-view{
+    -fx-border-color:#D4D6D8;
+    -fx-background-color:#FFFFFF;
+}
+.combo-box-button .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell{
+    -fx-padding:0px 0px 0px 10px;
+    -fx-pref-height:28px;
+    -fx-text-fill:-fx-default-radio-style-text-fill;
+}
+.combo-box-button .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected,
+.combo-box-button .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.combo-box-button .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-text-fill:-fx-default-radio-style-text-fill;
+    -fx-background-color: #F3F4F4;
+}
+.combo-box-button .combo-box-popup .scroll-bar:horizontal,
+.combo-box-button .combo-box-popup .scroll-bar .track-background .decrement-button,
+.combo-box-button .combo-box-popup .scroll-bar .track-background .increment-button,
+.combo-box-button .combo-box-popup .scroll-bar .track-background .decrement-button .increment-arrow,
+.combo-box-button .combo-box-popup .scroll-bar .track-background .increment-button .increment-arrow{
+    -fx-pref-width:0px;
+    -fx-max-width:0px;
+    -fx-min-width:0px;
+    -fx-min-height:0px;
+    -fx-max-height:0px;
+    -fx-pref-height:0px;
+    visibility: hidden;
+}
+.combo-box-button .combo-box-popup .scroll-bar,
+.combo-box-button .combo-box-popup .scroll-bar .track{
+    -fx-background-color:transparent;
+}
+.combo-box-button .combo-box-popup .scroll-bar .thumb{
+    -fx-pref-width:5px;
+    -fx-max-width:5px;
+    -fx-background-radius:2px;
+    -fx-background-color:#D8DADD;
+}
+.login-progress-hbox,
+.loginlabel,
+.login-progressbar{
+    -fx-pref-height:44px;
+    -fx-pref-width:246px;
+    -fx-background-insets: 0;
+}
+.login-progressbar:determinate .bar,
+.login-progressbar:determinate .track{
+    -fx-padding:22px;
+}
+.login-progressbar:determinate .track{
+    -fx-background-color:-fx-custom-Tab-focused-color;
+    -fx-background-radius:5px;
+} 
+.login-progressbar:determinate .bar{
+    -fx-background-radius:5px 0 0 5px;
+    -fx-background-insets: 0px;
+    -fx-background-color:#7FC569;
+}
+.loginlabel{
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:133.3%;
+}
+
+.query-form .formView >.gridPane{
+    -fx-padding:0 0 0 5;
+    -fx-alignment:center-left;
+}
+.query-form .formView .FormCell{
+    -fx-pref-height:26px;
+}
+.foldTableView >.image-view{
+    -fx-translate-x:-10;
+    -fx-image:url("../img/controlbar/save_3.png");
+}
+.foldTableView >.image-view:hover{
+    -fx-image:url("../img/controlbar/save_4.png");
+}
+.foldTableView .buttonBarRoot .controlbar-button-image{
+    -fx-padding:0;
+    -fx-translate-x:-15;
+}
+.foldTableView .buttonBarRoot .controlbar-button-image:hover{
+    -fx-cursor:hand;
+    -fx-background-color:transparent;
+}
+.foldTableView .buttonBarRoot .controlbar-button-image .image-view{
+    -fx-image:url("../img/controlbar/save_3.png");
+}
+.foldTableView .buttonBarRoot .controlbar-button-image:hover .image-view{
+    -fx-image:url("../img/controlbar/save_4.png");
+}
+.title-right{
+    -fx-padding:0 0 0 10px;
+}
+.title-right .title{
+    -fx-alignment:center-left;
+    -fx-text-alignment:left;
+}
+.line-field{
+    -fx-padding:0 10 0 10;
+}
+.line-field .title{
+    -fx-border-width:1px;
+    -fx-pref-height:1px;
+    -fx-min-height:1px;
+    -fx-max-heigth:1px;
+    -fx-border-color:#8F8F8F;
+}
+.table-title-label,
+.title-label .title{
+    -fx-alignment:CENTER_LEFT;
+    -fx-text-fill:#3B3B3B;
+    -fx-font-size:116.7%;
+    -fx-font-weight:bold;
+}
+.table-title-label{
+    -fx-pref-height:34px;
+}
+.top-form,
+.root-border-pane .center-root .leftbar .hbox{
+    -fx-padding:15 0 15 0px;
+}
+.password-Item{
+    -fx-pref-width:120px;
+    -fx-min-width:120px;
+    -fx-max-width:120px;
+}
+.site-grid-pane{
+    -fx-font-size:14px;
+}
+.site-pane{
+    -fx-background-radius:2px;
+    -fx-effect:dropshadow(three-pass-box,gray,2,0,0,0);
+}
+.site-hbox{
+    -fx-alignment:center-left;
+    -fx-spacing:5px;
+}
+.site-vbox{
+    -fx-border-width:0 0 0 1px;
+    -fx-border-color:#E7E8E9;
+    -fx-padding:0 12px 0 11px;
+}
+.site-label .label{
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:12px;
+}
+.site-menu-label{
+    -fx-pref-width:122px;
+    -fx-min-width:122px;
+    -fx-max-width:122px;
+    -fx-padding:0 0 0 7px;
+}
+.site-menu-label:hover{
+    -fx-background-color:-fx-custom-focused-color;
+}
+.site-menu-label:selected{
+    -fx-background-color:#C9E6F6;
+}
+.title-hbox{
+    -fx-padding:0 8 0 0;
+}
+.cascade-table .table-view:row-selection .column-header{
+    -fx-font-size:120%;
+    -fx-font-weight:bold;
+    -fx-background-color:transparent;
+}
+
+.site-label{
+    -fx-pref-height:18px;
+    -fx-min-height:18px;
+    -fx-max-height:18px;
+    -fx-font-size:12px;
+    -fx-font-family:"SimSun";
+}
+.site-label{
+    -fx-background-color:transparent;
+    -fx-border-width:1px;
+    -fx-border-color:transparent;
+}
+
+.site-label:showing{
+    -fx-background-color:#2a546b;
+    -fx-border-color:#598aa5;
+}
+.dialog-rootPane{
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+    -fx-background-color:#FFFFFF;
+}
+
+.dialog-bottom{
+    -fx-spacing:10px;
+    -fx-padding:5px;
+    -fx-alignment:center-right;
+}
+.switch-login-dialog{
+    -fx-padding:15px 10px 15px 10px;
+    -fx-border-width:0px;
+}
+.switch-login-dialog .text-field{
+    -fx-padding:4 5 4 35;
+    -fx-pref-height:32px;
+}
+.split-hbox{
+    -fx-border-width: 1px 0 0 0;
+    -fx-border-color:#dddddd;
+}
+.splitLine{
+    -fx-border-width: 1px 0 0 0;
+    -fx-pref-height:8px;
+    -fx-max-height:8px;
+    -fx-min-height:8px;
+    -fx-border-color:#dddddd;
+}
+.split-pane-divider{
+    -fx-padding:0 0 1 1px;
+    -fx-border-width:0px 0px 0px 0px;
+    -fx-border-color:#9CD9EE;
+    -fx-background-color:#9CD9EE;
+}
+
+.line{
+    -fx-border-width:1px 0 0 0;
+    -fx-border-color:#dddddd;
+    -fx-padding:0 0 5 0;
+}
+
+.scroll-pane .viewport{
+    -fx-background-color:white;
+}
+.split-pane{
+    -fx-background-color:transparent;
+}
+.account-border-pane{
+    -fx-background-color:white;
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+}
+.hip-form-view{
+    -fx-vgap:2px;
+    -fx-hgap:2px;
+    -fx-padding:0px;
+    /*-fx-alignment:center-left;*/
+}
+.hip-form-view-border{
+    -fx-border-width:1px;
+    -fx-vgap:2px;
+    -fx-border-style:segments(4px,4px);
+    -fx-border-color:#dddddd;
+}
+.hip-form-view-line{
+    -fx-vgap:0px;
+    -fx-hgap:0px;
+    -fx-grid-lines-visible:true;
+}
+.hip-form-view-line .label,
+.hip-form-view-line .hip-form-cell{
+    -fx-padding:0 4px 0 4px;
+}
+
+.hip-form-view-line > .label{
+    -fx-pref-height:34px;
+    -fx-background-color:#F1F1F1;
+}
+.hip-form-view-line .text-input{
+    -fx-prompt-text-fill:#b5b5b5;
+}
+.number-table-cell,
+.number-text-field,
+.hip-form-view-line .number-form-cell{
+    -fx-alignment:CENTER_RIGHT;
+}
+
+.control-bar-pane,
+.form-view-group{
+    -fx-alignment:CENTER_LEFT;
+    -fx-spacing:15px;
+    -fx-border-width: 1px;
+    -fx-border-color:#dddddd;
+    -fx-pref-height:34px;
+    -fx-min-height:34px;
+}
+.control-bar-pane{
+    -fx-background-color:#FAFAFA;
+}
+.form-view-group{
+    -fx-background-color:#F4F4F4;
+}
+
+.addressPane_table .column-header-background{
+    -fx-max-height:0px;
+    -fx-min-height:0px;
+    -fx-pref-height:0px;
+    visibility:hidden;
+}
+.patientBasicsView{
+    -fx-vgap:0px;
+}
+.formView-select{
+    -fx-boder-width:1px;
+    -fx-border-color:#f97769;
+}
+.tab-pane >.tab-header-area,
+.tab-pane >.tab-header-area .tab-header-background{
+    -fx-padding:0px 0 0 5px;
+    -fx-border-color:#dddddd;
+    -fx-background-color:#F5F5F5;
+}
+.tab-pane >.tab-header-area .headers-region .tab{
+    -fx-pref-height:25px;
+}
+.tab-pane:focused .tab-header-area .headers-region .tab:selected,
+.tab-pane >.tab-header-area .headers-region .tab:selected{
+    -fx-border-width:1px 1px 0px 1px;
+    -fx-border-color:#67A7C9;
+    -fx-background-color: #67A7C9, white;
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 0, 0;
+}
+.root-tab-pane >.tab-content-area{
+    -fx-background-color:white;
+
+}
+.root-tab-pane >.tab-header-area .headers-region .tab{
+    -fx-pref-height:35px;
+    -fx-pref-width:94px;
+}
+.tab-content-area{
+    -fx-padding:0px;
+}
+.tab-content-root{
+    -fx-alignment:TOP_LEFT;
+}
+.table-view .hip-form-view{
+    -fx-alignment:CENTER_LEFT;
+    -fx-vgap:0px;
+    -fx-hgap:0px;
+}
+.hip-choose-pane{
+    -fx-alignment:CENTER_LEFT;
+    -fx-hgap:2px;
+}
+.hip-form-cell .radio-button,
+.hip-choose-pane .radio-button{
+    -fx-border-width:1px;
+    -fx-padding:0px 2px 0 2px;
+    -fx-border-color:transparent;
+}
+.hip-form-cell .radio-button:hover,
+.hip-choose-pane .radio-button:hover{
+    -fx-background-insets:-1.4;
+    -fx-border-color:#67A7C9;
+    -fx-backgroud-color:#67A7C9;
+}
+.hip-form-cell .radio-button:focused,
+.hip-choose-pane .radio-button:focused{
+    -fx-background-insets:-1.4;
+    -fx-border-color:-fx-custom-text-field-hover-border-color;
+    -fx-backgroud-color:-fx-custom-text-field-hover-border-color;
+}
+
+.hip-filter-tree-view{
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+}
+.title-hbox{
+    -fx-background-color:#f5f5f5;
+}
+.title-hbox .label{
+    -fx-padding:5px;
+    -fx-text-fill:#3B3B3B;
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+}
+.service-item-dialog{
+    -fx-border-width:1px;
+    -fx-border-color:-fx-dialog-border-color;
+    -fx-background-color:#FFFFFF;
+    -fx-effect:dropshadow(three-pass-box,-fx-dialog-border-color,0,0.5,0,0);
+}
+.graybackground{
+    -fx-background-color:#F5F5F5;
+}
+.hip-form-cell{
+    -fx-text-fill:#3B3B3B;
+}
+
+.Hbox-border-style{
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+}
+.hip-form-cell-bold{
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+}
+.clinic-form-view{
+    -fx-padding:5px 0 0 0;
+}
+.clinic-form-view .hip-form-view{
+    -fx-padding:0 5px 0 5px;
+    -fx-vgap:3px;
+    -fx-hgap:0px;
+}
+.clinic-form-view .hip-form-view:disabled .hip-form-cell:disabled *{
+    -fx-opacity:0.95;
+}
+/**
+* 必输项标识样式
+**/
+.required-target-label{
+    -fx-text-fill:red;
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+}
+
+.hip-menu-flow-pane{
+    -fx-orientation:vertical;
+}
+
+.printDialog{
+    -fx-background-color:#FFFFFF;
+}
+.hide-stack-pane{
+    -fx-alignment:top-center;
+    -fx-background-color:#F5F5F5;
+    -fx-border-width: 1px;
+    -fx-border-color:#dddddd;
+}
+.hide-stack-pane .hide-label{
+    -fx-rotate:90;
+    -fx-background-image:url("../img/controlbar/next.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.hide-stack-pane .show-label{
+    -fx-rotate:90;
+    -fx-background-image:url("../img/controlbar/last.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.hide-stack-pane .hide-label:hover,
+.hide-stack-pane .show-label:hover{
+    -fx-cursor:hand;
+}
+/*居民 蓝*/
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .CUSTOM-RESIDENT-PATIENT{
+    -fx-text-fill:#6495ED;
+}
+/*职工 绿*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .CUSTOM-WORKERS-PATIENT{
+    -fx-text-fill:#00CD00;
+}
+/*遵义 红*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .CUSTOM-ZY-PATIENT{
+    -fx-text-fill:red;
+}
+/*新浦 咖啡色*/
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .CUSTOM-XP-PATIENT{
+    -fx-text-fill:#CD853F;
+}
+.pattooltip{
+    -fx-text-fill:#2481CE;
+    -fx-font-size:12px;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-background-color:#DEE0E3;
+    -fx-border-insets: 0, 0, 0, 0;
+    -fx-border-width: 0px;
+    -fx-label-padding:0px 0px 0px 3px;
+    -fx-padding:0px 0 0 0;
+}
+/*
+.pattooltip *.tooltip pattooltip{
+    -fx-text-fill:red;
+    -fx-border-width: 0px;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-border-insets: 0, 0, 0, 0;
+    -fx-background-color:red;
+}
+*/
+/*.pattooltip *.label{
+    -fx-text-fill:yellow;
+    -fx-border-width: 0px;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-border-insets: 0, 0, 0, 0;
+    -fx-border-radius:0px;
+    -fx-background-color:red;
+    -fx-label-padding:0px 2px 0px 0px;
+    -fx-padding:0px 0 0 0;
+}*/
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .CUSTOM-RED-ROW > .table-cell{
+    -fx-text-fill:red;
+}
+.style-change-pane{
+    -fx-padding:5px;
+    -fx-border-width:1px;
+    -fx-border-color:#dddddd;
+    -fx-background-insets:0px;
+    -fx-background-color:white;
+}
+.style-change-pane .hip-choose-pane{
+    -fx-hgap:5px;
+    -fx-vgap:5px;
+    -fx-alignment:center;
+}
+.style-change-pane .hip-choose-pane .radio-button{
+    -fx-pref-width:110px;
+}
+.catalog-pick{
+    -fx-grid-lines-visible:true;
+    -fx-padding:5px;
+    -fx-alignment:CENTER;
+}
+.catalog-pick .catalog-name,
+.catalog-pick .catalog-label{
+    -fx-pref-width:60px;
+    -fx-pref-height:40px;
+    -fx-alignment:CENTER;
+}
+.catalog-pick .catalog-name,
+.catalog-pick .data-name-stack-pane,
+.catalog-pick .data-name-stack-pane .label{
+    -fx-background-color:#67A7C9;
+    -fx-text-fill:white;
+}
+.catalog-pick .catalog-pick-data-box{
+    -fx-alignment:CENTER;
+    -fx-pref-width:560px;
+    -fx-spacing:8px;
+}
+
+.pat_amb_regist_form{
+    -fx-border-width: 0 0 1 0px;
+    -fx-border-color:#dddddd;
+    -fx-spacing:15px;
+}
+.pat_amb_regist_form .hbox{
+    -fx-alignment:center;
+    -fx-spacing:10px;
+}
+.page-helper .page-bar-first,
+.page-helper .page-bar-first:hover,
+.page-helper .page-bar-pre,
+.page-helper .page-bar-pre:hover,
+.page-helper .page-bar-next,
+.page-helper .page-bar-next:hover,
+.page-helper .page-bar-last,
+.page-helper .page-bar-last:hover{
+    -fx-background-color:transparent;
+    -fx-border-width:0px;
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat;
+}
+
+.page-helper .page-bar-first,
+.page-helper .page-bar-first:disabled,
+.page-helper .page-bar-first:disabled:hover{
+    -fx-background-image:url("../img/control/pane/calendar/7.png");
+}
+.page-helper .page-bar-first:hover{
+    -fx-background-image:url("../img/control/pane/calendar/8.png");
+}
+.page-helper .page-bar-pre,
+.page-helper .page-bar-pre:disabled,
+.page-helper .page-bar-pre:disabled:hover{
+    -fx-background-image:url("../img/control/pane/calendar/3.png");
+}
+.page-helper .page-bar-pre:hover{
+    -fx-background-image:url("../img/control/pane/calendar/4.png");
+}
+.page-helper .page-bar-next,
+.page-helper .page-bar-next:disabled,
+.page-helper .page-bar-next:disabled:hover{
+    -fx-background-image:url("../img/control/pane/calendar/5.png");
+}
+.page-helper .page-bar-next:hover{
+    -fx-background-image:url("../img/control/pane/calendar/6.png");
+}
+.page-helper .page-bar-last,
+.page-helper .page-bar-last:disabled,
+.page-helper .page-bar-last:disabled:hover{
+    -fx-background-image:url("../img/control/pane/calendar/9.png");
+}
+.page-helper .page-bar-last:hover{
+    -fx-background-image:url("../img/control/pane/calendar/10.png");
+}
+.filter-combox{
+    -fx-pref-height:24px;
+    -fx-max-height:24px;
+}
+.filter-combox .arraw-button,
+.filter-combox .arraw-button:hover{
+    -fx-background-color:transparent;
+    -fx-border-width:0px;
+}
+.filter-combox .arraw-button .image-view{
+    -fx-image:url("../img/controlbar/next_01.png");
+}
+.filter-combox:hover .arraw-button .image-view{
+    -fx-image:url("../img/controlbar/next.png");
+}
+.filter-combox:hover .arraw-button:showing .image-view,
+.filter-combox .arraw-button:showing .image-view{
+    -fx-image:url("../img/controlbar/last.png");
+}
+
+.hip-cascade-pane{
+    -fx-pref-height:270px;
+}
+.impOrderTab .hip-form-view{
+    -fx-hgap:0px;
+}
+.impOrderTab .hip-form-view .hip-choose-pane .radio-button,
+.impOrderTab .hip-form-view .hip-choose-pane .hip-button{
+    -fx-padding:0px;
+}
+.price-order-temp{
+    -fx-border-width:0 1 0 0px;
+    -fx-border-color:-fx-custom-border-color;
+}
+/*.step-item-tab-pane >.tab-header-area,
+.step-item-tab-pane >.tab-header-area .tab-header-background,
+.step-item-tab-pane >.tab-header-area .headers-region,*/
+.step-item-tab-pane .tab-header-area .headers-region .tab{
+    -fx-pref-height:34px;
+    -fx-font-size:14px;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.util.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import javafx.scene.control.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import com.bjgoodwill.sample.treeview.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.image.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.sample.formview.callback.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import javafx.scene.input.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.*?>
+
+
+<HipFormView xmlns:fx="http://javafx.com/fxml/1" prefHeight="150" >
+    <fx:define>
+        <ArrayList fx:id="shortCut">
+            <KeyCode fx:value="ENTER"></KeyCode>
+        </ArrayList>
+        <ArrayList fx:id="shortCut2">
+            <KeyCode fx:value="ALT"></KeyCode>
+            <KeyCode fx:value="CONTROL"></KeyCode>
+        </ArrayList>
+    </fx:define>
+    <properties shortCut="$shortCut" shortCut2="$shortCut2"/>
+    <children>
+
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="姓      名：" />
+        <HipTextInputFormCell prefWidth="120" propertyName="name" GridPane.columnIndex="1" >
+            <commitType>COMMIT_BY_DELAY</commitType>
+        </HipTextInputFormCell>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="时      间："  GridPane.columnIndex="2" />
+        <HipCalendarFormCell prefWidth="120" propertyName="birthday" dateFormat="yyyy-MM-dd HH:mm:ss"  GridPane.columnIndex="3" />
+
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="性      别："  GridPane.rowIndex="1" />
+        <HipCustomDataSourceFilterableComboBoxFormCell   prefWidth="120" propertyName="gender" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+            <customDataSourceCallback>
+                <SoureItemsCallback/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceFilterableComboBoxFormCell>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="可输可选："  GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <HipTextInputOrSelectFormCell prefWidth="120"  propertyName="loader"  GridPane.columnIndex="3" GridPane.rowIndex="1" >
+            <customDataSourceCallback>
+                <SoureItemsCallback/>
+            </customDataSourceCallback>
+        </HipTextInputOrSelectFormCell>
+        
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="年      龄：" GridPane.rowIndex="2" />
+        <HipNumberFormCell prefWidth="120" propertyName="age" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="邮政编码："  GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <HipNumberFormCell prefWidth="120" propertyName="codeId" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="两位小数："  GridPane.rowIndex="3" />
+        <HipNumberFormCell  prefWidth="120" propertyName="parent.codeId"  numberFormat="##.##" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+           
+        
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="多      选：" GridPane.rowIndex="4" />
+        <HipCustomDataSourceCheckBoxFormCell prefWidth="300" propertyName="hobbies" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" >
+            <customDataSourceCallback>
+                <HobbiesSourcesCallback/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceCheckBoxFormCell>
+        
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="单      选：" GridPane.rowIndex="5" />
+        <HipCustomDataSourceRadioBoxFormCell prefWidth="300" propertyName="parent.loader" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5" >
+            <customDataSourceCallback>
+                <SoureItemsCallback/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceRadioBoxFormCell>
+      
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="62" text="图      片：" GridPane.rowIndex="6" />
+        <HipEditableImageFormCell prefWidth="100" prefHeight="100" propertyName="parent.imagebytes" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" >
+        </HipEditableImageFormCell>
+        
+    </children>
+</HipFormView>

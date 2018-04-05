@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.util.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import com.bjgoodwill.hip.client.fx.control.form.HipFormView?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.entity.dict.DictElement?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.HipEtsFilterableComboBoxFormCell?>
+
+<HipFormView fx:id="regRoleInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="编  码:" textOverrun="CLIP" />
+        <HipFormCell propertyName= "roleCode" GridPane.columnIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="名  称:" textOverrun="CLIP" GridPane.rowIndex="1" />
+        <HipTextInputFormCell id="roleName" propertyName= "roleName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+<!--            <commitConsumer>
+                
+            </commitConsumer>-->
+        </HipTextInputFormCell>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="拼  音:" textOverrun="CLIP" GridPane.rowIndex="2" />
+        <HipTextInputFormCell propertyName= "inputPy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="分  类:" textOverrun="CLIP" GridPane.rowIndex="3" />
+        <HipEtsFilterableComboBoxFormCell propertyName="roleTypeCode" GridPane.columnIndex="1" GridPane.rowIndex="3" dictCode="Group"/>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="状  态:" textOverrun="CLIP" GridPane.rowIndex="4" />
+        <HipCustomDataSourceFilterableComboBoxFormCell propertyName= "statusCode" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <customDataSourceCallback>
+                <CustomStatusDataSourceCallback >
+                    <dictElementList>
+                        <ArrayList>
+                            <DictElement elementCode='ACTIVE' elementName='有效' />
+                            <DictElement elementCode='NULLIFIED' elementName='无效' />
+                        </ArrayList>
+                    </dictElementList>
+                </CustomStatusDataSourceCallback>
+            </customDataSourceCallback>
+        </HipCustomDataSourceFilterableComboBoxFormCell>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+</HipFormView>

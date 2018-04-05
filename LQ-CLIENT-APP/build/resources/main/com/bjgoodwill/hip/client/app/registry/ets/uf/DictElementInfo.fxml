@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import com.bjgoodwill.hip.client.fx.control.form.HipFormView?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.HipTextInputFormCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.HipFormTitleCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+
+<HipFormView fx:id="hipDictElementInfo" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="编      码:" textOverrun="CLIP" />
+        <HipTextInputFormCell propertyName= "elementCode" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="名      称:" textOverrun="CLIP" GridPane.rowIndex="1" />
+        <HipTextInputFormCell propertyName= "elementName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="备      注:" textOverrun="CLIP" GridPane.rowIndex="2" />
+        <HipTextInputFormCell propertyName= "elementRemark" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="关联数据:" textOverrun="CLIP" GridPane.rowIndex="3" />
+        <HipTextInputFormCell propertyName= "relationElementCode" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="拼 音  码:" textOverrun="CLIP" GridPane.rowIndex="4" />
+        <HipTextInputFormCell propertyName= "inputPy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="助 记  码:" textOverrun="CLIP" GridPane.rowIndex="5" />
+        <HipTextInputFormCell propertyName= "mnemonicCode" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="是否默认:" textOverrun="CLIP" GridPane.rowIndex="6" />
+        <HipBooleanRadioFormCell propertyName="isDefault" GridPane.columnIndex="1" text="是否默认" GridPane.rowIndex="6" />
+    </children>
+</HipFormView>

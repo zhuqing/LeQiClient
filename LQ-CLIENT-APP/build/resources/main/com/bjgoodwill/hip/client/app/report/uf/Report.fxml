@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.web.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" >
+    <left>
+        <HipFilterableTreeViewPane >
+            <hipTreeView>
+                <HipTreeView fx:id="treeView">
+                    <hipTreeCell>
+                        <HipTreeCell  propertyName="displayName" ></HipTreeCell>
+                    </hipTreeCell>
+                </HipTreeView>
+            </hipTreeView>
+        </HipFilterableTreeViewPane>
+    </left>
+    <center>
+        <VBox>
+            <TabPane fx:id="brtShowTablePane" prefHeight="30" minHeight="30"/>
+            <BorderPane>
+                <top>
+                    <StackPane  fx:id="queryPane"></StackPane>
+                </top>
+                <center>
+                    <StackPane styleClass="graybackground" fx:id="reportViewStackPane" alignment="CENTER">             
+                    </StackPane>         
+                </center>
+            </BorderPane>
+        </VBox>   
+    </center> 
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import com.bjgoodwill.hip.client.fx.control.form.HipFormView?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.HipEtsFilterableComboBoxFormCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.HipCustomDataSourceFilterableComboBoxFormCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.HipTextInputFormCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.HipNumberFormCell?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.HipFormTitleCell?>
+<?import com.bjgoodwill.hip.client.function.HipCallback?>
+
+<HipFormView fx:id="serviceNurinsgItemInfo" prefHeight="150" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="编      码:" textOverrun="CLIP" />
+        <HipTextInputFormCell fx:id="itemCodeComBox" propertyName= "itemCode" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="名      称:" textOverrun="CLIP" GridPane.rowIndex="1" />
+        <HipTextInputFormCell propertyName= "itemName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="类      型:" textOverrun="CLIP" GridPane.rowIndex="2" />
+        <HipEtsFilterableComboBoxFormCell propertyName="itemType" GridPane.columnIndex="1" GridPane.rowIndex="2" dictCode="ObsvalueDataType"/>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="顺      序:" textOverrun="CLIP" GridPane.rowIndex="3" />
+        <HipNumberFormCell numberFormat="##" propertyName="itemNo" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="单      位:" textOverrun="CLIP" GridPane.rowIndex="4" />
+        <HipEtsFilterableComboBoxFormCell propertyName="itemUnit" GridPane.columnIndex="1" GridPane.rowIndex="4" dictCode="Measures"/>
+        <!--<HipTextInputFormCell propertyName= "itemUnit" GridPane.columnIndex="1" GridPane.rowIndex="4" />-->
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="宽      度:" textOverrun="CLIP" GridPane.rowIndex="5" />
+        <HipTextInputFormCell propertyName= "itemWidth" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="格      式:" textOverrun="CLIP" GridPane.rowIndex="6" />
+        <HipTextInputFormCell propertyName= "itemFormat" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="字      典:" textOverrun="CLIP" GridPane.rowIndex="7" />
+        <HipCustomDataSourceFilterableComboBoxFormCell propertyName= "itemDict" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <customDataSourceCallback>
+                <HipCallback beanId="serviceNursingDict"/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceFilterableComboBoxFormCell>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="危机值 下限:" textOverrun="CLIP" GridPane.rowIndex="8" />
+        <HipTextInputFormCell propertyName= "lowLimit" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="危机值 下限:" textOverrun="CLIP" GridPane.rowIndex="9" />
+        <HipTextInputFormCell propertyName= "highLimit" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+<!--        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="80.0" text="提 醒 类 型:" textOverrun="CLIP" GridPane.rowIndex="10" />
+        <HipCustomDataSourceFilterableComboBoxFormCell propertyName= "warnType" GridPane.columnIndex="1" GridPane.rowIndex="10">
+            <customDataSourceCallback>
+                <HipCallback beanId="serviceNursingDict"/>
+            </customDataSourceCallback>
+        </HipCustomDataSourceFilterableComboBoxFormCell>-->
+    </children>
+</HipFormView>

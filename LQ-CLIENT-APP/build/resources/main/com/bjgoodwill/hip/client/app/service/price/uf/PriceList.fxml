@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.combobox.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.util.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.number.*?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.item.*?>
+<?import com.bjgoodwill.hip.client.fx.control.choose.box.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.app.service.price.util.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import com.bjgoodwill.hip.entity.dict.*?>
+<?import java.util.*?>
+<?import javafx.scene.image.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.function.*?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <SplitPane dividerPositions="0.15" BorderPane.alignment="CENTER">
+            <items>
+                <VBox  maxWidth="500" minWidth="200">
+                    <!--选择按钮部件-->
+                    <HipRadioButtonPane fx:id="priceServiceTypeView" prefHeight="34.0">
+                        <sourceItems>
+                            <SourceItem id="PriceItem" value="1" display="收费项目"/>
+                            <SourceItem id="Clinic" value="2" display="材料"/>
+                            <SourceItem id="Info" value="3" display="药品"/>
+                        </sourceItems>
+                        <value>
+                            <SourceItem id="PriceItem" value="1" display="收费项目"/>
+                        </value>
+                    </HipRadioButtonPane>
+                    <!--树部件-->
+                    <StackPane prefHeight="1200">
+                        <children>
+                            <!--药品树部件-->
+                            <HipFilterableTreeViewPane  fx:id="priceListTreeView" >
+                                <hipTreeView>
+                                    <HipTreeView fx:id="hipTreeCellView" >
+                                        <hipTreeCell>
+                                            <HipTreeCell propertyName="priceItemName" leafImageUrl="/img/tree/folder.png">
+                                            </HipTreeCell>
+                                        </hipTreeCell>
+                                    </HipTreeView>
+                                </hipTreeView>
+                            </HipFilterableTreeViewPane>
+                            <!--药品树部件-->
+                            <HipFilterableTreeViewPane fx:id="priceInfoTreeView" VBox.vgrow="ALWAYS" >
+                                <hipTreeView>
+                                    <HipTreeView fx:id="hipInfoTree">
+                                        <hipTreeCell>
+                                            <HipTreeCell propertyName="elementName" leafImageUrl="/img/tree/folder.png">
+                                            </HipTreeCell>
+                                        </hipTreeCell>
+                                    </HipTreeView>
+                                </hipTreeView>
+                            </HipFilterableTreeViewPane>
+                        </children>
+                    </StackPane>
+            
+                </VBox>
+
+                <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <top>
+                        <BorderPane prefHeight="34.0" prefWidth="400.0" BorderPane.alignment="CENTER" styleClass="control-bar-pane">
+                            <left>
+                                <HBox alignment="CENTER_LEFT" prefWidth="300.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <HipButton mnemonicParsing="false" onAction="#addPriceItem" text="添加分类" styleClass="add-button">
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                        <HipButton mnemonicParsing="false" onAction="#addPriceList" text="添加明细" styleClass="add-button">
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                        <HipButton mnemonicParsing="false" onAction="#updatePriceItem" text="编辑分类" styleClass="edit-button">
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                    </children>
+                                </HBox>
+                            </left>
+                            <right>
+                                <HipFormView fx:id="priceListFormView" alignment="CENTER_RIGHT" prefWidth="540.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" prefWidth="55.0" text="费用分类:" GridPane.columnIndex="1"/>
+                                        <HipCustomDataSourceFilterableComboBoxFormCell fx:id="listBoxCell" propertyName="priceItemType" prefWidth="120.0" GridPane.columnIndex="2">
+                                            <customDataSourceCallback>
+                                                <HipCallback beanId="priceItemTypeCallBack"/>
+                                            </customDataSourceCallback>
+                                        </HipCustomDataSourceFilterableComboBoxFormCell>
+                                        
+                                        <Label alignment="CENTER_RIGHT" prefWidth="55.0" text="项目过滤" GridPane.columnIndex="3"/>
+                                        <HipTextInputFormCell prefWidth="120.0" propertyName="priceItemNameVO" GridPane.columnIndex="4" />
+                                        <HipButton mnemonicParsing="false" onAction="#selectPriceList" text="查询" GridPane.columnIndex="5" styleClass="search-button">
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                    </children>
+                                </HipFormView>
+                            </right>
+                        </BorderPane>
+                    </top>
+                    <center>
+                        <HipTableView fx:id="priceListTableView" BorderPane.alignment="CENTER">
+                            <columns>
+                                <HipTableColumn propertyName="effectiveLowDate" prefWidth="120.0" text="启用时间" >
+                                    <tableCell>
+                                        <HipTableTextCell>
+                                            <toText>
+                                                <DateToString format="yyyy-MM-dd"/>
+                                            </toText>
+                                        </HipTableTextCell>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="systemType" prefWidth="100.0" text="系统分类" >
+                                    <tableCell>
+                                        <HipEtsTableCell dictCode="sysClass"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="priceItemType" prefWidth="100.0" text="费用分类" >
+                                    <tableCell>
+                                        <HipEtsTableCell dictCode="FeeClass"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="gbCode" prefWidth="100.0" text="国家编码"  >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="priceItemName" prefWidth="220.0" text="收费项目名称" >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="price" text="单价" >
+                                    <tableCell>
+                                        <HipNumberTableCell numberFormat="##.00"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="unit" text="单位" >
+                                    <tableCell>
+                                        <HipEtsTableCell dictCode="Measures"/>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn propertyName="packageSpec" text="规格" >
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="60.0" propertyName="statusCode" text="有效状态">
+                                    <tableCell>
+                                        <HipCustomDataSourceTableCell >
+                                            <customDataSourceCallback>
+                                                <CustomStatusDataSourceCallback >
+                                                    <dictElementList>
+                                                        <ArrayList>
+                                                            <DictElement elementCode='ACTIVE' elementName='有效' />
+                                                            <DictElement elementCode='NULLIFIED' elementName='无效' />
+                                                        </ArrayList>
+                                                    </dictElementList>
+                                                </CustomStatusDataSourceCallback>
+                                            </customDataSourceCallback>
+                                        </HipCustomDataSourceTableCell>
+                                    </tableCell>
+                                </HipTableColumn>
+                            </columns>
+                        </HipTableView>
+                    </center>
+                </BorderPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.util.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.client.app.registry.ets.element.info.uf.*?>
+<?import javafx.scene.control.*?>
+
+<SplitPane dividerPositions="0.55" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox BorderPane.alignment="CENTER" styleClass="control-bar-pane">
+                    <children>
+                        <TextField fx:id="filterField" promptText="名称/编码过滤" prefWidth="120" prefHeight="26"/>
+                        <HipButton mnemonicParsing="false" text="新增" onAction="#addDict" styleClass="add-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                        </HipButton>
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <HipTableView fx:id="hipDictView" BorderPane.alignment="CENTER" tableMenuButtonVisible="true">
+                    <columns>
+                        <HipTableColumn visible="false" editable="false" prefWidth="40" propertyName="id" text="id">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="165" propertyName="dictCode" text="编码">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="90" propertyName="dictType" text="类型">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="140.0" propertyName="dictName" text="名称">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <!--                        <HipTableColumn editable="false"  prefWidth="50.0" propertyName="reMark" text="备注">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="50.0" propertyName="relationCode" text="关联">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="50.0" propertyName="dictVersion" text="版本说明">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>-->
+                        <HipTableColumn editable="false"  prefWidth="85.0" propertyName="createDate" text="创建时间">
+                            <tableCell>
+                                <HipTableTextCell>
+                                    <toText>
+                                        <DateToString format="yyyy-MM-dd"/>
+                                    </toText>
+                                </HipTableTextCell>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="70.0" propertyName="statusCode" text="状态">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="125.0" text="操作">
+                            <tableCell>
+                                <HipTableButtonCell>
+                                    <buttonList>
+                                        <ArrayList>
+                                            <HipButton text="启用" onAction="#activeDict">
+                                            </HipButton>
+                                            <HipButton text="停用" onAction="#completedDict">
+                                            </HipButton>
+                                            <HipButton text="删除" onAction="#deleteDict">
+                                            </HipButton>
+                                        </ArrayList>
+                                    </buttonList>
+                                </HipTableButtonCell>
+                            </tableCell>
+                        </HipTableColumn>
+                    </columns>
+                </HipTableView>
+            </center>
+        </BorderPane>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox BorderPane.alignment="CENTER" styleClass="control-bar-pane">
+                    <children>
+                        <HipButton mnemonicParsing="false" text="新增" onAction="#addDictElement" styleClass="add-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                        </HipButton>
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <HipTableView fx:id="hipDictElementView" BorderPane.alignment="CENTER" tableMenuButtonVisible="true">
+                    <columns>
+                        <HipTableColumn visible="false" editable="false" prefWidth="50.0" propertyName="id" text="id">
+                            <tableCell>
+                                <HipTableTextCell />
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="150.0" propertyName="elementCode" text="编码">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="140" propertyName="elementName" text="名称">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <!--                        <HipTableColumn editable="false"  prefWidth="50.0" propertyName="reMark" text="备注">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="50.0" propertyName="relationCode" text="关联">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>-->
+                        <HipTableColumn editable="false"  prefWidth="90.0" propertyName="inputPy" text="拼音码">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false"  prefWidth="90.0" propertyName="mnemonicCode" text="助记码">
+                            <tableCell>
+                                <HipTableTextCell/>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn prefWidth="60.0" propertyName="isDefault" text="是否默认">
+                            <tableCell>
+                                <HipTableTextCell>
+                                    <toText>
+                                        <IsDefaultOrNoCallBack />
+                                    </toText>
+                                </HipTableTextCell>
+                            </tableCell>
+                        </HipTableColumn>
+                        <HipTableColumn editable="false" prefWidth="80.0" text="操作">
+                            <tableCell>
+                                <HipTableButtonCell>
+                                    <buttonList>
+                                        <ArrayList>
+                                            <HipButton text="删除" onAction="#deleteDictElement">
+                                            </HipButton>
+                                        </ArrayList>
+                                    </buttonList>
+                                </HipTableButtonCell>
+                            </tableCell>
+                        </HipTableColumn>
+                    </columns>
+                </HipTableView>
+            </center>
+        </BorderPane>
+    </items>
+</SplitPane>

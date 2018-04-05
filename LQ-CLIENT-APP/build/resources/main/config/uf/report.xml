@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="queryPatModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportModel">
+        <property name="fxmlController">
+            <bean id="patReportController" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportController">
+                <property name="queryReportConfigCommand">
+                    <bean id="patqueryReportConfigCommand" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.cf.QueryReportConfigCommand">
+                        <property name="modelName" value="queryPatModel"></property>
+                    </bean>
+                </property>
+                <property name="reportViewModel">
+                    <bean id="patreportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel"/>
+                </property>
+            </bean>
+        </property>
+        <!--        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/report/uf/Report.fxml"></property>-->
+    </bean>
+    
+    <bean id="econReportModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportModel">
+        <property name="fxmlController">
+            <bean id="econReportController" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportController">
+                <property name="queryReportConfigCommand">
+                    <bean id="econReportqueryReportConfigCommand" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.cf.QueryReportConfigCommand">
+                        <property name="modelName" value="econReportModel"></property>
+                    </bean>
+                </property>
+                
+                <property name="reportViewModel">
+                    <bean id="econReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel"/>
+                </property>
+            </bean>
+        </property>
+        <!--        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/report/uf/Report.fxml"></property>-->
+    </bean>
+    
+    <bean id="clinicReportModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportModel">
+        <property name="fxmlController">
+            <bean id="clinicReportController" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportController">
+                <property name="queryReportConfigCommand">
+                    <bean id="clinicReportqueryReportConfigCommand" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.cf.QueryReportConfigCommand">
+                        <property name="modelName" value="clinicReportModel"></property>
+                    </bean>
+                </property>
+                <property name="reportViewModel">
+                    <bean id="clinicReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel"/>
+                </property>
+            </bean>
+        </property>
+        <!--        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/report/uf/Report.fxml"></property>-->
+    </bean>
+    
+    <bean id="admEconReportModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportModel">
+        <property name="fxmlController">
+            <bean id="admEconReportController" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportController">
+                <property name="queryReportConfigCommand">
+                    <bean id="admEconReportQueryReportConfigCommand" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.cf.QueryReportConfigCommand">
+                        <property name="modelName" value="admEconReportModel"></property>
+                    </bean>
+                </property>
+                <property name="reportViewModel">
+                    <bean id="admEconReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel"/>
+                </property>
+            </bean>
+        </property>
+        <!--        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/report/uf/Report.fxml"></property>-->
+    </bean>
+    
+    <bean id="drugReportModel" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportModel">
+        <property name="fxmlController">
+            <bean id="drugReportController" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.uf.ReportController">
+                <property name="queryReportConfigCommand">
+                    <bean id="drugReportqueryReportConfigCommand" lazy-init="true" class="com.bjgoodwill.hip.client.app.report.cf.QueryReportConfigCommand">
+                        <property name="modelName" value="drugReportModel"></property>
+                    </bean>
+                </property>
+                
+                <property name="reportViewModel">
+                    <bean id="drugReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel"/>
+                </property>
+            </bean>
+        </property>
+        <!--        <property name="fxmlPath" value="/com/bjgoodwill/hip/client/app/report/uf/Report.fxml"></property>-->
+    </bean>
+    
+    <bean id="printOrderReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printOrderReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean>
+    
+    <bean id="printOrderTemporaryReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printOrderTemporaryReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean> 
+
+    <bean id="printNursingReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printNursingReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean>
+    
+    <bean id="printClinicReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printClinicReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean> 
+     
+    <bean id="printClinicNursingViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="护理记录单打印"></property>
+        <property name="subBusinessId" value="printNursingModel"></property>
+        <property name="width" value="935"></property>
+        <property name="heigh" value="660"></property>
+        <property name="okBtnText" value="打印"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="printClinicNursingCommand" />
+    </bean>
+    
+    
+    <bean id="printDgimgReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printDgimgReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean>
+    <bean id="printDgimgViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="检查条码预览"></property>
+        <property name="subBusinessId" value="previewDgimgReportModel"></property>
+        <property name="width" value="935"></property>
+        <property name="heigh" value="660"></property>
+        <property name="okBtnText" value="打印"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="printDgimgReportCommand" />
+    </bean>  
+    
+    <bean id="printApplyReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printApplyReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean>
+    <bean id="printApplyViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="检查申请单预览"></property>
+        <property name="subBusinessId" value="previewApplyReportModel"></property>
+        <property name="width" value="935"></property>
+        <property name="heigh" value="660"></property>
+        <property name="okBtnText" value="打印"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="printApplyReportCommand" />
+    </bean>  
+    
+    <bean id="printInfusionReportViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewModel">
+        <property name="fxmlController">
+            <bean id="printInfusionReportViewController" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.report.ReportViewController"/>
+        </property>
+    </bean>
+    <bean id="InfusionViewModel" lazy-init="true" class="com.bjgoodwill.hip.client.fw.root.uf.dialog.DialogModel">
+        <property name="title" value="请选择输液瓶贴格式"></property>
+        <property name="subBusinessId" value="printInfusionModel"></property>
+        <property name="width" value="935"></property>
+        <property name="heigh" value="660"></property>
+        <property name="okBtnText" value="打印"></property>
+        <property name="cancelBtnText" value="关闭"></property>
+        <property name="okCommand" ref="printInfusionBottleCommand" />
+    </bean>
+</beans>

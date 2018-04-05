@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import java.lang.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<!--    <StackPane maxWidth="600.0" minWidth="300.0" >
+    <HipFilterableTreeViewPane>
+        <hipTreeView>
+            <HipTreeView fx:id="serviceItemTree">
+                <hipTreeCell>
+                    <HipTreeCell propertyName="elementName" leafImageUrl="/img/tree/folder.png" />
+                </hipTreeCell>
+            </HipTreeView>
+        </hipTreeView>
+    </HipFilterableTreeViewPane>
+</StackPane>-->
+<HipFormView fx:id="priceListInfo" alignment="CENTER_LEFT" hgap="8.0" prefHeight="230.0" prefWidth="630.0" vgap="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="上级分类:" />
+        <HipTextInputFormCell disable="true" prefHeight="24.0" prefWidth="180.0" propertyName="priceItemNameVO" GridPane.columnIndex="1"  />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="项目编码:" GridPane.rowIndex="1" />
+        <HipTextInputFormCell prefHeight="24.0" prefWidth="180.0" propertyName="priceItemCode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="系统分类:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <HipEtsFilterableComboBoxFormCell dictCode="sysClass" prefHeight="24.0" prefWidth="120.0" propertyName="systemType" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="费用分类:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+        <HipEtsFilterableComboBoxFormCell dictCode="FeeClass" prefHeight="24.0" prefWidth="120.0" propertyName="priceItemType" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="项目名称:" GridPane.rowIndex="2" />
+        <HipTextInputFormCell promptText="请输入项目名称" prefHeight="24.0" prefWidth="180.0" propertyName="priceItemName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="规      格:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <HipTextInputFormCell prefHeight="24.0" prefWidth="120.0" propertyName="packageSpec" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="在用状态:" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+        <HipBooleanRadioFormCell prefHeight="25.0" prefWidth="120.0" propertyName="statusCodeVO" text="在用状态" GridPane.rowIndex="2" GridPane.columnIndex="5"  />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="单      价:" GridPane.rowIndex="3" />
+        <HipNumberFormCell numberFormat="##.0000" prefHeight="24.0" prefWidth="180.0" propertyName="price" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="单      位:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <HipEtsFilterableComboBoxFormCell dictCode="Measures" prefHeight="24.0" prefWidth="120.0" propertyName="unit" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="国家编码:" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+        <HipTextInputFormCell prefHeight="24.0" prefWidth="120.0" propertyName="gbCode" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="启用时间:" GridPane.rowIndex="4" />
+        <HipCalendarFormCell dateFormat="yyyy-MM-dd" prefHeight="24.0" prefWidth="180.0" propertyName="effectiveLowDate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="停用时间:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <HipCalendarFormCell dateFormat="yyyy-MM-dd" prefHeight="24.0" prefWidth="120.0" propertyName="effectiveHighDate" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+        <HipFormTitleCell alignment="CENTER_RIGHT" prefWidth="60.0" text="省级编码:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+        <HipTextInputFormCell prefHeight="24.0" prefWidth="120.0" propertyName="provinceCode" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+        <HipFormTitleCell alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="60.0" text="项目描述:" GridPane.rowIndex="5" />
+        <HipTextAreaInputFormCell prefHeight="60.0" prefWidth="660" propertyName="remark" rowCount="5" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="5" />
+        <HipFormTitleCell alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="60.0" text="注意事项:" GridPane.rowIndex="6" />
+        <HipTextAreaInputFormCell prefHeight="60.0" prefWidth="660" propertyName="attention" rowCount="5" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="6" />
+    </children>
+</HipFormView>

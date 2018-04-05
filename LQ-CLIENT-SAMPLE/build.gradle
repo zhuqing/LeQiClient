@@ -1,0 +1,33 @@
+// Note: "common.gradle" in the root project contains additional initialization
+//   for this project. This initialization is applied in the "build.gradle"
+//   of the root project.
+
+// NetBeans will automatically add "run" and "debug" tasks relying on the
+// "mainClass" property. You may however define the property prior executing
+// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
+//
+// Note however, that you may define your own "run" and "debug" task if you
+// prefer. In this case NetBeans will not add these tasks but you may rely on
+// your own implementation.
+configurations { providedCompile }
+
+sourceSets {
+    main {
+        compileClasspath += configurations.providedCompile
+    }
+    test {
+        compileClasspath += configurations.providedCompile
+        runtimeClasspath += configurations.providedCompile
+    }
+}
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'fxsampler.FXSampler'
+}
+
+dependencies {
+    providedCompile files("${System.env['JAVA_HOME']}/jre/lib/ext/jfxrt.jar")
+
+    compile fileTree(dir:'lib',include:['*.jar'])
+    compile project(':LQ-CLIENT-FW')
+}

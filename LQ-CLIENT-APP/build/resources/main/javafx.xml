@@ -1,0 +1,50 @@
+<project name="${applicationTitle}" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <target name="exportJar" depends="">
+        <copy todir="build/libs/lib">
+            <fileset dir="${resourceDir}">
+                <include name="**"/>
+            </fileset>
+            <fileset dir="${applicationResources}">
+                <include name="property/*.properties"/>
+            </fileset>
+        </copy>
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+                 uri="javafx:com.sun.javafx.tools.ant"
+                 classpath="${antJavaFxJar}"/>
+
+        <fx:application id="application"
+                        name="${applicationTitle}"
+                        mainClass="${mainClassName}"
+                        toolkit="fx"
+                        fallbackClass="${fallbackClassName}"/>
+
+        <fx:resources id="appRes">
+            <fx:fileset dir="${distDir}" includes="lib/*" />
+        </fx:resources>
+        
+        <fx:platform id="appPf">
+            <fx:jvmuserarg  name="-XX:PermSize" value="2048m" ></fx:jvmuserarg>
+            <fx:jvmuserarg  name="-XX:MaxPermSize" value="2048m" ></fx:jvmuserarg>
+            <fx:jvmuserarg  name="-Xmx" value="2048m" ></fx:jvmuserarg>
+            <fx:jvmuserarg  name="-Xms" value="2048m" ></fx:jvmuserarg>
+            <property name="file.encoding" value="UTF-8" ></property>
+        </fx:platform>
+
+        <fx:jar destfile="${distDir}/HipApp">
+            <fx:application refid="application" />
+            <fx:resources refid="appRes" />
+            <fx:platform refid="appPf" />
+            <manifest>
+                <attribute name="Implementation-Vendor" value="${applicationVendor}"/>
+                <attribute name="Implementation-Title" value="${applicationTitle}"/>
+                <attribute name="Implementation-Version" value="${applicationVersion}"/>
+            </manifest>
+            
+            <fileset dir="${applicationClasses}" />
+            <fileset dir="${applicationResources}" >
+                <exclude name="property/*.properties"/>
+            </fileset>
+        </fx:jar>
+        
+    </target>
+</project>

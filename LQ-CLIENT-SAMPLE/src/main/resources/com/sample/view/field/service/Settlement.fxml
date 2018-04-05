@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <StackPane alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                    <children>
+                        <StackPane alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="159.0">
+                            <children>
+                                <TextField promptText="科室、床位、住院号" />
+                                <HipButton mnemonicParsing="false" text="" styleClass="search-button,no-backgroun-style">
+                                    <graphic>
+                                        <ImageView pickOnBounds="true" preserveRatio="true"/>
+                                    </graphic>
+                                </HipButton>
+                            </children>
+                        </StackPane>
+                        <HipButton mnemonicParsing="false" text="读卡" styleClass="read-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" text="结算" styleClass="account-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" text="支付" styleClass="money-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" text="打印" styleClass="print-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" text="刷新" styleClass="refresh-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                        <HipButton mnemonicParsing="false" text="退出" styleClass="exit-button">
+                            <graphic>
+                                <ImageView pickOnBounds="true" preserveRatio="true"/>
+                            </graphic>
+                        </HipButton>
+                    </children>
+                </HBox>
+            </children>
+        </StackPane>
+    </top>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HipFormView prefHeight="60.0" styleClass="hip-form-view-border">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="住院号:" />
+                        <HipTextInputFormCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="患者ID:" GridPane.columnIndex="2" />
+                        <HipTextInputFormCell prefHeight="24.0" prefWidth="80.0" GridPane.columnIndex="3" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="40.0" text="姓名:" GridPane.columnIndex="4" />
+                        <HipFormTitleCell prefHeight="24.0" prefWidth="68.0" GridPane.columnIndex="5" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="40.0" text="性别:" GridPane.columnIndex="6" />
+                        <HipFormTitleCell prefWidth="50.0" GridPane.columnIndex="7" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="50.0" text="年龄:" GridPane.columnIndex="8" />
+                        <HipFormTitleCell prefWidth="40.0" GridPane.columnIndex="9" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="40.0" text="费别:" GridPane.columnIndex="10" />
+                        <HipFormTitleCell prefWidth="60.0" GridPane.columnIndex="11" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="余额:" GridPane.columnIndex="12" />
+                        <HipFormTitleCell prefWidth="70.0" GridPane.columnIndex="13" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="住院天数:" GridPane.columnIndex="14" />
+                        <HipFormTitleCell prefWidth="60.0" GridPane.columnIndex="15" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="科室:" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="床位:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="40.0" text="诊断:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefHeight="24.0" prefWidth="65.0" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.columnSpan="3" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="50.0" text="过敏史:" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="责任医生:" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefWidth="70.0" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="责任护士:" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+                        <HipFormTitleCell prefWidth="70.0" GridPane.columnIndex="15" GridPane.rowIndex="1" />
+                    </children>
+                </HipFormView>
+                <HipFormView prefHeight="34.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="结算方式:" />
+                        <HipEtsFilterableComboBoxFormCell dictCode="xxxx" prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                        
+                        <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="审核时间:" GridPane.columnIndex="2" />
+                        <HipDateTimeFormCell prefHeight="24.0" prefWidth="120.0" GridPane.columnIndex="3" />
+                    </children>
+                </HipFormView>
+                
+                <BorderPane styleClass="account-border-pane">
+                    <top>
+                        <HipFormView prefHeight="34.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="费用总额:" />
+                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                        
+                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="自付:" GridPane.columnIndex="2" />
+                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" />
+                        
+                                <Label alignment="CENTER_RIGHT" prefWidth="50.0" text="发票号:" GridPane.columnIndex="4" />
+                                <HipTextInputFormCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="5" />
+                        
+                                <Label alignment="CENTER_RIGHT" prefWidth="50.0" text="票据号:" GridPane.columnIndex="6" />
+                                <HipTextInputFormCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="7" />
+                            </children>
+                        </HipFormView>
+                    </top>
+                    <center>
+                        <HBox prefHeight="424.0" prefWidth="1024.0">
+                            <children>
+                                <VBox prefHeight="424.0" prefWidth="537.0">
+                                    <children>
+                                        <HipFormView prefHeight="120.0" styleClass="hip-form-view-line">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="西药" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="常规检查" GridPane.columnIndex="2" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="50.0" text="核磁" GridPane.columnIndex="4" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="5" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="中成药" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="CT" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="50.0" text="放射" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="中草药" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="B超" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="50.0" text="化疗" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="治疗" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="60.0" text="手术" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="50.0" text="其他" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                            </children>
+                                        </HipFormView>
+                                        <HipFormView prefHeight="120.0" styleClass="hip-form-view-line">
+                                            <children>
+                                                <HipBooleanCheckBoxFormCell prefHeight="24.0" prefWidth="50.0" styleClass="label"/>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="预交金" GridPane.columnIndex="1" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="180.0" GridPane.columnIndex="2" />
+                                        
+                                                <HipBooleanCheckBoxFormCell prefHeight="24.0" prefWidth="50.0" GridPane.rowIndex="1" styleClass="label"/>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="POS机" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="180.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        
+                                                <HipBooleanCheckBoxFormCell prefHeight="24.0" prefWidth="50.0" GridPane.rowIndex="2" styleClass="label"/>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="记账" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="180.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        
+                                                <HipBooleanCheckBoxFormCell prefHeight="24.0" prefWidth="50.0" GridPane.rowIndex="3" styleClass="label"/>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="支票" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="180.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                        
+                                            </children>
+                                        </HipFormView>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="424.0" prefWidth="482.0">
+                                    <children>
+                                        <HipFormView prefHeight="120.0" styleClass="hip-form-view-line">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="统筹支付" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="自付" GridPane.columnIndex="2" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="3" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="账户支付" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="公务员补助" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="单位记账" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label alignment="CENTER_RIGHT" prefWidth="60.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                            </children>
+                                        </HipFormView>
+                                        <HipFormView prefHeight="120.0" styleClass="hip-form-view-line">
+                                            <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="需交金额" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="160.0" GridPane.columnIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="使用预交金" GridPane.rowIndex="1" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="现金" GridPane.rowIndex="2" />
+                                                <HipFormTitleCell  prefHeight="24.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        
+                                                <Label alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="80.0" text="找零" GridPane.rowIndex="3" />
+                                                <HipFormTitleCell prefHeight="24.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        
+                                            </children>
+                                        </HipFormView>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </center>
+                </BorderPane>
+                
+                
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

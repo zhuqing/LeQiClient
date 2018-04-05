@@ -1,0 +1,49 @@
+[INFO ] 2018-04-04 21:29:39,769(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ba45134: startup date [Wed Apr 04 21:29:39 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:29:39,941(185) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-04 21:30:46,480(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@68776b18: startup date [Wed Apr 04 21:30:46 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:30:46,580(113) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-04 21:30:46,830(363) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@267bba0a: startup date [Wed Apr 04 21:30:46 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:30:46,832(365) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-04 21:30:47,499(1032) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[INFO ] 2018-04-04 21:37:40,194(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@316d08ca: startup date [Wed Apr 04 21:37:40 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:37:40,320(139) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-04 21:37:40,662(481) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@174db677: startup date [Wed Apr 04 21:37:40 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:37:40,665(484) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-04 21:37:41,318(1137) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[WARN ] 2018-04-04 21:37:42,551(2370) --> [JavaFX-Launcher] net.sf.ehcache.store.disk.DiskStorageFactory: The index for data file C:\Users\zhuqing.BJGOODWILL\cache\dict.data is out of date, probably due to an unclean shutdown. Deleting index file C:\Users\zhuqing.BJGOODWILL\cache\dict.index  
+[ERROR] 2018-04-04 21:37:43,203(3022) --> [JavaFX Application Thread] com.leqienglish.client.fw.root.uf.RootModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: 
+file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/com/bjgoodwill/hip/client/fw/root/uf/root.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2605)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2583)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2445)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2413)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.app.AbstractApplication.start(AbstractApplication.java:112)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$159(LauncherImpl.java:863)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$53/582469931.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$172(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/1213415012.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$170(PlatformImpl.java:295)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$48/176788456.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$171(PlatformImpl.java:294)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/2114664380.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$145(WinApplication.java:101)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$36/897697267.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassCastException: com.leqienglish.client.fw.root.uf.RootModel cannot be cast to com.leqienglish.client.fw.root.uf.business.BusinessRootModel
+	at com.leqienglish.client.fw.root.uf.RootController.initialize(RootController.java:42)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
+	... 19 more
+[INFO ] 2018-04-04 21:38:38,369(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@68776b18: startup date [Wed Apr 04 21:38:38 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:38:38,465(110) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-04 21:38:38,713(358) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@267bba0a: startup date [Wed Apr 04 21:38:38 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:38:38,715(360) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-04 21:38:39,268(913) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[INFO ] 2018-04-04 21:46:40,469(482114) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@267bba0a: startup date [Wed Apr 04 21:38:38 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-04 21:46:40,470(482115) --> [JavaFX Application Thread] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Shutting down EhCache CacheManager  

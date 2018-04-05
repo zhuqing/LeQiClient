@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import java.lang.*?>
+
+
+<HipFormView  prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="每次用量：" />
+      <HipTextInputFormCell prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="1" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="剂量单位：" GridPane.columnIndex="2" />
+      <HipTextInputFormCell prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="3" GridPane.columnSpan="2"/>
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="最小单位：" GridPane.columnIndex="5" />
+      <HipTextInputFormCell prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="6" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="用法：" GridPane.rowIndex="1" />
+      <HipEtsFilterableComboBoxFormCell dictCode="xxxx" prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="滴速：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <HipCustomDataSourceFilterableComboBoxFormCell prefHeight="24.0" prefWidth="70.0" propertyName="xxxx" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <HipFormTitleCell prefHeight="24.0" prefWidth="70.0" text="滴/分" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="频次：" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <HipEtsFilterableComboBoxFormCell dictCode="xxxx" prefHeight="24.0" prefWidth="140.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="疗程：" GridPane.rowIndex="3" />
+      <HipUnEditableEtsNumberFormCell dictCode="xxxx" prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <HipBooleanRadioFormCell prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" text="加入上药" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="总量(临)：" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <HipUnEditableCustomeDataSoureNumberFromCell prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" unitPropertyName="xxx" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="执行科室：" GridPane.rowIndex="4" />
+      <HipCascadeFieldFormCell defTabName="执行科室" prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <HipCustomDataSourceRadioBoxFormCell prefHeight="24.0" prefWidth="207.0" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="3"/>
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="开始时间：" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <HipDateTimeFormCell dateFormat="yyyy-MM-dd" prefHeight="24.0" prefWidth="140.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="结束时间：" GridPane.rowIndex="5" />
+      <HipDateTimeFormCell dateFormat="yyyy-MM-dd" prefHeight="24.0" prefWidth="140.0" propertyName="xxxx" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <HipFormTitleCell alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="67.0" text="补充说明：" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <HipTextInputFormCell prefHeight="24.0" prefWidth="347.0" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.columnSpan="4"/>
+   </children>
+</HipFormView>

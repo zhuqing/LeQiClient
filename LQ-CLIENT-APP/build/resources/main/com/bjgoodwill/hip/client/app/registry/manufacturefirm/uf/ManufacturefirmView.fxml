@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.*?>
+<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
+<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import com.bjgoodwill.hip.client.fx.control.button.*?>
+<?import com.bjgoodwill.hip.client.fx.callback.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.bool.*?>
+<?import com.bjgoodwill.hip.client.app.registry.staff.util.*?>
+<?import com.bjgoodwill.hip.client.app.service.storage.util.*?>
+<?import com.bjgoodwill.hip.client.app.util.datasource.*?>
+<?import com.bjgoodwill.hip.entity.dict.*?>
+<?import com.bjgoodwill.hip.client.fx.control.form.cell.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <SplitPane BorderPane.alignment="CENTER">
+            <items>
+                <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                    <items>
+                        <HipTableView fx:id="regManufServiceTableView" prefHeight="330.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                            <columns>
+                                <HipTableColumn prefWidth="130" propertyName="manufactureFirmName" text="厂商名称">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="manufactureType" text="厂商属性">
+                                    <tableCell>
+                                        <HipEtsTableCell  dictCode="ManufactureType" />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="firmType" text="厂商类型">
+                                    <tableCell>
+                                        <HipEtsTableCell  dictCode="FirmType" />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="firmExactAddr" text="厂商地址">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="tel" text="厂商电话">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="statusCode" text="是否有效">
+                                    <tableCell>
+                                        <HipCustomDataSourceTableCell >
+                                            <customDataSourceCallback>
+                                                <CustomStatusDataSourceCallback >
+                                                    <dictElementList>
+                                                        <ArrayList>
+                                                            <DictElement elementCode='ACTIVE' elementName='有效' />
+                                                            <DictElement elementCode='NULLIFIED' elementName='无效' />
+                                                        </ArrayList>
+                                                    </dictElementList>
+                                                </CustomStatusDataSourceCallback>
+                                            </customDataSourceCallback>
+                                        </HipCustomDataSourceTableCell>
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="relationEmp" text="厂商联系人">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="ratepayerCode" text="厂商纳税人识别号">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                                <HipTableColumn prefWidth="130" propertyName="mobile" text="移动电话">
+                                    <tableCell>
+                                        <HipTableTextCell />
+                                    </tableCell>
+                                </HipTableColumn>
+                            </columns>
+                        </HipTableView>
+                        <BorderPane>
+                            <top>
+                                <HBox alignment="CENTER_LEFT"  prefHeight="34.0" prefWidth="1024.0" styleClass="control-bar-pane">
+                                    <children>
+                                        <TextField fx:id="filterField" promptText="厂商名称过滤" prefWidth="120" prefHeight="26"/>
+                                        <HipButton onAction="#CreateManufactureFirm" text="新增" styleClass="add-button" >
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                        <HipButton onAction="#SaveManufactureFirm" text="保存" styleClass="save-button" >
+                                            <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </HipButton>
+                                    </children>
+                                </HBox>
+                            </top>
+                            <center>
+                                <HipFormView fx:id="regManufServiceFormView" prefHeight="329.0" prefWidth="732.0">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商名称：" />
+                                        <HipTextInputFormCell prefHeight="30.0" prefWidth="180" propertyName="manufactureFirmName" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="115.0" text="厂商属性：" GridPane.columnIndex="2" />
+                                        <HipEtsFilterableComboBoxFormCell  dictCode="ManufactureType" prefHeight="30.0" prefWidth="180" propertyName="manufactureType"  GridPane.columnIndex="3"/>
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商类型：" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+                                        <HipEtsFilterableComboBoxFormCell  dictCode="FirmType" prefHeight="30.0" prefWidth="180" propertyName="firmType" GridPane.rowIndex="0" GridPane.columnIndex="5" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商地址：" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                                        <HipAddressFormCell prefHeight="30.0" prefWidth="180" propertyName="firmAddr" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" prefHeight="115.0" prefWidth="115.0" text="厂商详细地址：" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                                        <HipTextInputFormCell  prefHeight="30.0" prefWidth="180" propertyName="firmExactAddr" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商电话：" GridPane.rowIndex="1" GridPane.columnIndex="4" />
+                                        <HipTextInputFormCell  prefHeight="30.0" prefWidth="180" propertyName="tel" GridPane.rowIndex="1" GridPane.columnIndex="5" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商联系人：" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                                        <HipTextInputFormCell  prefHeight="30.0" prefWidth="180" propertyName="relationEmp" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="115.0" text="厂商纳税人识别号：" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                                        <HipTextInputFormCell  prefHeight="30.0" prefWidth="180" propertyName="ratepayerCode" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商开户银行：" GridPane.rowIndex="2" GridPane.columnIndex="4" />
+                                        <HipTextInputFormCell  prefHeight="25.0" prefWidth="180" propertyName="managerBank" GridPane.rowIndex="2" GridPane.columnIndex="5" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="厂商银行账户：" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                                        <HipTextInputFormCell  prefHeight="25.0" prefWidth="180" propertyName="bankAccount" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="115.0" text="厂商简称：" GridPane.rowIndex="3" GridPane.columnIndex="2" />
+                                        <HipTextInputFormCell  prefHeight="25.0" prefWidth="180" propertyName="summary" GridPane.rowIndex="3" GridPane.columnIndex="3" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="邮政编码：" GridPane.rowIndex="3" GridPane.columnIndex="4" />
+                                        <HipTextInputFormCell  prefHeight="25.0" prefWidth="180" propertyName="postalCode" GridPane.rowIndex="3" GridPane.columnIndex="5" />
+                                        <Label alignment="CENTER_RIGHT" prefWidth="90.0" text="移动电话：" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                                        <HipTextInputFormCell  prefHeight="25.0" prefWidth="180" propertyName="mobile" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="115.0" text="有效标记："  GridPane.rowIndex="4" GridPane.columnIndex="2" />
+                                        <HipCustomDataSourceFilterableComboBoxFormCell prefHeight="35.0" prefWidth="180" propertyName="statusCode" GridPane.rowIndex="4" GridPane.columnIndex="3">
+                                            <customDataSourceCallback>
+                                                <CustomStatusDataSourceCallback>
+                                                    <dictElementList>
+                                                        <ArrayList>
+                                                            <DictElement elementCode="ACTIVE" elementName="有效" />
+                                                            <DictElement elementCode="NULLIFIED" elementName="无效" />
+                                                        </ArrayList>
+                                                    </dictElementList>
+                                                </CustomStatusDataSourceCallback>
+                                            </customDataSourceCallback>
+                                        </HipCustomDataSourceFilterableComboBoxFormCell>
+                                        <Label alignment="CENTER_RIGHT" prefHeight="25" prefWidth="80" text="备注：" GridPane.rowIndex="5"/>
+                                        <HipTextAreaInputFormCell prefHeight="25" prefWidth="485" propertyName="remark" GridPane.columnIndex="1" GridPane.rowIndex="5"  GridPane.columnSpan="5"  />
+                                    </children>
+                                </HipFormView>
+                            </center>
+                        </BorderPane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

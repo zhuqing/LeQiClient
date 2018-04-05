@@ -1,0 +1,112 @@
+<project name="${applicationTitle}"
+         xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <target name="javafxjar" >
+        <copy todir="build/libs/lib">
+            <fileset dir="${resourceDir}">
+                <include name="**"/>
+            </fileset>
+        </copy>
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+                 uri="javafx:com.sun.javafx.tools.ant"
+                 classpath="${antJavaFxJar}"/>
+        <fx:application id="application"
+                        name="${applicationTitle}"
+                        mainClass="${mainClassName}" 
+                        toolkit="fx"
+                        fallbackClass="${fallbackClassName}"/>
+        <!--<echo message="applicationResources package: ${applicationResources}"/>-->
+      
+        <fx:jar destfile="${distDir}/HipApp">
+            <fx:application refid="application"/>
+            <fx:platform>
+                <fx:jvmuserarg  name="-Xmx" value="1024m" ></fx:jvmuserarg>
+            </fx:platform>
+            <fx:resources>
+                <fx:fileset dir="${distDir}"  includes="lib/*.jar"/>
+                <fx:fileset dir="${applicationResources}" includes="**"/>
+            </fx:resources>
+            <manifest>
+                <attribute name="Implementation-Vendor"
+                           value="${applicationVendor}"/>
+                <attribute name="Implementation-Title"
+                           value="${applicationTitle}"/>
+                <attribute name="Implementation-Version"
+                           value="${applicationVersion}"/>
+            </manifest>
+            <fileset dir="${applicationClasses}"/>
+            <fileset dir="${applicationResources}"/>
+          
+        </fx:jar>
+   
+        
+        <!-- Copy web images -->
+        <copy todir="${distDir}">
+            <fileset dir="${basedir}/web">
+                <include name="**/*.png"/>
+                <include name="**/*.jpg"/>
+                <include name="**/*.gif"/>
+                <include name="**/*.ico"/>
+            </fileset>
+        </copy>
+        
+         <!--cachecertificates="yes"-->
+        <fx:deploy  outdir="${distDir}" embedJNLP="true"   includeDT="true"
+                   embeddedWidth="100%" embeddedHeight="100%" nativeBundles="all"
+                   outfile="${applicationTitle}"
+                   width="100" height="100">
+            <fx:application refId="application"/>
+            <template file="${basedir}/web/index_template.html"
+                      tofile="${distDir}/HipApp.html"/>
+            <template file="${basedir}/web/index_template.jsp"
+                      tofile="${distDir}/index.jsp"/>
+            <template file="${basedir}/web/view_template.jsp"
+                      tofile="${distDir}/view.jsp"/>
+            <callbacks>
+                <callback name="onGetSplash">getSplash</callback>
+            </callbacks>
+            <fx:resources>
+                <fx:fileset file="build/libs/HipApp.jar" requiredFor="startup"/>
+                <!--<fx:fileset dir="build/libs/lib" includes="*.jar"/>-->
+                 <fx:fileset dir="${distDir}"  includes="lib/*.jar"/>
+                <fx:fileset dir="${applicationResources}" includes="**"/>
+            </fx:resources> 
+            <fx:info title="client nobusiness" vendor="hip">
+                <fx:icon href="hip.ico" kind="default"
+                />
+                <fx:icon href="hip.ico" kind="rollover"
+                />
+                <fx:icon href="hip.ico" kind="selected"
+                />
+                <fx:icon href="hip.ico" kind="shortcut"
+                />
+            </fx:info>
+            <fx:platform>
+                <fx:jvmuserarg name="-Xmx" value="1024m" />
+            </fx:platform>
+        </fx:deploy>  
+        <!-- sign application jar. Use new self signed certificate   -->
+           <!--<delete file="${distDir}/lib/test.keystore"/>-->
+<!--          <genkey alias="TestAlias" 
+                storepass="xyz123" keystore="${distDir}/lib/test.keystore"
+                dname="CN=Samples, OU=JavaFX Dev, O=Oracle, C=US"/>-->
+<!--        <signjar keystore="${distDir}/lib/test.keystore" alias="TestAlias" storepass="xyz123">
+            <fileset dir="${distDir}"  includes="lib/*.jar"/>
+            <fileset dir="${distDir}"  includes="*.jar"/>
+        </signjar>   -->
+        <!--<delete file="${distDir}/sampleKeystore.jks"/>-->
+       <!--<fx:signjar destdir="${distDir}"  keyStore="${distDir}/bbb" storePass="xyz123" alias="javafx" keyPass="xyz123"> 
+            <fileset dir="${distDir}" file="${distDir}/${applicationTitle}.jar"/>
+        </fx:signjar> -->
+        
+        
+        <!--Workaround for bug with 100% size in templates--> 
+        <replace dir="${distDir}">
+            <include name="HipApp.html"/>
+            <include name="index.jsp"/>
+            <include name="view.jsp"/>
+            <replacetoken><![CDATA[: 100,]]></replacetoken>
+            <replacevalue><![CDATA[: '100%',]]></replacevalue>
+        </replace>
+        
+    </target>
+</project>
