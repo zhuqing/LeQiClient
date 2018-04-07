@@ -21,25 +21,25 @@ import org.slf4j.LoggerFactory;
  * @author duyi
  */
 public class LQApplication extends AbstractApplication {
-    
+
     private final static Logger logger = LoggerFactory.getLogger(LQApplication.class);
-    
+
     public static void main(final String... args) throws UnknownHostException {
-  
+     //   AbstractApplication.initApplicationContext();
         launch(LQApplication.class);
     }
-    
+
     @Override
     protected void initApp() {
     }
-    
+
     @Override
     protected void configStage(Stage stage) {
         stage.initStyle(StageStyle.DECORATED);
     }
-    
+
     @Override
     protected void configScene(Scene scene) {
     }
-    
+
 }

@@ -5,24 +5,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
    
-    <bean id="MESSAGE_SHOW_DIALOG_MODEL" lazy-init="true" class="com.leqienglish.client.fw.root.uf.dialog.DialogModel">
-        <property name="title" value="消息"></property>
-        <property name="subBusinessId" value="messageModel"></property>
-        <property name="width" value="500"></property>
-        <property name="heigh" value="600"></property>
-        <property name="cancelBtnText" value="关闭"></property>
-    </bean>
-    
-    <bean id="printReportModel" lazy-init="true" class="com.leqienglish.client.fw.root.uf.report.ReportViewModel">
-        <property name="fxmlController">
-            <bean id="printCdurgDetailReportViewController" lazy-init="true" class="com.leqienglish.client.fw.root.uf.report.ReportViewController"/>
-        </property>
-    </bean>  
-    <bean id="printReportDialogModel" lazy-init="true" class="com.leqienglish.client.fw.root.uf.dialog.DialogModel">
-        <property name="title" value="报表打印预览"></property>
-        <property name="subBusinessId" value="printReportModel"></property>
-        <property name="width" value="700"></property>
-        <property name="heigh" value="500"></property>
-    </bean>
-    
+   
 </beans>

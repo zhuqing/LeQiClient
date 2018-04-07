@@ -1,0 +1,320 @@
+[INFO ] 2018-04-06 16:54:09,504(12) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3d2fffe6: startup date [Fri Apr 06 16:54:09 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 16:54:09,627(135) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[WARN ] 2018-04-06 16:54:10,077(585) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bjgoodwill.hip.client.fw.config.AppConfig] for bean with name 'FWConfig' defined in class path resource [config.xml]; nested exception is java.lang.ClassNotFoundException: com.bjgoodwill.hip.client.fw.config.AppConfig  
+[INFO ] 2018-04-06 16:55:31,329(17) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6155cc4: startup date [Fri Apr 06 16:55:31 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 16:55:31,431(119) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 16:55:32,848(1536) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[ERROR] 2018-04-06 16:55:35,526(4214) --> [JavaFX Application Thread] com.leqienglish.client.fw.root.uf.RootModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: 
+file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/com/bjgoodwill/hip/client/fw/root/uf/root.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2605)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2583)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2445)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2413)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.app.AbstractApplication.start(AbstractApplication.java:112)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$159(LauncherImpl.java:863)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$53/1447123000.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$172(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/1811075214.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$170(PlatformImpl.java:295)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$48/204866826.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$171(PlatformImpl.java:294)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/1407343478.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$145(WinApplication.java:101)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$36/1174290147.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UpLoadModel' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:701)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at com.leqienglish.client.fw.uf.FXMLController.getModel(FXMLController.java:34)
+	at com.leqienglish.client.fw.root.uf.RootController.openModel(RootController.java:57)
+	at com.leqienglish.client.fw.root.uf.RootController.initialize(RootController.java:53)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
+	... 19 more
+[INFO ] 2018-04-06 17:03:31,976(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@461c9d2: startup date [Fri Apr 06 17:03:31 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:03:32,089(127) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-06 17:03:32,266(304) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5cfb33bf: startup date [Fri Apr 06 17:03:32 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:03:32,268(306) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:03:32,834(872) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[ERROR] 2018-04-06 17:03:34,410(2448) --> [JavaFX Application Thread] com.leqienglish.client.fw.root.uf.RootModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: 
+file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/com/bjgoodwill/hip/client/fw/root/uf/root.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2605)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2583)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2445)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2413)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.app.AbstractApplication.start(AbstractApplication.java:105)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$159(LauncherImpl.java:863)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$53/1534796169.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$172(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/703504298.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$170(PlatformImpl.java:295)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$48/271692653.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$171(PlatformImpl.java:294)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/201556483.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$145(WinApplication.java:101)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$36/967765295.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UpLoadModel' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:701)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at com.leqienglish.client.fw.uf.FXMLController.getModel(FXMLController.java:34)
+	at com.leqienglish.client.fw.root.uf.RootController.openModel(RootController.java:57)
+	at com.leqienglish.client.fw.root.uf.RootController.initialize(RootController.java:53)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
+	... 19 more
+[INFO ] 2018-04-06 17:04:52,702(15) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e: startup date [Fri Apr 06 17:04:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:04:52,813(126) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [config.xml]  
+[INFO ] 2018-04-06 17:04:52,984(297) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ddeceee: startup date [Fri Apr 06 17:04:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:04:52,986(299) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:04:53,601(914) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[ERROR] 2018-04-06 17:04:55,115(2428) --> [JavaFX Application Thread] com.leqienglish.client.fw.root.uf.RootModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: 
+file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/com/bjgoodwill/hip/client/fw/root/uf/root.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2605)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2583)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2445)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2413)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.app.AbstractApplication.start(AbstractApplication.java:105)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$159(LauncherImpl.java:863)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$53/886886951.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$172(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$46/703504298.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$170(PlatformImpl.java:295)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$48/1041719336.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$171(PlatformImpl.java:294)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/201556483.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$145(WinApplication.java:101)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$36/967765295.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UpLoadModel' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:701)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at com.leqienglish.client.fw.uf.FXMLController.getModel(FXMLController.java:34)
+	at com.leqienglish.client.fw.root.uf.RootController.openModel(RootController.java:57)
+	at com.leqienglish.client.fw.root.uf.RootController.initialize(RootController.java:53)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
+	... 19 more
+[INFO ] 2018-04-06 17:05:48,446(16) --> [main] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@21213b92: startup date [Fri Apr 06 17:05:48 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:05:48,545(115) --> [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:05:48,791(361) --> [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[WARN ] 2018-04-06 17:05:48,968(538) --> [main] org.springframework.context.support.ClassPathXmlApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.leqienglish.client.fw.root.uf.dialog.DialogModel] for bean with name 'MESSAGE_SHOW_DIALOG_MODEL' defined in URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]; nested exception is java.lang.ClassNotFoundException: com.leqienglish.client.fw.root.uf.dialog.DialogModel  
+[INFO ] 2018-04-06 17:06:43,741(16) --> [main] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@21213b92: startup date [Fri Apr 06 17:06:43 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:06:43,838(113) --> [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:06:44,089(364) --> [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[WARN ] 2018-04-06 17:06:44,277(552) --> [main] org.springframework.context.support.ClassPathXmlApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.leqienglish.client.fw.root.uf.dialog.DialogModel] for bean with name 'MESSAGE_SHOW_DIALOG_MODEL' defined in URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]; nested exception is java.lang.ClassNotFoundException: com.leqienglish.client.fw.root.uf.dialog.DialogModel  
+[INFO ] 2018-04-06 17:07:52,519(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@314bc458: startup date [Fri Apr 06 17:07:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:07:52,629(123) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:07:53,325(819) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[INFO ] 2018-04-06 17:07:54,601(2095) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@574f20ed: startup date [Fri Apr 06 17:07:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@314bc458  
+[INFO ] 2018-04-06 17:07:54,604(2098) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:07:54,696(2190) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[WARN ] 2018-04-06 17:07:54,768(2262) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.leqienglish.client.fw.root.uf.dialog.DialogModel] for bean with name 'MESSAGE_SHOW_DIALOG_MODEL' defined in URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]; nested exception is java.lang.ClassNotFoundException: com.leqienglish.client.fw.root.uf.dialog.DialogModel  
+[INFO ] 2018-04-06 17:10:08,822(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@254848e3: startup date [Fri Apr 06 17:10:08 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:10:08,924(115) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:10:09,650(841) --> [JavaFX-Launcher] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[INFO ] 2018-04-06 17:10:10,877(2068) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36852690: startup date [Fri Apr 06 17:10:10 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@254848e3  
+[INFO ] 2018-04-06 17:10:10,879(2070) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:10:10,968(2159) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:10:11,046(2237) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@791620b7: startup date [Fri Apr 06 17:10:11 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:10:11,050(2241) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:10:11,207(2398) --> [JavaFX Application Thread] org.springframework.cache.ehcache.EhCacheManagerFactoryBean: Initializing EhCache CacheManager  
+[WARN ] 2018-04-06 17:10:11,216(2407) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.interceptor.CacheInterceptor#0': Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManager' defined in class path resource [fwBeans.xml]: Cannot resolve reference to bean 'cacheManagerFactory' while setting bean property 'cacheManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cacheManagerFactory' defined in class path resource [fwBeans.xml]: Invocation of init method failed; nested exception is net.sf.ehcache.CacheException: Another CacheManager with same name 'hipCache' already exists in the same VM. Please provide unique names for each CacheManager in the config or do one of following:
+1. Use one of the CacheManager.create() static factory methods to reuse same CacheManager with same name or create one if necessary
+2. Shutdown the earlier cacheManager before creating new one with same name.
+The source of the existing CacheManager is: InputStreamConfigurationSource [stream=java.io.BufferedInputStream@1507c6d7]  
+[INFO ] 2018-04-06 17:11:05,032(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1: startup date [Fri Apr 06 17:11:05 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:11:05,133(115) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:11:05,691(673) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ace3fa4: startup date [Fri Apr 06 17:11:05 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1  
+[INFO ] 2018-04-06 17:11:05,694(676) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:11:05,779(761) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:11:05,865(847) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a: startup date [Fri Apr 06 17:11:05 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:11:05,868(850) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:11:06,025(1007) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4d346e67: startup date [Fri Apr 06 17:11:06 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a  
+[INFO ] 2018-04-06 17:11:06,027(1009) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:11:06,097(1079) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[ERROR] 2018-04-06 17:11:06,313(1295) --> [JavaFX Application Thread] com.leqienglish.client.fw.root.uf.RootModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: 
+file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/com/bjgoodwill/hip/client/fw/root/uf/root.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2605)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2583)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2445)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2413)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.app.AbstractApplication.start(AbstractApplication.java:107)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$159(LauncherImpl.java:863)
+	at com.sun.javafx.application.LauncherImpl$$Lambda$53/320767984.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$172(PlatformImpl.java:326)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$45/703504298.run(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$170(PlatformImpl.java:295)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$48/783023710.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$171(PlatformImpl.java:294)
+	at com.sun.javafx.application.PlatformImpl$$Lambda$47/201556483.run(Unknown Source)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$145(WinApplication.java:101)
+	at com.sun.glass.ui.win.WinApplication$$Lambda$36/967765295.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UpLoadModel' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:701)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:284)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:275)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at com.leqienglish.client.fw.uf.FXMLController.getModel(FXMLController.java:34)
+	at com.leqienglish.client.fw.root.uf.RootController.openModel(RootController.java:57)
+	at com.leqienglish.client.fw.root.uf.RootController.initialize(RootController.java:53)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2552)
+	... 19 more
+[INFO ] 2018-04-06 17:12:33,274(15) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e: startup date [Fri Apr 06 17:12:33 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:12:33,379(120) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:12:33,965(706) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11a57340: startup date [Fri Apr 06 17:12:33 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e  
+[INFO ] 2018-04-06 17:12:33,969(710) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:12:34,055(796) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:12:34,162(903) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb: startup date [Fri Apr 06 17:12:34 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:12:34,164(905) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:12:34,365(1106) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@60bf95fe: startup date [Fri Apr 06 17:12:34 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb  
+[INFO ] 2018-04-06 17:12:34,368(1109) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:12:34,444(1185) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:14:28,127(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5989995d: startup date [Fri Apr 06 17:14:28 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:14:28,238(125) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:14:28,801(688) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@59bb05d1: startup date [Fri Apr 06 17:14:28 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5989995d  
+[INFO ] 2018-04-06 17:14:28,805(692) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:14:28,919(806) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:14:29,038(925) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@736b38e6: startup date [Fri Apr 06 17:14:29 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:14:29,040(927) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:14:29,190(1077) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8b0fc72: startup date [Fri Apr 06 17:14:29 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@736b38e6  
+[INFO ] 2018-04-06 17:14:29,195(1082) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:14:29,272(1159) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:14:51,734(16) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@314bc458: startup date [Fri Apr 06 17:14:51 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:14:51,850(132) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:14:52,424(706) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2cf8efd4: startup date [Fri Apr 06 17:14:52 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@314bc458  
+[INFO ] 2018-04-06 17:14:52,426(708) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:14:52,502(784) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:14:52,611(893) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@615c7fd: startup date [Fri Apr 06 17:14:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:14:52,616(898) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:14:52,790(1072) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@fb05235: startup date [Fri Apr 06 17:14:52 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@615c7fd  
+[INFO ] 2018-04-06 17:14:52,792(1074) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:14:52,877(1159) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:17:28,071(36) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1: startup date [Fri Apr 06 17:17:28 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:17:28,260(225) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:17:28,906(871) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ace3fa4: startup date [Fri Apr 06 17:17:28 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1  
+[INFO ] 2018-04-06 17:17:28,909(874) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:17:29,051(1016) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:17:29,189(1154) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47667735: startup date [Fri Apr 06 17:17:29 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:17:29,200(1165) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:17:29,414(1379) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1cebcce3: startup date [Fri Apr 06 17:17:29 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@47667735  
+[INFO ] 2018-04-06 17:17:29,416(1381) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:17:29,466(1431) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:20:02,208(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@314bc458: startup date [Fri Apr 06 17:20:02 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:20:02,314(119) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:20:02,968(773) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2cf8efd4: startup date [Fri Apr 06 17:20:02 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@314bc458  
+[INFO ] 2018-04-06 17:20:02,970(775) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:20:03,044(849) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 17:20:03,155(960) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb: startup date [Fri Apr 06 17:20:03 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 17:20:03,157(962) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 17:20:03,339(1144) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@60bf95fe: startup date [Fri Apr 06 17:20:03 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb  
+[INFO ] 2018-04-06 17:20:03,342(1147) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 17:20:03,398(1203) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 18:29:26,430(18) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@314bc458: startup date [Fri Apr 06 18:29:26 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 18:29:26,557(145) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 18:29:27,102(690) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2cf8efd4: startup date [Fri Apr 06 18:29:27 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@314bc458  
+[INFO ] 2018-04-06 18:29:27,105(693) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 18:29:27,225(813) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 18:29:27,325(913) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a: startup date [Fri Apr 06 18:29:27 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 18:29:27,327(915) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 18:29:27,494(1082) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4d346e67: startup date [Fri Apr 06 18:29:27 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a  
+[INFO ] 2018-04-06 18:29:27,496(1084) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 18:29:27,552(1140) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 18:32:17,537(20) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1: startup date [Fri Apr 06 18:32:17 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 18:32:17,672(155) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 18:32:18,353(836) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ace3fa4: startup date [Fri Apr 06 18:32:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1  
+[INFO ] 2018-04-06 18:32:18,356(839) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 18:32:18,448(931) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-06 18:32:18,573(1056) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47667735: startup date [Fri Apr 06 18:32:18 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-06 18:32:18,575(1058) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-06 18:32:18,797(1280) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1cebcce3: startup date [Fri Apr 06 18:32:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@47667735  
+[INFO ] 2018-04-06 18:32:18,800(1283) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-06 18:32:18,991(1474) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:28:55,746(16) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@461c9d2: startup date [Sat Apr 07 11:28:55 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:28:55,863(133) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:28:56,553(823) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a3b2ea2: startup date [Sat Apr 07 11:28:56 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@461c9d2  
+[INFO ] 2018-04-07 11:28:56,556(826) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:28:56,679(949) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:28:56,787(1057) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a: startup date [Sat Apr 07 11:28:56 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:28:56,789(1059) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:28:56,942(1212) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4d346e67: startup date [Sat Apr 07 11:28:56 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2447cc5a  
+[INFO ] 2018-04-07 11:28:56,944(1214) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:28:57,002(1272) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:44:25,409(21) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e: startup date [Sat Apr 07 11:44:25 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:44:25,512(124) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:44:26,168(780) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11a57340: startup date [Sat Apr 07 11:44:26 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e  
+[INFO ] 2018-04-07 11:44:26,170(782) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:44:26,241(853) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:44:26,349(961) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb: startup date [Sat Apr 07 11:44:26 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:44:26,351(963) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:44:26,523(1135) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@60bf95fe: startup date [Sat Apr 07 11:44:26 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@29c224bb  
+[INFO ] 2018-04-07 11:44:26,525(1137) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:44:26,579(1191) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:57:12,600(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e: startup date [Sat Apr 07 11:57:12 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:57:12,708(121) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:57:13,433(846) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11a57340: startup date [Sat Apr 07 11:57:13 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4f458b6e  
+[INFO ] 2018-04-07 11:57:13,436(849) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:57:13,508(921) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 11:57:13,651(1064) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47667735: startup date [Sat Apr 07 11:57:13 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 11:57:13,658(1071) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 11:57:13,929(1342) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1cebcce3: startup date [Sat Apr 07 11:57:13 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@47667735  
+[INFO ] 2018-04-07 11:57:13,931(1344) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 11:57:13,990(1403) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 16:03:52,308(21) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f0f89d8: startup date [Sat Apr 07 16:03:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 16:03:53,666(1379) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 16:04:05,652(13365) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15ddb13f: startup date [Sat Apr 07 16:04:05 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4f0f89d8  
+[INFO ] 2018-04-07 16:04:05,654(13367) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 16:04:05,756(13469) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 16:04:06,249(13962) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2dabdee: startup date [Sat Apr 07 16:04:06 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 16:04:06,251(13964) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 16:04:06,408(14121) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2cd0b715: startup date [Sat Apr 07 16:04:06 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2dabdee  
+[INFO ] 2018-04-07 16:04:06,410(14123) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 16:04:06,464(14177) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 16:32:41,939(23) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1: startup date [Sat Apr 07 16:32:41 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 16:32:42,105(189) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 16:32:42,813(897) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ace3fa4: startup date [Sat Apr 07 16:32:42 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5b1d37f1  
+[INFO ] 2018-04-07 16:32:42,815(899) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 16:32:42,890(974) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-04-07 16:32:43,023(1107) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47667735: startup date [Sat Apr 07 16:32:43 CST 2018]; root of context hierarchy  
+[INFO ] 2018-04-07 16:32:43,026(1110) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-04-07 16:32:43,257(1341) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1cebcce3: startup date [Sat Apr 07 16:32:43 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@47667735  
+[INFO ] 2018-04-07 16:32:43,259(1343) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-04-07 16:32:43,319(1403) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/D:/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  

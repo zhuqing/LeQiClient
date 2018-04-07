@@ -5,13 +5,11 @@
  */
 package com.leqienglish.client.fw.app;
 
-
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.config.AppConfig;
 
 import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.fw.util.property.HipProperty;
-
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -78,9 +76,6 @@ public abstract class AbstractApplication extends Application {
         return appConfig;
     }
 
-   
-
-
     public static void setNowBusinessId(String nowBusinessCode) {
         AbstractApplication.nowBusinessCode = nowBusinessCode;
     }
@@ -95,25 +90,25 @@ public abstract class AbstractApplication extends Application {
 
     @Override
     public final void init() throws Exception {
-        
-   
-        ApplicationContext configContext = new ClassPathXmlApplicationContext("/config.xml");
-       
+
+       // ApplicationContext configContext = new ClassPathXmlApplicationContext("/config.xml");
+
         context = new ClassPathXmlApplicationContext("/fwBeans.xml");
+        initApplicationContext();
         initApp();
     }
 
     @Override
     public final void start(Stage primaryStage) throws Exception {
+        init();
         rootModel = initRootModel();
-
 
         AbstractApplication.primaryStage = primaryStage;
         Scene scene = new Scene((StackPane) getRootModel().getRoot());
         ((StackPane) getRootModel().getRoot()).maxHeightProperty().bind(scene.heightProperty());
         ((StackPane) getRootModel().getRoot()).maxWidthProperty().bind(scene.widthProperty());
         AbstractApplication.scene = scene;
-       
+
         configScene(scene);
         primaryStage.setScene(scene);
         configStage(primaryStage);
@@ -121,7 +116,7 @@ public abstract class AbstractApplication extends Application {
         primaryStage.setOnHidden((WindowEvent event) -> {
             close();
         });
-     
+
         primaryStage.show();
     }
 
@@ -133,19 +128,13 @@ public abstract class AbstractApplication extends Application {
 
     public static void initApplicationContext() {
         fwContext = context;
-        String amq = HipProperty.getHipAppProperty("AMQ");
-        if (Boolean.TRUE.equals(Boolean.valueOf(amq))) {
-            String[] configXMLs = new String[3];
-            configXMLs[0] = "ActiveMQ.xml";
-            configXMLs[1] = "beans.xml";
-            configXMLs[2] = "classpath*:/config/uf/*.xml";
-            context = new ClassPathXmlApplicationContext(configXMLs, fwContext);
-        } else {
-            String[] configXMLs = new String[2];
-            configXMLs[0] = "beans.xml";
-            configXMLs[1] = "classpath*:/config/uf/*.xml";
-            context = new ClassPathXmlApplicationContext(configXMLs, fwContext);
-        }
+   
+
+        String[] configXMLs = new String[2];
+        configXMLs[0] = "beans.xml";
+        configXMLs[1] = "classpath*:/config/uf/*.xml";
+        context = new ClassPathXmlApplicationContext(configXMLs, fwContext);
+
     }
 
     private void close() {
@@ -158,8 +147,7 @@ public abstract class AbstractApplication extends Application {
         EhCacheCacheManager cacheManager = (EhCacheCacheManager) context.getBean("cacheManager");
         cacheManager.getCacheManager().shutdown();
         Command.getThreadPool().shutdown();
-      
-     
+
         context.close();
         if (fwContext != null) {
             fwContext.close();
@@ -177,7 +165,5 @@ public abstract class AbstractApplication extends Application {
     public static Map<Object, Browser> getBrowserMap() {
         return browserMap;
     }
-
-   
 
 }

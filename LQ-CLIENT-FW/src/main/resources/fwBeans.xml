@@ -13,13 +13,13 @@
             http://activemq.apache.org/schema/core
             http://activemq.apache.org/schema/core/activemq-core-5.9.0.xsd">
     <context:component-scan base-package="com.leqienglish.client.fw.cache,com.leqienglish.client.fw.sf,com.leqienglish.client.fw.root,com.leqienglish.client.fw.cf" />
-    <cache:annotation-driven cache-manager="cacheManager"/>
+<!--    <cache:annotation-driven cache-manager="cacheManager"/>
     <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
         <property name="configLocation" value="classpath:/ehcache.xml" />
     </bean>
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">      
         <property name="cacheManager"  ref="cacheManagerFactory"/>
-    </bean>
+    </bean>-->
     
     
 </beans>

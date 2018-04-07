@@ -50,12 +50,12 @@ public class RootController extends FXMLController<RootModel> {
 //            }
 //
 //        });
-
+        openModel("UpLoadModel");
     }
 
-    private void openModel(String businessId, String parameter) {
+    private void openModel(String businessId) {
         final FXMLModel businessModel = getModel(businessId);
- 
+        rootPane.getChildren().setAll(businessModel.getRoot());
 
     }
 

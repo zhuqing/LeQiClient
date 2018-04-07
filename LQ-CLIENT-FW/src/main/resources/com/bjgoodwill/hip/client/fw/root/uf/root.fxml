@@ -27,12 +27,6 @@
                
             </bottom>
         </BorderPane>
-        <HBox fx:id="winBtnBar" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="90.0" StackPane.alignment="TOP_RIGHT">
-            <children>
-                <Button fx:id="minBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="minimize" textOverrun="CLIP" />
-                <Button fx:id="maxBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="maximize" textOverrun="CLIP" />
-                <Button fx:id="closeBtn" ellipsisString="" mnemonicParsing="false" prefHeight="23.0" prefWidth="30.0" styleClass="close" textOverrun="CLIP" />
-            </children>
-        </HBox>
+       
     </children>
 </StackPane>

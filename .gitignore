@@ -1,0 +1,7 @@
+/LQ-CLIENT-UTIL/build/*
+/LQ-CLIENT-FW/build/*
+/LQ-CLIENT-SAMPLE/build/*
+/LQ-CLIENT-APP/build/*
+/LQ-CLIENT-FX/build/*
+/LQ-Entity/build/*
+*/*.class

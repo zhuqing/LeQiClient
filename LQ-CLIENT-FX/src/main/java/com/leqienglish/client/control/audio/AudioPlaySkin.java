@@ -11,6 +11,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -33,6 +34,8 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
 
     private BorderPane rootPane;
 
+    private Label timeLabel;
+
     public AudioPlaySkin(AudioPlay audioPlay) {
         super(audioPlay, new AudioPlayBehavior(audioPlay));
     }
@@ -49,17 +52,27 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
         initListener();
         this.mediaplay = this.createMediaplayer(this.getSkinnable().getSource());
         this.rootPane = new BorderPane();
-        this.progressBar = this.createProgressBar();
+
         this.rootPane.setLeft(this.createOpeatorBar());
         StackPane stackPane = new StackPane();
-        stackPane.getChildren().add(progressBar);
+        stackPane.getChildren().add(createprogressBar());
         this.rootPane.setCenter(stackPane);
+
+    }
+
+    private HBox createprogressBar() {
+        HBox hbox = new HBox();
+        timeLabel = new Label();
+        this.progressBar = this.createProgressBar();
+        hbox.getChildren().addAll(timeLabel, progressBar);
+
+        return hbox;
 
     }
 
     private HBox createOpeatorBar() {
         HBox hbox = new HBox();
-        hbox.getChildren().addAll(this.playButton(), this.pauseButton(), this.stopButton());
+        hbox.getChildren().addAll(this.playButton(), this.pauseButton(), this.backButton());
         return hbox;
     }
 
@@ -77,6 +90,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                 double totle = mediaplay.getTotalDuration().toMillis();
                 getSkinnable().setCurrentPlayTime(current.longValue());
                 progressBar.setProgress(current / totle);
+                timeLabel.setText(newValue.toSeconds() + "");
 
             }
         });
@@ -123,8 +137,8 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
         return button;
     }
 
-    private Button stopButton() {
-        Button button = new Button("stop");
+    private Button backButton() {
+        Button button = new Button("back");
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -132,7 +146,11 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                     return;
                 }
 
-                mediaplay.stop();
+                double newTime = 0.0;
+                if (10 * 1000 < mediaplay.getCurrentTime().toMillis()) {
+                    newTime = mediaplay.getCurrentTime().toMillis() - 10 * 1000;
+                }
+                mediaplay.seek(new Duration((newTime)));
             }
         });
 

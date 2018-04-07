@@ -22,26 +22,26 @@ sourceCompatibility = '1.8'
 
 repositories {
     maven {
-        credentials {
-            username 'admin'
-            password 'admin123'
-        }
-        url "${nexusSnapshotsUrl}"
+//        credentials {
+//            username 'admin'
+//            password 'admin123'
+//        }
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
     }
-    maven {
-        credentials {
-            username 'admin'
-            password 'admin123'
-        }
-        url "${nexusReleasesUrl}"
-    }
-    maven {
-        credentials {
-            username 'admin'
-            password 'admin123'
-        }
-        url "${nexusPublicUrl}"
-    }
+//    maven {
+//        credentials {
+//            username 'admin'
+//            password 'admin123'
+//        }
+//        url "${nexusReleasesUrl}"
+//    }
+//    maven {
+//        credentials {
+//            username 'admin'
+//            password 'admin123'
+//        }
+//        url "${nexusPublicUrl}"
+//    }
 }
 
 dependencies {

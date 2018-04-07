@@ -10,7 +10,7 @@ import com.leqienglish.client.fw.app.AbstractApplication;
 import com.leqienglish.client.fw.root.uf.RootModel;
 
 import com.leqienglish.client.fw.uf.FXMLModel;
-import com.leqienglish.client.fx.util.concurrent.HipExecutors;
+import com.leqienglish.client.util.concurrent.HipExecutors;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;

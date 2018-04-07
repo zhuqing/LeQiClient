@@ -5,7 +5,6 @@
  */
 package com.lenglish.sample.control;
 
-
 import com.lenglish.sample.HipFXSample;
 import com.leqienglish.client.control.audio.AudioPlay;
 import java.io.File;
@@ -14,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -21,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -28,11 +30,10 @@ import javafx.stage.Stage;
  * @author zhuqing
  */
 public class HipAudioPlaySample extends HipFXSample {
-
+    
     private AudioPlay audioPlay;
 //    private TextField textField;
 
-   
     /**
      * 演示控件名称
      *
@@ -75,11 +76,9 @@ public class HipAudioPlaySample extends HipFXSample {
         String map3Path = "C:\\Users\\zhuqing.BJGOODWILL\\Downloads\\zted180404_4137744FWD.mp3";
         File filr = new File(map3Path);
         this.audioPlay = new AudioPlay();
-       this.audioPlay.setSource(filr.toURI().toString());
+        this.audioPlay.setSource(filr.toURI().toString());
         return audioPlay;
     }
-
-   
 
     /**
      * 介绍
@@ -100,12 +99,25 @@ public class HipAudioPlaySample extends HipFXSample {
     public Node getControlPanel() {
         VBox vbox = new VBox();
 //        textField = new TextField();
-        Button button = new Button("获取值");
+        Button button = new Button("选择音频文件");
         Label label = new Label("值：");
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-              //  label.setText("值：\r" + hipAddress.getValue().toString());
+                FileChooser fileChooser = new FileChooser();
+                fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("audio", "*.mp3"));
+                File file = fileChooser.showOpenDialog(button.getScene().getWindow());
+                if (file == null) {
+                    return;
+                }
+                
+                audioPlay.setSource(file.toURI().toString());
+                audioPlay.currentPlayTimeProperty().addListener(new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                        label.setText(newValue.toString());
+                    }
+                });
             }
         });
         vbox.getChildren().addAll(button, label);
@@ -116,7 +128,5 @@ public class HipAudioPlaySample extends HipFXSample {
     public String getControlStylesheetURL() {
         return "";
     }
-
-   
-
+    
 }
