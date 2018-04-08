@@ -27,46 +27,41 @@ dependencies {
     compile (group: 'com.fasterxml.jackson.module', name: 'jackson-module-jaxb-annotations', version: '2.4.3')
 
       
-compile (group: 'org.slf4j',name: 'slf4j-api',version: '1.7.7')
+    compile (group: 'org.slf4j',name: 'slf4j-api',version: '1.7.7')
         
         
-            compile (group: 'org.slf4j',name: 'slf4j-log4j12',version: '1.7.7')
+    compile (group: 'org.slf4j',name: 'slf4j-log4j12',version: '1.7.7')
         
         
-            compile (group: 'xstream',name: 'xstream',version: '1.2.2')
+    compile (group: 'xstream',name: 'xstream',version: '1.2.2')
         
         
-            compile (group: 'commons-beanutils',name: 'commons-beanutils',version: '1.9.3')
+    compile (group: 'commons-beanutils',name: 'commons-beanutils',version: '1.9.3')
         
         
-            compile (group: 'commons-codec',name: 'commons-codec',version: '1.9')
+    compile (group: 'commons-codec',name: 'commons-codec',version: '1.9')
         
         
-            compile (group: 'org.apache.poi',name: 'poi',version: '3.9')
+    compile (group: 'org.apache.poi',name: 'poi',version: '3.9')
         
         
-            compile (group: 'org.apache.poi',name: 'poi-excelant',version: '3.9')
+    compile (group: 'org.apache.poi',name: 'poi-excelant',version: '3.9')
         
         
-            compile (group: 'org.apache.poi',name: 'poi-ooxml-schemas',version: '3.9')
+    compile (group: 'org.apache.poi',name: 'poi-ooxml-schemas',version: '3.9')
         
         
-            compile (group: 'org.apache.poi',name: 'poi-ooxml',version: '3.9')
+    compile (group: 'org.apache.poi',name: 'poi-ooxml',version: '3.9')
         
         
-            compile (group: 'org.apache.poi',name: 'poi-scratchpad',version: '3.9')
+    compile (group: 'org.apache.poi',name: 'poi-scratchpad',version: '3.9')
         
         
-            compile (group: 'net.sf.dozer',name: 'dozer-spring',version: '5.5.1')
+    compile (group: 'net.sf.dozer',name: 'dozer-spring',version: '5.5.1')
+     
+    compile (group: 'net.sf.dozer',name: 'dozer',version: '5.5.1')
+    compile (group: 'commons-net',name: 'commons-net',version: '3.5')
+    compile (group: 'org.apache.httpcomponents',name: 'httpclient',version: '4.5.2')
         
-        
-            compile (group: 'net.sf.dozer',name: 'dozer',version: '5.5.1')
-        
-        
-            compile (group: 'commons-net',name: 'commons-net',version: '3.5')
-        
-        
-            compile (group: 'org.apache.httpcomponents',name: 'httpclient',version: '4.5.2')
-        
-         
+    compile project(':LQ-ENTITY')
 }

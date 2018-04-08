@@ -5,3 +5,6 @@
 /LQ-CLIENT-FX/build/*
 /LQ-Entity/build/*
 */*.class
+/LQ-ENTITY/build/
+.nb-gradle/*
+.gradle/*

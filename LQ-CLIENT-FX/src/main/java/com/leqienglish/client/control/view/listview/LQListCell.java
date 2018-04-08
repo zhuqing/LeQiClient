@@ -5,13 +5,13 @@
  */
 package com.leqienglish.client.control.view.listview;
 
-
-
 import com.leqienglish.client.util.reflect.PropertyReflectUtil;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.EventHandler;
 import javafx.scene.control.ListCell;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 /**
@@ -29,6 +29,7 @@ public class LQListCell<T> extends ListCell<T> {
         try {
             LQListCell listCell = getClass().newInstance();
             listCell.setPropertyName(propertyName);
+
             return listCell;
         } catch (InstantiationException ex) {
             Logger.getLogger(LQListCell.class.getName()).log(Level.SEVERE, null, ex);
@@ -36,6 +37,20 @@ public class LQListCell<T> extends ListCell<T> {
             Logger.getLogger(LQListCell.class.getName()).log(Level.SEVERE, null, ex);
         }
         return new LQListCell();
+    }
+
+    public LQListCell() {
+        this.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                LQListView listView = (LQListView) getListView();
+                if (listView.getCellMouseClickEventHandler() == null) {
+                    return;
+                }
+
+                listView.getCellMouseClickEventHandler().handle(event);
+            }
+        });
     }
 
     @Override
@@ -73,7 +88,7 @@ public class LQListCell<T> extends ListCell<T> {
             try {
                 return PropertyReflectUtil.getValue(s, getPropertyName());
             } catch (Exception ex) {
-               // Logger.getLogger(HipFormCell.class.getName()).log(Level.SEVERE, null, ex);
+                // Logger.getLogger(HipFormCell.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

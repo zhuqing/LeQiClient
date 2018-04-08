@@ -7,8 +7,10 @@ package com.leqienglish.client.control.view.listview;
 
 import com.leqienglish.client.util.node.NodeUtil;
 import javafx.beans.DefaultProperty;
+import javafx.event.EventHandler;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 /**
@@ -20,6 +22,8 @@ import javafx.util.Callback;
 public class LQListView<T> extends ListView<T> {
 
     private ListCell listCell;
+    
+    private EventHandler<MouseEvent> cellMouseClickEventHandler;
 
     public LQListView() {
         this.setCellFactory(new Callback<ListView<T>, ListCell<T>>() {
@@ -44,6 +48,20 @@ public class LQListView<T> extends ListView<T> {
      */
     public void setListCell(ListCell listCell) {
         this.listCell = listCell;
+    }
+
+    /**
+     * @return the cellMouseClickEventHandler
+     */
+    public EventHandler<MouseEvent> getCellMouseClickEventHandler() {
+        return cellMouseClickEventHandler;
+    }
+
+    /**
+     * @param cellMouseClickEventHandler the cellMouseClickEventHandler to set
+     */
+    public void setCellMouseClickEventHandler(EventHandler<MouseEvent> cellMouseClickEventHandler) {
+        this.cellMouseClickEventHandler = cellMouseClickEventHandler;
     }
 
 }

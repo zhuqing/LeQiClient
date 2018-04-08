@@ -7,7 +7,7 @@ package com.leqienglish.client.fw.cf;
 
 import com.leqienglish.client.fw.LogFacade;
 import com.leqienglish.client.fw.app.AbstractApplication;
-import com.leqienglish.client.fw.root.uf.RootModel;
+
 
 import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.concurrent.HipExecutors;
@@ -43,8 +43,6 @@ public abstract class Command extends LogFacade {
 
    
 
-    @Resource(name = "rootModel")
-    private RootModel rootModel;
 
     private final EventHandler lockScence = new EventHandler() {
         @Override
@@ -62,9 +60,8 @@ public abstract class Command extends LogFacade {
 
     protected abstract void getAppData() throws Exception;
 
-    protected abstract void getServiceData() throws Exception;
+    protected abstract void run(Object... args) throws Exception;
 
-    protected abstract void computer() throws Exception;
 
     protected abstract void doView() throws Exception;
 
@@ -72,11 +69,11 @@ public abstract class Command extends LogFacade {
         parameters.clear();
     }
 
-    public final void doCommand() {
-        doCommand(null);
+    public final void doCommand(Object... args) {
+        doCommand(null,args);
     }
 
-    public final void doCommand(Scene scene) {
+    public final void doCommand(Scene scene,Object... args) {
         StopWatch stopWatch = new StopWatch();
         init();
         try {
@@ -88,10 +85,10 @@ public abstract class Command extends LogFacade {
                 @Override
                 protected Object call() throws Exception {
                     stopWatch.start(Command.this.getClass() + ".getServiceData()");
-                    getServiceData();
+                    run();
                     stopWatch.stop();
                     stopWatch.start(Command.this.getClass() + ".computer()");
-                    computer();
+                   
                     stopWatch.stop();
                     return null;
                 }
@@ -147,7 +144,7 @@ public abstract class Command extends LogFacade {
     private void waitShow(Boolean show, Scene scene) {
         if (wait) {
             if (scene == null) {
-                rootModel.setWaitShow(show);
+//                rootModel.setWaitShow(show);
             } else {
                 if (show) {
                     scene.addEventFilter(EventType.ROOT, lockScence);

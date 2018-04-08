@@ -6,21 +6,24 @@
 package com.lenglish.sample.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
  *
  * @author zhuqing
  */
-public class Person implements Serializable{
+public class Person implements Serializable {
 
     private String id;
     private String name;
     private String gender;
     private Integer age;
     private Date birthday;
-    
+
     private Person parent;
 
     private double codeId;
@@ -217,6 +220,46 @@ public class Person implements Serializable{
      */
     public void setParent(Person parent) {
         this.parent = parent;
+    }
+
+    public static Person createPerson(String id, String name) {
+        Person p = new Person();
+        p.setId(id);
+        p.setName(name);
+
+        p.setGender("男");
+        p.setAge(Double.valueOf(Math.random() * 100 + "").intValue());
+        p.setLoader("1");
+        p.setCodeId(100.0235);
+        p.setUnitId(1l);
+//        String[] hobbies = new String[]{"music", "swim"};
+        Set hobbies = new HashSet();
+        hobbies.add("music");
+
+        p.setHobbies(hobbies);
+
+        p.setPhoneticize("拼音");
+        p.setPhoneticizeValue("PY");
+        Date d = new Date();
+        p.setStartTime(d.getTime() - 6 * 24 * 60 * 60 * 1000);
+
+        return p;
+    }
+
+    public static List<Person> createPersons(String name) {
+        List<Person> persons = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            persons.add(createPerson(i + "", name + i));
+        }
+        return persons;
+    }
+
+    public static List<Person> createPersons() {
+        List<Person> persons = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            persons.add(createPerson(i + "", "robbie" + i));
+        }
+        return persons;
     }
 
 }

@@ -5,64 +5,47 @@
 <?import java.util.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import com.leqienglish.client.control.view.table.*?>
 <?import javafx.scene.layout.StackPane?>
-<?import com.bjgoodwill.hip.client.fx.control.table.*?>
-<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
-<?import com.bjgoodwill.hip.client.fx.control.button.*?>
-<?import com.bjgoodwill.hip.client.fx.callback.*?>
-<?import javafx.scene.control.*?>
-<?import com.bjgoodwill.hip.client.fx.control.tree.*?>
-<?import com.bjgoodwill.hip.client.fx.control.tree.cell.*?>
-<?import com.bjgoodwill.sample.treeview.*?>
-<?import com.bjgoodwill.hip.client.fx.control.table.*?>
-<?import com.bjgoodwill.hip.client.fx.control.table.cell.*?>
-<?import com.bjgoodwill.hip.client.fx.control.button.*?>
-<?import com.bjgoodwill.hip.client.fx.control.form.cell.*?>
-<?import com.bjgoodwill.hip.client.fx.control.form.cell.number.*?>
-<?import com.bjgoodwill.hip.client.fx.control.form.*?>
-<?import com.bjgoodwill.hip.client.fx.callback.*?>
+
 <?import java.lang.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.customdatasource.*?>
-<?import com.bjgoodwill.sample.table.callback.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
 <?import com.bjgoodwill.hip.client.fx.control.form.cell.choose.ets.*?>
 
-<HipTableView>
-  <rowMouseEventHandler>
-      <MouseClickEventHandler/>
-  </rowMouseEventHandler>
+<LQTableView>
    
     <columns>
-         <HipTableColumn propertyName="id" text="id"  >
+         <LQTableColumn propertyName="id" text="id"  >
             <tableCell>
-               <HipTableTextCell  >
+               <LQTextTableCell  >
                     
-                </HipTableTextCell>
+                </LQTextTableCell>
             </tableCell>
-        </HipTableColumn>
-        <HipTableColumn propertyName="name" text="Name"  >
+        </LQTableColumn>
+        <LQTableColumn propertyName="name" text="Name"  >
             <tableCell>
-               <HipTableTextCell >
+               <LQTextTableCell >
                     
-                </HipTableTextCell>
+                </LQTextTableCell>
             </tableCell>
-        </HipTableColumn>
-         <HipTableColumn propertyName="age" text="age"  >
+        </LQTableColumn>
+         <LQTableColumn propertyName="age" text="age"  >
             <tableCell>
-               <HipTableTextCell >
+               <LQTextTableCell >
                     
-                </HipTableTextCell>
+                </LQTextTableCell>
             </tableCell>
-        </HipTableColumn>
-         <HipTableColumn propertyName="gender" text="gender"  >
+        </LQTableColumn>
+         <LQTableColumn propertyName="gender" text="gender"  >
             <tableCell>
-               <HipTableTextCell >
+               <LQTextTableCell >
                     
-                </HipTableTextCell>
+                </LQTextTableCell>
             </tableCell>
-        </HipTableColumn>
+        </LQTableColumn>
     </columns>
-</HipTableView>
+</LQTableView>
