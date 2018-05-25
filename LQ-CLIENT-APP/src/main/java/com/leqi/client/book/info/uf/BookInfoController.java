@@ -5,6 +5,7 @@
  */
 package com.leqi.client.book.info.uf;
 
+import com.leqi.client.book.info.cf.SavaCatalogCommand;
 import com.leqi.client.book.uf.*;
 import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.view.listview.LQListView;
@@ -40,7 +41,11 @@ public class BookInfoController extends FXMLController<BookInfoModel> {
 
     @Resource(name = "fileService")
     private FileService fileService;
+    
+     @Resource(name = "SavaCatalogCommand")
+    private SavaCatalogCommand savaCatalogCommand;
 
+     
     @Override
     public void refresh() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -58,7 +63,7 @@ public class BookInfoController extends FXMLController<BookInfoModel> {
 
     @FXML
     public void saveBook(ActionEvent event) {
-
+        savaCatalogCommand.doCommand();
     }
 
 }

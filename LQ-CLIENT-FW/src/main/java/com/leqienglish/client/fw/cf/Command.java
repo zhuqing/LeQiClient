@@ -7,7 +7,7 @@ package com.leqienglish.client.fw.cf;
 
 import com.leqienglish.client.fw.LogFacade;
 import com.leqienglish.client.fw.app.AbstractApplication;
-
+import com.leqienglish.client.fw.sf.RestClient;
 
 import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.concurrent.HipExecutors;
@@ -41,8 +41,8 @@ public abstract class Command extends LogFacade {
 
     private FXMLModel fxmlModel;
 
-   
-
+    @Resource(name = "RestClient")
+    protected RestClient restClient;
 
     private final EventHandler lockScence = new EventHandler() {
         @Override
@@ -59,9 +59,11 @@ public abstract class Command extends LogFacade {
     private final Map<String, Object> parameters = new HashMap<>();
 
     protected abstract void getAppData() throws Exception;
+   
 
+    
+    
     protected abstract void run(Object... args) throws Exception;
-
 
     protected abstract void doView() throws Exception;
 
@@ -70,26 +72,24 @@ public abstract class Command extends LogFacade {
     }
 
     public final void doCommand(Object... args) {
-        doCommand(null,args);
+        doCommand(null, args);
     }
 
-    public final void doCommand(Scene scene,Object... args) {
+    public final void doCommand(Scene scene, Object... args) {
         StopWatch stopWatch = new StopWatch();
         init();
         try {
             stopWatch.start(this.getClass() + ".getAppData()");
-            getAppData();
+           getAppData();
             stopWatch.stop();
             waitShow(Boolean.TRUE, scene);
             Task<Object> task = new Task<Object>() {
                 @Override
                 protected Object call() throws Exception {
                     stopWatch.start(Command.this.getClass() + ".getServiceData()");
-                    run();
+                    Command.this.run(args);
                     stopWatch.stop();
-                    stopWatch.start(Command.this.getClass() + ".computer()");
                    
-                    stopWatch.stop();
                     return null;
                 }
             };
@@ -145,12 +145,10 @@ public abstract class Command extends LogFacade {
         if (wait) {
             if (scene == null) {
 //                rootModel.setWaitShow(show);
+            } else if (show) {
+                scene.addEventFilter(EventType.ROOT, lockScence);
             } else {
-                if (show) {
-                    scene.addEventFilter(EventType.ROOT, lockScence);
-                } else {
-                    scene.removeEventFilter(EventType.ROOT, lockScence);
-                }
+                scene.removeEventFilter(EventType.ROOT, lockScence);
             }
         }
     }
@@ -188,7 +186,6 @@ public abstract class Command extends LogFacade {
     protected void putParameters(String key, Object obj) {
         this.parameters.put(key, obj);
     }
-
 
     public FXMLModel getFxmlModel() {
         return fxmlModel;

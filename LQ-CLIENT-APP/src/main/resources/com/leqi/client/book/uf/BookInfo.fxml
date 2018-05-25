@@ -26,7 +26,7 @@
                     
                     
                     <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Image:"   />
-                    <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" LQFormView.rowSpan="4"  propertyName="imagePath" >
+                    <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" LQFormView.rowSpan="4"  propertyName="imagePath" prefWidth="300" prefHeight="400"   >
                       
                     </LQImagePathFormCell>
                 </LQFormView>

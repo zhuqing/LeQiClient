@@ -35,6 +35,7 @@ public class UpLoadFileService {
 
             MultipartRequestEntity mre = new MultipartRequestEntity(partsCallback.call(null),
                     postMethod.getParams());
+            //mre.
             postMethod.setRequestEntity(mre);
             HttpClient client = new HttpClient();
             client.getHttpConnectionManager().getParams().setConnectionTimeout(50000);

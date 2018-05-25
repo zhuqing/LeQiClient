@@ -7,6 +7,7 @@ package com.leqienglish.client.fw.sf;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Objects;
+import java.io.File;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicHeader;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -33,6 +35,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.stereotype.Component;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import xyz.tobebetter.entity.Message;
@@ -47,7 +50,7 @@ public class RestClient {
 
     private static RestTemplate restTemplate;
 
-    private String serverPath = "";
+    private String serverPath = "http://127.0.0.1:8080";
     protected final ObjectMapper mapper = new ObjectMapper();
 
     static {
@@ -97,7 +100,7 @@ public class RestClient {
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
         messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
         messageConverters.add(new FormHttpMessageConverter());
-        messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
+       // messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
         messageConverters.add(new MappingJackson2HttpMessageConverter());
 
         restTemplate = new RestTemplate(messageConverters);
@@ -119,6 +122,25 @@ public class RestClient {
         return excute(HttpMethod.DELETE, path, obj, parameter, claz);
     }
 
+     public <T> T upload(String path, MultiValueMap<String, Object> value, Map<String, String> parameter, Class<T> claz) throws Exception {
+        
+        if (parameter == null) {
+            parameter = new HashMap<>();
+        }
+
+ 
+        HttpEntity entity = new HttpEntity(value, initHeaders());
+      //  entity.getHeaders().
+        ResponseEntity resEntity = restTemplate.exchange(serverPath + "/" + path, HttpMethod.POST, entity, Message.class, new HashMap());
+        Message resultMessage = (Message) resEntity.getBody();
+
+        if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {
+            throw new Exception(resultMessage.getMessage());
+        }
+
+        return mapper.readValue(resultMessage.getData(), claz);
+    }
+    
     public <T> T get(String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.GET, path, obj, parameter, claz);
     }
