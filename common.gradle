@@ -8,15 +8,6 @@ apply plugin: 'maven'
 String mavenGroupId = 'HIP-CLIENT'
 String mavenVersion = '1.0-SNAPSHOT'
 
-//遵义现场maven库
-//String nexusSnapshotsUrl = 'http://192.168.1.139:8081/repository/maven-snapshots/'
-//String nexusReleasesUrl = 'http://192.168.1.139:8081/repository/maven-releases/'
-//String nexusPublicUrl = 'http://192.168.1.139:8081/repository/maven-public/'
-//北京研发maven库
-String nexusSnapshotsUrl = 'http://192.168.50.11:8081/nexus/content/repositories/snapshots/'
-String nexusReleasesUrl = 'http://192.168.50.11:8081/nexus/content/repositories/releases/'
-String nexusPublicUrl = 'http://192.168.50.11:8081/nexus/content/groups/public/'
-
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 

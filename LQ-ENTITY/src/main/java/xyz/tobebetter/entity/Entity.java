@@ -1,5 +1,6 @@
 package xyz.tobebetter.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 
 
@@ -8,6 +9,7 @@ import java.io.Serializable;
 /**
  * Created by zhuqing on 2017/7/25.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Entity   implements Serializable {
 
 

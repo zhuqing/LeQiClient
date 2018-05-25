@@ -14,6 +14,8 @@ import com.leqienglish.client.fw.uf.FXMLModel;
 import java.util.Set;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -35,13 +37,17 @@ public class RootModel extends FXMLModel {
     
     private final BooleanProperty waitShow = new SimpleBooleanProperty();
     
+    /**
+     * 当前的业务导航
+     */
+    private StringProperty currentBusinessModel;
+    
    
     
     private Set<String> navItems;
     
     public RootModel() {
-        setFxmlPath("/com/bjgoodwill/hip/client/fw/root/uf/root.fxml");
-//        setFxmlPath("/com/bjgoodwill/hip/client/fw/root/uf/titleRoot.fxml");
+        setFxmlPath("/com/leqi/client/root/uf/root.fxml");
     }
     
     @Override
@@ -116,6 +122,33 @@ public class RootModel extends FXMLModel {
     
     public void setWinBtnBarVisiable(Boolean winBtnBarVisiable) {
         this.winBtnBarVisiable.setValue(winBtnBarVisiable);
+    }
+
+    /**
+     * 当前的业务导航
+     * @return the currentBusinessModel
+     */
+    public String getCurrentBusinessModel() {
+        return currentBusinessModelProperty().getValue();
+    }
+    
+      /**;
+     * 当前的业务导航
+     * @return the currentBusinessModel
+     */
+    public StringProperty currentBusinessModelProperty() {
+        if(currentBusinessModel == null){
+            currentBusinessModel = new SimpleStringProperty();
+        }
+        return currentBusinessModel;
+    }
+
+    /**
+     * 当前的业务导航
+     * @param currentBusinessModel the currentBusinessModel to set
+     */
+    public void setCurrentBusinessModel(String currentBusinessModel) {
+        this.currentBusinessModelProperty().setValue(currentBusinessModel);
     }
     
    

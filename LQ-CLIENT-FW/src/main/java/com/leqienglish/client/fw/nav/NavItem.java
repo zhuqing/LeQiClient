@@ -12,6 +12,7 @@ import java.util.UUID;
  *
  * @author zhuqing
  */
+
 public class NavItem {
 
     /**

@@ -5,7 +5,6 @@
  */
 package com.leqienglish.client.control.view.table.cell;
 
-
 import com.leqienglish.client.util.node.NodeUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.util.Collections;
@@ -31,6 +30,8 @@ public class LQTableCell<S, T> extends TableCell<S, T> {
     private Consumer mouseClickEventHander;
     private Consumer enterEventHandler;
 
+    private Callback<T, String> toTextCallback;
+
     /**
      *
      */
@@ -50,6 +51,14 @@ public class LQTableCell<S, T> extends TableCell<S, T> {
                 }
             }
         });
+    }
+
+    protected String toText(T t) {
+        if (this.getToTextCallback() == null) {
+            return t.toString();
+        }
+
+        return this.getToTextCallback().call(t);
     }
 
     @Override
@@ -139,6 +148,20 @@ public class LQTableCell<S, T> extends TableCell<S, T> {
      */
     public void setStylesCallback(Callback<S, List<String>> stylesCallback) {
         this.stylesCallback = stylesCallback;
+    }
+
+    /**
+     * @return the toTextCallback
+     */
+    public Callback<T, String> getToTextCallback() {
+        return toTextCallback;
+    }
+
+    /**
+     * @param toTextCallback the toTextCallback to set
+     */
+    public void setToTextCallback(Callback<T, String> toTextCallback) {
+        this.toTextCallback = toTextCallback;
     }
 
 }

@@ -6,7 +6,7 @@
 package com.leqi.client.nav.uf;
 
 import com.leqi.client.content.UpLoadModel;
-import com.leqienglish.client.control.view.listview.LQListCell;
+import com.leqienglish.client.control.view.listview.cell.LQListCell;
 import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.fw.nav.NavItem;
 import com.leqienglish.client.fw.uf.FXMLController;
@@ -58,8 +58,9 @@ public class NavController extends FXMLController<NavModel> {
 
     private List<NavItem> createNavData() {
         List<NavItem> navItems = new ArrayList<>();
+        navItems.add(new NavItem("BOOK列表", "BookListModel"));
         navItems.add(new NavItem("上传打点音频", "UpLoadModel"));
-        navItems.add(new NavItem("TED音频列表", "UpLoadModel"));
+        navItems.add(new NavItem("TED音频列表", "TEDAudioContentListModel"));
 
         return navItems;
 

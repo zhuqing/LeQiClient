@@ -5,18 +5,27 @@
  */
 package xyz.tobebetter.entity.english;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import xyz.tobebetter.entity.Entity;
 
 /**
  *
  * @author zhuqing
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+
 public class Content extends Entity{
     private String content;
     private String userId;
     private String imagePath;
     private String audioPath;
     private String timePoint;
+    private String title;
+    
+    /**
+     * 内容所属的分类
+     */
+    private String catalogId;
 
     /**
      * @return the content
@@ -86,6 +95,36 @@ public class Content extends Entity{
      */
     public void setTimePoint(String timePoint) {
         this.timePoint = timePoint;
+    }
+
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * 内容所属的分类
+     * @return the catalogId
+     */
+    public String getCatalogId() {
+        return catalogId;
+    }
+
+    /**
+     * 内容所属的分类
+     * @param catalogId the catalogId to set
+     */
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
     }
 
    

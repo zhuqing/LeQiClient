@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.util.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqi.client.content.list.cf.*?>
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.button.*?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+    <top>
+        <HBox>
+            <LQButton  id="create" text="新建" onAction="#createContent"/>
+            <LQButton id="query" text="查询" onAction="#queryContent"/>
+        </HBox>
+         
+    </top>
+    <center>
+        <LQTableView  fx:id="contentListTableView" >
+   
+            <columns>
+                <LQTableColumn propertyName="title" text="title"  >
+                    <tableCell>
+                        <LQTextTableCell  >
+                    
+                        </LQTextTableCell>
+                    </tableCell>
+                </LQTableColumn>
+                <LQTableColumn propertyName="" text=""  >
+                    <tableCell>
+                        <LQOperatorTableCell >
+                            <filterButtonsCallback>
+                                <ShowLunchButtonCallback/>
+                            </filterButtonsCallback>
+                            <buttons>
+                                <LQButton id="lunch" text="发布" onAction="#lunchContent" >
+                                </LQButton>
+                        
+                                <LQButton id="disLunch" text="撤销发布" onAction="#disLunchContent">
+                                </LQButton>
+                            </buttons>
+                        </LQOperatorTableCell>
+                    </tableCell>
+                </LQTableColumn>
+        
+            </columns>
+        </LQTableView>
+
+    </center>
+</BorderPane>

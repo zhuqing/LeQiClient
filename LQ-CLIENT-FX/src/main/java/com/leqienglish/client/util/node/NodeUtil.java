@@ -5,7 +5,13 @@
 package com.leqienglish.client.util.node;
 
 
+
+import com.leqienglish.client.control.date.DateTimeField;
+import com.leqienglish.client.control.pop.LQPopup;
+import com.leqienglish.client.util.focus.FocusUtil;
+import com.leqienglish.client.util.focus.IFocusNodes;
 import com.leqienglish.client.util.reflect.MethodReflectUtil;
+import com.leqienglish.client.util.shortcutkey.LQShortCutKeyEvent;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef;
 import java.lang.reflect.Method;
@@ -241,9 +247,142 @@ public class NodeUtil {
 
     }
 
+    public static List<Node> getFocusableNodes(List<Node> nodes) {
+        List<Node> focusables = new ArrayList<>();
+        for (Node node : nodes) {
+            focusables.addAll(getFocusableNodes(node));
+        }
 
+        return focusables;
+    }
 
-  
+    public static List<Node> getFocusableNodes(Node node) {
+
+        if (node == null) {
+            return Collections.EMPTY_LIST;
+        }
+
+        if (node instanceof ImageView) {
+            return Collections.EMPTY_LIST;
+        }
+
+        if (!node.isFocusTraversable() && node.isDisabled()) {
+            return Collections.EMPTY_LIST;
+        }
+
+        List<Node> focusables = new ArrayList<>();
+
+        if (node instanceof IFocusNodes) {
+            IFocusNodes ifocu = (IFocusNodes) node;
+
+            focusables.addAll(ifocu.getFocusNode());
+            return focusables;
+        }
+        if (node.getProperties().containsKey(FocusUtil.FOCUS_NODE)) {
+            if (node.getProperties().get(FocusUtil.FOCUS_NODE) instanceof Collection) {
+                Collection c = (Collection) node.getProperties().get(FocusUtil.FOCUS_NODE);
+                focusables.addAll(c);
+            } else {
+                focusables.add((Node) node.getProperties().get(FocusUtil.FOCUS_NODE));
+            }
+
+            return focusables;
+        }
+
+        if (node instanceof Pane) {
+            focusables.addAll(getFocusableNodes(((Pane) node).getChildren()));
+            return focusables;
+        }
+
+        if (node instanceof DateTimeField) {
+            focusables.addAll(getFocusableNodes(((DateTimeField) node).getChildrenUnmodifiable()));
+            return focusables;
+        }
+
+        focusables.add(node);
+
+        return focusables;
+    }
+
+    public static List<LQShortCutKeyEvent> getKeyEventList(Node node) {
+        List<LQShortCutKeyEvent> keyEventList = new ArrayList<>();
+        if (node == null) {
+            return keyEventList;
+        }
+        if (node instanceof Pane) {
+            List<Node> subNodeList = ((Pane) node).getChildren();
+            for (Node subNode : subNodeList) {
+                keyEventList.addAll(getKeyEventList(subNode));
+            }
+            return keyEventList;
+        }
+        if (node instanceof TabPane) {
+            TabPane tabPane = (TabPane) node;
+            for (Tab subNode : tabPane.getTabs()) {
+                if (subNode.getContent() == null) {
+                    continue;
+                }
+                keyEventList.addAll(getKeyEventList(subNode.getContent()));
+            }
+            return keyEventList;
+        }
+        if (node instanceof SplitPane) {
+            List<Node> subNodeList = ((SplitPane) node).getItems();
+            for (Node subNode : subNodeList) {
+                keyEventList.addAll(getKeyEventList(subNode));
+            }
+            return keyEventList;
+        }
+
+        if (node instanceof Label) {
+            Label label = (Label) node;
+            if (label.getGraphic() != null) {
+                keyEventList.addAll(getKeyEventList(label.getGraphic()));
+            }
+        }
+        LQShortCutKeyEvent hipShortCutKeyEvent = (LQShortCutKeyEvent) node.getProperties().get(LQShortCutKeyEvent.SHORTCUT_KEY);
+        if (hipShortCutKeyEvent == null) {
+            return keyEventList;
+        }
+        keyEventList.add(hipShortCutKeyEvent);
+        return keyEventList;
+    }
+
+    public static void registShortCutKeyEvent(Node root) {
+
+        if (root == null) {
+            return;
+        }
+
+        if (root.getProperties().containsKey("keyEventList")) {
+            return;
+        }
+
+        final List<LQShortCutKeyEvent> keyEventList = getKeyEventList(root);
+        root.getProperties().put("keyEventList", keyEventList);
+        root.addEventFilter(KeyEvent.ANY, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                //  System.err.print(event.getCode());
+                //  System.err.print(event.isAltDown() + ":" + event.isControlDown() + ":" + event.isShiftDown());
+
+                if (keyEventList == null) {
+                    return;
+                }
+
+                for (LQShortCutKeyEvent hipShortCutKeyEvent : keyEventList) {
+                    if (hipShortCutKeyEvent.equalsKeyEvent(event)) {
+
+                        if (LQPopup.isOpening()) {
+                            LQPopup.closeAll();
+                        }
+                        hipShortCutKeyEvent.getEventHandler().handle(event);
+                        event.consume();
+                    }
+                }
+            }
+        });
+    }
 
     /**
      * 给节点添加样式

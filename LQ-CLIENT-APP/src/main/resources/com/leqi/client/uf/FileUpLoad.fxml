@@ -8,17 +8,27 @@
 
 
 <?import com.leqienglish.client.control.timestemp.*?>
-<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox >
-            <Button fx:id="findAudio" text="打开Mp3文件"/>
-            
-            <Button fx:id="upload" text="上传"/>
-        </HBox>
+        <VBox >
+           
+           
+            <HBox>
+                <Button fx:id="findAudio" text="打开Mp3文件"/>
+                <Button fx:id="findImg" text="打开图片文件"/>
+                <Button fx:id="upload" text="上传"/>
+                <Button fx:id="download" text="下载"/>
+            </HBox>
+            <TextField fx:id="title" promptText="标题"/> 
+        </VBox>
     </top>
     <center>
-        <TimeStemp fx:id="timeStemp">
+        <StackPane >
+            <TimeStemp fx:id="timeStemp">
             
-        </TimeStemp>
+            </TimeStemp>
+        
+        </StackPane>
     </center>
 </BorderPane>

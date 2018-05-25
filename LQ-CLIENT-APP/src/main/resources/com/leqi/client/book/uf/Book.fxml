@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.listview.cell.*?>
+<?import com.leqienglish.client.control.view.listview.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox >
+            <HBox>
+                <Button text="Create Book" onAction="#createBook"/>
+                <Button  text="Delete Book" onAction="#deleteBook"/>
+            </HBox>
+           
+        </VBox>
+    </top>
+    <left>
+        <HBox >
+            <VBox prefWidth="100" >
+                <Label text="BookList"/> 
+                <StackPane fx:id="bookListPane" >
+                    <LQListView fx:id="bookListView">
+                        <LQListCell propertyName="title" />
+                    </LQListView>
+                </StackPane>
+            </VBox>
+            <VBox prefWidth="100" maxWidth="100" >
+                <Label text="ArticList" /> 
+                <StackPane prefWidth="100" fx:id="articListPane" >
+                    <LQListView fx:id="articListView">
+                        <LQListCell propertyName="title" />
+                    </LQListView>
+                </StackPane>
+            </VBox>
+        </HBox>
+    </left>
+    <center>
+        <StackPane fx:id="bookBusinessPane" >
+           
+        </StackPane>
+    </center>
+   
+</BorderPane>

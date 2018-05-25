@@ -8,7 +8,7 @@
 <?import com.leqienglish.client.control.view.listview.*?>
 
 <?import com.leqienglish.client.control.timestemp.*?>
-<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="100.0" xmlns:fx="http://javafx.com/fxml/1">
     
     <center>
         <LQListView fx:id="navListView">

@@ -9,16 +9,19 @@ import com.leqienglish.client.control.CustomSkin;
 import com.leqienglish.client.control.audio.AudioPlay;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 /**
  *
@@ -26,17 +29,21 @@ import javafx.scene.layout.HBox;
  */
 public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeStemp>> {
 
-    private TextArea sourceTextArea = new TextArea();
-
-    private TextArea targetTextArea = new TextArea();
+    private TextArea textField = new TextArea();
 
     private AudioPlay audioPlay;
+
+    private boolean isAddTimePoint = false;
 
     private BorderPane rootPane;
 
     private Integer timeStempIndex = 0;
 
-    List<String> texts = new ArrayList<>();
+    private List<Label> labels;
+
+    private List<String> texts = new ArrayList<>();
+
+    private VBox labelBox;
 
     public TimeStempSkin(TimeStemp timeStemp) {
         super(timeStemp, new TimeStempBehavior<TimeStemp>(timeStemp));
@@ -52,9 +59,11 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
     protected void initSkin() {
         super.initSkin(); //To change body of generated methods, choose Tools | Templates.
         rootPane = new BorderPane();
-
-        rootPane.setLeft(sourceTextArea);
-        rootPane.setRight(targetTextArea);
+        StackPane stackPane = new StackPane();
+        stackPane.getChildren().add(textField);
+        rootPane.setTop(stackPane);
+        labelBox = new VBox();
+        rootPane.setCenter(labelBox);
         rootPane.setBottom(createplayBar());
         initListener();
     }
@@ -67,11 +76,16 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         addPoint.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (timeStempIndex >= texts.size()-1) {
+                if (timeStempIndex >= texts.size() - 1) {
                     return;
                 } else {
                     timeStempIndex++;
-                    texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + ":" + texts.get(timeStempIndex));
+                    String text = texts.get(timeStempIndex);
+                    if (text.contains(":")) {
+                        text = text.split(":")[1];
+                    }
+                    texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + ":" + text);
+                    labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
                     toTargetText(texts);
                 }
             }
@@ -81,11 +95,36 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         return hbox;
     }
 
+    private void initLabels(List<String> sources) {
+        this.labels = new ArrayList<>(sources.size());
+        labelBox.getChildren().clear();
+        int i = 0;
+        for (String text : sources) {
+
+            Label label = new Label(text);
+            label.setUserData(i);
+            labels.add(label);
+            label.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Label la = (Label) event.getSource();
+                    timeStempIndex = (int) la.getUserData();
+                }
+            });
+            i++;
+        }
+
+        labelBox.getChildren().addAll(labels);
+    }
+
     private void initListener() {
-        sourceTextArea.textProperty().addListener(new ChangeListener<String>() {
+        textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue == null || newValue.isEmpty()) {
+                    return;
+                }
+                if (isAddTimePoint) {
                     return;
                 }
                 String[] strs = newValue.split("\n");
@@ -108,8 +147,9 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         for (String s : texts) {
             sb.append(s).append("\n");
         }
-
-        targetTextArea.setText(sb.toString());
+        isAddTimePoint = true;
+        initLabels(texts);
+        isAddTimePoint = false;
         this.getSkinnable().setTargetText(sb.toString());
     }
 

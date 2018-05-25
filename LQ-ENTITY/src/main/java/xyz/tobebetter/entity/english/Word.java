@@ -13,7 +13,8 @@ import xyz.tobebetter.entity.Entity;
  */
 public class Word extends Entity{
     private String word;
-    private String information;
+    private String detail;
+   // private String userId;
 
     /**
      * @return the word
@@ -30,18 +31,19 @@ public class Word extends Entity{
     }
 
     /**
-     * @return the information
+     * @return the detail
      */
-    public String getInformation() {
-        return information;
+    public String getDetail() {
+        return detail;
     }
 
     /**
-     * @param information the information to set
+     * @param detail the detail to set
      */
-    public void setInformation(String information) {
-        this.information = information;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
-    
+
+   
     
 }

@@ -8,3 +8,4 @@
 /LQ-ENTITY/build/
 .nb-gradle/*
 .gradle/*
+*.bin
