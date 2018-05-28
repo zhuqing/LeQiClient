@@ -58,6 +58,7 @@ public class RootController extends FXMLController<RootModel> {
 
     private MenuBar createMenuBar() {
         MenuBar menuBar = new MenuBar();
+        
         try {
             menuBar.getMenus().setAll(createMenus());
         } catch (IOException ex) {

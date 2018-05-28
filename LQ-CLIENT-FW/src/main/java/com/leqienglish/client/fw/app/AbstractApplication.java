@@ -144,8 +144,8 @@ public abstract class AbstractApplication extends Application {
                 value.dispose();
             }
         }
-        EhCacheCacheManager cacheManager = (EhCacheCacheManager) context.getBean("cacheManager");
-        cacheManager.getCacheManager().shutdown();
+       // EhCacheCacheManager cacheManager = (EhCacheCacheManager) context.getBean("cacheManager");
+       // cacheManager.getCacheManager().shutdown();
         Command.getThreadPool().shutdown();
 
         context.close();

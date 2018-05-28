@@ -35,13 +35,16 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 import xyz.tobebetter.entity.Message;
 
 /**
  * rest客户端
+ *
  * @author zhuqing
  */
 @Lazy
@@ -51,6 +54,7 @@ public class RestClient {
     private static RestTemplate restTemplate;
 
     private String serverPath = "http://127.0.0.1:8080";
+
     protected final ObjectMapper mapper = new ObjectMapper();
 
     static {
@@ -88,9 +92,9 @@ public class RestClient {
         // httpClient连接配置，底层是配置RequestConfig
         HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
         // 连接超时
-        clientHttpRequestFactory.setConnectTimeout(5000);
+        clientHttpRequestFactory.setConnectTimeout(50000);
         // 数据读取超时时间，即SocketTimeout
-        clientHttpRequestFactory.setReadTimeout(5000);
+        clientHttpRequestFactory.setReadTimeout(50000);
         // 连接不够用的等待时间，不宜过长，必须设置，比如连接不够用时，时间过长将是灾难性的
         clientHttpRequestFactory.setConnectionRequestTimeout(200);
         // 缓冲请求数据，默认值是true。通过POST或者PUT大量发送数据时，建议将此属性更改为false，以免耗尽内存。
@@ -100,7 +104,7 @@ public class RestClient {
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
         messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
         messageConverters.add(new FormHttpMessageConverter());
-       // messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
+        // messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
         messageConverters.add(new MappingJackson2HttpMessageConverter());
 
         restTemplate = new RestTemplate(messageConverters);
@@ -110,27 +114,26 @@ public class RestClient {
 //        LOGGER.info("RestClient初始化完成");
     }
 
-    public <T> T post(String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
+    public <T> T post(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.POST, path, obj, parameter, claz);
     }
 
-    public <T> T put(String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
+    public <T> T put(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.PUT, path, obj, parameter, claz);
     }
 
-    public <T> T delete(String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
+    public <T> T delete(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.DELETE, path, obj, parameter, claz);
     }
 
-     public <T> T upload(String path, MultiValueMap<String, Object> value, Map<String, String> parameter, Class<T> claz) throws Exception {
-        
+    public <T> T upload(String path, MultiValueMap<String, Object> value, Map<String, String> parameter, Class<T> claz) throws Exception {
+
         if (parameter == null) {
             parameter = new HashMap<>();
         }
 
- 
         HttpEntity entity = new HttpEntity(value, initHeaders());
-      //  entity.getHeaders().
+        //  entity.getHeaders().
         ResponseEntity resEntity = restTemplate.exchange(serverPath + "/" + path, HttpMethod.POST, entity, Message.class, new HashMap());
         Message resultMessage = (Message) resEntity.getBody();
 
@@ -140,18 +143,18 @@ public class RestClient {
 
         return mapper.readValue(resultMessage.getData(), claz);
     }
-    
-    public <T> T get(String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
+
+    public <T> T get(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.GET, path, obj, parameter, claz);
     }
 
-    private <T> T excute(HttpMethod method, String path, Object obj, Map<String, String> parameter, Class<T> claz) throws Exception {
+    private <T> T excute(HttpMethod method, String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         if (parameter == null) {
-            parameter = new HashMap<>();
+            parameter = new LinkedMultiValueMap<>();
         }
-
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         HttpEntity entity = new HttpEntity(obj, initHeaders());
-        ResponseEntity resEntity = restTemplate.exchange(serverPath + "/" + path, method, entity, Message.class, new HashMap());
+        ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), method, entity, Message.class);
         Message resultMessage = (Message) resEntity.getBody();
 
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {

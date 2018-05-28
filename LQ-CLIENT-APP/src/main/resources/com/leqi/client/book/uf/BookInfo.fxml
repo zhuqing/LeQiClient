@@ -15,7 +15,7 @@
     
     <center>
         <VBox >
-            <Label text="bookInfo"/> 
+            <Label fx:id="catalogTitle" text="bookInfo"/> 
             <StackPane fx:id="bookInfoPane" >
                 <LQFormView fx:id="bookInfoFormView" StackPane.alignment="CENTER" >
                     <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"   />

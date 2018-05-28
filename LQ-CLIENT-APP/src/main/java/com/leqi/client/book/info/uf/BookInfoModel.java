@@ -5,12 +5,12 @@
  */
 package com.leqi.client.book.info.uf;
 
-import com.leqi.client.book.uf.*;
-import com.leqi.client.content.*;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -24,20 +24,25 @@ import xyz.tobebetter.entity.english.Catalog;
 @Component("BookInfoModel")
 public class BookInfoModel extends FXMLModel {
 
+    /**
+     * 分类实体
+     */
+    private ObjectProperty<Catalog> catalog;
+
+    /**
+     * 标题
+     */
+    private StringProperty title;
+    
     public BookInfoModel() {
         setFxmlPath("/com/leqi/client/book/uf/BookInfo.fxml");
     }
-
+    
     @Override
     @Resource(name = "BookInfoController")
     public void setFxmlController(FXMLController fxmlController) {
         super.setFxmlController(fxmlController); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     * 分类实体
-     */
-    private ObjectProperty<Catalog> catalog;
 
     /**
      * 分类实体
@@ -67,5 +72,37 @@ public class BookInfoModel extends FXMLModel {
      */
     public void setCatalog(Catalog catalog) {
         this.catalogProperty().setValue(catalog);
+    }
+
+    /**
+     * 标题
+     *
+     * @return the title
+     */
+    public String getTitle() {
+        return titleProperty().getValue();
+    }
+
+    /**
+     * 标题
+     *
+     * @return the title
+     */
+    public StringProperty titleProperty() {
+        if (title == null) {
+            title = new SimpleStringProperty();
+        }
+        return title;
+        
+    }
+
+    /**
+     * 标题
+     *
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.titleProperty().setValue(title);
+        
     }
 }

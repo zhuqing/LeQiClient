@@ -9,3 +9,8 @@
 .nb-gradle/*
 .gradle/*
 *.bin
+*.lock
+*.bin
+*.bin
+*.bin
+*.jar

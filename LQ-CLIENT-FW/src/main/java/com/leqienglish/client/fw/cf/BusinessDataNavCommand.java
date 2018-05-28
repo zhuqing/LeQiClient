@@ -76,7 +76,7 @@ public abstract class BusinessDataNavCommand extends ChangeListenerCommand {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (newValue) {
-                    BusinessDataNavCommand.this.doCommand();
+                    BusinessDataNavCommand.this.doCommand(null);
                 }
             }
         });

@@ -58,36 +58,36 @@ public abstract class Command extends LogFacade {
 
     private final Map<String, Object> parameters = new HashMap<>();
 
-    protected abstract void getAppData() throws Exception;
+    protected abstract void getAppData(Map<String ,Object> param) throws Exception;
    
 
     
     
-    protected abstract void run(Object... args) throws Exception;
+    protected abstract void run(Map<String ,Object> param) throws Exception;
 
-    protected abstract void doView() throws Exception;
+    protected abstract void doView(Map<String ,Object> param) throws Exception;
 
     private void init() {
         parameters.clear();
     }
 
-    public final void doCommand(Object... args) {
-        doCommand(null, args);
+    public final void doCommand(Map<String ,Object> param) {
+        doCommand(null, param);
     }
 
-    public final void doCommand(Scene scene, Object... args) {
+    public final void doCommand(Scene scene, Map<String ,Object> param) {
         StopWatch stopWatch = new StopWatch();
         init();
         try {
             stopWatch.start(this.getClass() + ".getAppData()");
-           getAppData();
+           getAppData(param);
             stopWatch.stop();
             waitShow(Boolean.TRUE, scene);
             Task<Object> task = new Task<Object>() {
                 @Override
                 protected Object call() throws Exception {
                     stopWatch.start(Command.this.getClass() + ".getServiceData()");
-                    Command.this.run(args);
+                    Command.this.run(param);
                     stopWatch.stop();
                    
                     return null;
@@ -101,7 +101,7 @@ public abstract class Command extends LogFacade {
                         waitShow(Boolean.FALSE, scene);
                         try {
                             stopWatch.start(Command.this.getClass() + ".doView()");
-                            doView();
+                            doView(param);
                             stopWatch.stop();
                         } catch (Exception ex) {
                             if (!"Can't start StopWatch: it's already running".equals(ex.getMessage())) {

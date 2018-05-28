@@ -15,15 +15,15 @@ public class Catalog extends Entity{
     /**
      * 课本类型
      */
-    private final static Integer BOOK_TYPE = 1;
+    public final static int BOOK_TYPE = 1;
     /**
      * 章节类型
      */
-    private final static Integer CHAPTER_TYPE=2;
+    public final static int CHAPTER_TYPE=2;
     /**
      * 分类类型
      */
-    private final static Integer CATALOG_TYPE=3;
+    public final static int CATALOG_TYPE=3;
     /**
      * 分类的标题
      */
