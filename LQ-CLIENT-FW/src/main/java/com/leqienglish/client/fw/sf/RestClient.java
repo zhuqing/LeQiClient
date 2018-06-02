@@ -144,14 +144,12 @@ public class RestClient {
         return mapper.readValue(resultMessage.getData(), claz);
     }
 
-    public <T> T get(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
-        return excute(HttpMethod.GET, path, obj, parameter, claz);
+    public <T> T get(String path,  MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
+        return excute(HttpMethod.GET, path, null, parameter, claz);
     }
 
     private <T> T excute(HttpMethod method, String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
-        if (parameter == null) {
-            parameter = new LinkedMultiValueMap<>();
-        }
+
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         HttpEntity entity = new HttpEntity(obj, initHeaders());
         ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), method, entity, Message.class);

@@ -41,13 +41,12 @@ public class QueryCatalogCommand extends QueryCommand {
 
         parameter.add("page", this.getPageNum() + "");
         parameter.add("pageSize", this.getPageSize() + "");
+        parameter.add("type", (Integer) param.get("type") + "");
 
-        Catalog catalog = new Catalog();
-        catalog.setType((Integer) param.get("type"));
         if (param.get("parentId") != null) {
-            catalog.setParentId((String) param.get("parentId"));
+            parameter.add("parentId", (String) param.get("parentId"));
         }
-        Catalog[] catalogs = this.restClient.get("/english/catalog/getCatalogByType", catalog, parameter, Catalog[].class);
+        Catalog[] catalogs = this.restClient.get("/english/catalog/getCatalogByType",parameter, Catalog[].class);
         this.putParameters("datas", catalogs);
     }
 

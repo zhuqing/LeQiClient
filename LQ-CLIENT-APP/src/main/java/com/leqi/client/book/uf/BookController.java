@@ -80,15 +80,15 @@ public class BookController extends FXMLController<BookModel> {
     }
 
     private void articListViewSelectedChange(Catalog catalog) {
-        if (catalog == null) {
-            return;
-        }
-        queryArticle(catalog.getId(), 1, 20);
+//        if (catalog == null) {
+//            return;
+//        }
+//        queryArticle(catalog.getId(), 1, 20);
     }
 
     private void queryArticle(String parentId, int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
-        param.put("type", Catalog.BOOK_TYPE);
+        param.put("type", Catalog.CHAPTER_TYPE);
         param.put("parentId", parentId);
         queryCatalogCommand.setPageNum(page);
         queryCatalogCommand.setPageSize(pageSize);
@@ -116,7 +116,8 @@ public class BookController extends FXMLController<BookModel> {
             AlertUtil.showError("请先选择book");
             return;
         }
-        bookInfoModel.setCatalog(createBook());
+        String bookId = this.bookListView.getSelectionModel().getSelectedItem().getId();
+        bookInfoModel.setCatalog(createArticle(bookId));
         bookBusinessPane.getChildren().setAll(this.bookInfoModel.getRoot());
     }
 
@@ -133,11 +134,6 @@ public class BookController extends FXMLController<BookModel> {
         catalog.setParentId(bookId);
         catalog.setUserId("1");
         return catalog;
-    }
-
-    @FXML
-    public void deleteBook(ActionEvent event) {
-
     }
 
 }

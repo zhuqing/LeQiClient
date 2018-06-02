@@ -15,7 +15,7 @@
         <VBox >
             <HBox>
                 <Button text="Create Book" onAction="#createBook"/>
-                <Button  text="Delete Book" onAction="#deleteBook"/>
+                <Button  text="Create Aritcle" onAction="#createArticle"/>
             </HBox>
            
         </VBox>
