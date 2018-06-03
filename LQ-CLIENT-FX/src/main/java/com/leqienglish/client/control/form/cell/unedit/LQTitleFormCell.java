@@ -22,7 +22,16 @@ public class LQTitleFormCell<S, T> extends LQFormCell<S, T> {
 
     @Override
     protected void updateValue(T t) {
-        //this.setText(toText(t));
+        if (this.getToTextCallback() == null) {
+            return;
+        }
+        this.setText(this.getToTextCallback().call(t));
+        if (this.getToTextCallback() == null) {
+            return;
+        }
+
+        this.setText(this.getToTextCallback().call(t));
+
     }
 
     public LQFormCell clone() {

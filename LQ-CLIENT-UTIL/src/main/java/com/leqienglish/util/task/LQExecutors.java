@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqienglish.client.util.concurrent;
+package com.leqienglish.util.task;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *
- * @author duyi
+ * 线程服务
+ * @author zhuqing
  */
-public class HipExecutors {
+public class LQExecutors {
 
     private static ExecutorService executorService;
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.listview.cell.*?>
+<?import com.leqienglish.client.control.view.listview.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+<?import com.leqienglish.client.control.form.*?>
+<?import com.leqienglish.client.control.view.gridview.*?>
+<?import com.leqienglish.client.control.form.cell.*?>
+
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+   
+    <center>
+        <StackPane fx:id="bookBusinessPane" >
+            <LQGridView fx:id="contentsGridView">
+                <lQFormView>
+                    <LQFormView prefHeight="100" prefWidth="50"  >
+                         <LQFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" propertyName="title"  />
+                    </LQFormView>
+                </lQFormView>
+            </LQGridView>
+        </StackPane>
+    </center>
+   
+</BorderPane>

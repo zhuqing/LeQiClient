@@ -16,6 +16,7 @@ import xyz.tobebetter.entity.Entity;
 
 public class Content extends Entity{
     private String content;
+  
     private String userId;
     private String imagePath;
     private String audioPath;

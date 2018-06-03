@@ -18,8 +18,9 @@ import javafx.util.Callback;
 
 import java.lang.reflect.InvocationTargetException;
 import com.leqienglish.client.control.view.table.cell.LQTableCell;
-import com.leqienglish.client.util.concurrent.HipExecutors;
+
 import com.leqienglish.client.util.reflect.PropertyReflectUtil;
+import com.leqienglish.util.task.LQExecutors;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.collections.ListChangeListener;
@@ -190,7 +191,7 @@ public class LQTableColumn<S, T> extends TableColumn<S, T> {
      * @param sortType
      */
     private void getData(SortType sortType) {
-        HipExecutors.getSingleThreadExecutor().execute(new Runnable() {
+        LQExecutors.getSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
                 ObservableList<S> list = sortPolicy.getData(tableViewProperty().get(), LQTableColumn.this, getId(), sortType);

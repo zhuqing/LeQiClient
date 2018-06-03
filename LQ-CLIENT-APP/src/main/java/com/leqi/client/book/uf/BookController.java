@@ -7,6 +7,8 @@ package com.leqi.client.book.uf;
 
 import com.leqi.client.book.info.cf.QueryCatalogCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
+import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
+import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.fw.sf.FileService;
 
@@ -26,6 +28,7 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Catalog;
+import xyz.tobebetter.entity.english.Content;
 
 /**
  *
@@ -46,6 +49,12 @@ public class BookController extends FXMLController<BookModel> {
 
     @Resource(name = "BookInfoModel")
     private BookInfoModel bookInfoModel;
+
+    @Resource(name = "SegmentInfoModel")
+    private SegmentInfoModel segmentInfoModel;
+
+    @Resource(name = "SegmentModel")
+    private SegmentModel segmentModel;
 
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
@@ -80,10 +89,9 @@ public class BookController extends FXMLController<BookModel> {
     }
 
     private void articListViewSelectedChange(Catalog catalog) {
-//        if (catalog == null) {
-//            return;
-//        }
-//        queryArticle(catalog.getId(), 1, 20);
+
+        bookBusinessPane.getChildren().setAll(this.segmentModel.getRoot());
+        segmentModel.setArticle(catalog);
     }
 
     private void queryArticle(String parentId, int page, int pageSize) {
@@ -111,6 +119,20 @@ public class BookController extends FXMLController<BookModel> {
     }
 
     @FXML
+    public void createSegment(ActionEvent event) {
+
+        if (this.articListView.getSelectionModel().getSelectedItem() == null) {
+            AlertUtil.showError("没有选中文章");
+            return;
+        }
+
+        this.bookBusinessPane.getChildren().setAll(this.segmentInfoModel.getRoot());
+
+        segmentInfoModel.setContent(createContent(this.articListView.getSelectionModel().getSelectedItem()));
+
+    }
+
+    @FXML
     public void createArticle(ActionEvent event) {
         if (this.bookListView.getSelectionModel().getSelectedItem() == null) {
             AlertUtil.showError("请先选择book");
@@ -126,6 +148,13 @@ public class BookController extends FXMLController<BookModel> {
         catalog.setType(Catalog.BOOK_TYPE);
         catalog.setUserId("1");
         return catalog;
+    }
+
+    private Content createContent(Catalog catalog) {
+        Content content = new Content();
+        content.setCatalogId(catalog.getId());
+        content.setUserId("1");
+        return content;
     }
 
     private Catalog createArticle(String bookId) {

@@ -10,7 +10,8 @@ import com.leqienglish.client.fw.app.AbstractApplication;
 import com.leqienglish.client.fw.sf.RestClient;
 
 import com.leqienglish.client.fw.uf.FXMLModel;
-import com.leqienglish.client.util.concurrent.HipExecutors;
+import com.leqienglish.util.task.LQExecutors;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -28,14 +29,13 @@ import org.controlsfx.dialog.ExceptionDialog;
 import org.springframework.util.StopWatch;
 
 /**
- *
- * @author duyi
+ * 调用
+ * @author zhuqing
  */
 public abstract class Command extends LogFacade {
 
-    private Integer pageNum;
-
-    private Integer pageSize;
+    public static String DATA = "data";
+    public static String DATAS = "datas";
 
     protected boolean wait = true;
 
@@ -58,29 +58,26 @@ public abstract class Command extends LogFacade {
 
     private final Map<String, Object> parameters = new HashMap<>();
 
-    protected abstract void getAppData(Map<String ,Object> param) throws Exception;
-   
+    protected abstract void getAppData(Map<String, Object> param) throws Exception;
 
-    
-    
-    protected abstract void run(Map<String ,Object> param) throws Exception;
+    protected abstract void run(Map<String, Object> param) throws Exception;
 
-    protected abstract void doView(Map<String ,Object> param) throws Exception;
+    protected abstract void doView(Map<String, Object> param) throws Exception;
 
     private void init() {
         parameters.clear();
     }
 
-    public final void doCommand(Map<String ,Object> param) {
+    public final void doCommand(Map<String, Object> param) {
         doCommand(null, param);
     }
 
-    public final void doCommand(Scene scene, Map<String ,Object> param) {
+    public final void doCommand(Scene scene, Map<String, Object> param) {
         StopWatch stopWatch = new StopWatch();
         init();
         try {
             stopWatch.start(this.getClass() + ".getAppData()");
-           getAppData(param);
+            getAppData(param);
             stopWatch.stop();
             waitShow(Boolean.TRUE, scene);
             Task<Object> task = new Task<Object>() {
@@ -89,7 +86,7 @@ public abstract class Command extends LogFacade {
                     stopWatch.start(Command.this.getClass() + ".getServiceData()");
                     Command.this.run(param);
                     stopWatch.stop();
-                   
+
                     return null;
                 }
             };
@@ -155,7 +152,7 @@ public abstract class Command extends LogFacade {
 
     public static ExecutorService getThreadPool() {
         if (threadPool == null) {
-            threadPool = HipExecutors.getSingleThreadExecutor();
+            threadPool = LQExecutors.getSingleThreadExecutor();
         }
         return threadPool;
     }
@@ -193,22 +190,6 @@ public abstract class Command extends LogFacade {
 
     public void setFxmlModel(FXMLModel fxmlModel) {
         this.fxmlModel = fxmlModel;
-    }
-
-    public Integer getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
-    }
-
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
     }
 
 }

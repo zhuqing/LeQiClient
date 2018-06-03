@@ -16,6 +16,7 @@
             <HBox>
                 <Button text="Create Book" onAction="#createBook"/>
                 <Button  text="Create Aritcle" onAction="#createArticle"/>
+                 <Button  text="Create Segment" onAction="#createSegment"/>
             </HBox>
            
         </VBox>
