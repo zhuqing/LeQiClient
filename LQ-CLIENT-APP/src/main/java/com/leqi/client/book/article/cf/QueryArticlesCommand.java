@@ -3,29 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.info.cf;
+package com.leqi.client.book.article.cf;
 
-import com.leqi.client.book.info.uf.BookInfoModel;
+import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqi.client.book.uf.BookModel;
-import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.english.Catalog;
+import xyz.tobebetter.entity.english.Content;
 
 /**
- *
+ *根据catalogId查询文章列表
  * @author zhuqing
  */
 @Lazy
-@Component("QueryCatalogCommand")
-public class QueryCatalogCommand extends QueryCommand {
+@Component("QueryArticlesCommand")
+public class QueryArticlesCommand extends QueryCommand {
 
     @Resource(name = "BookModel")
     private BookModel bookModel;
@@ -41,28 +38,21 @@ public class QueryCatalogCommand extends QueryCommand {
 
         parameter.add("page", this.getPageNum() + "");
         parameter.add("pageSize", this.getPageSize() + "");
-        parameter.add("type", (Integer) param.get("type") + "");
 
-        if (param.get("parentId") != null) {
-            parameter.add("parentId", (String) param.get("parentId"));
+        if (param.get("catalogId") != null) {
+            parameter.add("catalogId", (String) param.get("catalogId"));
         }
-        Catalog[] catalogs = this.restClient.get("/english/catalog/getCatalogByType",parameter, Catalog[].class);
-        this.putParameters("datas", catalogs);
+        Content[] contents = this.restClient.get("/english/content/findCotentByCatalogId", parameter, Content[].class);
+        this.putParameters("datas", contents);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        Catalog[] catalogs = (Catalog[]) this.getParameters("datas");
-
-        Integer type = (Integer) param.get("type");
-        switch (type) {
-            case Catalog.BOOK_TYPE:
-                bookModel.setBooks(Arrays.asList(catalogs));
-                break;
-//            case Catalog.CHAPTER_TYPE:
-//                bookModel.setArticles(Arrays.asList(catalogs));
-//                break;
+        Content[] contents = (Content[]) this.getParameters("datas");
+        if(contents == null|| contents.length == 0){
+            return;
         }
+        bookModel.getArticles().setAll(contents);
 
     }
 

@@ -18,10 +18,23 @@ public class Content extends Entity{
     private String content;
   
     private String userId;
+    /**
+     * 图片路
+     */
     private String imagePath;
+    /**
+     * 音频路径
+     */
     private String audioPath;
     private String timePoint;
+    /**
+     * 标题
+     */
     private String title;
+    /**
+     * fu类ID
+     */
+    private String parentId;
     
     /**
      * 内容所属的分类
@@ -126,6 +139,22 @@ public class Content extends Entity{
      */
     public void setCatalogId(String catalogId) {
         this.catalogId = catalogId;
+    }
+
+    /**
+     * fu类ID
+     * @return the parentId
+     */
+    public String getParentId() {
+        return parentId;
+    }
+
+    /**
+     * fu类ID
+     * @param parentId the parentId to set
+     */
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 
    

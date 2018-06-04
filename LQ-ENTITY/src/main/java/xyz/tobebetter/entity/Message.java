@@ -10,6 +10,14 @@ public class Message {
     public final static int SUCCESS = 0;
     private String message;
     private int status;
+    /**
+     * 当前页码
+     */
+    private int page;
+    /**
+     * 总页数
+     */
+    private int totalPage;
     private String data;
 
 
@@ -46,5 +54,37 @@ public class Message {
      */
     public void setData(String data) {
         this.data = data;
+    }
+
+    /**
+     * 当前页码
+     * @return the page
+     */
+    public int getPage() {
+        return page;
+    }
+
+    /**
+     * 当前页码
+     * @param page the page to set
+     */
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    /**
+     * 总页数
+     * @return the totalPage
+     */
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    /**
+     * 总页数
+     * @param totalPage the totalPage to set
+     */
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 }

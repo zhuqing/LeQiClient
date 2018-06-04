@@ -5,6 +5,8 @@
  */
 package com.leqi.client.book.uf;
 
+import com.leqi.client.book.article.cf.QueryArticlesCommand;
+import com.leqi.client.book.article.uf.ArticleInfoModel;
 import com.leqi.client.book.info.cf.QueryCatalogCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
@@ -42,13 +44,16 @@ public class BookController extends FXMLController<BookModel> {
     private LQListView<Catalog> bookListView;
 
     @FXML
-    private LQListView<Catalog> articListView;
+    private LQListView<Content> articListView;
 
     @FXML
     private StackPane bookBusinessPane;
 
     @Resource(name = "BookInfoModel")
     private BookInfoModel bookInfoModel;
+
+    @Resource(name = "ArticleInfoModel")
+    private ArticleInfoModel articleInfoModel;
 
     @Resource(name = "SegmentInfoModel")
     private SegmentInfoModel segmentInfoModel;
@@ -58,6 +63,9 @@ public class BookController extends FXMLController<BookModel> {
 
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
+    
+        @Resource(name = "QueryArticlesCommand")
+    private QueryArticlesCommand queryArticlesCommand;
 
     @Override
     public void refresh() {
@@ -88,19 +96,19 @@ public class BookController extends FXMLController<BookModel> {
         queryArticle(catalog.getId(), 1, 20);
     }
 
-    private void articListViewSelectedChange(Catalog catalog) {
+    private void articListViewSelectedChange(Content content) {
 
         bookBusinessPane.getChildren().setAll(this.segmentModel.getRoot());
-        segmentModel.setArticle(catalog);
+        segmentModel.setArticle(content);
     }
 
     private void queryArticle(String parentId, int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("type", Catalog.CHAPTER_TYPE);
-        param.put("parentId", parentId);
-        queryCatalogCommand.setPageNum(page);
-        queryCatalogCommand.setPageSize(pageSize);
-        queryCatalogCommand.doCommand(param);
+        param.put("catalogId", parentId);
+        queryArticlesCommand.setPageNum(page);
+        queryArticlesCommand.setPageSize(pageSize);
+        queryArticlesCommand.doCommand(param);
     }
 
     private void queryBooks(int page, int pageSize) {
@@ -139,8 +147,8 @@ public class BookController extends FXMLController<BookModel> {
             return;
         }
         String bookId = this.bookListView.getSelectionModel().getSelectedItem().getId();
-        bookInfoModel.setCatalog(createArticle(bookId));
-        bookBusinessPane.getChildren().setAll(this.bookInfoModel.getRoot());
+        articleInfoModel.setContent(createArticle(bookId));
+        bookBusinessPane.getChildren().setAll(this.articleInfoModel.getRoot());
     }
 
     private Catalog createBook() {
@@ -150,17 +158,17 @@ public class BookController extends FXMLController<BookModel> {
         return catalog;
     }
 
-    private Content createContent(Catalog catalog) {
+    private Content createContent(Content catalog) {
         Content content = new Content();
-        content.setCatalogId(catalog.getId());
+        content.setParentId(catalog.getId());
         content.setUserId("1");
         return content;
     }
 
-    private Catalog createArticle(String bookId) {
-        Catalog catalog = new Catalog();
-        catalog.setType(Catalog.CHAPTER_TYPE);
-        catalog.setParentId(bookId);
+    private Content createArticle(String bookId) {
+        Content catalog = new Content();
+        catalog.setCatalogId(bookId);
+
         catalog.setUserId("1");
         return catalog;
     }

@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.segment.info.cf;
+package com.leqi.client.book.article.cf;
 
+import com.leqi.client.book.article.uf.ArticleInfoModel;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqi.client.book.uf.BookModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.util.exception.LQExceptionUtil;
 import java.io.File;
@@ -26,14 +28,15 @@ import xyz.tobebetter.entity.english.Content;
  * @author zhuqing
  */
 @Lazy
-@Component("SaveContentCommand")
-public class SaveContentCommand extends Command {
+@Component("SaveArticleCommand")
+public class SaveArticleCommand extends Command {
 
-    @Resource(name = "SegmentInfoModel")
-    private SegmentInfoModel segmentInfoModel;
-
-    @Resource(name = "SegmentModel")
-    private SegmentModel segmentModel;
+     @Resource(name = "BookModel")
+    private BookModel bookModel;
+     
+     
+     @Resource(name = "ArticleInfoModel")
+    private ArticleInfoModel articleInfoModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -56,7 +59,7 @@ public class SaveContentCommand extends Command {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
-        Content content = segmentInfoModel.getContent();
+        Content content = (Content) param.get(DATA);
 
         Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("type", "mp3");
@@ -78,8 +81,9 @@ public class SaveContentCommand extends Command {
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
         Content content = (Content) this.getParameters(DATA);
-        segmentInfoModel.setContent(content);
-        segmentModel.getContents().add(content);
+        bookModel.getArticles().add(content);
+        articleInfoModel.setContent(content);
+
     }
 
 }

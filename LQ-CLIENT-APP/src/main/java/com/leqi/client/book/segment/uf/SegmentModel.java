@@ -30,7 +30,7 @@ public class SegmentModel extends FXMLModel {
     /**
      * contents  对应的article
      */
-    private ObjectProperty<Catalog> article;
+    private ObjectProperty<Content> article;
 
     /**
      * 书列表
@@ -73,14 +73,14 @@ public class SegmentModel extends FXMLModel {
      * contents  对应的book
      * @return the book
      */
-    public Catalog getArticle() {
+    public Content getArticle() {
         return articleProperty().getValue();
     }
 /**
      * contents  对应的book
      * @return the book
      */
-    public ObjectProperty<Catalog> articleProperty() {
+    public ObjectProperty<Content> articleProperty() {
         if(article == null){
             article = new SimpleObjectProperty<>();
         }
@@ -91,7 +91,7 @@ public class SegmentModel extends FXMLModel {
      * @param article
 
      */
-    public void setArticle(Catalog article) {
+    public void setArticle(Content article) {
         this.articleProperty().setValue(article);
     }
 }

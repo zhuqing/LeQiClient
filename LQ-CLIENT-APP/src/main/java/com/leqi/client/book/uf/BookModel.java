@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Catalog;
+import xyz.tobebetter.entity.english.Content;
 
 /**
  *
@@ -31,7 +32,7 @@ public class BookModel extends FXMLModel {
     /**
      * 书下的文章列表
      */
-    private ObservableList<Catalog> articles;
+    private ObservableList<Content> articles;
 
     public BookModel() {
         setFxmlPath("/com/leqi/client/book/uf/Book.fxml");
@@ -71,7 +72,7 @@ public class BookModel extends FXMLModel {
      *
      * @return the articles
      */
-    public ObservableList<Catalog> getArticles() {
+    public ObservableList<Content> getArticles() {
         if (articles == null) {
             this.articles = FXCollections.observableArrayList();
         }
@@ -83,7 +84,7 @@ public class BookModel extends FXMLModel {
      *
      * @param articles the articles to set
      */
-    public void setArticles(List<Catalog> articles) {
+    public void setArticles(List<Content> articles) {
         this.getArticles().setAll(articles);
     }
 }

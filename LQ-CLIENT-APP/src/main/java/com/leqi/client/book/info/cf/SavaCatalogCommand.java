@@ -56,9 +56,10 @@ public class SavaCatalogCommand extends Command {
             Catalog newCatalog = (Catalog) this.getParameters("data");
             if (Objects.equal(newCatalog.getType(), Catalog.BOOK_TYPE)) {
                 this.bookModel.getBooks().add(newCatalog);
-            } else if (Objects.equal(newCatalog.getType(), Catalog.CHAPTER_TYPE)) {
-                this.bookModel.getArticles().add(newCatalog);
             }
+//            else if (Objects.equal(newCatalog.getType(), Catalog.CHAPTER_TYPE)) {
+//                this.bookModel.getArticles().add(newCatalog);
+//            }
         }
     }
 

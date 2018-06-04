@@ -52,13 +52,13 @@ public class SegmentController extends FXMLController<SegmentModel> {
         articleChange(getModel().getArticle());
     }
 
-    private void articleChange(Catalog catalog) {
-        if (catalog == null) {
+    private void articleChange(Content content) {
+        if (content == null) {
             this.getModel().getContents().clear();
             return;
         }
         Map<String, Object> map = new HashMap<>();
-        map.put("catalogId", catalog.getId());
+        map.put("parentId", content.getId());
         queryContentsCommand.doCommand(map);
     }
 
