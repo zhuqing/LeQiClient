@@ -8,11 +8,8 @@
 /LQ-ENTITY/build/
 .nb-gradle/*
 .gradle/*
-*.bin
 *.lock
 *.bin
-*.bin
-*.bin
 *.jar
-*.bin
-*.bin
+*.log
+LQ-CLIENT-APP/log/*
