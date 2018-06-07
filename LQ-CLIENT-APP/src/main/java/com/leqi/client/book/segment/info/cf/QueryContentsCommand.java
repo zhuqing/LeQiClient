@@ -38,10 +38,10 @@ public class QueryContentsCommand extends QueryCommand {
         parameter.add("page", this.getPageNum() + "");
         parameter.add("pageSize", this.getPageSize() + "");
 
-        if (param.get("catalogId") != null) {
-            parameter.add("catalogId", (String) param.get("catalogId"));
+        if (param.get("parentId") != null) {
+            parameter.add("parentId", (String) param.get("parentId"));
         }
-        Content[] contents = this.restClient.get("/english/content/findCotentByCatalogId", parameter, Content[].class);
+        Content[] contents = this.restClient.get("/english/content/findContentByParentId", parameter, Content[].class);
         this.putParameters("datas", contents);
     }
 

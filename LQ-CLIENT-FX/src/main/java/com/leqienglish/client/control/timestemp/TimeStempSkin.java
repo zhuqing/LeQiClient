@@ -7,6 +7,8 @@ package com.leqienglish.client.control.timestemp;
 
 import com.leqienglish.client.control.CustomSkin;
 import com.leqienglish.client.control.audio.AudioPlay;
+import io.reactivex.rxjavafx.observables.JavaFxObservable;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.value.ChangeListener;
@@ -39,7 +41,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
 
     private Integer timeStempIndex = 0;
 
-    private List<Label> labels;
+    private List<TextField> labels;
 
     private List<String> texts = new ArrayList<>();
 
@@ -71,15 +73,15 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
     private HBox createplayBar() {
         HBox hbox = new HBox();
         audioPlay = new AudioPlay();
-        audioPlay.sourceProperty().bind(this.getSkinnable().audioPathProperty());
+       // audioPlay.sourceProperty().bind(this.getSkinnable().audioPathProperty());
         Button addPoint = new Button("打点");
         addPoint.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (timeStempIndex >= texts.size() - 1) {
+                if (timeStempIndex >= texts.size()) {
                     return;
                 } else {
-                    timeStempIndex++;
+
                     String text = texts.get(timeStempIndex);
                     if (text.contains(":")) {
                         text = text.split(":")[1];
@@ -87,6 +89,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                     texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + ":" + text);
                     labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
                     toTargetText(texts);
+                    timeStempIndex++;
                 }
             }
         });
@@ -101,13 +104,13 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         int i = 0;
         for (String text : sources) {
 
-            Label label = new Label(text);
+            TextField label = new TextField(text);
             label.setUserData(i);
             labels.add(label);
             label.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    Label la = (Label) event.getSource();
+                    TextField la = (TextField) event.getSource();
                     timeStempIndex = (int) la.getUserData();
                 }
             });
@@ -140,6 +143,26 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                 toTargetText(texts);
             }
         });
+
+        JavaFxObservable.nullableValuesOf(this.getSkinnable().sourceTextProperty())
+                .subscribe((p) -> textField.setText(p.orElse("")));
+
+        JavaFxObservable.nullableValuesOf(this.getSkinnable().audioPathProperty())
+                .subscribe(p -> setAudioPath(p.orElse("")));
+
+        if (this.getSkinnable().getSourceText() != null) {
+            this.textField.setText("");
+        }
+        setAudioPath(this.getSkinnable().getAudioPath());
+    }
+
+    private void setAudioPath(String path) {
+        if (path == null || path.isEmpty()) {
+            this.audioPlay.setSource(null);
+            return;
+        }
+        File filr = new File(path);
+        this.audioPlay.setSource(filr.toURI().toString());
     }
 
     private void toTargetText(List<String> texts) {

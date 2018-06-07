@@ -8,11 +8,17 @@ package com.leqi.client.book.segment.info.uf;
 import com.leqi.client.book.segment.info.cf.SaveContentCommand;
 import com.leqi.client.book.segment.uf.*;
 import com.leqienglish.client.control.form.LQFormView;
+import com.leqienglish.client.control.form.cell.edit.file.LQOpenFileFormCell;
+import com.leqienglish.client.control.form.cell.edit.text.LQTextAreaInputFormCell;
+import com.leqienglish.client.control.form.cell.unedit.LQTitleFormCell;
 import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.gridview.LQGridView;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +37,10 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
 
     @FXML
     private LQFormView<Content> contentInfoFormView;
-
+    @FXML
+    private LQOpenFileFormCell audioPathFormCell;
+    @FXML
+    private LQTextAreaInputFormCell contentFormCell;
     @FXML
     private TimeStemp timeStemp;
 
@@ -47,6 +56,9 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
     public void initialize(URL location, ResourceBundle resources) {
         JavaFxObservable.nullableValuesOf(this.getModel().contentProperty())
                 .subscribe((p) -> contentInfoChange(p.orElse(null)));
+        
+        audioPathFormCell.setCommitConsumer((audioPath)->timeStemp.setAudioPath(audioPath));
+        contentFormCell.setCommitConsumer((content)->timeStemp.setSourceText(content+""));
     }
 
     private void contentInfoChange(Content content) {
@@ -56,6 +68,8 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
     @FXML
     public void save(ActionEvent event) {
         this.getModel().getContent().setTimePoint(timeStemp.getTargetText());
-        saveContentCommand.doCommand(null);
+        Map<String,Object> map = new HashMap<>();
+        map.put(Command.DATA, this.getModel().getContent());
+        saveContentCommand.doCommand(map);
     }
 }

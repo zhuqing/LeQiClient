@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqienglish.client.control.form.cell.number.customdatasource;
+package com.leqienglish.client.control.form.cell.edit.number;
 
 
 import com.leqienglish.client.control.combobox.LQComboBox;

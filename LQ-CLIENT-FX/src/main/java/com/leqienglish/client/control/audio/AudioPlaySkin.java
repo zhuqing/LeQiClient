@@ -89,7 +89,8 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                 Double current = newValue.toMillis();
                 double totle = mediaplay.getTotalDuration().toMillis();
                 getSkinnable().setCurrentPlayTime(current.longValue());
-                progressBar.setProgress(current / totle);
+    
+                progressBar.setProgress(current.longValue() / totle);
                 timeLabel.setText(newValue.toSeconds() + "");
 
             }

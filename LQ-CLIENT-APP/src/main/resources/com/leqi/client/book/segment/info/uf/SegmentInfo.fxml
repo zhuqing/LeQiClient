@@ -22,10 +22,12 @@
                 <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"  prefWidth="400"  />
                     
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Map3:"  prefWidth="60" />
-                <LQOpenFileFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="audioPath"   prefWidth="400" />      
+                <LQOpenFileFormCell fx:id="audioPathFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="audioPath"   prefWidth="400" >
+
+                </LQOpenFileFormCell>     
                     
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Content:"   prefWidth="60"/>
-                <LQTextAreaInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="content"  prefWidth="400"  />
+                <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Content:"   prefWidth="60"/>
+                <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="content"  prefWidth="400"  />
             </LQFormView>
             <TimeStemp fx:id="timeStemp">
             
