@@ -20,6 +20,11 @@ public class User extends Entity {
 
      */
     private String othersysId;
+    
+    /**
+     * 最后一次登录时间
+     */
+    private Long lastLogin;
 
 
     public String getName() {
@@ -63,5 +68,21 @@ public class User extends Entity {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    /**
+     * 最后一次登录时间
+     * @return the lastLogin
+     */
+    public Long getLastLogin() {
+        return lastLogin;
+    }
+
+    /**
+     * 最后一次登录时间
+     * @param lastLogin the lastLogin to set
+     */
+    public void setLastLogin(Long lastLogin) {
+        this.lastLogin = lastLogin;
     }
 }

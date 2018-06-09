@@ -26,6 +26,9 @@ public class Content extends Entity{
      * 音频路径
      */
     private String audioPath;
+    /**
+     * 点
+     */
     private String timePoint;
     /**
      * 标题
@@ -40,6 +43,11 @@ public class Content extends Entity{
      * 内容所属的分类
      */
     private String catalogId;
+    
+    /**
+     * 阅读数
+     */
+    private Long readNum;
 
     /**
      * @return the content
@@ -155,6 +163,22 @@ public class Content extends Entity{
      */
     public void setParentId(String parentId) {
         this.parentId = parentId;
+    }
+
+    /**
+     * 阅读数
+     * @return the readNum
+     */
+    public Long getReadNum() {
+        return readNum;
+    }
+
+    /**
+     * 阅读数
+     * @param readNum the readNum to set
+     */
+    public void setReadNum(Long readNum) {
+        this.readNum = readNum;
     }
 
    

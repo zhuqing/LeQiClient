@@ -51,6 +51,13 @@ public class Catalog extends Entity{
      * 创建者
      */
     private String userId;
+    
+    /**
+     * 订阅数
+     */
+    private Long subscribeNum;
+    
+    
 
     public String getTitle() {
         return title;
@@ -114,6 +121,22 @@ public class Catalog extends Entity{
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * 订阅数
+     * @return the subscribeNum
+     */
+    public Long getSubscribeNum() {
+        return subscribeNum;
+    }
+
+    /**
+     * 订阅数
+     * @param subscribeNum the subscribeNum to set
+     */
+    public void setSubscribeNum(Long subscribeNum) {
+        this.subscribeNum = subscribeNum;
     }
 
    

@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -30,33 +31,33 @@ import javafx.scene.layout.VBox;
  * @author zhuqing
  */
 public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeStemp>> {
-
+    
     private TextArea textField = new TextArea();
-
+    
     private AudioPlay audioPlay;
-
+    
     private boolean isAddTimePoint = false;
-
+    
     private BorderPane rootPane;
-
+    
     private Integer timeStempIndex = 0;
-
+    
     private List<TextField> labels;
-
+    
     private List<String> texts = new ArrayList<>();
-
+    
     private VBox labelBox;
-
+    
     public TimeStempSkin(TimeStemp timeStemp) {
         super(timeStemp, new TimeStempBehavior<TimeStemp>(timeStemp));
     }
-
+    
     @Override
     protected void showSkin() {
         super.showSkin(); //To change body of generated methods, choose Tools | Templates.
         this.getChildren().addAll(rootPane);
     }
-
+    
     @Override
     protected void initSkin() {
         super.initSkin(); //To change body of generated methods, choose Tools | Templates.
@@ -64,16 +65,21 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(textField);
         rootPane.setTop(stackPane);
+        ScrollPane scrollPane = new ScrollPane();
+        
         labelBox = new VBox();
-        rootPane.setCenter(labelBox);
+        labelBox.setPrefHeight(600);
+        scrollPane.setContent(labelBox);
+        
+        rootPane.setCenter(scrollPane);
         rootPane.setBottom(createplayBar());
         initListener();
     }
-
+    
     private HBox createplayBar() {
         HBox hbox = new HBox();
         audioPlay = new AudioPlay();
-       // audioPlay.sourceProperty().bind(this.getSkinnable().audioPathProperty());
+        // audioPlay.sourceProperty().bind(this.getSkinnable().audioPathProperty());
         Button addPoint = new Button("打点");
         addPoint.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -81,7 +87,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                 if (timeStempIndex >= texts.size()) {
                     return;
                 } else {
-
+                    
                     String text = texts.get(timeStempIndex);
                     if (text.contains(":")) {
                         text = text.split(":")[1];
@@ -93,17 +99,17 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                 }
             }
         });
-
+        
         hbox.getChildren().addAll(audioPlay, addPoint);
         return hbox;
     }
-
+    
     private void initLabels(List<String> sources) {
         this.labels = new ArrayList<>(sources.size());
         labelBox.getChildren().clear();
         int i = 0;
         for (String text : sources) {
-
+            
             TextField label = new TextField(text);
             label.setUserData(i);
             labels.add(label);
@@ -116,10 +122,10 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
             });
             i++;
         }
-
+        
         labelBox.getChildren().addAll(labels);
     }
-
+    
     private void initListener() {
         textField.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -143,19 +149,19 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                 toTargetText(texts);
             }
         });
-
+        
         JavaFxObservable.nullableValuesOf(this.getSkinnable().sourceTextProperty())
                 .subscribe((p) -> textField.setText(p.orElse("")));
-
+        
         JavaFxObservable.nullableValuesOf(this.getSkinnable().audioPathProperty())
                 .subscribe(p -> setAudioPath(p.orElse("")));
-
+        
         if (this.getSkinnable().getSourceText() != null) {
             this.textField.setText("");
         }
         setAudioPath(this.getSkinnable().getAudioPath());
     }
-
+    
     private void setAudioPath(String path) {
         if (path == null || path.isEmpty()) {
             this.audioPlay.setSource(null);
@@ -164,7 +170,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         File filr = new File(path);
         this.audioPlay.setSource(filr.toURI().toString());
     }
-
+    
     private void toTargetText(List<String> texts) {
         StringBuffer sb = new StringBuffer();
         for (String s : texts) {
@@ -175,5 +181,5 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         isAddTimePoint = false;
         this.getSkinnable().setTargetText(sb.toString());
     }
-
+    
 }
