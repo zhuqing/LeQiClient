@@ -14,9 +14,13 @@ import xyz.tobebetter.entity.Entity;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class Content extends Entity{
+public class Content extends Entity {
+
+    public static final int LUNCH = 0;
+    public static final int CANCEL_LUNCH = 1;
+    
     private String content;
-  
+
     private String userId;
     /**
      * 图片路
@@ -38,16 +42,16 @@ public class Content extends Entity{
      * fu类ID
      */
     private String parentId;
-    
+
     /**
      * 内容所属的分类
      */
     private String catalogId;
-    
+
     /**
      * 阅读数
      */
-    private Long readNum;
+    private Long readNum = 0L;
 
     /**
      * @return the content
@@ -135,6 +139,7 @@ public class Content extends Entity{
 
     /**
      * 内容所属的分类
+     *
      * @return the catalogId
      */
     public String getCatalogId() {
@@ -143,6 +148,7 @@ public class Content extends Entity{
 
     /**
      * 内容所属的分类
+     *
      * @param catalogId the catalogId to set
      */
     public void setCatalogId(String catalogId) {
@@ -151,6 +157,7 @@ public class Content extends Entity{
 
     /**
      * fu类ID
+     *
      * @return the parentId
      */
     public String getParentId() {
@@ -159,6 +166,7 @@ public class Content extends Entity{
 
     /**
      * fu类ID
+     *
      * @param parentId the parentId to set
      */
     public void setParentId(String parentId) {
@@ -167,6 +175,7 @@ public class Content extends Entity{
 
     /**
      * 阅读数
+     *
      * @return the readNum
      */
     public Long getReadNum() {
@@ -175,11 +184,11 @@ public class Content extends Entity{
 
     /**
      * 阅读数
+     *
      * @param readNum the readNum to set
      */
     public void setReadNum(Long readNum) {
         this.readNum = readNum;
     }
 
-   
 }

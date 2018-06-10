@@ -7,12 +7,14 @@ package com.leqi.client.book.segment.uf;
 
 import com.leqi.client.book.segment.info.cf.QueryContentsCommand;
 import com.leqienglish.client.control.view.gridview.LQGridView;
+import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.uf.FXMLController;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
@@ -29,7 +31,7 @@ import xyz.tobebetter.entity.english.Content;
 public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
-    private LQGridView<Content> contentsGridView;
+    private LQTableView<Content> segmentsTableView;
 
     @Resource(name = "QueryContentsCommand")
     private QueryContentsCommand queryContentsCommand;
@@ -42,10 +44,10 @@ public class SegmentController extends FXMLController<SegmentModel> {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         JavaFxObservable.changesOf(this.getModel().getContents())
-                .subscribe((lc) -> contentsGridView.getItems().setAll(this.getModel().getContents()));
+                .subscribe((lc) -> segmentsTableView.getItems().setAll(this.getModel().getContents()));
 
-        JavaFxObservable.changesOf(contentsGridView.getGridViewSelectionModel().selectedItemProperty())
-                .subscribe((b) -> bookListViewSelectedChange(b.getNewVal()));
+        JavaFxObservable.changesOf(segmentsTableView.getSelectionModel().selectedItemProperty())
+                .subscribe((b) -> segmentsTableViewSelectedChange(b.getNewVal()));
 
         JavaFxObservable.nullableValuesOf(this.getModel().articleProperty())
                 .subscribe(op -> articleChange(op.orElse(null)));
@@ -62,11 +64,28 @@ public class SegmentController extends FXMLController<SegmentModel> {
         queryContentsCommand.doCommand(map);
     }
 
-    private void bookListViewSelectedChange(Content content) {
+    private void segmentsTableViewSelectedChange(Content content) {
         if (content == null) {
             return;
         }
         // queryArticle(content.getId(), 1, 20);
     }
 
+    /**
+     * 发布按钮点击事件
+     * @param event 
+     */
+    @FXML
+    public void lunch(ActionEvent event) {
+
+    }
+
+    /**
+     * 取消发布按钮点击事件
+     * @param event 
+     */
+    @FXML
+    public void cancelLunch(ActionEvent event) {
+
+    }
 }

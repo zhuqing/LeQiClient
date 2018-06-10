@@ -36,6 +36,14 @@ public class AlertUtil {
         alert.showAndWait();
     }
 
+    public static void showInformation(String message) {
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(message);
+        addEnterEvent(alert);
+        alert.showAndWait();
+    }
+
     public static void showAlert(String message, Alert.AlertType type) {
 
         Alert alert = new Alert(type);

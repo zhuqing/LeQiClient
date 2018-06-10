@@ -13,3 +13,4 @@
 *.jar
 *.log
 LQ-CLIENT-APP/log/*
+.gradle/2.10/taskArtifacts/taskArtifacts.bin

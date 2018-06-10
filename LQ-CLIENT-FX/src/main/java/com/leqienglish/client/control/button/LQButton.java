@@ -13,7 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 
 /**
- *
+ * 
+ * @author zhuqing
  */
 public class LQButton extends Button {
 
@@ -51,13 +52,14 @@ public class LQButton extends Button {
 
     @Override
     public LQButton clone() throws CloneNotSupportedException {
-        LQButton hipButton = new LQButton();
-        hipButton.setText(getText());
-        hipButton.setVisible(isVisible());
-        hipButton.setDisable(isDisable());
-        hipButton.setOnAction(getOnAction());
-        hipButton.setTipText(getTipText());
-        return hipButton;
+        LQButton lqButton = new LQButton();
+        lqButton.setText(getText());
+        lqButton.setVisible(isVisible());
+        lqButton.setDisable(isDisable());
+        lqButton.setOnAction(getOnAction());
+        lqButton.setTipText(getTipText());
+        lqButton.setId(this.getId());
+        return lqButton;
     }
 
     public String getTipText() {

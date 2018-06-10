@@ -5,10 +5,8 @@
  */
 package com.leqi.client.book.segment.uf;
 
-import com.leqi.client.content.*;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
-import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -16,7 +14,6 @@ import javafx.collections.ObservableList;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 
 /**
@@ -33,7 +30,7 @@ public class SegmentModel extends FXMLModel {
     private ObjectProperty<Content> article;
 
     /**
-     * 书列表
+     * 段列表
      */
     private ObservableList<Content> contents;
   

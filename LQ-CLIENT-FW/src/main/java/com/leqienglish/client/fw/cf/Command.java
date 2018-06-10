@@ -30,12 +30,15 @@ import org.springframework.util.StopWatch;
 
 /**
  * 调用
+ *
  * @author zhuqing
  */
 public abstract class Command extends LogFacade {
 
     public static String DATA = "data";
-    public static String DATAS = "datas";
+    public static String ID = "ID";
+    public static String MODEL = "MODEL";
+
 
     protected boolean wait = true;
 
