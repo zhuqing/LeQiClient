@@ -17,7 +17,8 @@ import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Content;
 
 /**
- *根据catalogId查询文章列表
+ * 根据catalogId查询文章列表
+ *
  * @author zhuqing
  */
 @Lazy
@@ -49,7 +50,8 @@ public class QueryArticlesCommand extends QueryCommand {
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
         Content[] contents = (Content[]) this.getParameters("datas");
-        if(contents == null|| contents.length == 0){
+        if (contents == null || contents.length == 0) {
+            bookModel.getArticles().clear();
             return;
         }
         bookModel.getArticles().setAll(contents);

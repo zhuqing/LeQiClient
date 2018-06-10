@@ -9,6 +9,8 @@ import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
 import java.util.Map;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.Message;
@@ -18,6 +20,8 @@ import xyz.tobebetter.entity.english.Content;
  *
  * @author zhuqing
  */
+@Lazy
+@Component("UpdateContentStatusCommand")
 public class UpdateContentStatusCommand extends Command {
 
     @Override

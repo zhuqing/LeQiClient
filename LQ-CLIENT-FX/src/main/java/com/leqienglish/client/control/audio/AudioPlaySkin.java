@@ -10,9 +10,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Slider;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -30,11 +34,30 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
 
     private MediaPlayer mediaplay;
 
-    private ProgressBar progressBar;
-
+//    private ProgressBar progressBar;
     private BorderPane rootPane;
 
     private Label timeLabel;
+
+    private Button audioButton;
+
+    private Slider slider;
+
+    private boolean pressed = false;
+
+    private double startX = 0.0;
+
+    private final ChangeListener<Number> valueChangeListener = new ChangeListener<Number>() {
+        @Override
+        public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+            if (mediaplay == null) {
+                return;
+            }
+            timeLabel.setText(newValue.longValue() + "/" + (long) mediaplay.getTotalDuration().toMillis());
+            Duration duran = Duration.millis(newValue.doubleValue());
+            mediaplay.seek(duran);
+        }
+    };
 
     public AudioPlaySkin(AudioPlay audioPlay) {
         super(audioPlay, new AudioPlayBehavior(audioPlay));
@@ -63,11 +86,59 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
     private HBox createprogressBar() {
         HBox hbox = new HBox();
         timeLabel = new Label();
-        this.progressBar = this.createProgressBar();
-        hbox.getChildren().addAll(timeLabel, progressBar);
+        timeLabel.setMinWidth(100);
+        timeLabel.setMaxWidth(100);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.getChildren().addAll(timeLabel, createSlider());
 
         return hbox;
 
+    }
+
+    private Slider createSlider() {
+        this.slider = new Slider();
+        this.slider.valueProperty().addListener(valueChangeListener);
+        slider.setMin(0);
+        return slider;
+    }
+
+//    private StackPane createTimeBar() {
+//        this.progressBar = this.createProgressBar();
+//        
+//        StackPane stackPane = new StackPane();
+//        stackPane.getChildren().addAll(progressBar, this.createAudioButton());
+//        return stackPane;
+//    }
+    private Button createAudioButton() {
+        this.audioButton = new Button();
+
+        audioButton.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                pressed = true;
+                startX = event.getX();
+            }
+        });
+
+        audioButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                pressed = false;
+            }
+        });
+
+        audioButton.addEventHandler(MouseEvent.MOUSE_MOVED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (event.getButton() != MouseButton.PRIMARY || !pressed) {
+                    return;
+                }
+                System.err.println(event);
+                double newX = event.getX();
+                audioButton.setLayoutX(audioButton.getLayoutX() + newX - startX);
+            }
+        });
+        return audioButton;
     }
 
     private HBox createOpeatorBar() {
@@ -87,15 +158,25 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
             @Override
             public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
                 Double current = newValue.toMillis();
-                double totle = mediaplay.getTotalDuration().toMillis();
+                Double totle = mediaplay.getTotalDuration().toMillis();
                 getSkinnable().setCurrentPlayTime(current.longValue());
-    
-                progressBar.setProgress(current.longValue() / totle);
-                timeLabel.setText(newValue.toSeconds() + "");
 
+                //progressBar.setProgress(current / totle);
+                timeLabel.setText(current.longValue() + "/" + totle.longValue());
+                slider.valueProperty().removeListener(valueChangeListener);
+                slider.setValue(current);
+                slider.valueProperty().addListener(valueChangeListener);
             }
         });
-
+        mediaplay.totalDurationProperty().addListener(new ChangeListener<Duration>() {
+            @Override
+            public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
+                if (newValue == Duration.UNKNOWN) {
+                    return;
+                }
+                slider.setMax(newValue.toMillis());
+            }
+        });
         return mediaplay;
     }
 
@@ -112,6 +193,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                 }
                 mediaplay = createMediaplayer(newValue);
                 getSkinnable().setCurrentPlayTime(0L);
+
             }
         });
     }

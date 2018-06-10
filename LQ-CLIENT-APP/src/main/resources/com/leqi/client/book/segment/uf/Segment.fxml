@@ -19,34 +19,34 @@
         <StackPane fx:id="bookBusinessPane" >
             <LQTableView  fx:id="segmentsTableView">
                 <columns>
-                    <LQTableColumn visible="false" editable="false" prefWidth="40" propertyName="title" text="Title">
+                    <LQTableColumn  editable="false" prefWidth="40" propertyName="title" text="Title">
                         <tableCell>
                             <LQTableTextCell />
                         </tableCell>
                     </LQTableColumn>
-                     <LQTableColumn visible="false" editable="false" prefWidth="40" propertyName="readNum" text="readNum">
+                    <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
                         <tableCell>
                             <LQTableTextCell />
                         </tableCell>
                     </LQTableColumn>
                     <LQTableColumn editable="false" prefWidth="125.0" text="操作">
-                            <tableCell>
-                                <LQOperatorTableCell>
-                                    <buttons>
-                                        <ArrayList>
-                                            <LQButton id="lunch" text="发布" onAction="#lunch">
-                                            </LQButton>
-                                            <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
-                                            </LQButton>
+                        <tableCell>
+                            <LQOperatorTableCell>
+                                <buttons>
+                                      
+                                    <LQButton id="lunch" text="发布" onAction="#lunch">
+                                    </LQButton>
+                                    <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
+                                    </LQButton>
                                         
-                                        </ArrayList>
-                                    </buttons>
-                                    <filterButtonsCallback>
-                                        <FilterOpertorButtonsCallback/>
-                                    </filterButtonsCallback>
-                                </LQOperatorTableCell>
-                            </tableCell>
-                        </LQTableColumn>
+                            
+                                </buttons>
+                                <filterButtonsCallback>
+                                    <FilterOpertorButtonsCallback/>
+                                </filterButtonsCallback>
+                            </LQOperatorTableCell>
+                        </tableCell>
+                    </LQTableColumn>
                 </columns>
             </LQTableView>
            

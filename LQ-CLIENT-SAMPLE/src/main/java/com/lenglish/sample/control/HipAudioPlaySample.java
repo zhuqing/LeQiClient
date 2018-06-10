@@ -76,7 +76,7 @@ public class HipAudioPlaySample extends HipFXSample {
         String map3Path = "C:\\Users\\zhuqing.BJGOODWILL\\Downloads\\zted180404_4137744FWD.mp3";
         File filr = new File(map3Path);
         this.audioPlay = new AudioPlay();
-        this.audioPlay.setSource(filr.toURI().toString());
+      //  this.audioPlay.setSource(filr.toURI().toString());
         return audioPlay;
     }
 

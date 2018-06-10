@@ -5,9 +5,12 @@
  */
 package com.leqi.client.book.segment.uf;
 
+import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.info.cf.QueryContentsCommand;
+import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.control.view.gridview.LQGridView;
 import com.leqienglish.client.control.view.table.LQTableView;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
@@ -35,6 +38,9 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @Resource(name = "QueryContentsCommand")
     private QueryContentsCommand queryContentsCommand;
+
+    @Resource(name = "UpdateContentStatusCommand")
+    private UpdateContentStatusCommand updateContentStatusCommand;
 
     @Override
     public void refresh() {
@@ -73,19 +79,30 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     /**
      * 发布按钮点击事件
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     public void lunch(ActionEvent event) {
-
+        callUpdateContent(event, Content.LUNCH);
     }
 
     /**
      * 取消发布按钮点击事件
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     public void cancelLunch(ActionEvent event) {
+        callUpdateContent(event, Content.CANCEL_LUNCH);
+    }
 
+    private void callUpdateContent(ActionEvent event, int status) {
+        LQButton button = (LQButton) event.getSource();
+        Content content = (Content) button.getUserData();
+        Map<String, Object> param = new HashMap<>();
+        param.put(Command.ID, content.getId());
+        param.put(Command.DATA, status + "");
+        updateContentStatusCommand.doCommand(param);
     }
 }
