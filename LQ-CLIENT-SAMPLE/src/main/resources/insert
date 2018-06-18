@@ -1,0 +1,20 @@
+<insert  id="create" parameterType="${parameterType}" >
+        insert into 
+       ${table}
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+           <#list wheres as where>
+              <if test="${where.filedName} != null" >
+                  ${where.propertyName} ,
+             </if>
+           </#list>
+           
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+           <#list wheres as where>
+              <if test="${where.filedName} != null" >
+                  ${'#{'}${where.filedName} ,jdbcType=${where.type} ${'}'},
+             </if>
+           </#list>
+          
+        </trim>
+</insert>

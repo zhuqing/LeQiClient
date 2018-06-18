@@ -5,6 +5,8 @@
  */
 package com.leqienglish.client.control.timestemp;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Control;
@@ -19,6 +21,10 @@ public class TimeStemp extends Control {
     private StringProperty audioPath;
     private StringProperty sourceText;
     private StringProperty targetText;
+    /**
+     * 是否支持中文
+     */
+    private BooleanProperty suportChinease;
 
     @Override
     protected Skin<?> createDefaultSkin() {
@@ -95,5 +101,35 @@ public class TimeStemp extends Control {
      */
     public void setTargetText(String targetText) {
         this.targetTextProperty().setValue(targetText);
+    }
+
+    /**
+     * 是否支持中文
+     *
+     * @return the chinease
+     */
+    public Boolean isSuportChineaseChinease() {
+        return suportChineaseProperty().getValue();
+    }
+
+    /**
+     * 是否支持中文
+     *
+     * @return the chinease
+     */
+    public BooleanProperty suportChineaseProperty() {
+        if (suportChinease == null) {
+            suportChinease = new SimpleBooleanProperty(Boolean.FALSE);
+        }
+        return suportChinease;
+    }
+
+    /**
+     * 是否支持中文
+     *
+     * @param chinease the chinease to set
+     */
+    public void setSuportChineaseChinease(Boolean chinease) {
+        this.suportChineaseProperty().setValue(chinease);
     }
 }

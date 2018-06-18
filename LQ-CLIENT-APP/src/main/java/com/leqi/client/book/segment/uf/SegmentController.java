@@ -7,8 +7,8 @@ package com.leqi.client.book.segment.uf;
 
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.info.cf.QueryContentsCommand;
+import com.leqi.client.common.cf.DownLoadFileCommand;
 import com.leqienglish.client.control.button.LQButton;
-import com.leqienglish.client.control.view.gridview.LQGridView;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
@@ -22,7 +22,6 @@ import javafx.fxml.FXML;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 
 /**
@@ -41,6 +40,9 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @Resource(name = "UpdateContentStatusCommand")
     private UpdateContentStatusCommand updateContentStatusCommand;
+
+    @Resource(name = "DownLoadFileCommand")
+    private DownLoadFileCommand downLoadFileCommand;
 
     @Override
     public void refresh() {
@@ -68,6 +70,8 @@ public class SegmentController extends FXMLController<SegmentModel> {
         Map<String, Object> map = new HashMap<>();
         map.put("parentId", content.getId());
         queryContentsCommand.doCommand(map);
+        map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
+        downLoadFileCommand.doCommand(map);
     }
 
     private void segmentsTableViewSelectedChange(Content content) {

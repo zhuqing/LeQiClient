@@ -1,0 +1,16 @@
+<update id="update" parameterType="${parameterType}"  >
+    update 
+  ${table}
+    <set>
+          <#list wheres as where>
+  <#if where.propertyName == 'ID'>
+ <#continue>
+</#if>
+             <if test="${where.filedName} != null" >
+                   ${where.propertyName} =${'#{'}${where.filedName} ,jdbcType=${where.type} ${'}'},
+             </if>
+           </#list>
+     
+    </set>
+    where ID = ${'#{'}id,jdbcType=DECIMAL${'}'}
+</update>

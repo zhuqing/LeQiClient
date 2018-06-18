@@ -60,14 +60,14 @@ public class SaveContentCommand extends Command {
 
         Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("type", "mp3");
-
-        String path = this.restClient.upload("/file/uploadAudio", (MultiValueMap<String, Object>) this.getParameters("audio"), null,String.class);
-        content.setAudioPath(path);
+        String path = null;
+//        String path = this.restClient.upload("/file/uploadAudio", (MultiValueMap<String, Object>) this.getParameters("audio"), null,String.class);
+//        content.setAudioPath(path);
         if (content.getImagePath() != null && !content.getImagePath().isEmpty()) {
             paramMap.put("type", "jpg");
             path = this.restClient.upload("/file/uploadImage", (MultiValueMap<String, Object>) this.getParameters("image"), null, String.class);
             content.setImagePath(path);
-        }else{
+        } else {
             content.setImagePath("");
         }
 

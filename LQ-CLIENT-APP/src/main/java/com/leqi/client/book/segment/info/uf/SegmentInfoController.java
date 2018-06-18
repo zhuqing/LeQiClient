@@ -15,6 +15,7 @@ import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.gridview.LQGridView;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
 import java.util.HashMap;
@@ -22,6 +23,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -43,6 +45,8 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
     private LQTextAreaInputFormCell contentFormCell;
     @FXML
     private TimeStemp timeStemp;
+    @FXML
+    private CheckBox isSupportChinease;
 
     @Resource(name = "SaveContentCommand")
     private SaveContentCommand saveContentCommand;
@@ -56,19 +60,28 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
     public void initialize(URL location, ResourceBundle resources) {
         JavaFxObservable.nullableValuesOf(this.getModel().contentProperty())
                 .subscribe((p) -> contentInfoChange(p.orElse(null)));
-        
-        audioPathFormCell.setCommitConsumer((audioPath)->timeStemp.setAudioPath(audioPath));
-        contentFormCell.setCommitConsumer((content)->timeStemp.setSourceText(content+""));
+
+        JavaFxObservable.changesOf(this.isSupportChinease.selectedProperty())
+                .subscribe((c) -> timeStemp.setSuportChineaseChinease(c.getNewVal()));
+
+        //  audioPathFormCell.setCommitConsumer((audioPath)->timeStemp.setAudioPath(audioPath));
+        //  contentFormCell.setCommitConsumer((content)->timeStemp.setSourceText(content+""));
     }
 
-    private void contentInfoChange(Content content) {
+    private void contentInfoChange(Content content) throws Exception {
+
         contentInfoFormView.setValue(content);
+        if (content == null) {
+            timeStemp.setAudioPath(null);
+            return;
+        }
+        timeStemp.setAudioPath(FileUtil.toLocalFilePath(content.getAudioPath()));
     }
 
     @FXML
     public void save(ActionEvent event) {
         this.getModel().getContent().setTimePoint(timeStemp.getTargetText());
-        Map<String,Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put(Command.DATA, this.getModel().getContent());
         saveContentCommand.doCommand(map);
     }

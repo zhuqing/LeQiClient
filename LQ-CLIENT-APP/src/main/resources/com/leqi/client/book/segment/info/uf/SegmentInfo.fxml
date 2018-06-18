@@ -21,17 +21,18 @@
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"  prefWidth="60"   />
                 <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"  prefWidth="400"  />
                     
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Map3:"  prefWidth="60" />
+<!--                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Map3:"  prefWidth="60" />
                 <LQOpenFileFormCell fx:id="audioPathFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="audioPath"   prefWidth="400" >
 
-                </LQOpenFileFormCell>     
+                </LQOpenFileFormCell>     -->
                     
-                <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Content:"   prefWidth="60"/>
-                <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="content"  prefWidth="400"  />
+                <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Content:"   prefWidth="60"/>
+                <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="content"  prefWidth="400"  />
             </LQFormView>
             <TimeStemp fx:id="timeStemp">
             
             </TimeStemp>
+            <CheckBox fx:id="isSupportChinease" selected="false" text="is support chinease？" /> 
             <HBox>
                 <Button text="Save" onAction="#save"/>  
             </HBox>

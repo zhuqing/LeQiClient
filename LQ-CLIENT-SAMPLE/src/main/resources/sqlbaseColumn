@@ -1,0 +1,3 @@
+<sql id="Base_Column_List" >
+     <#list wheres as where>${where.propertyName} ,</#list>
+</sql>

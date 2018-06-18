@@ -16,3 +16,5 @@ LQ-CLIENT-APP/log/*
 LQ-CLIENT-APP/log/*.log
 .gradle/*.bin
 */*.lock
+/LQ-ENTITY - 副本/build/
+/LQ-CLIENT-CUSTOM-FX/build/

@@ -14,7 +14,7 @@ if (!hasProperty('mainClass')) {
 }
 
 dependencies {
-    compile project(':LQ-CLIENT-FX')
+    compile project(':LQ-CLIENT-CUSTOM-FX')
     compile group: 'org.apache.activemq', name: 'activemq-client', version: '5.14.0'
     
     compile group: 'org.springframework', name: 'spring-jms', version: '4.3.1.RELEASE'

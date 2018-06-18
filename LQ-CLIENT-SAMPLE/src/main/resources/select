@@ -1,0 +1,13 @@
+<select id="selectByEntity" resultMap="${resultMap}" parameterType="${parameterType}" >
+        select
+           <include refid="${selectField}" />
+        ${table}
+        <where>
+           <#list wheres as where>
+              <if test="${where.filedName} != null" >
+                  AND ${where.propertyName} =${'#{'}${where.filedName} ,jdbcType=${where.type} ${'}'}
+             </if>
+           </#list>
+            
+        </where>
+</select>

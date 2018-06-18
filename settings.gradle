@@ -1,4 +1,4 @@
-rootProject.name = 'LeQi-CLIENT'
+rootProject.name = 'LEQI-CLIENT'
 
 // Find the directories containing a "build.gradle" file in the root directory
 // of the project. That is, every directory containing a "build.gradle" will

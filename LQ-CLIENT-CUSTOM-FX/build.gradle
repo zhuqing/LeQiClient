@@ -9,25 +9,12 @@
 // Note however, that you may define your own "run" and "debug" task if you
 // prefer. In this case NetBeans will not add these tasks but you may rely on
 // your own implementation.
-configurations { providedCompile }
-
-sourceSets {
-    main {
-        compileClasspath += configurations.providedCompile
-    }
-    test {
-        compileClasspath += configurations.providedCompile
-        runtimeClasspath += configurations.providedCompile
-    }
-}
 
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'fxsampler.FXSampler'
+    ext.mainClass = ''
 }
 
 dependencies {
-    providedCompile files("${System.env['JAVA_HOME']}/jre/lib/ext/jfxrt.jar")
-   compile (group: 'org.freemarker', name: 'freemarker-gae', version: '2.3.28', changing: true)
-    compile fileTree(dir:'lib',include:['*.jar'])
-    compile project(':LQ-CLIENT-FW')
+   compile project(':LQ-CLIENT-FX')
+         
 }

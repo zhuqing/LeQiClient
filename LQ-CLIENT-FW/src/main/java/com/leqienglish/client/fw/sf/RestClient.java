@@ -8,12 +8,20 @@ package com.leqienglish.client.fw.sf;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Objects;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
@@ -50,13 +58,13 @@ import xyz.tobebetter.entity.Message;
 @Lazy
 @Component("RestClient")
 public class RestClient {
-
+    
     private static RestTemplate restTemplate;
-
+    
     private String serverPath = "http://127.0.0.1:8080";
-
+    
     protected final ObjectMapper mapper = new ObjectMapper();
-
+    
     static {
         // 长连接保持30秒
         PoolingHttpClientConnectionManager pollingConnectionManager = new PoolingHttpClientConnectionManager(30, TimeUnit.SECONDS);
@@ -64,7 +72,7 @@ public class RestClient {
         pollingConnectionManager.setMaxTotal(1000);
         // 同路由的并发数
         pollingConnectionManager.setDefaultMaxPerRoute(1000);
-
+        
         HttpClientBuilder httpClientBuilder = HttpClients.custom();
         httpClientBuilder.setConnectionManager(pollingConnectionManager);
         // 重试次数，默认是3次，没有开启
@@ -84,9 +92,9 @@ public class RestClient {
         headers.add(new BasicHeader("Accept-Encoding", "gzip,deflate"));
         headers.add(new BasicHeader("Accept-Language", "zh-CN"));
         headers.add(new BasicHeader("Connection", "Keep-Alive"));
-
+        
         httpClientBuilder.setDefaultHeaders(headers);
-
+        
         HttpClient httpClient = httpClientBuilder.build();
 
         // httpClient连接配置，底层是配置RequestConfig
@@ -106,65 +114,110 @@ public class RestClient {
         messageConverters.add(new FormHttpMessageConverter());
         // messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
         messageConverters.add(new MappingJackson2HttpMessageConverter());
-
+        
         restTemplate = new RestTemplate(messageConverters);
         restTemplate.setRequestFactory(clientHttpRequestFactory);
         restTemplate.setErrorHandler(new DefaultResponseErrorHandler());
 
 //        LOGGER.info("RestClient初始化完成");
     }
-
+    
     public <T> T post(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.POST, path, obj, parameter, claz);
     }
-
+    
     public <T> T put(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.PUT, path, obj, parameter, claz);
     }
-
+    
     public <T> T delete(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.DELETE, path, obj, parameter, claz);
     }
-
+    
     public <T> T upload(String path, MultiValueMap<String, Object> value, Map<String, String> parameter, Class<T> claz) throws Exception {
-
+        
         if (parameter == null) {
             parameter = new HashMap<>();
         }
-
+        
         HttpEntity entity = new HttpEntity(value, initHeaders());
         //  entity.getHeaders().
         ResponseEntity resEntity = restTemplate.exchange(serverPath + "/" + path, HttpMethod.POST, entity, Message.class, new HashMap());
         Message resultMessage = (Message) resEntity.getBody();
-
+        
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {
             throw new Exception(resultMessage.getMessage());
         }
-
+        
         return mapper.readValue(resultMessage.getData(), claz);
     }
-
-    public <T> T get(String path,  MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
+    
+    public <T> T get(String path, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.GET, path, null, parameter, claz);
     }
-
+    
     private <T> T excute(HttpMethod method, String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
-
+        
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         HttpEntity entity = new HttpEntity(obj, initHeaders());
         ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), method, entity, Message.class);
         Message resultMessage = (Message) resEntity.getBody();
-
+        
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {
             throw new Exception(resultMessage.getMessage());
         }
-
+        
         return mapper.readValue(resultMessage.getData(), claz);
     }
-
+    
     private HttpHeaders initHeaders() {
         HttpHeaders headers = new HttpHeaders();
         return headers;
     }
 
+    /**
+     * 下载文件
+     *
+     * @param path
+     * @param filePath
+     * @param hasdownload
+     * @throws MalformedURLException
+     * @throws IOException
+     * @throws Exception
+     */
+    public void downLoad(String path, String filePath, Consumer<Double> hasdownload) throws MalformedURLException, IOException, Exception {
+        //创建一个URL对象
+        URL url = new URL(serverPath + "/" + path);
+        //创建一个HTTP链接
+        HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
+        urlConn.setConnectTimeout(300000);
+        urlConn.connect();
+        
+        if (urlConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+            throw new Exception(urlConn.getResponseMessage());
+        }
+        
+        InputStream inputStream = urlConn.getInputStream();
+        int totalLength = inputStream.available();
+        OutputStream os = new FileOutputStream(filePath);
+        int length;
+        int lengtsh = 0;
+        byte[] bytes = new byte[1024];
+        while ((length = inputStream.read(bytes)) != -1) {
+            os.write(bytes, 0, length);
+            //获取当前进度值
+            lengtsh += length;
+            System.err.print("lengtsh:" + lengtsh + ",totalLength:" + totalLength);
+            //把值传给handler
+            if (hasdownload != null) {
+                hasdownload.accept(lengtsh * 1.0 / totalLength);
+            }
+        }
+        //关闭流
+        inputStream.close();
+        os.close();
+        os.flush();
+        
+    }
+    
 }

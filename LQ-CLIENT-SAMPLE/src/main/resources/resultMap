@@ -1,0 +1,8 @@
+<resultMap id="${resultMap}" type="${parameterType}" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <#list wheres as where>
+        <#if where.propertyName != 'ID'>
+    <result column="${where.propertyName}" property="${where.filedName}" jdbcType="${where.type}" />
+       </#if>
+    </#list>
+</resultMap>

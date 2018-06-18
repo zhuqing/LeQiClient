@@ -63,8 +63,8 @@ public class BookController extends FXMLController<BookModel> {
 
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
-    
-        @Resource(name = "QueryArticlesCommand")
+
+    @Resource(name = "QueryArticlesCommand")
     private QueryArticlesCommand queryArticlesCommand;
 
     @Override
@@ -135,9 +135,7 @@ public class BookController extends FXMLController<BookModel> {
         }
 
         this.bookBusinessPane.getChildren().setAll(this.segmentInfoModel.getRoot());
-
-        segmentInfoModel.setContent(createContent(this.articListView.getSelectionModel().getSelectedItem()));
-
+        segmentInfoModel.setContent(createSegmentInfo(this.articListView.getSelectionModel().getSelectedItem()));
     }
 
     @FXML
@@ -151,6 +149,10 @@ public class BookController extends FXMLController<BookModel> {
         bookBusinessPane.getChildren().setAll(this.articleInfoModel.getRoot());
     }
 
+    /**
+     * 创建书本
+     * @return 
+     */
     private Catalog createBook() {
         Catalog catalog = new Catalog();
         catalog.setType(Catalog.BOOK_TYPE);
@@ -158,13 +160,24 @@ public class BookController extends FXMLController<BookModel> {
         return catalog;
     }
 
-    private Content createContent(Content catalog) {
+    /**
+     * 创建文章的片段
+     * @param artical
+     * @return 
+     */
+    private Content createSegmentInfo(Content artical) {
         Content content = new Content();
-        content.setParentId(catalog.getId());
+        content.setParentId(artical.getId());
         content.setUserId("1");
+        content.setAudioPath(artical.getAudioPath());
         return content;
     }
 
+    /**
+     * 创建文章
+     * @param bookId
+     * @return 
+     */
     private Content createArticle(String bookId) {
         Content catalog = new Content();
         catalog.setCatalogId(bookId);
