@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 import javafx.util.Callback;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  *
@@ -27,8 +28,8 @@ public class FilterOpertorButtonsCallback implements Callback<List<LQButton>, Li
         }
 
         List<LQButton> hasFiltered = new ArrayList<>(1);
-        Content content = (Content) lqButtons.get(0).getUserData();
-        String status = content.getStatus() == Content.LUNCH ? "lunch" : "cancelLunch";
+        Segment segment = (Segment) lqButtons.get(0).getUserData();
+        String status = segment.getStatus() == Content.LUNCH ? "lunch" : "cancelLunch";
 
         for (LQButton lqButton : lqButtons) {
             if (Objects.equals(status, lqButton.getId())) {

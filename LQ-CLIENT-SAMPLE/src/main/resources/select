@@ -1,7 +1,7 @@
 <select id="findByEntity" resultMap="${resultMap}" parameterType="${parameterType}" >
         select
            <include refid="${selectField}" />
-        ${table}
+        from ${table}
         <where>
            <#list wheres as where>
               <if test="${where.filedName} != null" >

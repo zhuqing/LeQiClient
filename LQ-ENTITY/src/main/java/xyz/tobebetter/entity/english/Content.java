@@ -30,10 +30,7 @@ public class Content extends Entity {
      * 音频路径
      */
     private String audioPath;
-    /**
-     * 点
-     */
-    private String timePoint;
+
     /**
      * 标题
      */
@@ -109,19 +106,6 @@ public class Content extends Entity {
         this.audioPath = audioPath;
     }
 
-    /**
-     * @return the timePoint
-     */
-    public String getTimePoint() {
-        return timePoint;
-    }
-
-    /**
-     * @param timePoint the timePoint to set
-     */
-    public void setTimePoint(String timePoint) {
-        this.timePoint = timePoint;
-    }
 
     /**
      * @return the title
