@@ -1,4 +1,4 @@
-<select id="selectByEntity" resultMap="${resultMap}" parameterType="${parameterType}" >
+<select id="findByEntity" resultMap="${resultMap}" parameterType="${parameterType}" >
         select
            <include refid="${selectField}" />
         ${table}

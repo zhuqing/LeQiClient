@@ -6,7 +6,7 @@
 package com.leqi.client.book.segment.uf;
 
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
-import com.leqi.client.book.segment.info.cf.QueryContentsCommand;
+import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
 import com.leqi.client.common.cf.DownLoadFileCommand;
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.control.view.table.LQTableView;
@@ -23,6 +23,7 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  *
@@ -33,10 +34,10 @@ import xyz.tobebetter.entity.english.Content;
 public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
-    private LQTableView<Content> segmentsTableView;
+    private LQTableView<Segment> segmentsTableView;
 
-    @Resource(name = "QueryContentsCommand")
-    private QueryContentsCommand queryContentsCommand;
+    @Resource(name = "QuerySegmentsCommand")
+    private QuerySegmentsCommand querySegmentsCommand;
 
     @Resource(name = "UpdateContentStatusCommand")
     private UpdateContentStatusCommand updateContentStatusCommand;
@@ -51,8 +52,8 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        JavaFxObservable.changesOf(this.getModel().getContents())
-                .subscribe((lc) -> segmentsTableView.getItems().setAll(this.getModel().getContents()));
+        JavaFxObservable.changesOf(this.getModel().getSegments())
+                .subscribe((lc) -> segmentsTableView.getItems().setAll(this.getModel().getSegments()));
 
         JavaFxObservable.changesOf(segmentsTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((b) -> segmentsTableViewSelectedChange(b.getNewVal()));
@@ -64,17 +65,17 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     private void articleChange(Content content) {
         if (content == null) {
-            this.getModel().getContents().clear();
+            this.getModel().getSegments().clear();
             return;
         }
         Map<String, Object> map = new HashMap<>();
-        map.put("parentId", content.getId());
-        queryContentsCommand.doCommand(map);
+        map.put("contentId", content.getId());
+        querySegmentsCommand.doCommand(map);
         map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
         downLoadFileCommand.doCommand(map);
     }
 
-    private void segmentsTableViewSelectedChange(Content content) {
+    private void segmentsTableViewSelectedChange(Segment content) {
         if (content == null) {
             return;
         }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.segment.info.cf;
+package com.leqi.client.book.segment.cf;
 
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.fw.cf.QueryCommand;
@@ -14,14 +14,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  *
  * @author zhuqing
  */
 @Lazy
-@Component("QueryContentsCommand")
-public class QueryContentsCommand extends QueryCommand {
+@Component("QuerySegmentsCommand")
+public class QuerySegmentsCommand extends QueryCommand {
 
     @Resource(name = "SegmentModel")
     private SegmentModel segmentModel;
@@ -35,21 +36,17 @@ public class QueryContentsCommand extends QueryCommand {
     protected void run(Map<String, Object> param) throws Exception {
         MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
 
-        parameter.add("page", this.getPageNum() + "");
-        parameter.add("pageSize", this.getPageSize() + "");
+        parameter.add("contentId", (String) param.get("contentId"));
 
-        if (param.get("parentId") != null) {
-            parameter.add("parentId", (String) param.get("parentId"));
-        }
-        Content[] contents = this.restClient.get("/english/content/findContentByParentId", parameter, Content[].class);
+        Segment[] contents = this.restClient.get("/segment/findByContentId", parameter, Segment[].class);
         this.putParameters("datas", contents);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        Content[] catalogs = (Content[]) this.getParameters("datas");
+        Segment[] catalogs = (Segment[]) this.getParameters("datas");
 
-        segmentModel.getContents().setAll(catalogs);
+        segmentModel.getSegments().setAll(catalogs);
 
     }
 

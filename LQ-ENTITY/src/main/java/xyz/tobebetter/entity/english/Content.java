@@ -51,7 +51,7 @@ public class Content extends Entity {
     /**
      * 阅读数
      */
-    private Long readNum = 0L;
+    private Long readNum ;
 
     /**
      * @return the content

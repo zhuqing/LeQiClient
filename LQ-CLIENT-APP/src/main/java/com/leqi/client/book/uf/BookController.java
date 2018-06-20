@@ -31,6 +31,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  *
@@ -135,7 +136,8 @@ public class BookController extends FXMLController<BookModel> {
         }
 
         this.bookBusinessPane.getChildren().setAll(this.segmentInfoModel.getRoot());
-        segmentInfoModel.setContent(createSegmentInfo(this.articListView.getSelectionModel().getSelectedItem()));
+        segmentInfoModel.setArticle(this.articListView.getSelectionModel().getSelectedItem());
+        segmentInfoModel.setSegment(createSegmentInfo(this.articListView.getSelectionModel().getSelectedItem()));
     }
 
     @FXML
@@ -151,7 +153,8 @@ public class BookController extends FXMLController<BookModel> {
 
     /**
      * 创建书本
-     * @return 
+     *
+     * @return
      */
     private Catalog createBook() {
         Catalog catalog = new Catalog();
@@ -162,21 +165,22 @@ public class BookController extends FXMLController<BookModel> {
 
     /**
      * 创建文章的片段
+     *
      * @param artical
-     * @return 
+     * @return
      */
-    private Content createSegmentInfo(Content artical) {
-        Content content = new Content();
-        content.setParentId(artical.getId());
-        content.setUserId("1");
-        content.setAudioPath(artical.getAudioPath());
-        return content;
+    private Segment createSegmentInfo(Content artical) {
+        Segment segment = new Segment();
+        segment.setUserId("1");
+        segment.setContentId(artical.getId());
+        return segment;
     }
 
     /**
      * 创建文章
+     *
      * @param bookId
-     * @return 
+     * @return
      */
     private Content createArticle(String bookId) {
         Content catalog = new Content();

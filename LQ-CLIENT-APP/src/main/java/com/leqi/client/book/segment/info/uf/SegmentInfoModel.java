@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  * 每篇文章下面的段
@@ -24,9 +25,14 @@ import xyz.tobebetter.entity.english.Content;
 public class SegmentInfoModel extends FXMLModel {
 
     /**
-     * Content
+     * 文章内容
      */
-    private ObjectProperty<Content> content;
+    private ObjectProperty<Segment> segment;
+
+    /**
+     * 文章
+     */
+    private ObjectProperty<Content> article;
 
     public SegmentInfoModel() {
         setFxmlPath("/com/leqi/client/book/segment/info/uf/SegmentInfo.fxml");
@@ -43,8 +49,8 @@ public class SegmentInfoModel extends FXMLModel {
      *
      * @return the content
      */
-    public Content getContent() {
-        return contentProperty().getValue();
+    public Segment getSegment() {
+        return segmentProperty().getValue();
     }
 
     /**
@@ -52,11 +58,11 @@ public class SegmentInfoModel extends FXMLModel {
      *
      * @return the content
      */
-    public ObjectProperty<Content> contentProperty() {
-        if (content == null) {
-            content = new SimpleObjectProperty<Content>();
+    public ObjectProperty<Segment> segmentProperty() {
+        if (segment == null) {
+            segment = new SimpleObjectProperty<Segment>();
         }
-        return content;
+        return segment;
     }
 
     /**
@@ -64,8 +70,38 @@ public class SegmentInfoModel extends FXMLModel {
      *
      * @param content the content to set
      */
-    public void setContent(Content content) {
-        this.contentProperty().setValue(content);
+    public void setSegment(Segment content) {
+        this.segmentProperty().setValue(content);
+    }
+
+    /**
+     * 文章
+     *
+     * @return the article
+     */
+    public Content getArticle() {
+        return articleProperty().getValue();
+    }
+
+    /**
+     * 文章
+     *
+     * @return the article
+     */
+    public ObjectProperty<Content> articleProperty() {
+        if (article == null) {
+            article = new SimpleObjectProperty<Content>();
+        }
+        return article;
+    }
+
+    /**
+     * 文章
+     *
+     * @param article the article to set
+     */
+    public void setArticle(Content article) {
+        this.articleProperty().setValue(article);
     }
 
 }

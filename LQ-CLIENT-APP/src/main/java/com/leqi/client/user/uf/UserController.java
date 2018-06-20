@@ -130,15 +130,6 @@ public class UserController extends FXMLController<UserModel> {
     @FXML
     public void createSegment(ActionEvent event) {
 
-        if (this.articListView.getSelectionModel().getSelectedItem() == null) {
-            AlertUtil.showError("没有选中文章");
-            return;
-        }
-
-        this.bookBusinessPane.getChildren().setAll(this.segmentInfoModel.getRoot());
-
-        segmentInfoModel.setContent(createContent(this.articListView.getSelectionModel().getSelectedItem()));
-
     }
 
     @FXML

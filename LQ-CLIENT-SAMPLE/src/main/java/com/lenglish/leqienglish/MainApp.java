@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  * 使用freeMarker，生成mybatis配置xml
@@ -32,7 +33,7 @@ import xyz.tobebetter.entity.english.Content;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(Content.class, Content.class, "PATIENT_RCMC", "Base_DrugInfo_List");
+        createMaper(Segment.class, Segment.class, "SEGMENT", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {
@@ -126,7 +127,7 @@ public class MainApp {
                 return "VARCHAR";
             case "int":
             case "Integer":
-                return "INT";
+                return "INTEGER";
             case "long":
             case "Long":
                 return "BIGINT";
