@@ -12,13 +12,9 @@ import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.control.view.listview.LQListView;
-import com.leqienglish.client.fw.sf.FileService;
-
-import com.leqienglish.client.fw.sf.UpLoadFileService;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
-import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +25,7 @@ import javafx.scene.layout.StackPane;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
@@ -105,7 +102,7 @@ public class BookController extends FXMLController<BookModel> {
 
     private void queryArticle(String parentId, int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
-        param.put("type", Catalog.CHAPTER_TYPE);
+
         param.put("catalogId", parentId);
         queryArticlesCommand.setPageNum(page);
         queryArticlesCommand.setPageSize(pageSize);
@@ -114,7 +111,7 @@ public class BookController extends FXMLController<BookModel> {
 
     private void queryBooks(int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
-        param.put("type", Catalog.BOOK_TYPE);
+        param.put("type", Consistent.BOOK_TYPE);
         queryCatalogCommand.setPageNum(page);
         queryCatalogCommand.setPageSize(pageSize);
         queryCatalogCommand.doCommand(param);
@@ -158,7 +155,7 @@ public class BookController extends FXMLController<BookModel> {
      */
     private Catalog createBook() {
         Catalog catalog = new Catalog();
-        catalog.setType(Catalog.BOOK_TYPE);
+        catalog.setType(Consistent.BOOK_TYPE);
         catalog.setUserId("1");
         return catalog;
     }
@@ -172,6 +169,7 @@ public class BookController extends FXMLController<BookModel> {
     private Segment createSegmentInfo(Content artical) {
         Segment segment = new Segment();
         segment.setUserId("1");
+      
         segment.setContentId(artical.getId());
         return segment;
     }

@@ -5,27 +5,15 @@
  */
 package xyz.tobebetter.entity.english;
 
-import xyz.tobebetter.entity.Entity;
-
 /**
- * 用户订阅分类的关系实体
- *
+ *用户已经背诵完成的段
  * @author zhuqing
  */
-public class UserAndCatalog extends Entity {
-
-
-    /**
-     * 用户ID
-     */       
+public class UserAndSegment {
     private String userId;
-    /**
-     * 分类Id
-     */
-    private String catalogId;
+    private String segmentId;
 
     /**
-     * 用户ID
      * @return the userId
      */
     public String getUserId() {
@@ -33,7 +21,6 @@ public class UserAndCatalog extends Entity {
     }
 
     /**
-     * 用户ID
      * @param userId the userId to set
      */
     public void setUserId(String userId) {
@@ -41,20 +28,17 @@ public class UserAndCatalog extends Entity {
     }
 
     /**
-     * 分类Id
-     * @return the catalogId
+     * @return the segmentId
      */
-    public String getCatalogId() {
-        return catalogId;
+    public String getSegmentId() {
+        return segmentId;
     }
 
     /**
-     * 分类Id
-     * @param catalogId the catalogId to set
+     * @param segmentId the segmentId to set
      */
-    public void setCatalogId(String catalogId) {
-        this.catalogId = catalogId;
+    public void setSegmentId(String segmentId) {
+        this.segmentId = segmentId;
     }
-    
     
 }

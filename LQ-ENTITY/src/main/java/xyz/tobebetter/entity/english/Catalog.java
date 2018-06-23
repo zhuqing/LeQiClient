@@ -12,18 +12,7 @@ import xyz.tobebetter.entity.Entity;
  * @author zhuqing
  */
 public class Catalog extends Entity{
-    /**
-     * 课本类型
-     */
-    public final static int BOOK_TYPE = 1;
-    /**
-     * 章节类型
-     */
-    public final static int CHAPTER_TYPE=2;
-    /**
-     * 分类类型
-     */
-    public final static int CATALOG_TYPE=3;
+ 
     /**
      * 分类的标题
      */

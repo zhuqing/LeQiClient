@@ -5,39 +5,13 @@
  */
 package xyz.tobebetter.entity.english;
 
-import xyz.tobebetter.entity.Entity;
-
 /**
- *
+ *用户关注的单词
  * @author zhuqing
  */
-public class ContentWordUserRelationship extends Entity {
-
-    private String contentId;
+public class UserAndWord {
     private String userId;
     private String wordId;
-
-    public static ContentWordUserRelationship create(String contentId, String userId, String wordId) {
-        ContentWordUserRelationship ship = new ContentWordUserRelationship();
-        ship.setContentId(contentId);
-        ship.setUserId(userId);
-        ship.setWordId(wordId);
-        return ship;
-    }
-
-    /**
-     * @return the contentId
-     */
-    public String getContentId() {
-        return contentId;
-    }
-
-    /**
-     * @param contentId the contentId to set
-     */
-    public void setContentId(String contentId) {
-        this.contentId = contentId;
-    }
 
     /**
      * @return the userId
@@ -66,5 +40,5 @@ public class ContentWordUserRelationship extends Entity {
     public void setWordId(String wordId) {
         this.wordId = wordId;
     }
-
+    
 }

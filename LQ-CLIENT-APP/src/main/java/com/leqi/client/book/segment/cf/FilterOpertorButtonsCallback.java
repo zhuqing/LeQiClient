@@ -5,13 +5,13 @@
  */
 package com.leqi.client.book.segment.cf;
 
-
 import com.leqienglish.client.control.button.LQButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import javafx.util.Callback;
+import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 
@@ -29,7 +29,7 @@ public class FilterOpertorButtonsCallback implements Callback<List<LQButton>, Li
 
         List<LQButton> hasFiltered = new ArrayList<>(1);
         Segment segment = (Segment) lqButtons.get(0).getUserData();
-        String status = segment.getStatus() == Content.LUNCH ? "lunch" : "cancelLunch";
+        String status = Objects.equals(segment.getStatus(), Consistent.HAS_LAUNCHED) ? "cancelLunch" : "lunch";
 
         for (LQButton lqButton : lqButtons) {
             if (Objects.equals(status, lqButton.getId())) {

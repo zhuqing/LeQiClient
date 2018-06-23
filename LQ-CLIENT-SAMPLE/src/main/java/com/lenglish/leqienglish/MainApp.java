@@ -33,7 +33,7 @@ import xyz.tobebetter.entity.english.Segment;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(Content.class, Content.class, "CONTENT", "Base_Column_List");
+        createMaper(Segment.class, Segment.class, "SEGMENT", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {

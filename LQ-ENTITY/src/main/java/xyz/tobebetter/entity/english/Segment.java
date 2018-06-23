@@ -16,6 +16,10 @@ public class Segment extends Entity{
     private String content;
     private String userId;
     private String contentId;
+    /**
+     * 阅读数量，默认是0
+     */
+    private Long readNum = 0L;
 
     /**
      * @return the title
@@ -71,6 +75,22 @@ public class Segment extends Entity{
      */
     public void setContentId(String contentId) {
         this.contentId = contentId;
+    }
+
+    /**
+     * 阅读数量
+     * @return the readNum
+     */
+    public Long getReadNum() {
+        return readNum;
+    }
+
+    /**
+     * 阅读数量
+     * @param readNum the readNum to set
+     */
+    public void setReadNum(Long readNum) {
+        this.readNum = readNum;
     }
     
     

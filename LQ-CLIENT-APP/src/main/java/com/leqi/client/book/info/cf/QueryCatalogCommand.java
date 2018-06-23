@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
 
 /**
@@ -56,7 +57,7 @@ public class QueryCatalogCommand extends QueryCommand {
 
         Integer type = (Integer) param.get("type");
         switch (type) {
-            case Catalog.BOOK_TYPE:
+            case Consistent.BOOK_TYPE:
                 bookModel.setBooks(Arrays.asList(catalogs));
                 break;
 //            case Catalog.CHAPTER_TYPE:

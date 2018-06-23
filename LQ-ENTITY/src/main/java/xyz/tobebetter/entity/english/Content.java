@@ -16,8 +16,6 @@ import xyz.tobebetter.entity.Entity;
 
 public class Content extends Entity {
 
-    public static final int LUNCH = 0;
-    public static final int CANCEL_LUNCH = 1;
     
     private String content;
 

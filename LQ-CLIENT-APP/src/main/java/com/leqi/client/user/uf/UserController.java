@@ -64,8 +64,8 @@ public class UserController extends FXMLController<UserModel> {
 
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
-    
-        @Resource(name = "QueryArticlesCommand")
+
+    @Resource(name = "QueryArticlesCommand")
     private QueryArticlesCommand queryArticlesCommand;
 
     @Override
@@ -87,14 +87,13 @@ public class UserController extends FXMLController<UserModel> {
         JavaFxObservable.changesOf(articListView.getSelectionModel().selectedItemProperty())
                 .subscribe((catalog) -> articListViewSelectedChange(catalog.getNewVal()));
 
-        queryBooks(1, 20);
     }
 
     private void bookListViewSelectedChange(Catalog catalog) {
         if (catalog == null) {
             return;
         }
-        queryArticle(catalog.getId(), 1, 20);
+
     }
 
     private void articListViewSelectedChange(Content content) {
@@ -103,28 +102,9 @@ public class UserController extends FXMLController<UserModel> {
         segmentModel.setArticle(content);
     }
 
-    private void queryArticle(String parentId, int page, int pageSize) {
-        Map<String, Object> param = new HashMap<String, Object>();
-        param.put("type", Catalog.CHAPTER_TYPE);
-        param.put("catalogId", parentId);
-        queryArticlesCommand.setPageNum(page);
-        queryArticlesCommand.setPageSize(pageSize);
-        queryArticlesCommand.doCommand(param);
-    }
-
-    private void queryBooks(int page, int pageSize) {
-        Map<String, Object> param = new HashMap<String, Object>();
-        param.put("type", Catalog.BOOK_TYPE);
-        queryCatalogCommand.setPageNum(page);
-        queryCatalogCommand.setPageSize(pageSize);
-        queryCatalogCommand.doCommand(param);
-    }
-
     @FXML
     public void createBook(ActionEvent event) {
 
-        bookInfoModel.setCatalog(createBook());
-        bookBusinessPane.getChildren().setAll(this.bookInfoModel.getRoot());
     }
 
     @FXML
@@ -141,13 +121,6 @@ public class UserController extends FXMLController<UserModel> {
         String bookId = this.bookListView.getSelectionModel().getSelectedItem().getId();
         articleInfoModel.setContent(createArticle(bookId));
         bookBusinessPane.getChildren().setAll(this.articleInfoModel.getRoot());
-    }
-
-    private Catalog createBook() {
-        Catalog catalog = new Catalog();
-        catalog.setType(Catalog.BOOK_TYPE);
-        catalog.setUserId("1");
-        return catalog;
     }
 
     private Content createContent(Content catalog) {

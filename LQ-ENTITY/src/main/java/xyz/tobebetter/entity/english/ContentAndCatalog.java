@@ -6,27 +6,26 @@
 package xyz.tobebetter.entity.english;
 
 /**
- *用户和内容的关系表，用户订阅的内容
+ * 文章和分类的关联
+ *
  * @author zhuqing
  */
-public class UserAndContent {
-    private String userId;
+public class ContentAndCatalog {
+    private String catalogId;
     private String contentId;
 
-    
-
     /**
-     * @return the userId
+     * @return the catalogId
      */
-    public String getUserId() {
-        return userId;
+    public String getCatalogId() {
+        return catalogId;
     }
 
     /**
-     * @param userId the userId to set
+     * @param catalogId the catalogId to set
      */
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
     }
 
     /**
@@ -42,6 +41,5 @@ public class UserAndContent {
     public void setContentId(String contentId) {
         this.contentId = contentId;
     }
-
     
 }

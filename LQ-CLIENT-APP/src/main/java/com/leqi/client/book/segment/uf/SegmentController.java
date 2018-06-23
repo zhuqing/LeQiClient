@@ -7,6 +7,7 @@ package com.leqi.client.book.segment.uf;
 
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
+import com.leqi.client.book.segment.cf.UpdateSegmentStatusCommand;
 import com.leqi.client.common.cf.DownLoadFileCommand;
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.control.view.table.LQTableView;
@@ -22,6 +23,7 @@ import javafx.fxml.FXML;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 
@@ -44,6 +46,9 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @Resource(name = "DownLoadFileCommand")
     private DownLoadFileCommand downLoadFileCommand;
+
+    @Resource(name = "UpdateSegmentStatusCommand")
+    private UpdateSegmentStatusCommand updateSegmentStatusCommand;
 
     @Override
     public void refresh() {
@@ -89,7 +94,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
      */
     @FXML
     public void lunch(ActionEvent event) {
-        callUpdateContent(event, Content.LUNCH);
+        callUpdateContent(event, Consistent.HAS_LAUNCHED);
     }
 
     /**
@@ -99,15 +104,16 @@ public class SegmentController extends FXMLController<SegmentModel> {
      */
     @FXML
     public void cancelLunch(ActionEvent event) {
-        callUpdateContent(event, Content.CANCEL_LUNCH);
+        callUpdateContent(event, Consistent.UN_LAUNCH);
     }
 
     private void callUpdateContent(ActionEvent event, int status) {
         LQButton button = (LQButton) event.getSource();
-        Content content = (Content) button.getUserData();
+        Segment content = (Segment) button.getUserData();
         Map<String, Object> param = new HashMap<>();
         param.put(Command.ID, content.getId());
         param.put(Command.DATA, status + "");
-        updateContentStatusCommand.doCommand(param);
+        param.put(Command.MODEL, this.getModel());
+        updateSegmentStatusCommand.doCommand(param);
     }
 }

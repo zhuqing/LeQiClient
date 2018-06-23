@@ -38,7 +38,7 @@ public abstract class Command extends LogFacade {
     public static String DATA = "data";
     public static String ID = "ID";
     public static String MODEL = "MODEL";
-
+   public static String ENTITY = "ENTITY";
 
     protected boolean wait = true;
 

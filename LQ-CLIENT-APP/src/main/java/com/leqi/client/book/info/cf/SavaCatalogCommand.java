@@ -18,6 +18,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
 
 /**
@@ -54,7 +55,7 @@ public class SavaCatalogCommand extends Command {
             AlertUtil.showError("保存失败！");
         } else {
             Catalog newCatalog = (Catalog) this.getParameters("data");
-            if (Objects.equal(newCatalog.getType(), Catalog.BOOK_TYPE)) {
+            if (Objects.equal(newCatalog.getType(), Consistent.BOOK_TYPE)) {
                 this.bookModel.getBooks().add(newCatalog);
             }
 //            else if (Objects.equal(newCatalog.getType(), Catalog.CHAPTER_TYPE)) {
