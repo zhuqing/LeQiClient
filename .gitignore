@@ -27,3 +27,7 @@ LQ-CLIENT-APP/log/*.log
 .gradle/2.10/taskArtifacts/fileSnapshots.bin
 .gradle/2.10/taskArtifacts/outputFileStates.bin
 .gradle/2.10/taskArtifacts/taskArtifacts.bin
+.gradle/2.10/taskArtifacts/taskArtifacts.bin
+.gradle/2.10/taskArtifacts/outputFileStates.bin
+.gradle/2.10/taskArtifacts/fileSnapshots.bin
+.gradle/2.10/taskArtifacts/fileHashes.bin
