@@ -110,6 +110,7 @@ public abstract class AbstractApplication extends Application {
         AbstractApplication.scene = scene;
 
         configScene(scene);
+        //scene.setUserAgentStylesheet("/css/lqapp.css");
         primaryStage.setScene(scene);
         configStage(primaryStage);
 //        ScenicView.show(scene);

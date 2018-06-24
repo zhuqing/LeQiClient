@@ -9,6 +9,8 @@ import com.leqi.client.content.*;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.annotation.Resource;
@@ -33,6 +35,8 @@ public class BookModel extends FXMLModel {
      * 书下的文章列表
      */
     private ObservableList<Content> articles;
+
+    private StringProperty bookBusinessId;
 
     public BookModel() {
         setFxmlPath("/com/leqi/client/book/uf/Book.fxml");
@@ -86,5 +90,29 @@ public class BookModel extends FXMLModel {
      */
     public void setArticles(List<Content> articles) {
         this.getArticles().setAll(articles);
+    }
+
+    /**
+     * @return the bookBusinessId
+     */
+    public String getBookBusinessId() {
+        return bookBusinessIdProperty().getValue();
+    }
+
+    /**
+     * @return the bookBusinessId
+     */
+    public StringProperty bookBusinessIdProperty() {
+        if (bookBusinessId == null) {
+            bookBusinessId = new SimpleStringProperty();
+        }
+        return bookBusinessId;
+    }
+
+    /**
+     * @param bookBusinessId the bookBusinessId to set
+     */
+    public void setBookBusinessId(String bookBusinessId) {
+        this.bookBusinessIdProperty().setValue(bookBusinessId);
     }
 }

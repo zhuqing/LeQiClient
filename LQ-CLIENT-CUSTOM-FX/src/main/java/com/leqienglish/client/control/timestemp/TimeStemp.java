@@ -26,6 +26,8 @@ public class TimeStemp extends Control {
      */
     private BooleanProperty suportChinease;
 
+    private BooleanProperty playing;
+
     @Override
     protected Skin<?> createDefaultSkin() {
         return new TimeStempSkin(this);
@@ -132,4 +134,29 @@ public class TimeStemp extends Control {
     public void setSuportChineaseChinease(Boolean chinease) {
         this.suportChineaseProperty().setValue(chinease);
     }
+
+    /**
+     * @return the playing
+     */
+    public Boolean getPlaying() {
+        return playingProperty().getValue();
+    }
+
+    /**
+     * @return the playing
+     */
+    public BooleanProperty playingProperty() {
+        if (playing == null) {
+            playing = new SimpleBooleanProperty(Boolean.FALSE);
+        }
+        return playing;
+    }
+
+    /**
+     * @param playing the playing to set
+     */
+    public void setPlaying(Boolean playing) {
+        this.playingProperty().setValue(playing);
+    }
+
 }

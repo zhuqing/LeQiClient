@@ -20,11 +20,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import xyz.tobebetter.entity.Consistent;
 
 /**
  *
@@ -45,6 +48,10 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
     private List<TextField> labels;
 
     private List<String> texts = new ArrayList<>();
+
+    private List<HBox> timeHBoxs;
+
+    private Label timeLabel;
 
     private VBox labelBox;
 
@@ -73,6 +80,9 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
 
         rootPane.setCenter(scrollPane);
         rootPane.setBottom(createplayBar());
+
+        this.timeLabel = new Label("0");
+
         initListener();
     }
 
@@ -84,22 +94,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         addPoint.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (timeStempIndex >= texts.size()) {
-                    return;
-                } else {
-
-                    String text = texts.get(timeStempIndex);
-                    if (text.contains(":")) {
-                        text = text.split(":")[1];
-                    }
-                    texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + ":" + text);
-                    labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
-                    toTargetText(texts);
-                    timeStempIndex++;
-                    if (getSkinnable().isSuportChineaseChinease()) {
-                        timeStempIndex++;
-                    }
-                }
+                addPoint();
             }
         });
 
@@ -107,26 +102,74 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         return hbox;
     }
 
+    private void addPoint() {
+        if (timeStempIndex >= texts.size()) {
+            return;
+        } else {
+
+            String text = texts.get(timeStempIndex);
+            if (text.contains(Consistent.SLIP_TIME_AND_TEXT)) {
+                text = text.split(Consistent.SLIP_TIME_AND_TEXT)[1];
+            }
+            texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + Consistent.SLIP_TIME_AND_TEXT + text);
+            labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
+            toTargetText(texts);
+            timeStempIndex++;
+            if (getSkinnable().isSuportChineaseChinease()) {
+                timeStempIndex++;
+            }
+
+            moveTimeLabel();
+        }
+    }
+
+    private void moveTimeLabel() {
+        if (timeStempIndex < texts.size()) {
+            timeHBoxs.get(timeStempIndex).getChildren().setAll(timeLabel);
+        }
+    }
+
     private void initLabels(List<String> sources) {
         this.labels = new ArrayList<>(sources.size());
+        timeHBoxs = new ArrayList<>(sources.size());
+
         labelBox.getChildren().clear();
         int i = 0;
         for (String text : sources) {
 
-            TextField label = new TextField(text);
+            TextField label = createSetences(text);
+
             label.setUserData(i);
-            labels.add(label);
-            label.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    TextField la = (TextField) event.getSource();
-                    timeStempIndex = (int) la.getUserData();
-                }
-            });
+
             i++;
         }
 
-        labelBox.getChildren().addAll(labels);
+    }
+
+    private TextField createSetences(String text) {
+        HBox hbox = new HBox();
+
+        HBox timeBox = new HBox();
+        timeBox.setPrefWidth(60);
+        timeHBoxs.add(timeBox);
+
+        TextField scentens = new TextField(text);
+        scentens.setPrefWidth(this.textField.getWidth() - 70);
+
+        scentens.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                TextField la = (TextField) event.getSource();
+                timeStempIndex = (int) la.getUserData();
+                moveTimeLabel();
+            }
+        });
+
+        hbox.getChildren().addAll(timeBox, scentens);
+        labelBox.getChildren().add(hbox);
+
+        labels.add(scentens);
+        return scentens;
     }
 
     private void initListener() {
@@ -148,8 +191,10 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                     texts.add(item);
                 }
                 timeStempIndex = 0;
-                texts.set(0, "0:" + texts.get(0));
+                texts.set(0, texts.get(0));
                 toTargetText(texts);
+                timeLabel.setText("0:");
+                moveTimeLabel();
             }
         });
 
@@ -159,10 +204,25 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         JavaFxObservable.nullableValuesOf(this.getSkinnable().audioPathProperty())
                 .subscribe(p -> setAudioPath(p.orElse("")));
 
+        JavaFxObservable.changesOf(audioPlay.currentPlayTimeProperty())
+                .subscribe((p) -> this.timeLabel.setText(p.getNewVal() + ":"));
+
+        //this.audioPlay.currentPlayTimeProperty().addListener(listener);
+        this.getSkinnable().addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() != KeyCode.SPACE) {
+                    return;
+                }
+                addPoint();
+            }
+        });
+
         if (this.getSkinnable().getSourceText() != null) {
             this.textField.setText("");
         }
         setAudioPath(this.getSkinnable().getAudioPath());
+        this.audioPlay.playingProperty().bindBidirectional(this.getSkinnable().playingProperty());
     }
 
     private void setAudioPath(String path) {
@@ -179,7 +239,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
 
         for (int i = 0; i < texts.size(); i++) {
             if (this.getSkinnable().isSuportChineaseChinease()) {
-                sb.append(texts.get(i)).append("|||").append(texts.get(i + 1)).append("\n");
+                sb.append(texts.get(i)).append(Consistent.SLIP_EN_AND_CH).append(texts.get(i + 1)).append("\n");
                 i++;
             } else {
                 sb.append(texts.get(i)).append("\n");

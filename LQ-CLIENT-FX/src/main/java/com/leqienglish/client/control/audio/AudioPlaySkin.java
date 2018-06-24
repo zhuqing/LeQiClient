@@ -6,6 +6,7 @@
 package com.leqienglish.client.control.audio;
 
 import com.leqienglish.client.control.CustomSkin;
+import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -102,44 +103,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
         return slider;
     }
 
-//    private StackPane createTimeBar() {
-//        this.progressBar = this.createProgressBar();
-//        
-//        StackPane stackPane = new StackPane();
-//        stackPane.getChildren().addAll(progressBar, this.createAudioButton());
-//        return stackPane;
-//    }
-    private Button createAudioButton() {
-        this.audioButton = new Button();
-
-        audioButton.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                pressed = true;
-                startX = event.getX();
-            }
-        });
-
-        audioButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                pressed = false;
-            }
-        });
-
-        audioButton.addEventHandler(MouseEvent.MOUSE_MOVED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (event.getButton() != MouseButton.PRIMARY || !pressed) {
-                    return;
-                }
-                System.err.println(event);
-                double newX = event.getX();
-                audioButton.setLayoutX(audioButton.getLayoutX() + newX - startX);
-            }
-        });
-        return audioButton;
-    }
+  
 
     private HBox createOpeatorBar() {
         HBox hbox = new HBox();
@@ -196,12 +160,14 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
 
             }
         });
-    }
-
-    private ProgressBar createProgressBar() {
-        ProgressBar pb = new ProgressBar(0.0);
-
-        return pb;
+        JavaFxObservable.changesOf(getSkinnable().playingProperty()).map(c -> c.getNewVal())
+                .subscribe((c) -> {
+                    if (c) {
+                        mediaplay.play();
+                    } else {
+                        mediaplay.pause();
+                    }
+                });
     }
 
     private Button playButton() {
@@ -214,6 +180,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                 }
                 mediaplay.getTotalDuration().toMillis();
                 mediaplay.play();
+                getSkinnable().setPlaying(true);
             }
         });
 
@@ -250,6 +217,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                 }
 
                 mediaplay.pause();
+                getSkinnable().setPlaying(false);
             }
         });
 

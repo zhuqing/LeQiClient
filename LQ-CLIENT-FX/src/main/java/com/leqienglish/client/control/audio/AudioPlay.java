@@ -6,7 +6,9 @@
 package com.leqienglish.client.control.audio;
 
 import java.util.List;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.LongProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -28,6 +30,8 @@ public class AudioPlay extends Control {
     private ObservableList<String> results;
 
     private LongProperty currentPlayTime;
+
+    private BooleanProperty playing;
 
     @Override
     protected Skin<?> createDefaultSkin() {
@@ -117,4 +121,27 @@ public class AudioPlay extends Control {
         currentPlayTimeProperty().setValue(currentPlayTime);
     }
 
+    /**
+     * @return the playing
+     */
+    public Boolean getPlaying() {
+        return playingProperty().getValue();
+    }
+
+    /**
+     * @return the playing
+     */
+    public BooleanProperty playingProperty() {
+        if (playing == null) {
+            playing = new SimpleBooleanProperty(Boolean.FALSE);
+        }
+        return playing;
+    }
+
+    /**
+     * @param playing the playing to set
+     */
+    public void setPlaying(Boolean playing) {
+        this.playingProperty().setValue(playing);
+    }
 }

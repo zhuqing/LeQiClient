@@ -89,6 +89,7 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
         this.getModel().getSegment().setContent(timeStemp.getTargetText());
         Map<String, Object> map = new HashMap<>();
         map.put(Command.DATA, this.getModel().getSegment());
+        timeStemp.setPlaying(Boolean.FALSE);
         saveContentCommand.doCommand(map);
     }
 }

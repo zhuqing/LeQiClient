@@ -13,6 +13,7 @@ import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.alert.AlertUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
@@ -83,6 +84,19 @@ public class BookController extends FXMLController<BookModel> {
 
         JavaFxObservable.changesOf(articListView.getSelectionModel().selectedItemProperty())
                 .subscribe((catalog) -> articListViewSelectedChange(catalog.getNewVal()));
+        JavaFxObservable.changesOf(this.getModel().bookBusinessIdProperty())
+                .map((p) -> p.getNewVal())
+                .subscribe((businessId) -> {
+                    if (businessId == null) {
+                        this.bookBusinessPane.getChildren().clear();
+                    } else {
+                        FXMLModel fxmlModel = this.getModel(businessId);
+                        if (fxmlModel == null) {
+                            return;
+                        }
+                        this.bookBusinessPane.getChildren().setAll(fxmlModel.getRoot());
+                    }
+                });
 
         queryBooks(1, 20);
     }
@@ -169,7 +183,7 @@ public class BookController extends FXMLController<BookModel> {
     private Segment createSegmentInfo(Content artical) {
         Segment segment = new Segment();
         segment.setUserId("1");
-      
+
         segment.setContentId(artical.getId());
         return segment;
     }
