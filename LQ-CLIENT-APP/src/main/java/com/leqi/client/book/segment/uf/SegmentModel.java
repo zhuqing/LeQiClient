@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 
@@ -26,6 +27,9 @@ import xyz.tobebetter.entity.english.Segment;
 @Lazy
 @Component("SegmentModel")
 public class SegmentModel extends FXMLModel {
+    
+    private ObjectProperty<Catalog> book;
+    
 
     /**
      * contents 对应的article
@@ -36,6 +40,8 @@ public class SegmentModel extends FXMLModel {
      * 段列表
      */
     private ObservableList<Segment> segments;
+    
+    private ObjectProperty<Segment> editingSegment;
 
     public SegmentModel() {
         setFxmlPath("/com/leqi/client/book/segment/uf/Segment.fxml");
@@ -101,4 +107,53 @@ public class SegmentModel extends FXMLModel {
     public void setSegments(List<Segment> segments) {
         this.getSegments().setAll(segments);
     }
+
+    /**
+     * @return the editingSegment
+     */
+    public Segment getEditingSegment() {
+        return editingSegmentProperty().getValue();
+    }
+    
+      /**
+     * @return the editingSegment
+     */
+    public ObjectProperty<Segment> editingSegmentProperty() {
+        if(editingSegment == null){
+            editingSegment = new SimpleObjectProperty<>();
+        }
+        return editingSegment;
+    }
+
+    /**
+     * @param editingSegment the editingSegment to set
+     */
+    public void setEditingSegment(Segment editingSegment) {
+        this.editingSegmentProperty().setValue(editingSegment); 
+    }
+
+    /**
+     * @return the book
+     */
+    public Catalog getBook() {
+        return bookProperty().getValue();
+    }
+    
+     /**
+     * @return the book
+     */
+    public ObjectProperty<Catalog> bookProperty() {
+        if(book == null){
+             book = new SimpleObjectProperty<>();
+        }
+        return book;
+    }
+
+    /**
+     * @param book the book to set
+     */
+    public void setBook(Catalog book) {
+        this.bookProperty().setValue(book);
+    }
+    
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.googlecode.ehcache-spring-annotations:ehcache-spring-annotations:1.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.ehcache-spring-annotations/ehcache-spring-annotations/1.2.0/b6bf5706d99a9fd7cae9f887e28a98be19f3064b/ehcache-spring-annotations-1.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.ehcache-spring-annotations/ehcache-spring-annotations/1.2.0/75882f40c8e5da57678e6cfbb849ee29c0aea1b/ehcache-spring-annotations-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

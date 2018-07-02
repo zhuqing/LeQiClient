@@ -35,11 +35,13 @@ import org.springframework.util.StopWatch;
  */
 public abstract class Command extends LogFacade {
 
-    public static String DATA = "data";
-    public static String ID = "ID";
-    public static String MODEL = "MODEL";
-   public static String ENTITY = "ENTITY";
-
+    public final static String DATA = "data";
+    public final static String ID = "ID";
+    public final static String MODEL = "MODEL";
+    public final static String ENTITY = "ENTITY";
+    public final static String PATH = "PATH";
+    
+    public final static String CONSUMER = "CONSUMER";
     protected boolean wait = true;
 
     private FXMLModel fxmlModel;

@@ -4,11 +4,18 @@
   <auxiliary>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group name="Cus"/>
+      <group>
+        <file>file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/src/main/java/com/leqi/client/content/UpLoadController.java</file>
+        <file>file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/info/uf/BookInfoController.java</file>
+        <file>file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/src/main/java/com/leqi/client/app/LQApplication.java</file>
+        <file>file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/src/main/java/com/leqi/client/user/uf/UserController.java</file>
+      </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group name="Cus"/>
+      <group>
+        <file>file:/Users/zhuleqi/GitHub/LeQiClient/common.gradle</file>
+      </group>
     </open-files>
   </auxiliary>
 </gradle-project-properties>

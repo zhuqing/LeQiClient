@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import  com.leqienglish.client.util.sourceitem.SourceItem?>
+<?import com.leqienglish.client.control.timestemp.*?>
+<ArrayList>
+    <SourceItem>
+        <display>book</display>
+        <value>BookModel</value>
+        <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>create</display>
+                    <value>CreateBookModel</value> 
+                </SourceItem>
+                <SourceItem>
+                    <display>delete</display>
+                    <value>DeleteBookModel</value> 
+                </SourceItem>
+            </ArrayList>
+        </children>
+    </SourceItem>
+    <SourceItem>
+        <display>User</display>
+        <value>UserModel</value>
+    </SourceItem>
+    <SourceItem>
+        <display>Help</display>
+        <value>HelpModel</value>
+    </SourceItem>
+</ArrayList>

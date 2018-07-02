@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.listview.cell.*?>
+<?import com.leqienglish.client.control.view.listview.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.view.table.column.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import com.leqienglish.client.control.button.*?>
+<?import com.leqienglish.client.wordpane.*?>
+<?import com.leqienglish.client.control.combobox.*?>
+<?import com.leqienglish.client.control.query.listview.QueryListView?>
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+   
+   
+    <center>
+        <StackPane fx:id="bookBusinessPane">
+           <WordsPane fx:id="wordsPane"/>
+        </StackPane>
+    </center>
+    
+    <bottom>
+         <HBox>
+                <Button text="Save" onAction="#save"/>
+  
+            </HBox>
+    </bottom>
+
+</BorderPane>

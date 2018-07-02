@@ -10,9 +10,7 @@
 // prefer. In this case NetBeans will not add these tasks but you may rely on
 // your own implementation.
 
-if (!hasProperty('mainClass')) {
-    ext.mainClass = ''
-}
+
 
 dependencies {
     compile (group: 'org.springframework', name: 'spring-core', version: '4.3.1.RELEASE'){
@@ -62,6 +60,5 @@ dependencies {
     compile (group: 'net.sf.dozer',name: 'dozer',version: '5.5.1')
     compile (group: 'commons-net',name: 'commons-net',version: '3.5')
     compile (group: 'org.apache.httpcomponents',name: 'httpclient',version: '4.5.2')
-        
-    compile project(':LQ-ENTITY')
+
 }

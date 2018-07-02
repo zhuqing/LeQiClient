@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="LEQI-CLIENT_main" target="1.8" />
+      <module name="LEQI-CLIENT_test" target="1.8" />
+      <module name="LQ-CLIENT-APP_main" target="1.8" />
+      <module name="LQ-CLIENT-APP_test" target="1.8" />
+      <module name="LQ-CLIENT-CUSTOM-FX_main" target="1.8" />
+      <module name="LQ-CLIENT-CUSTOM-FX_test" target="1.8" />
+      <module name="LQ-CLIENT-FW_main" target="1.8" />
+      <module name="LQ-CLIENT-FW_test" target="1.8" />
+      <module name="LQ-CLIENT-FX_main" target="1.8" />
+      <module name="LQ-CLIENT-FX_test" target="1.8" />
+      <module name="LQ-CLIENT-SAMPLE_main" target="1.8" />
+      <module name="LQ-CLIENT-SAMPLE_test" target="1.8" />
+      <module name="LQ-CLIENT-UTIL_main" target="1.8" />
+      <module name="LQ-CLIENT-UTIL_test" target="1.8" />
+      <module name="LQ-ENTITY_main" target="1.8" />
+      <module name="LQ-ENTITY_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

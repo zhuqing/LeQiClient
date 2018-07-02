@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+   
+    
+    <center>
+        <VBox >
+            <Label fx:id="catalogTitle" text="bookInfo"/> 
+            <StackPane fx:id="bookInfoPane" >
+                <LQFormView fx:id="bookInfoFormView" StackPane.alignment="CENTER" >
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"   />
+                    <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"   />
+                    
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Description:"   />
+                    <LQTextAreaInputFormCell rowCount="5"  LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="description"   />
+                    
+                    
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Image:"   />
+                    <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" LQFormView.rowSpan="4"  propertyName="imagePath" prefWidth="300" prefHeight="400"   >
+                      
+                    </LQImagePathFormCell>
+                </LQFormView>
+            </StackPane>
+        </VBox>
+    </center>
+
+    <bottom>
+ 
+        <HBox>
+            <Button text="Save" onAction="#saveBook"/>
+  
+        </HBox>
+           
+
+    </bottom>
+
+</BorderPane>

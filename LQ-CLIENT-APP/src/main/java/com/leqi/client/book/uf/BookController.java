@@ -6,15 +6,20 @@
 package com.leqi.client.book.uf;
 
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
-import com.leqi.client.book.article.uf.ArticleInfoModel;
+import com.leqi.client.book.article.uf.ArticleModel;
+import com.leqi.client.book.content.uf.ContentModel;
 import com.leqi.client.book.info.cf.QueryCatalogCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.view.listview.LQListView;
+import com.leqienglish.client.control.view.table.LQTableView;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.alert.AlertUtil;
+import com.leqienglish.client.util.sourceitem.SourceItem;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
 import java.util.HashMap;
@@ -22,6 +27,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
@@ -40,25 +47,23 @@ import xyz.tobebetter.entity.english.Segment;
 public class BookController extends FXMLController<BookModel> {
 
     @FXML
-    private LQListView<Catalog> bookListView;
-
+    private LQTableView<Catalog> bookTableView;
+    
     @FXML
-    private LQListView<Content> articListView;
+    private LQFormView<Catalog> bookInfoFormView;
 
     @FXML
     private StackPane bookBusinessPane;
 
-    @Resource(name = "BookInfoModel")
-    private BookInfoModel bookInfoModel;
+    @FXML
+    private TextField filter;
 
-    @Resource(name = "ArticleInfoModel")
-    private ArticleInfoModel articleInfoModel;
+    @Resource(name = "ContentModel")
+    private ContentModel contentModel;
 
-    @Resource(name = "SegmentInfoModel")
-    private SegmentInfoModel segmentInfoModel;
+    @Resource(name = "ArticleModel")
+    private ArticleModel articleModel;
 
-    @Resource(name = "SegmentModel")
-    private SegmentModel segmentModel;
 
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
@@ -74,16 +79,16 @@ public class BookController extends FXMLController<BookModel> {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         JavaFxObservable.changesOf(this.getModel().getBooks())
-                .subscribe((lc) -> bookListView.getItems().setAll(this.getModel().getBooks()));
+                .subscribe((lc) -> bookTableView.getItems().setAll(this.getModel().getBooks()));
 
-        JavaFxObservable.changesOf(bookListView.getSelectionModel().selectedItemProperty())
+        JavaFxObservable.changesOf(bookTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((catalog) -> bookListViewSelectedChange(catalog.getNewVal()));
 
-        JavaFxObservable.changesOf(this.getModel().getArticles())
-                .subscribe((lc) -> this.articListView.getItems().setAll(this.getModel().getArticles()));
-
-        JavaFxObservable.changesOf(articListView.getSelectionModel().selectedItemProperty())
-                .subscribe((catalog) -> articListViewSelectedChange(catalog.getNewVal()));
+//        JavaFxObservable.changesOf(this.getModel().getArticles())
+//                .subscribe((lc) -> this.articListView.getItems().setAll(this.getModel().getArticles()));
+//
+//        JavaFxObservable.changesOf(articListView.getSelectionModel().selectedItemProperty())
+//                .subscribe((catalog) -> articListViewSelectedChange(catalog.getNewVal()));
         JavaFxObservable.changesOf(this.getModel().bookBusinessIdProperty())
                 .map((p) -> p.getNewVal())
                 .subscribe((businessId) -> {
@@ -98,33 +103,29 @@ public class BookController extends FXMLController<BookModel> {
                     }
                 });
 
-        queryBooks(1, 20);
+        //  queryBooks(1, 20);
     }
 
     private void bookListViewSelectedChange(Catalog catalog) {
         if (catalog == null) {
             return;
         }
-        queryArticle(catalog.getId(), 1, 20);
+        bookInfoFormView.setValue(catalog);
+        //queryArticle(catalog.getId(), 1, 20);
     }
 
     private void articListViewSelectedChange(Content content) {
 
-        bookBusinessPane.getChildren().setAll(this.segmentModel.getRoot());
-        segmentModel.setArticle(content);
+//        bookBusinessPane.getChildren().setAll(this.segmentModel.getRoot());
+//        segmentModel.setArticle(content);
     }
 
-    private void queryArticle(String parentId, int page, int pageSize) {
-        Map<String, Object> param = new HashMap<String, Object>();
-
-        param.put("catalogId", parentId);
-        queryArticlesCommand.setPageNum(page);
-        queryArticlesCommand.setPageSize(pageSize);
-        queryArticlesCommand.doCommand(param);
-    }
+   
 
     private void queryBooks(int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, filter.getText());
         param.put("type", Consistent.BOOK_TYPE);
         queryCatalogCommand.setPageNum(page);
         queryCatalogCommand.setPageSize(pageSize);
@@ -133,33 +134,55 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     public void createBook(ActionEvent event) {
+        createBook();
 
-        bookInfoModel.setCatalog(createBook());
-        bookBusinessPane.getChildren().setAll(this.bookInfoModel.getRoot());
     }
 
     @FXML
-    public void createSegment(ActionEvent event) {
+    public void queryBook(ActionEvent event) {
 
-        if (this.articListView.getSelectionModel().getSelectedItem() == null) {
-            AlertUtil.showError("没有选中文章");
+        queryBooks(1, 1000);
+    }
+
+    @FXML
+    public void deleteBook(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void cancelLunch(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void lunch(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void showArticles(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        Catalog book = (Catalog) button.getUserData();
+        if(book == null){
+            AlertUtil.showError("没有书本");
             return;
         }
-
-        this.bookBusinessPane.getChildren().setAll(this.segmentInfoModel.getRoot());
-        segmentInfoModel.setArticle(this.articListView.getSelectionModel().getSelectedItem());
-        segmentInfoModel.setSegment(createSegmentInfo(this.articListView.getSelectionModel().getSelectedItem()));
+        SourceItem sourceItem = new SourceItem();
+        sourceItem.setDisplay(book.getTitle());
+        this.contentModel.setAddBreadCrumb(sourceItem);
+        this.articleModel.setBook(book);
+        
     }
 
     @FXML
     public void createArticle(ActionEvent event) {
-        if (this.bookListView.getSelectionModel().getSelectedItem() == null) {
+        if (this.bookTableView.getSelectionModel().getSelectedItem() == null) {
             AlertUtil.showError("请先选择book");
             return;
         }
-        String bookId = this.bookListView.getSelectionModel().getSelectedItem().getId();
-        articleInfoModel.setContent(createArticle(bookId));
-        bookBusinessPane.getChildren().setAll(this.articleInfoModel.getRoot());
+        String bookId = this.bookTableView.getSelectionModel().getSelectedItem().getId();
+        articleModel.setContent(createArticle(bookId));
+        bookBusinessPane.getChildren().setAll(this.articleModel.getRoot());
     }
 
     /**
@@ -174,32 +197,6 @@ public class BookController extends FXMLController<BookModel> {
         return catalog;
     }
 
-    /**
-     * 创建文章的片段
-     *
-     * @param artical
-     * @return
-     */
-    private Segment createSegmentInfo(Content artical) {
-        Segment segment = new Segment();
-        segment.setUserId("1");
-
-        segment.setContentId(artical.getId());
-        return segment;
-    }
-
-    /**
-     * 创建文章
-     *
-     * @param bookId
-     * @return
-     */
-    private Content createArticle(String bookId) {
-        Content catalog = new Content();
-        catalog.setCatalogId(bookId);
-
-        catalog.setUserId("1");
-        return catalog;
-    }
+    
 
 }

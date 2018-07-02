@@ -6,12 +6,9 @@
 package com.leqi.client.book.info.uf;
 
 import com.leqi.client.book.info.cf.SavaCatalogCommand;
-import com.leqi.client.book.uf.*;
 import com.leqienglish.client.control.form.LQFormView;
-import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.fw.sf.FileService;
 
-import com.leqienglish.client.fw.sf.UpLoadFileService;
 import com.leqienglish.client.fw.uf.FXMLController;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.io.File;
@@ -40,8 +37,7 @@ public class BookInfoController extends FXMLController<BookInfoModel> {
 
     private File imagePath;
 
-    @Resource(name = "UpLoadFileService")
-    private UpLoadFileService upLoadFile;
+
 
     @Resource(name = "fileService")
     private FileService fileService;

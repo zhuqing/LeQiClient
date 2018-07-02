@@ -9,6 +9,7 @@ package com.leqienglish.client.control.form.cell.edit.file;
 import com.leqienglish.client.control.form.cell.LQFormCell;
 import com.leqienglish.client.control.form.cell.edit.LQEditableFormCell;
 import com.leqienglish.client.util.reflect.PropertyReflectUtil;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -26,7 +27,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
-import org.apache.http.util.ByteArrayBuffer;
+
 
 /**
  *
@@ -96,8 +97,8 @@ public class LQFileUploadFieldFormCell extends LQEditableFormCell<Object, Object
             getTextField().textProperty().removeListener(changeListener);
             byte[] bytes = (byte[]) PropertyReflectUtil.getValue(object, this.getPropertyName());
             if (bytes != null) {
-                ByteArrayBuffer byteArray = new ByteArrayBuffer(100);
-                byteArray.append(bytes, 0, 100);
+                ByteArrayOutputStream byteArray = new ByteArrayOutputStream(100);
+                byteArray.write(bytes, 0, 100);
                 getTextField().setText(new String(byteArray.toByteArray()));
             }
             getTextField().textProperty().addListener(changeListener);
@@ -167,18 +168,18 @@ public class LQFileUploadFieldFormCell extends LQEditableFormCell<Object, Object
             }
             InputStream inputStream = new FileInputStream(file);
             final int defaultLen = 1024;
-            ByteArrayBuffer byteArray = new ByteArrayBuffer(defaultLen);
+            ByteArrayOutputStream byteArray = new ByteArrayOutputStream(defaultLen);
             byte[] fileNamebytes = new byte[100];
             byte[] names = file.getName().getBytes();
             for (int i = 0; i < names.length; i++) {
                 fileNamebytes[i] = names[i];
             }
 
-            byteArray.append(fileNamebytes, 0, 100);
+            byteArray.write(fileNamebytes, 0, 100);
             byte[] bytes = new byte[defaultLen];
             int size = 0;
             while ((size = inputStream.read(bytes, 0, defaultLen)) > 0) {
-                byteArray.append(bytes, 0, size);
+                byteArray.write(bytes, 0, size);
             }
             return byteArray.toByteArray();
         } catch (Exception ex) {

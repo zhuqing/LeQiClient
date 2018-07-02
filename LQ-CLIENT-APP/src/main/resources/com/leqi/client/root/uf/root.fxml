@@ -10,13 +10,23 @@
 <?import javafx.scene.layout.StackPane?>
 
 
-<StackPane fx:id="root" styleClass="businessRoot" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="root" prefWidth="800" prefHeight="600"  styleClass="businessRoot" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
     <children>
        
         <BorderPane fx:id="rootPane">
            
             <center>
-                <StackPane fx:id="businessPane" BorderPane.alignment="CENTER" />
+                <StackPane >
+                    <BorderPane >
+                        <top>
+                            
+                        </top>
+                        <center>
+                             <StackPane fx:id="businessPane" BorderPane.alignment="CENTER" />
+                        </center>
+                    </BorderPane>
+                </StackPane>
+               
             </center>
             <top>
                 <StackPane fx:id="menuPane" BorderPane.alignment="CENTER" />

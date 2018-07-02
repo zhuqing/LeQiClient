@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.poi:poi-excelant:3.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-excelant/3.9/b3a741242569219eaf7bee9cf8b52042a226f6c0/poi-excelant-3.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-excelant/3.9/86747f41aecb743d81ddd5d4e9ab836ae724e31f/poi-excelant-3.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

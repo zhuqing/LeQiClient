@@ -9,13 +9,17 @@
 // Note however, that you may define your own "run" and "debug" task if you
 // prefer. In this case NetBeans will not add these tasks but you may rely on
 // your own implementation.
+//apply plugin: 'application'
 
-String mavenGroupId = 'HIP-RIM'
+String mavenGroupId = 'LQ-APP'
 String mavenArtifactId = name
 String mavenVersion = '1.0.3-SNAPSHOT'
 version = mavenVersion
 group = mavenGroupId
 
+
+
+//mainClassName = 'com.leqi.client.app.LQApplication'
 configurations { providedCompile }
 
 sourceSets {
@@ -30,6 +34,11 @@ sourceSets {
 
 if (!hasProperty('mainClass')) {
     ext.mainClass = 'com.leqi.client.app.LQApplication'
+}
+
+task myRun(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main =  'com.leqi.client.app.LQApplication'
 }
 
 dependencies {
@@ -51,7 +60,7 @@ ant.distDir = libsDir
 ant.distName = jar.archiveName;
 ant.resourceDir = libFolder
 ant.resourceIncludePattern = includePattern
-ant.applicationTitle = 'HipApp' + '-' + mavenVersion//mavenArtifactId+'-'+mavenVersion
+ant.applicationTitle = 'LQApp' + '-' + mavenVersion//mavenArtifactId+'-'+mavenVersion
 ant.applicationVendor = 'vendor'
 ant.applicationVersion = version
 ant.applicationClasses = sourceSets.main.output.classesDir
@@ -63,6 +72,8 @@ task copyJars(name:"copyJars",type: Copy) {
     from configurations.compile
     into 'libs' // 目标位置
 }
+
+
 
 jar {
     doFirst {

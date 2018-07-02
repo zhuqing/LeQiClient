@@ -5,6 +5,7 @@
  */
 package com.leqi.client.book.article.cf;
 
+import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqi.client.book.uf.BookModel;
 import com.leqienglish.client.fw.cf.QueryCommand;
@@ -25,8 +26,8 @@ import xyz.tobebetter.entity.english.Content;
 @Component("QueryArticlesCommand")
 public class QueryArticlesCommand extends QueryCommand {
 
-    @Resource(name = "BookModel")
-    private BookModel bookModel;
+    @Resource(name = "ArticleModel")
+    private ArticleModel articleModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -40,8 +41,8 @@ public class QueryArticlesCommand extends QueryCommand {
         parameter.add("page", this.getPageNum() + "");
         parameter.add("pageSize", this.getPageSize() + "");
 
-        if (param.get("catalogId") != null) {
-            parameter.add("catalogId", (String) param.get("catalogId"));
+        if (param.get(ID) != null) {
+            parameter.add("catalogId", (String) param.get(ID));
         }
         Content[] contents = this.restClient.get("/english/content/findCotentByCatalogId", parameter, Content[].class);
         this.putParameters("datas", contents);
@@ -51,10 +52,10 @@ public class QueryArticlesCommand extends QueryCommand {
     protected void doView(Map<String, Object> param) throws Exception {
         Content[] contents = (Content[]) this.getParameters("datas");
         if (contents == null || contents.length == 0) {
-            bookModel.getArticles().clear();
+            articleModel.getArticles().clear();
             return;
         }
-        bookModel.getArticles().setAll(contents);
+        articleModel.getArticles().setAll(contents);
 
     }
 

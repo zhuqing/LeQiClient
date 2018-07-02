@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.freemarker:freemarker-gae:2.3.28">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker-gae/2.3.28/7df17fbb993a9267d39d17a4f2f28648accce103/freemarker-gae-2.3.28.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker-gae/2.3.28/bcb6ed38528498730a9e6bcfececbdfe20b1a170/freemarker-gae-2.3.28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

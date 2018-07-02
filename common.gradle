@@ -19,20 +19,28 @@ repositories {
 //        }
         url "http://maven.aliyun.com/nexus/content/groups/public/"
     }
-//    maven {
+    maven {
 //        credentials {
 //            username 'admin'
 //            password 'admin123'
 //        }
-//        url "${nexusReleasesUrl}"
-//    }
-//    maven {
+        url "http://maven.jahia.org/maven2/"
+    }
+    maven {
 //        credentials {
 //            username 'admin'
-//            password 'admin123'
+//            password 'admin123' http://repository.jboss.org/nexus/content/groups/public
 //        }
-//        url "${nexusPublicUrl}"
-//    }
+        url "https://repo1.maven.org/maven2/"
+    }
+    
+      maven {
+//        credentials {
+//            username 'admin'
+//            password 'admin123' 
+//        }
+        url "http://repository.jboss.org/nexus/content/groups/public"
+    }
 }
 
 dependencies {

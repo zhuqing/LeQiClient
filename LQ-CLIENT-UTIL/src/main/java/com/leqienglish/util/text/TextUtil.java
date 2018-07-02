@@ -26,6 +26,14 @@ public class TextUtil {
         }
         return str.split("[ :-]");
     }
+    
+    public static String[] splitWords(String str){
+           if (str == null || str.isEmpty()) {
+            return null;
+        }
+        return str.split("[ ';,.\n0-9\\/]");
+ 
+    }
 
     public static int textAllLength(String[] strArr, int endIndex) {
         int length = 0;

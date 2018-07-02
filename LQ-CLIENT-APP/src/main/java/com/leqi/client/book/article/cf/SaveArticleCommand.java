@@ -5,10 +5,7 @@
  */
 package com.leqi.client.book.article.cf;
 
-import com.leqi.client.book.article.uf.ArticleInfoModel;
-import com.leqi.client.book.info.uf.BookInfoModel;
-import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqi.client.book.uf.BookModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.util.exception.LQExceptionUtil;
@@ -35,8 +32,8 @@ public class SaveArticleCommand extends Command {
     private BookModel bookModel;
      
      
-     @Resource(name = "ArticleInfoModel")
-    private ArticleInfoModel articleInfoModel;
+     @Resource(name = "ArticleModel")
+    private ArticleModel articleModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -82,7 +79,7 @@ public class SaveArticleCommand extends Command {
     protected void doView(Map<String, Object> param) throws Exception {
         Content content = (Content) this.getParameters(DATA);
         bookModel.getArticles().add(content);
-        articleInfoModel.setContent(content);
+        articleModel.setContent(content);
 
     }
 

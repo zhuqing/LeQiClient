@@ -12,10 +12,12 @@ import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.uf.BookModel;
 import com.leqi.client.common.cf.DownLoadFileCommand;
 import com.leqienglish.client.control.button.LQButton;
+import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.control.view.table.row.LQTableRow;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.client.util.alert.AlertUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
 import java.util.HashMap;
@@ -42,6 +44,10 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
     private LQTableView<Segment> segmentsTableView;
+    
+    
+    @FXML
+    private LQFormView<Segment> segmentFormView;
 
     @Resource(name = "QuerySegmentsCommand")
     private QuerySegmentsCommand querySegmentsCommand;
@@ -72,7 +78,11 @@ public class SegmentController extends FXMLController<SegmentModel> {
                 .subscribe((lc) -> segmentsTableView.getItems().setAll(this.getModel().getSegments()));
 
         JavaFxObservable.changesOf(segmentsTableView.getSelectionModel().selectedItemProperty())
-                .subscribe((b) -> segmentsTableViewSelectedChange(b.getNewVal()));
+                .subscribe((b) -> this.getModel().setEditingSegment(b.getNewVal()));
+        
+        JavaFxObservable.nonNullChangesOf(this.getModel().editingSegmentProperty())
+                .map(c->c.getNewVal())
+                .subscribe(c->this.segmentFormView.setValue(c));
 
         JavaFxObservable.nullableValuesOf(this.getModel().articleProperty())
                 .subscribe(op -> articleChange(op.orElse(null)));
@@ -112,12 +122,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
         downLoadFileCommand.doCommand(map);
     }
 
-    private void segmentsTableViewSelectedChange(Segment content) {
-        if (content == null) {
-            return;
-        }
-        // queryArticle(content.getId(), 1, 20);
-    }
+   
 
     /**
      * 发布按钮点击事件
@@ -129,6 +134,47 @@ public class SegmentController extends FXMLController<SegmentModel> {
         callUpdateContent(event, Consistent.HAS_LAUNCHED);
     }
 
+    @FXML
+    public void createSegment(ActionEvent event){
+        Segment segment = this.createSegmentInfo(this.getModel().getArticle());
+        
+        if(segment == null){
+            return;
+        }
+        
+        this.getModel().setEditingSegment(segment);
+    }
+    
+     /**
+     * 创建文章的片段
+     *
+     * @param artical
+     * @return
+     */
+    private Segment createSegmentInfo(Content artical) {
+        if(artical == null){
+            AlertUtil.showError("文章不能为null");
+            return null;
+        }
+        Segment segment = new Segment();
+        segment.setUserId("1");
+
+        segment.setContentId(artical.getId());
+        return segment;
+    }
+    
+    
+    @FXML
+    public void deleteSegment(ActionEvent event){
+        
+    }
+    
+     
+    @FXML
+    public void save(ActionEvent event){
+        
+    }
+    
     /**
      * 取消发布按钮点击事件
      *

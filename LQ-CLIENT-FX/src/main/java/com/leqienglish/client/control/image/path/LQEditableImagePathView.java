@@ -5,12 +5,8 @@
  */
 package com.leqienglish.client.control.image.path;
 
-import com.leqienglish.client.control.image.*;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -19,7 +15,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import org.apache.http.util.ByteArrayBuffer;
 
 /**
  *

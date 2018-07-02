@@ -9,17 +9,33 @@
 <?import com.leqienglish.client.control.timestemp.*?>
 <ArrayList>
     <SourceItem>
-        <display>book</display>
+        <display>Content</display>
         <value>BookModel</value>
         <children>
             <ArrayList>
                 <SourceItem>
-                    <display>create</display>
-                    <value>CreateBookModel</value> 
+                    <display>Book</display>
+                    <value>ContentModel</value>
                 </SourceItem>
                 <SourceItem>
-                    <display>delete</display>
-                    <value>DeleteBookModel</value> 
+                    <display>Article</display>
+                    <value>ContentModel</value> 
+                </SourceItem>
+                <SourceItem>
+                    <display>Segment</display>
+                    <value>ContentModel</value>
+                </SourceItem>
+            </ArrayList>
+        </children>
+    </SourceItem>
+    <SourceItem>
+        <display>Catalog</display>
+        <value>Catalog</value>
+        <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>CatalogInfo</display>
+                    <value>CatalogModel</value>
                 </SourceItem>
             </ArrayList>
         </children>

@@ -10,6 +10,7 @@ import com.leqienglish.client.control.form.cell.LQFormCell;
 import com.leqienglish.client.control.form.cell.edit.LQEditableFormCell;
 import com.leqienglish.client.util.reflect.PropertyReflectUtil;
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,7 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
-import org.apache.http.util.ByteArrayBuffer;
+
 
 /**
  *
@@ -85,8 +86,8 @@ public class LQFileDownloadFieldFormCell extends LQEditableFormCell<Object, Obje
             byte[] bytes = (byte[]) PropertyReflectUtil.getValue(object, this.getPropertyName());
             if (bytes != null) {
                 fileBytesProperty().setValue(bytes);
-                ByteArrayBuffer byteArray = new ByteArrayBuffer(100);
-                byteArray.append(bytes, 0, 100);
+                ByteArrayOutputStream byteArray = new ByteArrayOutputStream(100);
+                byteArray.write(bytes, 0, 100);
                 String fileName = new String(byteArray.toByteArray());
                 getTextField().setText(fileName);
                 if (fileName.contains(".")) {
@@ -152,8 +153,8 @@ public class LQFileDownloadFieldFormCell extends LQEditableFormCell<Object, Obje
         byte[] filevalues = fileBytesProperty().getValue();
         BufferedOutputStream bos = null;
         FileOutputStream fos = null;
-        ByteArrayBuffer byteArray = new ByteArrayBuffer(1024);
-        byteArray.append(filevalues, 100, filevalues.length - 100);
+        ByteArrayOutputStream byteArray = new ByteArrayOutputStream(1024);
+        byteArray.write(filevalues, 100, filevalues.length - 100);
         try {
             fos = new FileOutputStream(file);
             bos = new BufferedOutputStream(fos);

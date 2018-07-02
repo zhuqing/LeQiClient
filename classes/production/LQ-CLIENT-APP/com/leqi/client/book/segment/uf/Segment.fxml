@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.view.table.column.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import com.leqienglish.client.control.button.*?>
+<?import com.leqi.client.book.segment.cf.*?>
+
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+   
+    <center>
+        <StackPane fx:id="bookBusinessPane" >
+            <LQTableView  fx:id="segmentsTableView">
+                <columns>
+                    <LQTableColumn  editable="false" prefWidth="40" propertyName="title" text="Title">
+                        <tableCell>
+                            <LQTableTextCell />
+                        </tableCell>
+                    </LQTableColumn>
+                    <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
+                        <tableCell>
+                            <LQTableTextCell />
+                        </tableCell>
+                    </LQTableColumn>
+                    <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                        <tableCell>
+                            <LQOperatorTableCell>
+                                <buttons>
+                                      
+                                    <LQButton id="lunch" text="发布" onAction="#lunch">
+                                    </LQButton>
+                                    <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
+                                    </LQButton>
+                                        
+                            
+                                </buttons>
+                                <filterButtonsCallback>
+                                    <FilterOpertorButtonsCallback/>
+                                </filterButtonsCallback>
+                            </LQOperatorTableCell>
+                        </tableCell>
+                    </LQTableColumn>
+                </columns>
+            </LQTableView>
+           
+        </StackPane>
+    </center>
+   
+</BorderPane>

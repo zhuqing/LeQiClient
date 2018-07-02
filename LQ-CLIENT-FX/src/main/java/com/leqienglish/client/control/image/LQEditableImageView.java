@@ -5,6 +5,7 @@
  */
 package com.leqienglish.client.control.image;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +19,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import org.apache.http.util.ByteArrayBuffer;
+
 
 /**
  *
@@ -69,11 +70,11 @@ public class LQEditableImageView extends LQImageView {
             InputStream inputStream = new FileInputStream(file);
 
             final int defaultLen = 1024;
-            ByteArrayBuffer byteArray = new ByteArrayBuffer(defaultLen);
+            ByteArrayOutputStream byteArray = new ByteArrayOutputStream(defaultLen);
             byte[] bytes = new byte[defaultLen];
             int size = 0;
             while ((size = inputStream.read(bytes, 0, defaultLen)) > 0) {
-                byteArray.append(bytes, 0, size);
+                byteArray.write(bytes, 0, size);
             }
             this.setImageViewBytes(byteArray.toByteArray());
         } catch (FileNotFoundException ex) {

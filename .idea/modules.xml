@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LEQI-CLIENT.iml" filepath="$PROJECT_DIR$/.idea/modules/LEQI-CLIENT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP.iml" group="LQ-CLIENT-APP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_main.iml" group="LQ-CLIENT-APP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_test.iml" group="LQ-CLIENT-APP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX.iml" group="LQ-CLIENT-CUSTOM-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_main.iml" group="LQ-CLIENT-CUSTOM-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_test.iml" group="LQ-CLIENT-CUSTOM-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW.iml" group="LQ-CLIENT-FW" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_main.iml" group="LQ-CLIENT-FW" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_test.iml" group="LQ-CLIENT-FW" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX.iml" group="LQ-CLIENT-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_main.iml" group="LQ-CLIENT-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_test.iml" group="LQ-CLIENT-FX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE.iml" group="LQ-CLIENT-SAMPLE" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_main.iml" group="LQ-CLIENT-SAMPLE" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_test.iml" group="LQ-CLIENT-SAMPLE" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL.iml" group="LQ-CLIENT-UTIL" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_main.iml" group="LQ-CLIENT-UTIL" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_test.iml" group="LQ-CLIENT-UTIL" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY.iml" group="LQ-ENTITY" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY_main.iml" group="LQ-ENTITY" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LQ-ENTITY/LQ-ENTITY_test.iml" group="LQ-ENTITY" />
+    </modules>
+  </component>
+</project>

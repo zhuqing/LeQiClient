@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.4.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.4.3/2db9fd5800bbae80b79c468a79eba14de4c90075/jackson-jaxrs-json-provider-2.4.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.4.3/75c496e7a8bb1c5db5b7bc0664c5fec25c552e70/jackson-jaxrs-json-provider-2.4.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

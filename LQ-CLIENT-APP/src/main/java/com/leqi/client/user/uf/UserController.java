@@ -5,24 +5,17 @@
  */
 package com.leqi.client.user.uf;
 
-import com.leqi.client.book.uf.*;
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
-import com.leqi.client.book.article.uf.ArticleInfoModel;
+import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqi.client.book.info.cf.QueryCatalogCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.control.view.listview.LQListView;
-import com.leqienglish.client.fw.sf.FileService;
-
-import com.leqienglish.client.fw.sf.UpLoadFileService;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
-import java.io.File;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,8 +46,8 @@ public class UserController extends FXMLController<UserModel> {
     @Resource(name = "BookInfoModel")
     private BookInfoModel bookInfoModel;
 
-    @Resource(name = "ArticleInfoModel")
-    private ArticleInfoModel articleInfoModel;
+    @Resource(name = "ArticleModel")
+    private ArticleModel articleModel;
 
     @Resource(name = "SegmentInfoModel")
     private SegmentInfoModel segmentInfoModel;
@@ -119,8 +112,8 @@ public class UserController extends FXMLController<UserModel> {
             return;
         }
         String bookId = this.bookListView.getSelectionModel().getSelectedItem().getId();
-        articleInfoModel.setContent(createArticle(bookId));
-        bookBusinessPane.getChildren().setAll(this.articleInfoModel.getRoot());
+        articleModel.setContent(createArticle(bookId));
+        bookBusinessPane.getChildren().setAll(this.articleModel.getRoot());
     }
 
     private Content createContent(Content catalog) {
