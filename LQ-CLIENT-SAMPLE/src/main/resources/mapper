@@ -13,4 +13,5 @@
    <#include "/src/main/resources/update">
    
    <#include "/src/main/resources/delete">
+    <#include "/src/main/resources/create">
 </mapper>

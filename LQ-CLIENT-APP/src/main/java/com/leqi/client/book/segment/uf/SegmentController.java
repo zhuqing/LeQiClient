@@ -8,11 +8,13 @@ package com.leqi.client.book.segment.uf;
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
 import com.leqi.client.book.segment.cf.UpdateSegmentStatusCommand;
+import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.uf.BookModel;
 import com.leqi.client.common.cf.DownLoadFileCommand;
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.control.form.LQFormView;
+import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.control.view.table.row.LQTableRow;
 import com.leqienglish.client.fw.cf.Command;
@@ -26,6 +28,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
@@ -66,6 +69,14 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @Resource(name = "SegmentInfoModel")
     private SegmentInfoModel segmentInfoModel;
+    
+        @FXML
+    private TimeStemp timeStemp;
+    @FXML
+    private CheckBox isSupportChinease;
+
+    @Resource(name = "SaveContentCommand")
+    private SaveSegmentCommand saveContentCommand;
 
     @Override
     public void refresh() {
@@ -80,7 +91,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
         JavaFxObservable.changesOf(segmentsTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((b) -> this.getModel().setEditingSegment(b.getNewVal()));
         
-        JavaFxObservable.nonNullChangesOf(this.getModel().editingSegmentProperty())
+        JavaFxObservable.changesOf(this.getModel().editingSegmentProperty())
                 .map(c->c.getNewVal())
                 .subscribe(c->this.segmentFormView.setValue(c));
 
@@ -88,27 +99,21 @@ public class SegmentController extends FXMLController<SegmentModel> {
                 .subscribe(op -> articleChange(op.orElse(null)));
         articleChange(getModel().getArticle());
 
-        segmentsTableView.setRowMouseEventHandler(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (event.getClickCount() != 2) {
-                    return;
-                }
-
-                LQTableRow row = (LQTableRow) event.getSource();
-
-                if (row.getItem() == null) {
-                    return;
-                }
-                edit((Segment) row.getItem());
+        segmentsTableView.setRowMouseEventHandler((MouseEvent event) -> {
+            if (event.getClickCount() != 2) {
+                return;
             }
+            
+            LQTableRow row = (LQTableRow) event.getSource();
+            
+            if (row.getItem() == null) {
+                return;
+            }
+            getModel().setEditingSegment((Segment) row.getItem());
         });
     }
 
-    private void edit(Segment segment) {
-        segmentInfoModel.setSegment(segment);
-        bookModel.setBookBusinessId("SegmentInfoModel");
-    }
+
 
     private void articleChange(Content content) {
         if (content == null) {
@@ -172,7 +177,11 @@ public class SegmentController extends FXMLController<SegmentModel> {
      
     @FXML
     public void save(ActionEvent event){
-        
+        this.getModel().getEditingSegment().setContent(timeStemp.getTargetText());
+        Map<String, Object> map = new HashMap<>();
+        map.put(Command.DATA, this.getModel().getEditingSegment());
+        timeStemp.setPlaying(Boolean.FALSE);
+        saveContentCommand.doCommand(map);
     }
     
     /**

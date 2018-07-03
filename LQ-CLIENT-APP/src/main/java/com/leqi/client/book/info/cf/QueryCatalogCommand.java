@@ -60,9 +60,6 @@ public class QueryCatalogCommand extends QueryCommand {
             case Consistent.BOOK_TYPE:
                 bookModel.setBooks(Arrays.asList(catalogs));
                 break;
-//            case Catalog.CHAPTER_TYPE:
-//                bookModel.setArticles(Arrays.asList(catalogs));
-//                break;
         }
 
     }

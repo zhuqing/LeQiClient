@@ -61,11 +61,11 @@
                                 <LQTableTextCell />
                             </tableCell>
                         </LQTableColumn>
-                        <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
+<!--                        <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
                             <tableCell>
                                 <LQTableTextCell />
                             </tableCell>
-                        </LQTableColumn>
+                        </LQTableColumn>-->
                         <LQTableColumn editable="false" prefWidth="125.0" text="操作">
                             <tableCell>
                                 <LQOperatorTableCell>
@@ -76,7 +76,10 @@
                                         <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
                                         </LQButton>
                                     
-                                        <LQButton id="cancelLunch" text="查看段" onAction="#showSegemnt">
+                                        <LQButton id="showSegemnt" text="查看段" onAction="#showSegemnt">
+                                        </LQButton>
+                                        
+                                         <LQButton id="openWord" text="单词" onAction="#openWord">
                                         </LQButton>
 
                                     </buttons>

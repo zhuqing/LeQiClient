@@ -18,6 +18,7 @@ import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 
 import java.util.List;
+import javafx.collections.FXCollections;
 
 /**
  * 创建文章实体
@@ -87,7 +88,7 @@ public class ArticleModel extends FXMLModel {
     }
 
     public Catalog getBook() {
-        return book.get();
+        return book.getValue();
     }
 
     public ObjectProperty<Catalog> bookProperty() {
@@ -100,10 +101,13 @@ public class ArticleModel extends FXMLModel {
 
 
     public void setBook(Catalog book) {
-        this.book.set(book);
+        this.bookProperty().setValue(book);
     }
 
     public ObservableList<Content> getArticles() {
+        if(this.articles == null){
+            this.articles = FXCollections.observableArrayList();
+        }
         return articles;
     }
 

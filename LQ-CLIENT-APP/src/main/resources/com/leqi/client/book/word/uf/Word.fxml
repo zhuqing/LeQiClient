@@ -28,7 +28,39 @@
 <?import com.leqienglish.client.control.query.listview.QueryListView?>
 <BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
    
-   
+    <left>
+         <StackPane prefWidth="500" >
+           
+              
+             
+                <LQTableView  fx:id="wordTableView">
+                    <columns>
+                        <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
+                            <tableCell>
+                                <LQTableTextCell />
+                            </tableCell>
+                        </LQTableColumn>
+                       
+                        <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                            <tableCell>
+                                <LQOperatorTableCell>
+                                    <buttons>
+
+                                    
+                                        <LQButton id="showArticles" text="编辑" onAction="#wordEdit">
+                                        </LQButton>
+
+                                    </buttons>
+                                   
+                                </LQOperatorTableCell>
+                            </tableCell>
+                        </LQTableColumn>
+                    </columns>
+                </LQTableView>
+          
+
+        </StackPane>
+    </left>
     <center>
         <StackPane fx:id="bookBusinessPane">
            <WordsPane fx:id="wordsPane"/>

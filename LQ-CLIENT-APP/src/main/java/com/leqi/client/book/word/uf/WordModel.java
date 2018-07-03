@@ -37,7 +37,7 @@ public class WordModel extends FXMLModel {
             
 
      public WordModel() {
-        setFxmlPath("/com/leqi/client/book/word/uf/Wook.fxml");
+        setFxmlPath("/com/leqi/client/book/word/uf/Word.fxml");
 
     }
      

@@ -134,7 +134,8 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     public void createBook(ActionEvent event) {
-        createBook();
+       Catalog book = createBook();
+       this.bookInfoFormView.setValue(book);
 
     }
 
@@ -168,22 +169,14 @@ public class BookController extends FXMLController<BookModel> {
             return;
         }
         SourceItem sourceItem = new SourceItem();
+        sourceItem.setValue("ArticleModel");
         sourceItem.setDisplay(book.getTitle());
         this.contentModel.setAddBreadCrumb(sourceItem);
         this.articleModel.setBook(book);
         
     }
 
-    @FXML
-    public void createArticle(ActionEvent event) {
-        if (this.bookTableView.getSelectionModel().getSelectedItem() == null) {
-            AlertUtil.showError("请先选择book");
-            return;
-        }
-        String bookId = this.bookTableView.getSelectionModel().getSelectedItem().getId();
-        articleModel.setContent(createArticle(bookId));
-        bookBusinessPane.getChildren().setAll(this.articleModel.getRoot());
-    }
+   
 
     /**
      * 创建书本

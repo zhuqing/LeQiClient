@@ -13,27 +13,9 @@
 
 dependencies {
 
-    compile (group: 'org.springframework', name: 'spring-core', version: '4.3.1.RELEASE'){
-        exclude(module: 'commons-logging')
-    }
-    dependencies { compile fileTree(dir:'lib',include:['*.jar'])}
-    compile (group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.3')
-    compile (group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.3')
-    compile (group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.3')
-    compile (group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-base', version: '2.4.3')
-    compile (group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.4.3')
-    compile (group: 'com.fasterxml.jackson.module', name: 'jackson-module-jaxb-annotations', version: '2.4.3')
-
-    compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
-    compile group: 'com.github.xuwei-k', name: 'html2image', version: '0.1.0'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.20.8'
-    //    compile group: 'com.sun.jna', name: 'jna', version: '4.0.0'
-    compile group: 'io.reactivex', name: 'rxjavafx', version: '2.0.2'
-    // https://mvnrepository.com/artifact/net.java.dev.jna/jna
-    compile group: 'net.java.dev.jna', name: 'jna', version: '4.5.1'
-    // https://mvnrepository.com/artifact/net.java.dev.jna/jna-platform
-    compile group: 'net.java.dev.jna', name: 'jna-platform', version: '4.5.1'
+   
     
-    compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.1.6'
+        // https://mvnrepository.com/artifact/org.json/json
+    compile group: 'org.json', name: 'json', version: '20180130'
          
 }

@@ -6,19 +6,8 @@
 package xyz.tobebetter.entity.message;
 
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author duyi
- */
-@JsonInclude(Include.NON_NULL)
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+
 public class LQMessageEvent  {
 
     private String entitys;

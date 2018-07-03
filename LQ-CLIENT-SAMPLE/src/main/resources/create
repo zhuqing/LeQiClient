@@ -1,0 +1,9 @@
+
+
+CREATE TABLE `tobebetter`.`${table}` (
+    
+     <#list wheres as where>
+        `${where.propertyName}` ${where.type}(40) ,
+           </#list>
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `UserTask_UNIQUE` (`ID` ASC, `UPDATE_DATE` ASC, `CREATE_DATE` ASC, `STATUS` ASC, `USER_ID` ASC));

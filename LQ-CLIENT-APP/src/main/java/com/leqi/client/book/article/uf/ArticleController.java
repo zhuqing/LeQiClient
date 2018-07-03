@@ -83,15 +83,17 @@ public class ArticleController extends FXMLController<ArticleModel> {
         JavaFxObservable.changesOf(this.getModel().contentProperty())
                 .subscribe((c) -> this.contentInfoFormView.setValue(c.getNewVal()));
 
-        JavaFxObservable.nullableValuesOf(this.getModel().bookProperty())
-                .map(p -> p.orElse(null))
-                .subscribe(book -> this.bookChange(book));
+        JavaFxObservable.changesOf(this.getModel().bookProperty())
+                
+                .subscribe(book -> this.bookChange(book.getNewVal()));
 
         JavaFxObservable.changesOf(this.getModel().getArticles())
                 .subscribe(c -> this.articleTableView.getItems().setAll(this.getModel().getArticles()));
 
-        JavaFxObservable.nullableValuesOf(this.articleTableView.getSelectionModel().selectedItemProperty())
-                .subscribe((c) -> this.getModel().setContent(c.orElse(null)));
+        JavaFxObservable.changesOf(this.articleTableView.getSelectionModel().selectedItemProperty())
+                .subscribe((c) -> this.getModel().setContent(c.getNewVal()));
+        
+        bookChange(this.getModel().getBook());
 
     }
 
@@ -143,7 +145,8 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @FXML
     public void createArticle(ActionEvent event) {
        Content article = createArticle(this.getModel().getBook().getId());
-       this.contentInfoFormView.setValue(article);
+       this.getModel().setContent(article);
+       //this.contentInfoFormView.setValue(article);
     }
 
     /**

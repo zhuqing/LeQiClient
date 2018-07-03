@@ -6,16 +6,25 @@
 package com.lenglish.sample.control;
 
 import com.lenglish.sample.HipFXSample;
+import static com.lenglish.sample.HipFXSample.DOCUMENT_BASE;
 import com.leqienglish.client.control.audio.AudioPlay;
 import com.leqienglish.client.wordpane.WordsPane;
+import com.leqienglish.util.tran.BaiduTranslateEntity;
+import com.leqienglish.util.tran.TranslateBaiduUtil;
+import com.leqienglish.util.tran.iciba.ICIBATranslateUtil;
 import java.io.File;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Consumer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -25,6 +34,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import xyz.tobebetter.entity.english.Word;
 
 /**
  *
@@ -77,6 +87,28 @@ public class HipWordPaneSample extends HipFXSample {
        
         wordsPane = new WordsPane();
       //  this.audioPlay.setSource(filr.toURI().toString());
+      this.wordsPane.getWords().addListener(new ListChangeListener<Word>(){
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends Word> change) {
+                for(Word word : wordsPane.getWords()){
+                    try {
+                        ICIBATranslateUtil.transResult(word.getWord(),  new Consumer<String>(){
+                            @Override
+                            public void accept(String t) {
+                                Word word = Word.icibaJsontoWord(t);
+                                System.err.println(word);
+                            }
+                        }
+                        );
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(HipWordPaneSample.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ExecutionException ex) {
+                        Logger.getLogger(HipWordPaneSample.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+               
+            }
+        });
         return wordsPane;
     }
 

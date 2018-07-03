@@ -190,8 +190,8 @@ public class FutureTaskUtil {
      * @throws InterruptedException
      * @throws ExecutionException
      */
-    public  static <T> T run(Callable<T> callable) throws InterruptedException, ExecutionException {
-        FutureTask<T> task = new FutureTask<T>(callable);
+    public  static <T> T run(Callable runnable) throws InterruptedException, ExecutionException {
+        FutureTask<T> task = new FutureTask<T>(runnable);
         Executors.newCachedThreadPool().execute(task);
         return task.get();
     }

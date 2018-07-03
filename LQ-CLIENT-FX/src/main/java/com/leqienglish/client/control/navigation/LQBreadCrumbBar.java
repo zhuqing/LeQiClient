@@ -7,6 +7,7 @@ package com.leqienglish.client.control.navigation;
 
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.util.sourceitem.SourceItem;
+import com.leqienglish.client.util.thread.DelayRunner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,8 +49,8 @@ public class LQBreadCrumbBar<T extends SourceItem> extends HBox{
             List<LQButton> removedButtons = buttons.subList(index+1, buttons.size());
             
             buttons.removeAll(removedButtons);
-            LQBreadCrumbBar.this.getChildren().removeAll(removedButtons);
-            
+           
+
             
         }
     };

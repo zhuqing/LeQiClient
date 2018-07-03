@@ -65,7 +65,7 @@ ant.applicationVendor = 'vendor'
 ant.applicationVersion = version
 ant.applicationClasses = sourceSets.main.output.classesDir
 ant.applicationResources = sourceSets.main.output.resourcesDir
-ant.roperties = 'lib/HIP.ico'
+ant.roperties = 'img/le.png'
 
 task copyJars(name:"copyJars",type: Copy) {
     //    println("-------------------003 copyJars ")
