@@ -9,22 +9,16 @@ import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.config.AppConfig;
 
 import com.leqienglish.client.fw.uf.FXMLModel;
-import com.leqienglish.client.fw.util.property.HipProperty;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.ay;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

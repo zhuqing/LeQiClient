@@ -9,4 +9,5 @@
     <system systemId="http://www.springframework.org/schema/tool/spring-tool-3.2.xsd" uri="www.springframework.org/schema/tool/spring-tool-3.2.xsd"/>
     <system systemId="http://activemq.apache.org/schema/core/activemq-core-5.9.0.xsd" uri="activemq.apache.org/schema/core/activemq-core-5.9.0.xsd"/>
     <system systemId="http://javafx.com/javafx/8.0.45" uri="www.oracle.com/technetwork/java/javase/overview/index.html"/>
+    <system systemId="http://javafx.com/fxml/1" uri="www.oracle.com/technetwork/java/javase/overview/index.html"/>
 </catalog>

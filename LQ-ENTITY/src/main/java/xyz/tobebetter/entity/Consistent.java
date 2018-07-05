@@ -47,9 +47,28 @@ public class Consistent {
      * 章节类型
      */
     public final static int CHAPTER_TYPE = 302;
+
+    /**
+     * 文章类型
+     */
+    public final static int ARTICLE_TYPE = 302;
+
+    /**
+     * 段类型
+     */
+    public final static int SEGMENT_TYPE = 302;
     /**
      * 分类类型
      */
     public final static int CATALOG_TYPE = 303;
+    
+    
+    
+    
+    public static final int DELETE = -1;
+     
+    public static final int USER_NORMAL = 0;
+    public static final int USER_WECHAT = 1;
+    public static final int USER_QQ = 2;
 
 }

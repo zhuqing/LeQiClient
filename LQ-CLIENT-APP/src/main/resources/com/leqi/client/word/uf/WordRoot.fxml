@@ -29,14 +29,10 @@
 <BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
    
     <left>
-        <BorderPane prefWidth="500" >
-            <top>
-                <HBox alignment="CENTER_RIGHT">
-                    <LQButton text="刷新"  onAction="#refresh" />  
-                    <LQButton text="添加单词"  onAction="#addWords" />
-                </HBox>
-            </top>
-            <center>
+         <StackPane prefWidth="500" >
+           
+              
+             
                 <LQTableView  fx:id="wordTableView">
                     <columns>
                         <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
@@ -53,12 +49,7 @@
                                     
                                         <LQButton id="showArticles" text="编辑" onAction="#wordEdit">
                                         </LQButton>
-                                        
-                                        <LQButton id="showWord" text="查看" onAction="#showWord">
-                                        </LQButton>
-                                        <LQButton id="delete" text="删除" onAction="#delete">
-                                        </LQButton>
-                                        
+
                                     </buttons>
                                    
                                 </LQOperatorTableCell>
@@ -66,20 +57,21 @@
                         </LQTableColumn>
                     </columns>
                 </LQTableView>
-            </center>
-        </BorderPane>
+          
+
+        </StackPane>
     </left>
     <center>
         <StackPane fx:id="bookBusinessPane">
-            <WordsPane fx:id="wordsPane"/>
+           <WordsPane fx:id="wordsPane"/>
         </StackPane>
     </center>
     
     <bottom>
-        <HBox>
-            <Button text="Save" onAction="#save"/>
+         <HBox>
+                <Button text="Save" onAction="#save"/>
   
-        </HBox>
+            </HBox>
     </bottom>
 
 </BorderPane>

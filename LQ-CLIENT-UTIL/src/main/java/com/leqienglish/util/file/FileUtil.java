@@ -27,6 +27,7 @@ public class FileUtil {
     public static final String APP_NAME = "leqienglish";
     public static final String IMAGE = "image";
     public static final String AUDIO = "audio";
+    public static final String WORD = "word";
 
     public static String appRootPath() {
 
@@ -51,11 +52,12 @@ public class FileUtil {
 
     /**
      * 相对路径转换为绝对路径
+     *
      * @param path
-     * @return 
+     * @return
      */
     public static String toLocalFilePath(String path) throws Exception {
-        LQExceptionUtil.required(!(path ==null||path.isEmpty()), "path 参数不能为空");
+        LQExceptionUtil.required(!(path == null || path.isEmpty()), "path 参数不能为空");
 
         path = path.replace('/', File.separatorChar);
         path = FileUtil.appRootPath() + File.separator + path;
@@ -102,6 +104,24 @@ public class FileUtil {
         return createDirectory(IMAGE);
     }
 
+    public static String wordDirectory(String word) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(appRootPath()).append(File.separatorChar).append(WORD).append(File.separatorChar).append(word);//
+        initDirectory(sb.toString());
+
+        sb = new StringBuffer();
+        sb.append(WORD).append(File.separatorChar).append(word);
+        return sb.toString();
+    }
+
+    public static String wordFilelPath(String word) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(appRootPath()).append(File.separatorChar).append(WORD).append(File.separatorChar).append(word);//
+        initDirectory(sb.toString());
+        sb.append(File.separatorChar).append(fileName("mp3"));
+        return sb.toString();
+    }
+
     public static String createDirectory(String dirName) {
         StringBuffer sb = new StringBuffer();
         sb.append(dirName).append(File.separatorChar);
@@ -146,9 +166,32 @@ public class FileUtil {
                 return FileUtil.audioDirectory();
             case "jpg":
                 return FileUtil.imageDirectory();
+
         }
 
         return null;
+    }
+
+    /**
+     * 写入文件
+     *
+     * @param file
+     * @param fileSuffix
+     * @return
+     * @throws IOException
+     */
+    public static String writeWordAudioFile(byte[] file, String word, String fileSuffix) throws IOException {
+        String path = wordDirectory(word);
+
+        if (path == null) {
+            return null;
+        }
+
+        String filePath = FileUtil.appRootPath() + File.separator + path + File.separator;
+        String imageFileName = FileUtil.fileName(fileSuffix);
+
+        wirteFile(file, filePath, imageFileName);
+        return path + File.separator + imageFileName;
     }
 
     /**

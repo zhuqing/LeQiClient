@@ -134,15 +134,15 @@ public class RestClient {
         return excute(HttpMethod.DELETE, path, obj, parameter, claz);
     }
     
-    public <T> T upload(String path, MultiValueMap<String, Object> value, Map<String, String> parameter, Class<T> claz) throws Exception {
+    public <T> T upload(String path, MultiValueMap<String, Object> value, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         
-        if (parameter == null) {
-            parameter = new HashMap<>();
-        }
+      
+        
+         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         
         HttpEntity entity = new HttpEntity(value, initHeaders());
         //  entity.getHeaders().
-        ResponseEntity resEntity = restTemplate.exchange(serverPath + "/" + path, HttpMethod.POST, entity, Message.class, new HashMap());
+        ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), HttpMethod.POST, entity, Message.class, new HashMap());
         Message resultMessage = (Message) resEntity.getBody();
         
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {

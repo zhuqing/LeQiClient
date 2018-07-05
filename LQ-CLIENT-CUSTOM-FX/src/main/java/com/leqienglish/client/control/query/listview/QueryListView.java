@@ -5,6 +5,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.awt.*;
+import javafx.geometry.Pos;
 
 /**
  * Created by zhuleqi on 2018/6/29.
