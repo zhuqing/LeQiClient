@@ -5,6 +5,7 @@
  */
 package com.leqienglish.client.control.timestemp;
 
+import io.reactivex.functions.Consumer;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,6 +22,11 @@ public class TimeStemp extends Control {
     private StringProperty audioPath;
     private StringProperty sourceText;
     private StringProperty targetText;
+    
+    /**
+     * 对单独的句子处理
+     */
+    private SentenceAndIndex sentenceConsumer; 
     /**
      * 是否支持中文
      */
@@ -157,6 +163,26 @@ public class TimeStemp extends Control {
      */
     public void setPlaying(Boolean playing) {
         this.playingProperty().setValue(playing);
+    }
+
+    /**
+     * @return the sentenceConsumer
+     */
+    public SentenceAndIndex getSentenceConsumer() {
+        return sentenceConsumer;
+    }
+
+    /**
+     * @param sentenceConsumer the sentenceConsumer to set
+     */
+    public void setSentenceConsumer(SentenceAndIndex sentenceConsumer) {
+        this.sentenceConsumer = sentenceConsumer;
+    }
+
+  
+    
+    public interface SentenceAndIndex{
+        public void apply(int index,String sentence);
     }
 
 }

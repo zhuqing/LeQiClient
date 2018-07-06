@@ -29,7 +29,7 @@ dependencies {
 
     compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
     compile group: 'com.github.xuwei-k', name: 'html2image', version: '0.1.0'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.20.8'
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
     //    compile group: 'com.sun.jna', name: 'jna', version: '4.0.0'
     compile group: 'io.reactivex', name: 'rxjavafx', version: '2.0.2'
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna

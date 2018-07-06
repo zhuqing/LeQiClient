@@ -102,33 +102,72 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         return hbox;
     }
 
+    /**
+     * 给句子加上时间点
+     */
     private void addPoint() {
+        addLastEndPoint();
         if (timeStempIndex >= texts.size()) {
             return;
-        } else {
-
-            String text = texts.get(timeStempIndex);
-            if (text.contains(Consistent.SLIP_TIME_AND_TEXT)) {
-                text = text.split(Consistent.SLIP_TIME_AND_TEXT)[1];
-            }
-            texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + Consistent.SLIP_TIME_AND_TEXT + text);
-            labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
-            toTargetText(texts);
-            timeStempIndex++;
-            if (getSkinnable().isSuportChineaseChinease()) {
-                timeStempIndex++;
-            }
-
-            moveTimeLabel();
         }
+
+        String text = texts.get(timeStempIndex);
+        if (text.contains(Consistent.SLIP_TIME_AND_TEXT)) {
+            text = text.split(Consistent.SLIP_TIME_AND_TEXT)[1];
+        }
+        texts.set(timeStempIndex, audioPlay.getCurrentPlayTime() + Consistent.SLIP_TIME_AND_TEXT + text);
+        labels.get(timeStempIndex).setText(texts.get(timeStempIndex));
+        toTargetText(texts);
+        timeStempIndex++;
+        if (getSkinnable().isSuportChineaseChinease()) {
+            timeStempIndex++;
+        }
+
+        moveTimeLabel();
+
+    }
+  
+
+    /**
+     * 给上一个句子加上结束时间
+     */
+    private void addLastEndPoint() {
+        int lastTimeStempIndex = timeStempIndex - 1;
+        if (lastTimeStempIndex < 0 || lastTimeStempIndex >= texts.size()) {
+            return;
+        }
+
+        String text = texts.get(lastTimeStempIndex);
+        String timeText = "";
+        if (text.contains(Consistent.SLIP_TIME_AND_TEXT)) {
+            text = texts.get(lastTimeStempIndex).split(Consistent.SLIP_TIME_AND_TEXT)[1];
+            timeText = texts.get(lastTimeStempIndex).split(Consistent.SLIP_TIME_AND_TEXT)[0];
+        }
+
+        if (timeText.contains(Consistent.SLIP_START_AND_END)) {
+            timeText = timeText.split(Consistent.SLIP_START_AND_END)[0];
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(timeText).append(Consistent.SLIP_START_AND_END).append(audioPlay.getCurrentPlayTime()).append(Consistent.SLIP_TIME_AND_TEXT).append(text);
+
+        texts.set(lastTimeStempIndex, sb.toString());
+        labels.get(lastTimeStempIndex).setText(texts.get(lastTimeStempIndex));
+
     }
 
     private void moveTimeLabel() {
         if (timeStempIndex < texts.size()) {
             timeHBoxs.get(timeStempIndex).getChildren().setAll(timeLabel);
         }
+        timeLabel.requestFocus();
     }
 
+    /**
+     * 初始化句子的文本筐
+     *
+     * @param sources
+     */
     private void initLabels(List<String> sources) {
         this.labels = new ArrayList<>(sources.size());
         timeHBoxs = new ArrayList<>(sources.size());
@@ -166,10 +205,34 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
         });
 
         hbox.getChildren().addAll(timeBox, scentens);
+        
+        addWordsButton(hbox,scentens);
+        
         labelBox.getChildren().add(hbox);
 
         labels.add(scentens);
         return scentens;
+    }
+
+    /**
+     * 单词所在的句子的音频
+     * @param hbox
+     * @param textField 
+     */
+    private void addWordsButton(HBox hbox, TextField textField) {
+        if (this.getSkinnable().getSentenceConsumer() == null) {
+            return;
+        }
+        Button button = new Button("编辑单词");
+        hbox.getChildren().add(button);
+
+        JavaFxObservable.eventsOf(button, MouseEvent.MOUSE_CLICKED)
+                .filter(e -> e.getClickCount() == 1)
+                .subscribe(e -> {
+                    String text = textField.getText();
+                    int index = (int) textField.getUserData();
+                    getSkinnable().getSentenceConsumer().apply(index,text);
+                });
     }
 
     private void initListener() {
@@ -208,13 +271,14 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
                 .subscribe((p) -> this.timeLabel.setText(p.getNewVal() + ":"));
 
         //this.audioPlay.currentPlayTimeProperty().addListener(listener);
-        this.getSkinnable().addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+        this.getSkinnable().getScene().addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if (event.getCode() != KeyCode.SPACE) {
+                if (event.getCode() != KeyCode.SHIFT) {
                     return;
                 }
                 addPoint();
+                event.consume();
             }
         });
 

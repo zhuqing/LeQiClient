@@ -12,8 +12,9 @@ package xyz.tobebetter.entity;
  */
 public class Consistent {
 
-    public static final String SLIP_TIME_AND_TEXT = "<:>";
-    public static final String SLIP_EN_AND_CH = "<&>";
+    public static final String SLIP_TIME_AND_TEXT = "-->";
+      public static final String SLIP_START_AND_END = "==>";
+    public static final String SLIP_EN_AND_CH = ">::<";
     public static final String SLIP_END = "<=====>";
 
     /**

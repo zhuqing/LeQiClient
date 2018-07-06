@@ -38,11 +38,12 @@ public class DeleteWordAndContentCommand extends Command {
     protected void run(Map<String, Object> param) throws Exception {
         MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
         Word word = (Word) param.get(DATA);
-        parameter.add("id", word.getId());
+        parameter.add("wordId", word.getId());
+        parameter.add("contentId", wordModel.getArticle().getId());
 
-        String words = this.restClient.delete("english/wordandcontent/delete", null, parameter, String.class);
+         this.restClient.delete("english/wordandcontent/deleteByWordIdAndContentId", null, parameter, String.class);
 
-        param.put(ENTITY, words);
+        param.put(ENTITY, "words");
 
     }
 

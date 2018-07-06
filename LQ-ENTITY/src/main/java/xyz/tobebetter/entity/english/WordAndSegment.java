@@ -27,6 +27,22 @@ public class WordAndSegment extends Entity {
      * 单词所在的句子
      */
     private Integer index;
+    
+    /**
+     * 所在句子音频的开始时间
+     */
+    
+    private Integer startTime;
+    
+    /**
+     *  所在句子音频的结束时间
+     */
+    private Integer endTime;
+    
+    /**
+     * 音频路径
+     */
+    private String audioPath;
 
     /**
      * 单词所在的段Id
@@ -80,6 +96,48 @@ public class WordAndSegment extends Entity {
      */
     public void setIndex(Integer index) {
         this.index = index;
+    }
+
+    /**
+     * @return the startTime
+     */
+    public Integer getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * @param startTime the startTime to set
+     */
+    public void setStartTime(Integer startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * @return the endTime
+     */
+    public Integer getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * @param endTime the endTime to set
+     */
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * @return the audioPath
+     */
+    public String getAudioPath() {
+        return audioPath;
+    }
+
+    /**
+     * @param audioPath the audioPath to set
+     */
+    public void setAudioPath(String audioPath) {
+        this.audioPath = audioPath;
     }
 
 }

@@ -7,11 +7,7 @@ package com.leqienglish.client.control.navigation;
 
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.util.sourceitem.SourceItem;
-import com.leqienglish.client.util.thread.DelayRunner;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
@@ -19,70 +15,69 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.TreeItem;
 import javafx.scene.layout.HBox;
+import javafx.util.Callback;
+import org.controlsfx.control.BreadCrumbBar;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author zhuleqi
  */
-public class LQBreadCrumbBar<T extends SourceItem> extends HBox{
-    
-    private final List<LQButton> buttons = new ArrayList<>();
-    
-    private final Map<SourceItem , Button> buttonsMap  = new HashMap<>();
-    
-    private ObjectProperty<SourceItem> selected;
-    
-    private final ChangeListener<SourceItem> selectedItemChangeListener = new ChangeListener<SourceItem>(){
-        @Override
-        public void changed(ObservableValue<? extends SourceItem> observable, SourceItem oldValue, SourceItem newValue) {
-            Button selectButton = buttonsMap.get(newValue);
-            
-            if(selectButton == null){
-                return;
-            }
-            int index = buttons.indexOf(selectButton);
-            if(index <0){
-                return;
-            }
-            
-            List<LQButton> removedButtons = buttons.subList(index+1, buttons.size());
-            
-            buttons.removeAll(removedButtons);
-           
+public class LQBreadCrumbBar<T extends SourceItem> extends HBox {
 
-            
+    BreadCrumbBar<SourceItem> breadCrumbBar;
+
+    private ObjectProperty<SourceItem> selected;
+
+    public LQBreadCrumbBar() {
+
+    }
+
+    private void initBreadCrumbBar(TreeItem<SourceItem> treeItem) {
+        if (this.breadCrumbBar != null) {
+            return;
         }
-    };
-    
-    public LQBreadCrumbBar(){
-       
+        this.breadCrumbBar = new BreadCrumbBar(treeItem);
+        breadCrumbBar.setAutoNavigationEnabled(true);
+
+        this.breadCrumbBar.setCrumbFactory(new Callback<TreeItem<SourceItem>, Button>() {
+            @Override
+            public Button call(TreeItem<SourceItem> param) {
+                Button button = new Button(param.getValue().getDisplay());
+                return button;
+            }
+        });
+
+        JavaFxObservable.changesOf(this.breadCrumbBar.selectedCrumbProperty())
+                .subscribe((c) -> this.setSelected(c.getNewVal().getValue()));
+        this.getChildren().add(this.breadCrumbBar);
     }
-    
-    
-    
-    public void add(SourceItem item){
-       LQButton lqButton = new LQButton(item.getDisplay()+">>");
-       lqButton.setUserData(item);
-       buttons.add(lqButton);
-       buttonsMap.put(item, lqButton);
-       this.setSelected(item);
-       this.getChildren().add(lqButton);
-       
-       lqButton.setOnAction(new EventHandler<ActionEvent>(){
-           @Override
-           public void handle(ActionEvent event) {
-               Button button = (Button) event.getSource();
-               
-               SourceItem clickItem = (SourceItem) button.getUserData();
-               setSelected(clickItem);
-           }
-       });
+
+    public void add(SourceItem item) {
+
+        TreeItem<SourceItem> treeItem = new TreeItem<>();
+        treeItem.setValue(item);
+        if (breadCrumbBar == null) {
+            initBreadCrumbBar(treeItem);
+            this.setSelected(item);
+        } else if (this.breadCrumbBar.getSelectedCrumb() != null) {
+            this.breadCrumbBar.getSelectedCrumb().getChildren().setAll(treeItem);
+           this.breadCrumbBar.setSelectedCrumb(treeItem);
+        }
+
+  
+
+        // this.setSelected(item);
     }
-    
-    public void clear(){
-        buttons.clear();
-        this.getChildren().clear();
+
+    public void clear() {
+
     }
 
     /**
@@ -92,20 +87,21 @@ public class LQBreadCrumbBar<T extends SourceItem> extends HBox{
         return selectedProperty().getValue();
     }
 
-      /**
+    /**
      * @return the selected
      */
     public ObjectProperty<SourceItem> selectedProperty() {
-        if(selected == null){
+        if (selected == null) {
             selected = new SimpleObjectProperty<SourceItem>();
-            selected.addListener(selectedItemChangeListener);
+
         }
         return selected;
     }
+
     /**
      * @param selected the selected to set
      */
     public void setSelected(SourceItem selected) {
-        this.selectedProperty().setValue(selected); 
+        this.selectedProperty().setValue(selected);
     }
 }
