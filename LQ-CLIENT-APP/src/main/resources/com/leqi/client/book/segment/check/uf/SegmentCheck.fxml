@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.file.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+<?import com.leqienglish.client.control.timestemp.check.*?>
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+   
+    <center>
+        <StackPane>
+            <TimeStempCheck fx:id="timeStempCheck"/>
+        </StackPane>
+    </center>
+   
+</BorderPane>

@@ -16,6 +16,7 @@ public class Consistent {
       public static final String SLIP_START_AND_END = "==>";
     public static final String SLIP_EN_AND_CH = ">::<";
     public static final String SLIP_END = "<=====>";
+    public static final String SLIP_SENTENCE = "\n";
 
     /**
      * 已经发布的

@@ -3,29 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english;
+package xyz.tobebetter.entity.english.word.user;
 
 /**
- * 文章和分类的关联
- *
+ *用户和内容的关系表，用户订阅的内容
  * @author zhuqing
  */
-public class ContentAndCatalog {
-    private String catalogId;
+public class UserAndContent {
+    private String userId;
     private String contentId;
 
+    
+
     /**
-     * @return the catalogId
+     * @return the userId
      */
-    public String getCatalogId() {
-        return catalogId;
+    public String getUserId() {
+        return userId;
     }
 
     /**
-     * @param catalogId the catalogId to set
+     * @param userId the userId to set
      */
-    public void setCatalogId(String catalogId) {
-        this.catalogId = catalogId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
@@ -41,5 +42,6 @@ public class ContentAndCatalog {
     public void setContentId(String contentId) {
         this.contentId = contentId;
     }
+
     
 }

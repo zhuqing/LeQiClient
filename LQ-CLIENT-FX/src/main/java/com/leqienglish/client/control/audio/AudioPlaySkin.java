@@ -103,8 +103,6 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
         return slider;
     }
 
-  
-
     private HBox createOpeatorBar() {
         HBox hbox = new HBox();
         hbox.getChildren().addAll(this.playButton(), this.pauseButton(), this.backButton());
@@ -163,9 +161,18 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
         JavaFxObservable.changesOf(getSkinnable().playingProperty()).map(c -> c.getNewVal())
                 .subscribe((c) -> {
                     if (c) {
+
                         mediaplay.play();
+
                     } else {
                         mediaplay.pause();
+                    }
+                });
+
+        JavaFxObservable.changesOf(getSkinnable().resetPlayTimeProperty()).map(c -> c.getNewVal())
+                .subscribe((c) -> {
+                    if (this.getSkinnable().getPlaying()) {
+                        mediaplay.seek(Duration.millis(c.doubleValue()));
                     }
                 });
     }
@@ -179,7 +186,14 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
                     return;
                 }
                 mediaplay.getTotalDuration().toMillis();
-                mediaplay.play();
+                if (getSkinnable().getResetPlayTime() > 0L) {
+                    long mill = getSkinnable().getResetPlayTime();
+                    getSkinnable().setResetPlayTime(0L);
+                    mediaplay.seek(Duration.millis(mill));
+                }else{
+                      mediaplay.play();
+                }
+              
                 getSkinnable().setPlaying(true);
             }
         });
@@ -198,7 +212,7 @@ public class AudioPlaySkin extends CustomSkin<AudioPlay, AudioPlayBehavior<Audio
 
                 double newTime = 0.0;
                 if (10 * 1000 < mediaplay.getCurrentTime().toMillis()) {
-                    newTime = mediaplay.getCurrentTime().toMillis() - 10 * 1000;
+                    newTime = mediaplay.getCurrentTime().toMillis() - 5 * 1000;
                 }
                 mediaplay.seek(new Duration((newTime)));
             }

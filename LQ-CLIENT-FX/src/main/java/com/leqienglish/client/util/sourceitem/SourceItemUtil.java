@@ -7,6 +7,7 @@ package com.leqienglish.client.util.sourceitem;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  *
@@ -33,5 +34,14 @@ public class SourceItemUtil {
         }
         return null;
     }
+    
+    public static <T> SourceItem create(String display,T value){
+        SourceItem<T> sourceItem = new SourceItem<>();
+        sourceItem.setDisplay(display);
+        sourceItem.setValue(value);
+        sourceItem.setId(UUID.randomUUID().toString());
+        
+        return sourceItem;
+    } 
 
 }

@@ -41,6 +41,8 @@ public abstract class Command extends LogFacade {
     public final static String ENTITY = "ENTITY";
     public final static String PATH = "PATH";
     
+      public final static String SUCCESS = "SUCCESS";
+    
     public final static String CONSUMER = "CONSUMER";
     protected boolean wait = true;
 

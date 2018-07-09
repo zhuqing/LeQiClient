@@ -5,9 +5,12 @@
  */
 package com.leqi.client.book.segment.uf;
 
+import com.leqi.client.book.content.uf.ContentModel;
+import com.leqi.client.book.segment.cf.DeleteSegmentCommand;
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
 import com.leqi.client.book.segment.cf.UpdateSegmentStatusCommand;
+import com.leqi.client.book.segment.check.uf.SegmentCheckModel;
 import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.uf.BookModel;
@@ -18,16 +21,23 @@ import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.control.view.table.row.LQTableRow;
 import com.leqienglish.client.fw.cf.Command;
+import static com.leqienglish.client.fw.cf.Command.ID;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
+import com.leqienglish.client.util.sourceitem.SourceItemUtil;
+import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
+import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
 import javax.annotation.Resource;
@@ -47,16 +57,13 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
     private LQTableView<Segment> segmentsTableView;
-    
-    
+
     @FXML
     private LQFormView<Segment> segmentFormView;
 
     @Resource(name = "QuerySegmentsCommand")
     private QuerySegmentsCommand querySegmentsCommand;
 
-    @Resource(name = "UpdateContentStatusCommand")
-    private UpdateContentStatusCommand updateContentStatusCommand;
 
     @Resource(name = "DownLoadFileCommand")
     private DownLoadFileCommand downLoadFileCommand;
@@ -64,19 +71,23 @@ public class SegmentController extends FXMLController<SegmentModel> {
     @Resource(name = "UpdateSegmentStatusCommand")
     private UpdateSegmentStatusCommand updateSegmentStatusCommand;
 
-    @Resource(name = "BookModel")
-    private BookModel bookModel;
 
-    @Resource(name = "SegmentInfoModel")
-    private SegmentInfoModel segmentInfoModel;
-    
-        @FXML
-    private TimeStemp timeStemp;
+
     @FXML
-    private CheckBox isSupportChinease;
+    private TimeStemp timeStemp;
+
 
     @Resource(name = "SaveContentCommand")
     private SaveSegmentCommand saveContentCommand;
+
+    @Resource(name = "DeleteSegmentCommand")
+    private DeleteSegmentCommand deleteSegmentCommand;
+    
+    @Resource(name = "ContentModel")
+    private ContentModel contentModel;
+
+    @Resource(name = "SegmentCheckModel")
+    private SegmentCheckModel segmentCheckModel;
 
     @Override
     public void refresh() {
@@ -90,10 +101,10 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
         JavaFxObservable.changesOf(segmentsTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((b) -> this.getModel().setEditingSegment(b.getNewVal()));
-        
+
         JavaFxObservable.changesOf(this.getModel().editingSegmentProperty())
-                .map(c->c.getNewVal())
-                .subscribe(c->this.segmentFormView.setValue(c));
+                .map(c -> c.getNewVal())
+                .subscribe(c -> editingSegmentChange(c));
 
         JavaFxObservable.nullableValuesOf(this.getModel().articleProperty())
                 .subscribe(op -> articleChange(op.orElse(null)));
@@ -103,17 +114,29 @@ public class SegmentController extends FXMLController<SegmentModel> {
             if (event.getClickCount() != 2) {
                 return;
             }
-            
+
             LQTableRow row = (LQTableRow) event.getSource();
-            
+
             if (row.getItem() == null) {
                 return;
             }
             getModel().setEditingSegment((Segment) row.getItem());
         });
+        
+        
     }
 
-
+    private void editingSegmentChange(Segment segment) {
+        try {
+            Content article = this.getModel().getArticle();
+            String filePath = FileUtil.toLocalFilePath(article.getAudioPath());
+            File file = new File(filePath);
+            timeStemp.setAudioPath(file.toURI().toString());
+            this.segmentFormView.setValue(segment);
+        } catch (Exception ex) {
+            Logger.getLogger(SegmentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void articleChange(Content content) {
         if (content == null) {
@@ -127,8 +150,6 @@ public class SegmentController extends FXMLController<SegmentModel> {
         downLoadFileCommand.doCommand(map);
     }
 
-   
-
     /**
      * 发布按钮点击事件
      *
@@ -140,24 +161,24 @@ public class SegmentController extends FXMLController<SegmentModel> {
     }
 
     @FXML
-    public void createSegment(ActionEvent event){
+    public void createSegment(ActionEvent event) {
         Segment segment = this.createSegmentInfo(this.getModel().getArticle());
-        
-        if(segment == null){
+
+        if (segment == null) {
             return;
         }
-        
+
         this.getModel().setEditingSegment(segment);
     }
-    
-     /**
+
+    /**
      * 创建文章的片段
      *
      * @param artical
      * @return
      */
     private Segment createSegmentInfo(Content artical) {
-        if(artical == null){
+        if (artical == null) {
             AlertUtil.showError("文章不能为null");
             return null;
         }
@@ -167,23 +188,39 @@ public class SegmentController extends FXMLController<SegmentModel> {
         segment.setContentId(artical.getId());
         return segment;
     }
-    
-    
+
     @FXML
-    public void deleteSegment(ActionEvent event){
-        
+    public void refresh(ActionEvent event) {
+
     }
-    
-     
+
     @FXML
-    public void save(ActionEvent event){
+    public void deleteSegment(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        Segment segment = (Segment) button.getUserData();
+        Map<String, Object> map = new HashMap<>();
+        map.put(ID, segment.getId());
+        deleteSegmentCommand.doCommand(map);
+    }
+
+    @FXML
+    public void check(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        Segment segment = (Segment) button.getUserData();
+        segmentCheckModel.setSegment(segment);
+        this.segmentCheckModel.setArticle(this.getModel().getArticle());
+        contentModel.setAddBreadCrumb(SourceItemUtil.create(segment.getTitle(), "SegmentCheckModel"));
+    }
+
+    @FXML
+    public void save(ActionEvent event) {
         this.getModel().getEditingSegment().setContent(timeStemp.getTargetText());
         Map<String, Object> map = new HashMap<>();
         map.put(Command.DATA, this.getModel().getEditingSegment());
         timeStemp.setPlaying(Boolean.FALSE);
         saveContentCommand.doCommand(map);
     }
-    
+
     /**
      * 取消发布按钮点击事件
      *

@@ -108,6 +108,7 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
     private void addPoint() {
         addLastEndPoint();
         if (timeStempIndex >= texts.size()) {
+              toTargetText(texts);
             return;
         }
 
@@ -294,8 +295,8 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
             this.audioPlay.setSource(null);
             return;
         }
-        File filr = new File(path);
-        this.audioPlay.setSource(filr.toURI().toString());
+        //File filr = new File(path);
+        this.audioPlay.setSource(path);
     }
 
     private void toTargetText(List<String> texts) {
@@ -303,10 +304,10 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
 
         for (int i = 0; i < texts.size(); i++) {
             if (this.getSkinnable().isSuportChineaseChinease()) {
-                sb.append(texts.get(i)).append(Consistent.SLIP_EN_AND_CH).append(texts.get(i + 1)).append("\n");
+                sb.append(texts.get(i)).append(Consistent.SLIP_EN_AND_CH).append(texts.get(i + 1)).append(Consistent.SLIP_SENTENCE);
                 i++;
             } else {
-                sb.append(texts.get(i)).append("\n");
+                sb.append(texts.get(i)).append(Consistent.SLIP_SENTENCE);
             }
 
         }

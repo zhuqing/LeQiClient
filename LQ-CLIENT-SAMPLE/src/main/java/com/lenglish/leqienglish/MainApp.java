@@ -26,6 +26,7 @@ import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.english.Word;
 import xyz.tobebetter.entity.english.WordAndContent;
+import xyz.tobebetter.entity.english.segment.WordAndSegment;
 
 /**
  * 使用freeMarker，生成mybatis配置xml
@@ -35,7 +36,7 @@ import xyz.tobebetter.entity.english.WordAndContent;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(WordAndContent.class, WordAndContent.class, "WORD_And_CONTENT", "Base_Column_List");
+        createMaper(WordAndSegment.class, WordAndSegment.class, "WORD_AND_SEGMENT", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {

@@ -23,13 +23,16 @@
    <top>
        <HBox spacing="20" >
            <Button text="Create Segment" onAction="#createSegment"  ></Button>
-            <Button text="Create Segment" onAction="#deleteSegment"  ></Button>
+           <Button text="Save" onAction="#save"/>  
+            
        </HBox>
    </top>
     <left>
-        <StackPane prefWidth="400" >
+        <StackPane prefWidth="500" >
             <VBox >
-                <Label fx:id="AritcleTitle"/>
+                <HBox>
+                    <LQButton id="refresh" text="刷新" onAction="#refresh"/>
+                </HBox>
                 <LQTableView  fx:id="segmentsTableView">
                 <columns>
                     <LQTableColumn  editable="false" prefWidth="100" propertyName="title" text="Title">
@@ -42,16 +45,19 @@
                             <LQTableTextCell />
                         </tableCell>
                     </LQTableColumn>
-                    <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                    <LQTableColumn editable="false" prefWidth="240.0" text="操作">
                         <tableCell>
                             <LQOperatorTableCell>
                                 <buttons>
                                       
                                     <LQButton id="lunch" text="发布" onAction="#lunch">
                                     </LQButton>
-                                    <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
-                                    </LQButton>
+                                    <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch"/>
                                         
+                                         <LQButton id="check" text="Check" onAction="#check"/>
+                                  
+                                        <LQButton id="deleteSegment" text="delete" onAction="#deleteSegment">
+                                    </LQButton> 
                             
                                 </buttons>
                                 <filterButtonsCallback>
@@ -80,19 +86,17 @@
 <!--                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Map3:"  prefWidth="60" />
                 <LQOpenFileFormCell fx:id="audioPathFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="audioPath"   prefWidth="400" >
 
-                </LQOpenFileFormCell>     -->
+                    </LQOpenFileFormCell>     -->
                     
-                <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Content:"   prefWidth="60"/>
-                <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="content"  prefWidth="400"  />
-            </LQFormView>
-            <TimeStemp fx:id="timeStemp">
+                    <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Content:"   prefWidth="60"/>
+                    <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="content"  prefWidth="400"  />
+                </LQFormView>
+                <TimeStemp fx:id="timeStemp">
             
-            </TimeStemp>
-            <CheckBox fx:id="isSupportChinease" selected="false" text="is support chinease？" /> 
-            <HBox>
-                <Button text="Save" onAction="#save"/>  
-            </HBox>
-        </VBox>
+                </TimeStemp>
+                <CheckBox fx:id="isSupportChinease" selected="false" text="is support chinease？" /> 
+          
+            </VBox>
    
         </StackPane>
     </center>

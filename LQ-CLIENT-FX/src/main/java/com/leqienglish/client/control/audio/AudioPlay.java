@@ -31,6 +31,8 @@ public class AudioPlay extends Control {
 
     private LongProperty currentPlayTime;
 
+    private LongProperty resetPlayTime;
+
     private BooleanProperty playing;
 
     @Override
@@ -143,5 +145,29 @@ public class AudioPlay extends Control {
      */
     public void setPlaying(Boolean playing) {
         this.playingProperty().setValue(playing);
+    }
+
+    /**
+     * @return the resetPlayTime
+     */
+    public Long getResetPlayTime() {
+        return resetPlayTimeProperty().getValue();
+    }
+
+    /**
+     * @return the resetPlayTime
+     */
+    public LongProperty resetPlayTimeProperty() {
+        if (resetPlayTime == null) {
+            resetPlayTime = new SimpleLongProperty(0L);
+        }
+        return resetPlayTime;
+    }
+
+    /**
+     * @param resetPlayTime the resetPlayTime to set
+     */
+    public void setResetPlayTime(Long resetPlayTime) {
+        this.resetPlayTimeProperty().setValue(resetPlayTime); 
     }
 }

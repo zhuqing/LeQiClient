@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english;
+package xyz.tobebetter.entity.english.word.user;
 
 /**
  *用户已经背诵完成的段

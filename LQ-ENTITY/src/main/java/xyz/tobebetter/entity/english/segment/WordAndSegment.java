@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english;
+package xyz.tobebetter.entity.english.segment;
 
 import xyz.tobebetter.entity.Entity;
 
@@ -13,6 +13,11 @@ import xyz.tobebetter.entity.Entity;
  * @author zhuqing
  */
 public class WordAndSegment extends Entity {
+    
+    /**
+     * 关联的单词，减少查询次数
+     */
+    private String word;
 
     /**
      * 单词所在的段Id
@@ -138,6 +143,20 @@ public class WordAndSegment extends Entity {
      */
     public void setAudioPath(String audioPath) {
         this.audioPath = audioPath;
+    }
+
+    /**
+     * @return the word
+     */
+    public String getWord() {
+        return word;
+    }
+
+    /**
+     * @param word the word to set
+     */
+    public void setWord(String word) {
+        this.word = word;
     }
 
 }
