@@ -39,7 +39,7 @@ public class DeleteSegmentCommand extends QueryCommand {
 
         parameter.add("id", (String) param.get(ID));
 
-        Segment segment = this.restClient.get("/segment/delete", parameter, Segment.class);
+        String segment = this.restClient.delete("/segment/delete",null, parameter, String.class);
         this.putParameters(SUCCESS, segment);
     }
 

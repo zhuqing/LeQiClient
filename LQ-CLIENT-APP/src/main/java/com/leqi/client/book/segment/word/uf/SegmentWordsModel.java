@@ -8,13 +8,18 @@ package com.leqi.client.book.segment.word.uf;
 import com.leqi.client.book.segment.info.uf.*;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
+import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
+import xyz.tobebetter.entity.english.play.AudioPlayPoint;
+import xyz.tobebetter.entity.english.segment.WordAndSegment;
 
 /**
  * 每篇文章下面的段
@@ -34,6 +39,14 @@ public class SegmentWordsModel extends FXMLModel {
      * 文章
      */
     private ObjectProperty<Content> article;
+    
+    private ObservableList<WordAndSegment> wordAndSegments;
+    
+    /**
+     * 
+     */
+    private ObjectProperty<AudioPlayPoint> audioPlayPoint;
+    
 
     public SegmentWordsModel() {
         setFxmlPath("/com/leqi/client/book/segment/word/uf/SegmentWords.fxml");
@@ -105,4 +118,46 @@ public class SegmentWordsModel extends FXMLModel {
         this.articleProperty().setValue(article);
     }
 
+    /**
+     * @return the audioPlayPoint
+     */
+    public AudioPlayPoint getAudioPlayPoint() {
+        return audioPlayPointProperty().getValue();
+    }
+    
+      /**
+     * @return the audioPlayPoint
+     */
+    public ObjectProperty<AudioPlayPoint> audioPlayPointProperty() {
+        if(audioPlayPoint == null){
+            audioPlayPoint = new SimpleObjectProperty<AudioPlayPoint>();
+        }
+        return audioPlayPoint;
+    }
+
+    /**
+     * @param audioPlayPoint the audioPlayPoint to set
+     */
+    public void setAudioPlayPoint(AudioPlayPoint audioPlayPoint) {
+        this.audioPlayPointProperty().setValue(audioPlayPoint); 
+    }
+
+    /**
+     * @return the wordAndSegments
+     */
+    public ObservableList<WordAndSegment> getWordAndSegments() {
+        if(this.wordAndSegments == null){
+            this.wordAndSegments = FXCollections.observableArrayList();
+        }
+        return wordAndSegments;
+    }
+
+    /**
+     * @param wordAndSegments the wordAndSegments to set
+     */
+    public void setWordAndSegments(List<WordAndSegment> wordAndSegments) {
+        this.getWordAndSegments().setAll(wordAndSegments) ;
+    }
+
+   
 }

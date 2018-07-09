@@ -44,10 +44,8 @@ public class SaveWordsCommand extends Command {
 
     }
 
-    @Override
-    protected void run(Map<String, Object> param) throws Exception {
-        List<Word> words = (List<Word>) param.get(DATA);
-        String contentId = (String) param.get(ID);
+    protected List<String> saveWord(List<Word> words) throws InterruptedException, Exception {
+
         MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
 
         List<String> wordIds = new ArrayList<>();
@@ -67,7 +65,6 @@ public class SaveWordsCommand extends Command {
             ICIBATranslateUtil.transResult(word.getWord(), (json) -> {
 
                 Word newWord = Word.icibaJsontoWord(json);
- 
 
                 try {
                     changePath(newWord);
@@ -80,18 +77,12 @@ public class SaveWordsCommand extends Command {
 
         }
 
-        wordIds.stream().map((wordId) -> {
-            WordAndContent wc = new WordAndContent();
-            wc.setContentId(contentId);
-            wc.setWordId(wordId);
-            return wc;
-        }).forEach((wc) -> {
-            try {
-                restClient.post("english/wordandcontent/create", wc, null, WordAndContent.class);
-            } catch (Exception ex) {
-                Logger.getLogger(SaveWordsCommand.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        return wordIds;
+    }
+
+    @Override
+    protected void run(Map<String, Object> param) throws Exception {
+        
 
     }
 
@@ -124,7 +115,7 @@ public class SaveWordsCommand extends Command {
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        AlertUtil.showInformation("保存完成");
+        
     }
 
 }

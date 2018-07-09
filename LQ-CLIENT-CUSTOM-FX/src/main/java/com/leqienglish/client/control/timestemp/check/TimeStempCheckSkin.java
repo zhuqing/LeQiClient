@@ -82,7 +82,7 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
 
         labelBox = new VBox();
         labelBox.setPrefHeight(300);
-        labelBox.setPrefWidth(400);
+        labelBox.setMinWidth(900);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(labelBox);
@@ -134,7 +134,7 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
         HBox hbox = new HBox();
 
         HBox timeBox = new HBox();
-        timeBox.setPrefWidth(120);
+        timeBox.setMinWidth(120);
         timeHBoxs.add(timeBox);
         Label scentens = null;
         if (playPoint.getChText() != null) {
@@ -146,7 +146,7 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
         if (getSkinnable().getWidth() > 10) {
             scentens.setPrefWidth(this.getSkinnable().getWidth() - 70);
         }else{
-            scentens.setPrefWidth(300);
+            scentens.setPrefWidth(800);
         }
 
         hbox.getChildren().addAll(timeBox, scentens);

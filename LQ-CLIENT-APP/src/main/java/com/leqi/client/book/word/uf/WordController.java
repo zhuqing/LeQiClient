@@ -8,6 +8,7 @@ package com.leqi.client.book.word.uf;
 import com.leqi.client.book.uf.BookModel;
 import com.leqi.client.book.word.cf.DeleteWordAndContentCommand;
 import com.leqi.client.book.word.cf.QueryWordsCommand;
+import com.leqi.client.book.word.cf.SaveWordAndContentCommand;
 import com.leqi.client.book.word.cf.SaveWordsCommand;
 import com.leqi.client.word.info.cf.UpdateWordCommand;
 import com.leqi.client.word.info.uf.WordInfoModel;
@@ -55,8 +56,8 @@ public class WordController extends FXMLController<WordModel> {
     @Resource(name = "WordInfoModel")
     protected WordInfoModel wordInfoModel;
 
-    @Resource(name = "SaveWordsCommand")
-    protected SaveWordsCommand saveWordsCommand;
+    @Resource(name = "SaveWordAndContentCommand")
+    protected SaveWordAndContentCommand saveWordAndContentCommand;
 
     @Resource(name = "QueryWordsCommand")
     protected QueryWordsCommand queryWordsCommand;
@@ -143,6 +144,6 @@ public class WordController extends FXMLController<WordModel> {
         Map<String, Object> param = new HashMap<>();
         param.put(DATA, words);
         param.put(ID, article.getId());
-        saveWordsCommand.doCommand(param);
+        saveWordAndContentCommand.doCommand(param);
     }
 }

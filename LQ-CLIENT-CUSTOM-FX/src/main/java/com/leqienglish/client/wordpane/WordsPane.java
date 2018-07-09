@@ -6,6 +6,8 @@
 package com.leqienglish.client.wordpane;
 
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Control;
@@ -20,6 +22,8 @@ public class WordsPane extends Control{
   
     
     private ObservableList<Word> words;
+    
+    private StringProperty text;
     
 
     /**
@@ -43,6 +47,32 @@ public class WordsPane extends Control{
     protected Skin<?> createDefaultSkin() {
         return new WordsPaneSkin(this);
     }
+
+    /**
+     * @return the text
+     */
+    public String getText() {
+        return textProperty().getValue();
+    }
+    
+     /**
+     * @return the text
+     */
+    public StringProperty textProperty() {
+        if(text == null){
+            text = new SimpleStringProperty();
+            
+        }
+        return text;
+    }
+
+    /**
+     * @param text the text to set
+     */
+    public void setText(String text) {
+        this.textProperty().setValue(text);
+    }
+    
     
     
             

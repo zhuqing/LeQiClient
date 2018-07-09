@@ -5,25 +5,12 @@
  */
 package com.leqi.client.book.segment.check.uf;
 
-import com.leqi.client.book.segment.uf.*;
-import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
-import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
-import com.leqi.client.book.segment.cf.UpdateSegmentStatusCommand;
-import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
-import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.word.uf.SegmentWordsModel;
-import com.leqi.client.book.uf.BookModel;
 import com.leqi.client.common.cf.DownLoadFileCommand;
-import com.leqienglish.client.control.button.LQButton;
-import com.leqienglish.client.control.form.LQFormView;
-import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.timestemp.check.TimeStempCheck;
-import com.leqienglish.client.control.view.table.LQTableView;
-import com.leqienglish.client.control.view.table.row.LQTableRow;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.dialog.LQDialog;
 import com.leqienglish.client.fw.uf.FXMLController;
-import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.io.File;
@@ -34,15 +21,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.CheckBox;
-import javafx.scene.input.MouseEvent;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 
@@ -81,6 +64,8 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
 
         this.timeStempCheck.setSentenceConsumer((a) -> {
             segmentWordsModel.setSegment(this.getModel().getSegment());
+            segmentWordsModel.setAudioPlayPoint(a);
+            segmentWordsModel.setArticle(this.getModel().getArticle());
             LQDialog.openDialog("", segmentWordsModel, timeStempCheck, ButtonType.CLOSE);
         });
         segmentChange(this.getModel().getSegment());

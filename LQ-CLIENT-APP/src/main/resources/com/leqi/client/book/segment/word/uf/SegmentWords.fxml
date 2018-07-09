@@ -33,11 +33,11 @@
             <top>
                 <HBox alignment="CENTER_RIGHT">
                     <LQButton text="刷新"  onAction="#refresh" />  
-                    <LQButton text="添加单词"  onAction="#addWords" />
+                 
                 </HBox>
             </top>
             <center>
-                <LQTableView  fx:id="wordTableView">
+                <LQTableView  fx:id="wordAndSegmentsTableView">
                     <columns>
                         <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
                             <tableCell>
@@ -75,11 +75,6 @@
         </StackPane>
     </center>
     
-    <bottom>
-        <HBox>
-            <Button text="Save" onAction="#save"/>
-  
-        </HBox>
-    </bottom>
+    
 
 </BorderPane>

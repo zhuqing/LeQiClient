@@ -31,18 +31,18 @@ public class WordAndSegment extends Entity {
     /**
      * 单词所在的句子
      */
-    private Integer index;
+    private Integer scentenceIndex;
     
     /**
      * 所在句子音频的开始时间
      */
     
-    private Integer startTime;
+    private Long startTime;
     
     /**
      *  所在句子音频的结束时间
      */
-    private Integer endTime;
+    private Long endTime;
     
     /**
      * 音频路径
@@ -85,51 +85,8 @@ public class WordAndSegment extends Entity {
         this.wordId = wordId;
     }
 
-    /**
-     * 单词所在的句子
-     *
-     * @return the index
-     */
-    public Integer getIndex() {
-        return index;
-    }
+   
 
-    /**
-     * 单词所在的句子
-     *
-     * @param index the index to set
-     */
-    public void setIndex(Integer index) {
-        this.index = index;
-    }
-
-    /**
-     * @return the startTime
-     */
-    public Integer getStartTime() {
-        return startTime;
-    }
-
-    /**
-     * @param startTime the startTime to set
-     */
-    public void setStartTime(Integer startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * @return the endTime
-     */
-    public Integer getEndTime() {
-        return endTime;
-    }
-
-    /**
-     * @param endTime the endTime to set
-     */
-    public void setEndTime(Integer endTime) {
-        this.endTime = endTime;
-    }
 
     /**
      * @return the audioPath
@@ -157,6 +114,48 @@ public class WordAndSegment extends Entity {
      */
     public void setWord(String word) {
         this.word = word;
+    }
+
+    /**
+     * @return the startTime
+     */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * @param startTime the startTime to set
+     */
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * @return the endTime
+     */
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * @param endTime the endTime to set
+     */
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * @return the scentenceIndex
+     */
+    public Integer getScentenceIndex() {
+        return scentenceIndex;
+    }
+
+    /**
+     * @param scentenceIndex the scentenceIndex to set
+     */
+    public void setScentenceIndex(Integer scentenceIndex) {
+        this.scentenceIndex = scentenceIndex;
     }
 
 }

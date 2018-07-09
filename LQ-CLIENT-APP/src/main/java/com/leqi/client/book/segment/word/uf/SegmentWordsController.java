@@ -8,14 +8,18 @@ package com.leqi.client.book.segment.word.uf;
 import com.leqi.client.book.segment.info.uf.*;
 import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.uf.*;
+import com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand;
+import com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand;
 import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.form.cell.edit.file.LQOpenFileFormCell;
 import com.leqienglish.client.control.form.cell.edit.text.LQTextAreaInputFormCell;
 import com.leqienglish.client.control.form.cell.unedit.LQTitleFormCell;
 import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.gridview.LQGridView;
+import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.client.wordpane.WordsPane;
 import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
@@ -30,6 +34,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
+import xyz.tobebetter.entity.english.play.AudioPlayPoint;
+import xyz.tobebetter.entity.english.segment.WordAndSegment;
 
 /**
  *
@@ -40,18 +46,16 @@ import xyz.tobebetter.entity.english.Segment;
 public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
 
     @FXML
-    private LQFormView<Segment> contentInfoFormView;
-    @FXML
-    private LQOpenFileFormCell audioPathFormCell;
-    @FXML
-    private LQTextAreaInputFormCell contentFormCell;
-    @FXML
-    private TimeStemp timeStemp;
-    @FXML
-    private CheckBox isSupportChinease;
+    private LQTableView<WordAndSegment> wordAndSegmentsTableView;
 
-    @Resource(name = "SaveContentCommand")
-    private SaveSegmentCommand saveContentCommand;
+    @FXML
+    private WordsPane wordsPane;
+
+    @Resource(name = "SaveWordAndSegmentsCommand")
+    private SaveWordAndSegmentsCommand saveWordAndSegmentsCommand;
+
+    @Resource(name = "QuerySegmentWrodsCommand")
+    private QuerySegmentWrodsCommand querySegmentWrodsCommand;
 
     @Override
     public void refresh() {
@@ -63,38 +67,48 @@ public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
         JavaFxObservable.nullableValuesOf(this.getModel().segmentProperty())
                 .subscribe((p) -> segmentInfoChange(p.orElse(null)));
 
-        JavaFxObservable.nullableValuesOf(this.getModel().articleProperty())
-                .subscribe((p) -> aritcleChange(p.orElse(null)));
+        JavaFxObservable.nullableValuesOf(this.getModel().audioPlayPointProperty())
+                .subscribe(c -> audioPlayPointChange(c.orElse(null)));
 
-        JavaFxObservable.changesOf(this.isSupportChinease.selectedProperty())
-                .subscribe((c) -> timeStemp.setSuportChineaseChinease(c.getNewVal()));
+        JavaFxObservable.changesOf(this.getModel().getWordAndSegments())
+                .subscribe(c -> wordAndSegmentsTableView.getItems().setAll(this.getModel().getWordAndSegments()));
 
-        //  audioPathFormCell.setCommitConsumer((audioPath)->timeStemp.setAudioPath(audioPath));
-        //  contentFormCell.setCommitConsumer((content)->timeStemp.setSourceText(content+""));
+        JavaFxObservable.changesOf(this.wordsPane.getWords())
+                .subscribe(c -> {
+                    Map<String, Object> map = new HashMap<>();
+                    map.put(Command.DATA, this.wordsPane.getWords());
+                    saveWordAndSegmentsCommand.doCommand(map);
+                });
+
     }
 
-    private void aritcleChange(Content content) throws Exception {
-        if (content == null) {
-            timeStemp.setAudioPath(null);
+    private void audioPlayPointChange(AudioPlayPoint app) {
+        if (app == null) {
+            this.wordsPane.setText("");
             return;
         }
-        timeStemp.setAudioPath(FileUtil.toLocalFilePath(content.getAudioPath()));
+
+        this.wordsPane.setText(app.getEnText());
     }
 
-    private void segmentInfoChange(Segment content) throws Exception {
-        contentInfoFormView.setValue(content);
+    private void segmentInfoChange(Segment segment) throws Exception {
+        if (segment == null) {
+            this.getModel().getWordAndSegments().clear();
+            return;
+        }
+        Map<String, Object> map = new HashMap<>();
+        map.put(Command.ID, segment.getId());
+        querySegmentWrodsCommand.doCommand(map);
+
     }
 
     @FXML
-    public void save(ActionEvent event) {
-        this.getModel().getSegment().setContent(timeStemp.getTargetText());
-        Map<String, Object> map = new HashMap<>();
-        map.put(Command.DATA, this.getModel().getSegment());
-        timeStemp.setPlaying(Boolean.FALSE);
-        saveContentCommand.doCommand(map);
+    public void refresh(ActionEvent event) {
+
     }
-      @FXML
-    public void deleteWord(ActionEvent event){
-        
+
+    @FXML
+    public void deleteWord(ActionEvent event) {
+
     }
 }

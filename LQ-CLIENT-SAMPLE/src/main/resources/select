@@ -11,3 +11,10 @@
             
         </where>
 </select>
+
+<select id="findById" resultMap="${resultMap}" parameterType="${parameterType}" >
+        select
+           <include refid="${selectField}" />
+        from ${table} t
+        WHERE t.ID = ${'#{'}id ,jdbcType=VARCHAR${'}'}
+</select>

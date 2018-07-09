@@ -5,19 +5,15 @@
  */
 package com.leqienglish.client.wordpane;
 
-import com.leqienglish.client.control.date.pick.YearAndMonthPanel;
 import com.leqienglish.client.control.skin.LQSkin;
 import com.leqienglish.util.text.TextUtil;
 import com.sun.javafx.scene.control.behavior.BehaviorBase;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -85,12 +81,21 @@ public class WordsPaneSkin extends LQSkin<WordsPane, BehaviorBase<WordsPane>> {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 String[] words = TextUtil.splitWords(newValue);
+                
                 toWord(words);
             }
         });
 
         JavaFxObservable.changesOf(this.getSkinnable().getWords())
                 .subscribe((c) -> this.chooseWordsChange());
+
+        JavaFxObservable.changesOf(this.getSkinnable().textProperty())
+                .filter(c -> c.getNewVal() != null)
+                .subscribe((c) -> textArea.setText(c.getNewVal()));
+
+        if (this.getSkinnable().getText() != null) {
+            this.textArea.setText(this.getSkinnable().getText());
+        }
     }
 
     private void chooseWordsChange() {
@@ -108,14 +113,19 @@ public class WordsPaneSkin extends LQSkin<WordsPane, BehaviorBase<WordsPane>> {
                 .map(e -> (Label) e.getSource())
                 .subscribe((l) -> {
                     Word wordE = (Word) l.getUserData();
-                    //this.getSkinnable().getWords().remove(wordE);
+
                     this.chooseWordsPane.getChildren().remove(l);
+                    addWords(wordE.getWord());
+                    this.getSkinnable().getWords().remove(wordE);
                 });
 
         return label;
     }
 
     private void toWord(String[] words) {
+        
+        this.chooseWordsPane.getChildren().clear();
+        this.getSkinnable().getWords().clear();
 
         List<Label> labels = Stream.of(words).filter(p -> !p.trim().isEmpty())
                 .distinct().map((w) -> createWordLabel(w))
@@ -124,7 +134,13 @@ public class WordsPaneSkin extends LQSkin<WordsPane, BehaviorBase<WordsPane>> {
         this.wordsPane.getChildren().setAll(labels);
     }
 
+    private void addWords(String words) {
+        Label label = createWordLabel(words);
+        this.wordsPane.getChildren().add(label);
+    }
+
     private Label createWordLabel(String word) {
+        word = word.toLowerCase();
         Label label = new Label(word);
         label.setUserData(word);
         JavaFxObservable.eventsOf(label, MouseEvent.MOUSE_CLICKED)
