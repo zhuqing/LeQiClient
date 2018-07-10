@@ -13,7 +13,7 @@ import java.util.UUID;
 import org.springframework.util.FileCopyUtils;
 
 /**
- * 
+ *
  * @author zhuleqi
  */
 public class FileUtil {
@@ -231,6 +231,21 @@ public class FileUtil {
         }
         FileCopyUtils.copy(file, uploadFile);
 
+    }
+
+    /**
+     * 判断文件是否存在
+     *
+     * @param path
+     * @return
+     */
+    public static boolean fileExit(String path) {
+        if (path == null || path.isEmpty()) {
+            return false;
+        }
+        File file = new File(path);
+
+        return file.exists();
     }
 
 }

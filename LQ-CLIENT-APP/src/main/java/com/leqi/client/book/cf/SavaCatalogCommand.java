@@ -10,6 +10,8 @@ import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.uf.BookModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
+import com.leqienglish.util.exception.LQExceptionUtil;
+import com.leqienglish.util.file.FileUtil;
 import java.io.File;
 import java.util.Map;
 import javax.annotation.Resource;
@@ -29,53 +31,47 @@ import xyz.tobebetter.entity.english.Catalog;
 @Component("SavaCatalogCommand")
 public class SavaCatalogCommand extends Command {
 
-    /**
-     *
-     */
-    @Resource(name = "BookInfoModel")
-    private BookInfoModel bookInfoModel;
-
     @Resource(name = "BookModel")
     private BookModel bookModel;
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
+        Catalog catalog = (Catalog) param.get(DATA);
+        if (this.getParameters("value") != null) {
+            String path = this.restClient.upload("file/uploadImage", (MultiValueMap<String, Object>) this.getParameters("value"), null, String.class);
+            catalog.setImagePath(path);
+        }
 
-        String path = this.restClient.upload("/english/catalog/upload", (MultiValueMap<String, Object>) this.getParameters("value"), null, String.class);
-        Catalog catalog = bookInfoModel.getCatalog();
-        catalog.setImagePath(path);
-        Catalog newCatalog = this.restClient.post("/english/catalog/create", catalog, null, Catalog.class);
-        this.putParameters("data", newCatalog);
+        if (catalog.getId() == null) {
+            catalog = this.restClient.post("/english/catalog/create", catalog, null, Catalog.class);
+            this.putParameters(MESSAGE, AlertUtil.SAVE_SUCCESS);
+        } else {
+            catalog = this.restClient.put("/english/catalog/update", catalog, null, Catalog.class);
+            this.putParameters(MESSAGE, AlertUtil.UPDATE_SUCCESS);
+        }
+
+        this.putParameters(DATA, catalog);
 
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        if (this.getParameters("data") == null) {
-            AlertUtil.showError("保存失败！");
-        } else {
-            Catalog newCatalog = (Catalog) this.getParameters("data");
-            if (Objects.equal(newCatalog.getType(), Consistent.BOOK_TYPE)) {
-                this.bookModel.getBooks().add(newCatalog);
-            }
-//            else if (Objects.equal(newCatalog.getType(), Catalog.CHAPTER_TYPE)) {
-//                this.bookModel.getArticles().add(newCatalog);
-//            }
-        }
+        AlertUtil.showInformation((String) this.getParameters(MESSAGE));
     }
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
-        Catalog catalog = bookInfoModel.getCatalog();
+        Catalog catalog = (Catalog) param.get(DATA);
 
-        if (catalog == null) {
-            throw new Exception("catalog不能为null");
+        LQExceptionUtil.required(catalog != null, "catalog不能为null");
+        if (FileUtil.fileExit(catalog.getImagePath())) {
+            MultiValueMap<String, Object> value = new LinkedMultiValueMap();
+
+            value.add("file", new FileSystemResource(new File(catalog.getImagePath())));
+            //catalog.setImagePath(null);
+            this.putParameters("value", value);
         }
-        MultiValueMap<String, Object> value = new LinkedMultiValueMap();
-        value.add("catalog", "catalog");
-        value.add("file", new FileSystemResource(new File(catalog.getImagePath())));
-        //catalog.setImagePath(null);
-        this.putParameters("value", value);
+
     }
 
 }

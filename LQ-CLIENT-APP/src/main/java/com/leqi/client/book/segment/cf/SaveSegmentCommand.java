@@ -38,18 +38,17 @@ public class SaveSegmentCommand extends Command {
         Segment content = (Segment) param.get(DATA);
         if (content.getId() == null) {
             content = this.restClient.post("/segment/create", content, null, Segment.class);
-              this.putParameters("MESAGE", AlertUtil.SAVE_SUCCESS);
-        }else{
-             content = this.restClient.put("/segment/update", content, null, Segment.class);
-               this.putParameters("MESAGE", AlertUtil.UPDATE_SUCCESS);
+            this.putParameters(MESSAGE, AlertUtil.SAVE_SUCCESS);
+        } else {
+            content = this.restClient.put("/segment/update", content, null, Segment.class);
+            this.putParameters(MESSAGE, AlertUtil.UPDATE_SUCCESS);
         }
-                
 
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        AlertUtil.showInformation((String) this.getParameters("MESSAGE"));
+        AlertUtil.showInformation((String) this.getParameters(MESSAGE));
     }
 
 }

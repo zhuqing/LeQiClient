@@ -35,3 +35,7 @@ LQ-CLIENT-APP/log/*.log
 LQ-CLIENT-APP/log/his.log
 
 LQ-CLIENT-FW/src/main/resources/fwBeans.xml
+
+LQ-CLIENT-APP/log/his.log
+
+LQ-CLIENT-FW/src/main/resources/fwBeans.xml

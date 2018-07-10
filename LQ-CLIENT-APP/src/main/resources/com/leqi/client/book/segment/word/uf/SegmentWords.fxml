@@ -45,7 +45,7 @@
                             </tableCell>
                         </LQTableColumn>
                         
-                         <LQTableColumn  editable="false" prefWidth="100" propertyName="index" text="Index">
+                         <LQTableColumn  editable="false" prefWidth="100" propertyName="scentenceIndex" text="Index">
                             <tableCell>
                                 <LQTableTextCell />
                             </tableCell>

@@ -134,7 +134,11 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     public void saveBook(ActionEvent event) {
-        savaCatalogCommand.doCommand(null);
+
+        Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, bookInfoFormView.getValue());
+        savaCatalogCommand.doCommand(param);
     }
 
     @FXML
