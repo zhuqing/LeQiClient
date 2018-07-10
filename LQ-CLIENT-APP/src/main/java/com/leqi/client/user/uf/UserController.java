@@ -7,7 +7,7 @@ package com.leqi.client.user.uf;
 
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
 import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.book.info.cf.QueryCatalogCommand;
+import com.leqi.client.book.cf.QueryCatalogCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;

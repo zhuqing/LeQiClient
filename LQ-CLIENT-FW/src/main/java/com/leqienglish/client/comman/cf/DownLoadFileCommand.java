@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.common.cf;
+package com.leqienglish.client.comman.cf;
 
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.util.exception.LQExceptionUtil;

@@ -8,6 +8,7 @@ package com.leqienglish.client.control.form.cell.edit.image.path;
 import com.leqienglish.client.control.form.cell.edit.LQEditableFormCell;
 import com.leqienglish.client.control.image.path.LQEditableImagePathView;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
+import javafx.util.Callback;
 
 /**
  *
@@ -16,6 +17,8 @@ import io.reactivex.rxjavafx.observables.JavaFxObservable;
 public class LQImagePathFormCell<S> extends LQEditableFormCell<S, String, LQEditableImagePathView> {
 
     private LQEditableImagePathView hipImageView;
+    
+    private Callback<String,String> checkFileCallback;
 
     @Override
     protected LQEditableImagePathView createEditGraghic() {
@@ -33,6 +36,9 @@ public class LQImagePathFormCell<S> extends LQEditableFormCell<S, String, LQEdit
     protected void updateValue(String path) {
         super.updateValue(path);
 
+        if(this.getCheckFileCallback()!=null){
+            path = this.getCheckFileCallback().call(path);
+        }
         this.getHipImageView().setImagePath(path);
 
     }
@@ -42,6 +48,20 @@ public class LQImagePathFormCell<S> extends LQEditableFormCell<S, String, LQEdit
             createEditGraghic();
         }
         return hipImageView;
+    }
+
+    /**
+     * @return the checkFileCallback
+     */
+    public Callback<String,String> getCheckFileCallback() {
+        return checkFileCallback;
+    }
+
+    /**
+     * @param checkFileCallback the checkFileCallback to set
+     */
+    public void setCheckFileCallback(Callback<String,String> checkFileCallback) {
+        this.checkFileCallback = checkFileCallback;
     }
 
 }

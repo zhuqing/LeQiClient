@@ -26,21 +26,23 @@
 <?import com.leqi.client.book.segment.cf.*?>
 <?import com.leqienglish.client.control.combobox.*?>
 <?import com.leqienglish.client.control.query.listview.QueryListView?>
+
+<?import com.leqienglish.client.fw.callback.*?>
 <BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <VBox>
             <HBox>
                 <Button text="Create Book" onAction="#createBook"/>
-                <Button text="Delete Book" onAction="#deleteBook"/>
-
+                
+                <Button text="Save Book" onAction="#saveBook"/>
             </HBox>
 
         </VBox>
     </top>
     <left>
 
-
-        <StackPane prefWidth="300" >
+       
+        <StackPane prefWidth="500" >
             <VBox>
                
                 <HBox>
@@ -56,12 +58,8 @@
                                 <LQTableTextCell />
                             </tableCell>
                         </LQTableColumn>
-                        <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
-                            <tableCell>
-                                <LQTableTextCell />
-                            </tableCell>
-                        </LQTableColumn>
-                        <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                       
+                        <LQTableColumn editable="false" prefWidth="220.0" text="操作">
                             <tableCell>
                                 <LQOperatorTableCell>
                                     <buttons>
@@ -72,6 +70,9 @@
                                         </LQButton>
                                     
                                         <LQButton id="showArticles" text="查看文章" onAction="#showArticles">
+                                        </LQButton>
+                                        
+                                        <LQButton id="delete" text="Delete" onAction="#delete">
                                         </LQButton>
 
                                     </buttons>
@@ -103,7 +104,9 @@
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Image:"/>
                 <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" LQFormView.rowSpan="4"
                                      propertyName="imagePath" prefWidth="300" prefHeight="400">
-
+                    <checkFileCallback>
+                        <FileCheckCallback/>
+                    </checkFileCallback>
                 </LQImagePathFormCell>
             </LQFormView>
         </StackPane>

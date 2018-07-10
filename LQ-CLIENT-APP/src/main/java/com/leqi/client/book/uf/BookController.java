@@ -7,8 +7,11 @@ package com.leqi.client.book.uf;
 
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
 import com.leqi.client.book.article.uf.ArticleModel;
+import com.leqi.client.book.cf.DeleteCatalogCommand;
 import com.leqi.client.book.content.uf.ContentModel;
-import com.leqi.client.book.info.cf.QueryCatalogCommand;
+import com.leqi.client.book.cf.QueryCatalogCommand;
+import com.leqi.client.book.cf.SavaCatalogCommand;
+import com.leqi.client.book.cf.UpdateCatalogStatusCommand;
 import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
@@ -19,6 +22,7 @@ import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.alert.AlertUtil;
+import com.leqienglish.client.util.event.EventUtil;
 import com.leqienglish.client.util.sourceitem.SourceItem;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
@@ -48,7 +52,7 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     private LQTableView<Catalog> bookTableView;
-    
+
     @FXML
     private LQFormView<Catalog> bookInfoFormView;
 
@@ -64,12 +68,17 @@ public class BookController extends FXMLController<BookModel> {
     @Resource(name = "ArticleModel")
     private ArticleModel articleModel;
 
-
     @Resource(name = "QueryCatalogCommand")
     private QueryCatalogCommand queryCatalogCommand;
 
-    @Resource(name = "QueryArticlesCommand")
-    private QueryArticlesCommand queryArticlesCommand;
+    @Resource(name = "DeleteCatalogCommand")
+    private DeleteCatalogCommand deleteCatalogCommand;
+
+    @Resource(name = "SavaCatalogCommand")
+    private SavaCatalogCommand savaCatalogCommand;
+
+    @Resource(name = "UpdateCatalogStatusCommand")
+    private UpdateCatalogStatusCommand updateCatalogStatusCommand;
 
     @Override
     public void refresh() {
@@ -89,20 +98,6 @@ public class BookController extends FXMLController<BookModel> {
 //
 //        JavaFxObservable.changesOf(articListView.getSelectionModel().selectedItemProperty())
 //                .subscribe((catalog) -> articListViewSelectedChange(catalog.getNewVal()));
-        JavaFxObservable.changesOf(this.getModel().bookBusinessIdProperty())
-                .map((p) -> p.getNewVal())
-                .subscribe((businessId) -> {
-                    if (businessId == null) {
-                        this.bookBusinessPane.getChildren().clear();
-                    } else {
-                        FXMLModel fxmlModel = this.getModel(businessId);
-                        if (fxmlModel == null) {
-                            return;
-                        }
-                        this.bookBusinessPane.getChildren().setAll(fxmlModel.getRoot());
-                    }
-                });
-
         //  queryBooks(1, 20);
     }
 
@@ -113,14 +108,6 @@ public class BookController extends FXMLController<BookModel> {
         bookInfoFormView.setValue(catalog);
         //queryArticle(catalog.getId(), 1, 20);
     }
-
-    private void articListViewSelectedChange(Content content) {
-
-//        bookBusinessPane.getChildren().setAll(this.segmentModel.getRoot());
-//        segmentModel.setArticle(content);
-    }
-
-   
 
     private void queryBooks(int page, int pageSize) {
         Map<String, Object> param = new HashMap<String, Object>();
@@ -134,8 +121,8 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     public void createBook(ActionEvent event) {
-       Catalog book = createBook();
-       this.bookInfoFormView.setValue(book);
+        Catalog book = createBook();
+        this.bookInfoFormView.setValue(book);
 
     }
 
@@ -146,25 +133,47 @@ public class BookController extends FXMLController<BookModel> {
     }
 
     @FXML
-    public void deleteBook(ActionEvent event) {
+    public void saveBook(ActionEvent event) {
+        savaCatalogCommand.doCommand(null);
+    }
 
+    @FXML
+    public void delete(ActionEvent event) {
+        Catalog book = EventUtil.getEntityFromButton(event);
+        Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, book);
+        deleteCatalogCommand.doCommand(param);
     }
 
     @FXML
     public void cancelLunch(ActionEvent event) {
+        Catalog catalog = EventUtil.getEntityFromButton(event);
+        Map<String, Object> param = new HashMap<String, Object>();
 
+        param.put(Command.DATA, Consistent.UN_LAUNCH);
+        param.put(Command.ID, catalog.getId());
+
+        updateCatalogStatusCommand.doCommand(param);
     }
 
     @FXML
     public void lunch(ActionEvent event) {
 
+        Catalog catalog = EventUtil.getEntityFromButton(event);
+        Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, Consistent.HAS_LAUNCHED);
+        param.put(Command.ID, catalog.getId());
+
+        updateCatalogStatusCommand.doCommand(param);
     }
 
     @FXML
     public void showArticles(ActionEvent event) {
         Button button = (Button) event.getSource();
         Catalog book = (Catalog) button.getUserData();
-        if(book == null){
+        if (book == null) {
             AlertUtil.showError("没有书本");
             return;
         }
@@ -173,10 +182,8 @@ public class BookController extends FXMLController<BookModel> {
         sourceItem.setDisplay(book.getTitle());
         this.contentModel.setAddBreadCrumb(sourceItem);
         this.articleModel.setBook(book);
-        
-    }
 
-   
+    }
 
     /**
      * 创建书本
@@ -189,7 +196,5 @@ public class BookController extends FXMLController<BookModel> {
         catalog.setUserId("1");
         return catalog;
     }
-
-    
 
 }

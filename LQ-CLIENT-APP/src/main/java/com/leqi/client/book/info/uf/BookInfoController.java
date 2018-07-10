@@ -5,7 +5,7 @@
  */
 package com.leqi.client.book.info.uf;
 
-import com.leqi.client.book.info.cf.SavaCatalogCommand;
+import com.leqi.client.book.cf.SavaCatalogCommand;
 import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.fw.sf.FileService;
 

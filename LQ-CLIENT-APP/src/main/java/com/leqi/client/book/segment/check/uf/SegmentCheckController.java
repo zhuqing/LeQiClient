@@ -6,7 +6,8 @@
 package com.leqi.client.book.segment.check.uf;
 
 import com.leqi.client.book.segment.word.uf.SegmentWordsModel;
-import com.leqi.client.common.cf.DownLoadFileCommand;
+import com.leqienglish.client.comman.cf.DownLoadFileCommand;
+
 import com.leqienglish.client.control.timestemp.check.TimeStempCheck;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.dialog.LQDialog;

@@ -5,17 +5,22 @@
  */
 package com.leqi.client.book.segment.cf;
 
+import com.google.common.base.Objects;
 import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqi.client.common.cf.updatestatus.UpdateStatusByIdCommand;
 import com.leqienglish.client.fw.cf.Command;
+import static com.leqienglish.client.fw.cf.Command.DATA;
+import static com.leqienglish.client.fw.cf.Command.ID;
 import com.leqienglish.client.util.alert.AlertUtil;
 import java.util.Map;
+import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.Message;
 import xyz.tobebetter.entity.english.Content;
-
+import xyz.tobebetter.entity.english.Segment;
 
 /**
  *
@@ -23,7 +28,10 @@ import xyz.tobebetter.entity.english.Content;
  */
 @Lazy
 @Component("UpdateSegmentStatusCommand")
-public class UpdateSegmentStatusCommand extends Command {
+public class UpdateSegmentStatusCommand extends UpdateStatusByIdCommand {
+
+    @Resource(name = "SegmentModel")
+    private SegmentModel segmentModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -32,27 +40,24 @@ public class UpdateSegmentStatusCommand extends Command {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
-        MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
-        parameter.add("id", param.get(ID) + "");
-        parameter.add("status", (String) param.get(DATA));
-      
+        String id = (String) param.get(ID);
+        int status = (int) param.get(DATA);
 
-        this.restClient.put("/segment/updateStatusById", null, parameter, Message.class);
-//
-//        if (message.getStatus() == Message.ERROR) {
-//            throw new Exception("更新失败，" + message.getMessage());
-//        }
-       
+        this.updateStatus(id, status + "");
+        Segment book = segmentModel.getSegments().stream().filter(c -> Objects.equal(c.getId(), id)).findFirst().orElse(null);
+        book.setStatus(status);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        AlertUtil.showInformation("更新成功");
+        Segment[] cs = segmentModel.getSegments().toArray(new Segment[0]);
+        segmentModel.getSegments().clear();
+        this.segmentModel.getSegments().setAll(cs);
+    }
 
-        SegmentModel segmentModel = (SegmentModel) param.get(Command.MODEL);
-        Content article = segmentModel.getArticle();
-        segmentModel.setArticle(null);
-        segmentModel.setArticle(article);
+    @Override
+    protected String getUpdatePath() {
+        return "/segment/updateStatusById";
     }
 
 }

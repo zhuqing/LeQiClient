@@ -6,8 +6,9 @@
 package com.leqi.client.book.segment.word.uf;
 
 import com.leqi.client.book.segment.info.uf.*;
-import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
+import com.leqi.client.book.segment.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.uf.*;
+import com.leqi.client.book.segment.word.cf.DeleteSegmentWrodsCommand;
 import com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand;
 import com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand;
 import com.leqienglish.client.control.form.LQFormView;
@@ -18,6 +19,7 @@ import com.leqienglish.client.control.timestemp.TimeStemp;
 import com.leqienglish.client.control.view.gridview.LQGridView;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
+import static com.leqienglish.client.fw.cf.Command.DATA;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.wordpane.WordsPane;
 import com.leqienglish.util.file.FileUtil;
@@ -28,6 +30,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
@@ -56,6 +59,9 @@ public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
 
     @Resource(name = "QuerySegmentWrodsCommand")
     private QuerySegmentWrodsCommand querySegmentWrodsCommand;
+    
+       @Resource(name = "DeleteSegmentWrodsCommand")
+    private DeleteSegmentWrodsCommand deleteSegmentWrodsCommand;
 
     @Override
     public void refresh() {
@@ -104,11 +110,18 @@ public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
 
     @FXML
     public void refresh(ActionEvent event) {
-
+        Segment segment = this.getModel().getSegment();
+        this.getModel().setSegment(null);
+        this.getModel().setSegment(segment);
     }
 
     @FXML
     public void deleteWord(ActionEvent event) {
-
+        Button button = (Button) event.getSource();
+        
+        WordAndSegment was = (WordAndSegment) button.getUserData();
+        Map<String,Object> param = new HashMap<>();
+        param.put(DATA, was);
+        deleteSegmentWrodsCommand.doCommand(param);
     }
 }

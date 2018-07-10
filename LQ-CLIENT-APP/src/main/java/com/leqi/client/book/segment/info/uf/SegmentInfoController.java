@@ -5,7 +5,7 @@
  */
 package com.leqi.client.book.segment.info.uf;
 
-import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
+import com.leqi.client.book.segment.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.uf.*;
 import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.form.cell.edit.file.LQOpenFileFormCell;

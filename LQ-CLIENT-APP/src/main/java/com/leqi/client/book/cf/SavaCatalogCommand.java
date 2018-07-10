@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.info.cf;
+package com.leqi.client.book.cf;
 
 import com.google.common.base.Objects;
 import com.leqi.client.book.info.uf.BookInfoModel;

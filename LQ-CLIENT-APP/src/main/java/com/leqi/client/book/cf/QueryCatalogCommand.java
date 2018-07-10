@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.info.cf;
+package com.leqi.client.book.cf;
 
-import com.leqi.client.book.info.uf.BookInfoModel;
 import com.leqi.client.book.uf.BookModel;
-import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.cf.QueryCommand;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;

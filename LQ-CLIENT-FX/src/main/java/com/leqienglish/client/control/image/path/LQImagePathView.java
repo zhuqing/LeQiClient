@@ -38,6 +38,9 @@ public  class LQImagePathView extends StackPane {
 
     private void imagePathChange(String path) throws FileNotFoundException {
 
+        if(path == null|| path.isEmpty()){
+            return;
+        }
         Image image = null;
         if (URI.isWellFormedIPv4Address(path)) {
             image = new Image(path, true);

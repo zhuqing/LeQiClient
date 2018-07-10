@@ -79,7 +79,7 @@
             
                
         <VBox >
-            <LQFormView fx:id="segmentFormView" StackPane.alignment="CENTER"  prefWidth="600" >
+            <LQFormView fx:id="segmentFormView" StackPane.alignment="CENTER"  >
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"  prefWidth="60"   />
                 <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"  prefWidth="400"  />
                     
@@ -89,7 +89,7 @@
                     </LQOpenFileFormCell>     -->
                     
                     <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Content:"   prefWidth="60"/>
-                    <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="content"  prefWidth="400"  />
+                    <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="content"  prefWidth="400" prefHeight="400" />
                 </LQFormView>
                 <TimeStemp fx:id="timeStemp">
             

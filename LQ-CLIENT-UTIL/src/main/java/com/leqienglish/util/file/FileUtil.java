@@ -13,8 +13,8 @@ import java.util.UUID;
 import org.springframework.util.FileCopyUtils;
 
 /**
- *
- * @author duyi
+ * 
+ * @author zhuleqi
  */
 public class FileUtil {
 

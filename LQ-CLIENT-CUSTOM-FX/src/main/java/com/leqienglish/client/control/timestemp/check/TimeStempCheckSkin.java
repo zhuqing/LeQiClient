@@ -96,6 +96,7 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
     }
 
     private void buildAudioPlayPoints(String text) {
+         this.labelBox.getChildren().clear();
         if (text == null || text.isEmpty()) {
             return;
         }

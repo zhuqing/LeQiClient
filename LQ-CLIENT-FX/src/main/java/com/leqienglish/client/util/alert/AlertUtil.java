@@ -23,6 +23,10 @@ import javafx.scene.input.KeyEvent;
  */
 public class AlertUtil {
 
+    public static final String DELETE_SUCCESS = "删除成功";
+    public static final String SAVE_SUCCESS = "保存成功";
+    public static final String UPDATE_SUCCESS = "更新成功";
+
     public static final ButtonType YES = new ButtonType("是");
     public static final ButtonType NO = new ButtonType("否");
     public static final ButtonType CONFIRM = new ButtonType("确认");

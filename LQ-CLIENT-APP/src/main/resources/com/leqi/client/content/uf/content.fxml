@@ -20,7 +20,7 @@
                
             </center>
             <top>
-                <StackPane >
+                <StackPane  >
                      <LQBreadCrumbBar fx:id="lqBreadCrumBar"></LQBreadCrumbBar>
                 </StackPane>
                

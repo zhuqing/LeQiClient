@@ -5,8 +5,11 @@
  */
 package com.leqi.client.book.article.uf;
 
+import com.leqi.client.book.article.cf.DeleteArticlesCommand;
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
 import com.leqi.client.book.article.cf.SaveArticleCommand;
+import com.leqi.client.book.article.cf.UpdateArticleStatusCommand;
+import com.leqi.client.book.cf.UpdateCatalogStatusCommand;
 import com.leqi.client.book.content.uf.ContentModel;
 import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqi.client.book.word.uf.WordModel;
@@ -18,6 +21,7 @@ import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
+import com.leqienglish.client.util.event.EventUtil;
 import com.leqienglish.client.util.sourceitem.SourceItem;
 
 import com.sun.javafx.collections.MappingChange;
@@ -69,6 +73,14 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @Resource(name = "SaveArticleCommand")
     private SaveArticleCommand saveArticleCommand;
 
+    @Resource(name = "DeleteArticlesCommand")
+    private DeleteArticlesCommand deleteArticlesCommand;
+
+    
+    @Resource(name = "UpdateArticleStatusCommand")
+    private UpdateArticleStatusCommand updateArticleStatusCommand;
+    
+    
     public ArticleController() {
     }
 
@@ -84,7 +96,6 @@ public class ArticleController extends FXMLController<ArticleModel> {
                 .subscribe((c) -> this.contentInfoFormView.setValue(c.getNewVal()));
 
         JavaFxObservable.changesOf(this.getModel().bookProperty())
-                
                 .subscribe(book -> this.bookChange(book.getNewVal()));
 
         JavaFxObservable.changesOf(this.getModel().getArticles())
@@ -92,7 +103,7 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
         JavaFxObservable.changesOf(this.articleTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((c) -> this.getModel().setContent(c.getNewVal()));
-        
+
         bookChange(this.getModel().getBook());
 
     }
@@ -115,15 +126,7 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
     }
 
-    /**
-     * 取消发布按钮点击事件
-     *
-     * @param event
-     */
-    @FXML
-    public void cancelLunch(ActionEvent event) {
-        // callUpdateContent(event, Consistent.UN_LAUNCH);
-    }
+   
 
     @FXML
     public void openWord(ActionEvent event) {
@@ -144,9 +147,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
     @FXML
     public void createArticle(ActionEvent event) {
-       Content article = createArticle(this.getModel().getBook().getId());
-       this.getModel().setContent(article);
-       //this.contentInfoFormView.setValue(article);
+        Content article = createArticle(this.getModel().getBook().getId());
+        this.getModel().setContent(article);
+        //this.contentInfoFormView.setValue(article);
     }
 
     /**
@@ -170,7 +173,43 @@ public class ArticleController extends FXMLController<ArticleModel> {
      */
     @FXML
     public void lunch(ActionEvent event) {
-        // callUpdateContent(event, Consistent.UN_LAUNCH);
+        Content content = EventUtil.getEntityFromButton(event);
+        Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, Consistent.HAS_LAUNCHED);
+        param.put(Command.ID, content.getId());
+
+        updateArticleStatusCommand.doCommand(param);
+    }
+    
+     /**
+     * 取消发布按钮点击事件
+     *
+     * @param event
+     */
+    @FXML
+    public void cancelLunch(ActionEvent event) {
+        Content content = EventUtil.getEntityFromButton(event);
+        Map<String, Object> param = new HashMap<String, Object>();
+
+        param.put(Command.DATA, Consistent.UN_LAUNCH);
+        param.put(Command.ID, content.getId());
+
+        updateArticleStatusCommand.doCommand(param);
+    }
+
+    /**
+     * 取消发布按钮点击事件
+     *
+     * @param event
+     */
+    @FXML
+    public void delete(ActionEvent event) {
+        Content article = EventUtil.getEntityFromButton(event);
+
+        Map<String, Object> param = new HashMap<>();
+        param.put(DATA, article);
+        deleteArticlesCommand.doCommand(param);
     }
 
     @FXML

@@ -27,9 +27,6 @@ import xyz.tobebetter.entity.english.Content;
 @Lazy
 @Component("SaveArticleCommand")
 public class SaveArticleCommand extends Command {
-
-     @Resource(name = "BookModel")
-    private BookModel bookModel;
      
      
      @Resource(name = "ArticleModel")
@@ -78,7 +75,7 @@ public class SaveArticleCommand extends Command {
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
         Content content = (Content) this.getParameters(DATA);
-        bookModel.getArticles().add(content);
+       
         articleModel.setContent(content);
 
     }

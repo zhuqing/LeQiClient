@@ -58,13 +58,13 @@ import xyz.tobebetter.entity.Message;
 @Lazy
 @Component("RestClient")
 public class RestClient {
-    
+
     private static RestTemplate restTemplate;
-    
+
     private String serverPath = "http://127.0.0.1:8080";
-    
+
     protected final ObjectMapper mapper = new ObjectMapper();
-    
+
     static {
         // 长连接保持30秒
         PoolingHttpClientConnectionManager pollingConnectionManager = new PoolingHttpClientConnectionManager(30, TimeUnit.SECONDS);
@@ -72,7 +72,7 @@ public class RestClient {
         pollingConnectionManager.setMaxTotal(1000);
         // 同路由的并发数
         pollingConnectionManager.setDefaultMaxPerRoute(1000);
-        
+
         HttpClientBuilder httpClientBuilder = HttpClients.custom();
         httpClientBuilder.setConnectionManager(pollingConnectionManager);
         // 重试次数，默认是3次，没有开启
@@ -92,9 +92,9 @@ public class RestClient {
         headers.add(new BasicHeader("Accept-Encoding", "gzip,deflate"));
         headers.add(new BasicHeader("Accept-Language", "zh-CN"));
         headers.add(new BasicHeader("Connection", "Keep-Alive"));
-        
+
         httpClientBuilder.setDefaultHeaders(headers);
-        
+
         HttpClient httpClient = httpClientBuilder.build();
 
         // httpClient连接配置，底层是配置RequestConfig
@@ -114,62 +114,63 @@ public class RestClient {
         messageConverters.add(new FormHttpMessageConverter());
         // messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
         messageConverters.add(new MappingJackson2HttpMessageConverter());
-        
+
         restTemplate = new RestTemplate(messageConverters);
         restTemplate.setRequestFactory(clientHttpRequestFactory);
         restTemplate.setErrorHandler(new DefaultResponseErrorHandler());
 
 //        LOGGER.info("RestClient初始化完成");
     }
-    
+
     public <T> T post(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.POST, path, obj, parameter, claz);
     }
-    
+
     public <T> T put(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.PUT, path, obj, parameter, claz);
     }
-    
+
     public <T> T delete(String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.DELETE, path, obj, parameter, claz);
     }
-    
+
     public <T> T upload(String path, MultiValueMap<String, Object> value, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
-        
-      
-        
-         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
-        
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
+
         HttpEntity entity = new HttpEntity(value, initHeaders());
         //  entity.getHeaders().
         ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), HttpMethod.POST, entity, Message.class, new HashMap());
         Message resultMessage = (Message) resEntity.getBody();
-        
+
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {
             throw new Exception(resultMessage.getMessage());
         }
-        
+
         return mapper.readValue(resultMessage.getData(), claz);
     }
-    
+
     public <T> T get(String path, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
         return excute(HttpMethod.GET, path, null, parameter, claz);
     }
-    
+
     private <T> T excute(HttpMethod method, String path, Object obj, MultiValueMap<String, String> parameter, Class<T> claz) throws Exception {
-        
+
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         HttpEntity entity = new HttpEntity(obj, initHeaders());
         ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), method, entity, Message.class);
         Message resultMessage = (Message) resEntity.getBody();
-        
+
         if (Objects.equal(resultMessage.getStatus(), Message.ERROR)) {
             throw new Exception(resultMessage.getMessage());
         }
-        
+        if (claz == null) {
+            return null;
+        }
+
         return mapper.readValue(resultMessage.getData(), claz);
     }
-    
+
     private HttpHeaders initHeaders() {
         HttpHeaders headers = new HttpHeaders();
         return headers;
@@ -192,11 +193,11 @@ public class RestClient {
         HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
         urlConn.setConnectTimeout(300000);
         urlConn.connect();
-        
+
         if (urlConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
             throw new Exception(urlConn.getResponseMessage());
         }
-        
+
         InputStream inputStream = urlConn.getInputStream();
         int totalLength = inputStream.available();
         OutputStream os = new FileOutputStream(filePath);
@@ -217,7 +218,7 @@ public class RestClient {
         inputStream.close();
         os.close();
         os.flush();
-        
+
     }
-    
+
 }

@@ -31,12 +31,8 @@ public class BookModel extends FXMLModel {
      * 书列表
      */
     private ObservableList<Catalog> books;
-    /**
-     * 书下的文章列表
-     */
-    private ObservableList<Content> articles;
 
-    private StringProperty bookBusinessId;
+
 
     public BookModel() {
         setFxmlPath("/com/leqi/client/book/uf/Book.fxml");
@@ -71,48 +67,6 @@ public class BookModel extends FXMLModel {
         this.getBooks().setAll(books);
     }
 
-    /**
-     * 书下的文章列表
-     *
-     * @return the articles
-     */
-    public ObservableList<Content> getArticles() {
-        if (articles == null) {
-            this.articles = FXCollections.observableArrayList();
-        }
-        return articles;
-    }
-
-    /**
-     * 书下的文章列表
-     *
-     * @param articles the articles to set
-     */
-    public void setArticles(List<Content> articles) {
-        this.getArticles().setAll(articles);
-    }
-
-    /**
-     * @return the bookBusinessId
-     */
-    public String getBookBusinessId() {
-        return bookBusinessIdProperty().getValue();
-    }
-
-    /**
-     * @return the bookBusinessId
-     */
-    public StringProperty bookBusinessIdProperty() {
-        if (bookBusinessId == null) {
-            bookBusinessId = new SimpleStringProperty();
-        }
-        return bookBusinessId;
-    }
-
-    /**
-     * @param bookBusinessId the bookBusinessId to set
-     */
-    public void setBookBusinessId(String bookBusinessId) {
-        this.bookBusinessIdProperty().setValue(bookBusinessId);
-    }
+  
+   
 }

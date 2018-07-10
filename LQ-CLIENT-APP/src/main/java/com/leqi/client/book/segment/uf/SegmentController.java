@@ -11,10 +11,11 @@ import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
 import com.leqi.client.book.segment.cf.UpdateSegmentStatusCommand;
 import com.leqi.client.book.segment.check.uf.SegmentCheckModel;
-import com.leqi.client.book.segment.info.cf.SaveSegmentCommand;
+import com.leqi.client.book.segment.cf.SaveSegmentCommand;
 import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
 import com.leqi.client.book.uf.BookModel;
-import com.leqi.client.common.cf.DownLoadFileCommand;
+import com.leqienglish.client.comman.cf.DownLoadFileCommand;
+
 import com.leqienglish.client.control.button.LQButton;
 import com.leqienglish.client.control.form.LQFormView;
 import com.leqienglish.client.control.timestemp.TimeStemp;
@@ -77,8 +78,8 @@ public class SegmentController extends FXMLController<SegmentModel> {
     private TimeStemp timeStemp;
 
 
-    @Resource(name = "SaveContentCommand")
-    private SaveSegmentCommand saveContentCommand;
+    @Resource(name = "SaveSegmentCommand")
+    private SaveSegmentCommand saveSegmentCommand;
 
     @Resource(name = "DeleteSegmentCommand")
     private DeleteSegmentCommand deleteSegmentCommand;
@@ -132,6 +133,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
             String filePath = FileUtil.toLocalFilePath(article.getAudioPath());
             File file = new File(filePath);
             timeStemp.setAudioPath(file.toURI().toString());
+            timeStemp.setSourceText(segment.getContent());
             this.segmentFormView.setValue(segment);
         } catch (Exception ex) {
             Logger.getLogger(SegmentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -218,7 +220,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
         Map<String, Object> map = new HashMap<>();
         map.put(Command.DATA, this.getModel().getEditingSegment());
         timeStemp.setPlaying(Boolean.FALSE);
-        saveContentCommand.doCommand(map);
+        saveSegmentCommand.doCommand(map);
     }
 
     /**
@@ -236,7 +238,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
         Segment content = (Segment) button.getUserData();
         Map<String, Object> param = new HashMap<>();
         param.put(Command.ID, content.getId());
-        param.put(Command.DATA, status + "");
+        param.put(Command.DATA, status);
         param.put(Command.MODEL, this.getModel());
         updateSegmentStatusCommand.doCommand(param);
     }

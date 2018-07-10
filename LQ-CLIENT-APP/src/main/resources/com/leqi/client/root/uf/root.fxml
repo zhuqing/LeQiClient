@@ -24,6 +24,10 @@
                         <center>
                              <StackPane fx:id="businessPane" BorderPane.alignment="CENTER" />
                         </center>
+                        <bottom>
+                            <HBox minHeight="20"/>
+                        </bottom>
+                       
                     </BorderPane>
                 </StackPane>
                

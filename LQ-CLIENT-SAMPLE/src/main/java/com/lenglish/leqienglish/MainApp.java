@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.english.Word;
@@ -36,7 +37,7 @@ import xyz.tobebetter.entity.english.segment.WordAndSegment;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(WordAndSegment.class, WordAndSegment.class, "WORD_AND_SEGMENT", "Base_Column_List");
+        createMaper(Catalog.class, Catalog.class, "CATALOG", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {

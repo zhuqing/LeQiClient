@@ -40,9 +40,9 @@ public abstract class Command extends LogFacade {
     public final static String MODEL = "MODEL";
     public final static String ENTITY = "ENTITY";
     public final static String PATH = "PATH";
-    
-      public final static String SUCCESS = "SUCCESS";
-    
+
+    public final static String SUCCESS = "SUCCESS";
+
     public final static String CONSUMER = "CONSUMER";
     protected boolean wait = true;
 
@@ -129,7 +129,7 @@ public abstract class Command extends LogFacade {
         } catch (Exception ex) {
             ex.printStackTrace();
             waitShow(Boolean.FALSE, scene);
-            getLogger().error(":doCommand:ERR", ex);
+            showExceptionDialog(ex, scene);
         }
     }
 
