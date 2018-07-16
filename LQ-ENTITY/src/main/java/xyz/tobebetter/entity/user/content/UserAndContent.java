@@ -3,16 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english.word.user;
+package xyz.tobebetter.entity.user.content;
 
 /**
  *用户和内容的关系表，用户订阅的内容
  * @author zhuqing
  */
 public class UserAndContent {
+    
     private String userId;
+    /**
+     * contentId
+     */
     private String contentId;
-
+    
     
 
     /**

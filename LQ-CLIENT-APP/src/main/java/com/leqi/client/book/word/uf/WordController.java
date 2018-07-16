@@ -36,8 +36,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import xyz.tobebetter.entity.english.Content;
-import xyz.tobebetter.entity.english.Word;
-import xyz.tobebetter.entity.english.word.WordMean;
+import xyz.tobebetter.entity.word.Word;
+import xyz.tobebetter.entity.word.WordMean;
 
 /**
  *

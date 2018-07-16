@@ -21,7 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

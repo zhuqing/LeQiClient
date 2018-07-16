@@ -5,17 +5,12 @@
  */
 package com.leqi.client.word.info.cf;
 
-import com.leqi.client.book.word.cf.*;
-import com.leqi.client.book.word.uf.WordModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
 import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

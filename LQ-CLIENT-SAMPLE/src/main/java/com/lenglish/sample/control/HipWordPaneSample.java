@@ -34,7 +34,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

@@ -25,9 +25,11 @@ import java.util.stream.Collectors;
 import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
-import xyz.tobebetter.entity.english.Word;
-import xyz.tobebetter.entity.english.WordAndContent;
+import xyz.tobebetter.entity.word.Word;
+import xyz.tobebetter.entity.content.WordAndContent;
 import xyz.tobebetter.entity.english.segment.WordAndSegment;
+import xyz.tobebetter.entity.user.recite.UserReciteRecord;
+import xyz.tobebetter.entity.user.recite.UserReciteRecordItem;
 
 /**
  * 使用freeMarker，生成mybatis配置xml
@@ -37,7 +39,7 @@ import xyz.tobebetter.entity.english.segment.WordAndSegment;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(Catalog.class, Catalog.class, "CATALOG", "Base_Column_List");
+        createMaper(UserReciteRecordItem.class, UserReciteRecordItem.class, "USER_RECITE_RECORD_ITEM", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {

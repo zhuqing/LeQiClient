@@ -12,7 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

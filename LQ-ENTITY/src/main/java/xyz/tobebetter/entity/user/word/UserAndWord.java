@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english.word.user;
+package xyz.tobebetter.entity.user.word;
 
 /**
  *用户关注的单词

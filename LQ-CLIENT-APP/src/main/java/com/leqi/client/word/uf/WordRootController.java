@@ -21,7 +21,7 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

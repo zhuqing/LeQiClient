@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyz.tobebetter.entity.english.word;
+package xyz.tobebetter.entity.word;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +11,6 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import xyz.tobebetter.entity.Entity;
-import xyz.tobebetter.entity.english.Word;
 
 /**
  *[{"part":"adj.","means":["\u597d\u7684","\u4f18\u79c0\u7684","\u6709\u76ca\u7684","\u6f02\u4eae\u7684\uff0c\u5065\u5168\u7684"]},

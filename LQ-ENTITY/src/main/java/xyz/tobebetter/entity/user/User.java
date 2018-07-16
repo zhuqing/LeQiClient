@@ -1,4 +1,6 @@
-package xyz.tobebetter.entity;
+package xyz.tobebetter.entity.user;
+
+import xyz.tobebetter.entity.Entity;
 
 
 /**

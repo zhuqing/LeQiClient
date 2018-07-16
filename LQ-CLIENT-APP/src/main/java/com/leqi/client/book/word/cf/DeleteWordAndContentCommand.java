@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.english.Word;
-import xyz.tobebetter.entity.english.WordAndContent;
+import xyz.tobebetter.entity.word.Word;
+import xyz.tobebetter.entity.content.WordAndContent;
 
 /**
  *

@@ -5,21 +5,14 @@
  */
 package com.leqi.client.word.info.uf;
 
-import com.leqi.client.word.uf.*;
-import com.leqi.client.book.word.uf.*;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
-import io.reactivex.internal.operators.observable.ObservableLift;
-import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import xyz.tobebetter.entity.english.Content;
-import xyz.tobebetter.entity.english.Word;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  *

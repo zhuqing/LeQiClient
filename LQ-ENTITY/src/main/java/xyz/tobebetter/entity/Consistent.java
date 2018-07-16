@@ -13,7 +13,7 @@ package xyz.tobebetter.entity;
 public class Consistent {
 
     public static final String SLIP_TIME_AND_TEXT = "-->";
-      public static final String SLIP_START_AND_END = "==>";
+    public static final String SLIP_START_AND_END = "==>";
     public static final String SLIP_EN_AND_CH = ">::<";
     public static final String SLIP_END = "<=====>";
     public static final String SLIP_SENTENCE = "\n";
@@ -63,14 +63,38 @@ public class Consistent {
      * 分类类型
      */
     public final static int CATALOG_TYPE = 303;
-    
-    
-    
-    
+
     public static final int DELETE = -1;
-     
+
     public static final int USER_NORMAL = 0;
     public static final int USER_WECHAT = 1;
     public static final int USER_QQ = 2;
+
+    /**
+     * 正在学习
+     */
+    public static final int LEARNING = 401;
+    /**
+     * 已经学习
+     */
+    public static final int LEARNED = 402;
+    /**
+     * 未学习
+     */
+    public static final int UN_LEARN = 403;
+
+    /**
+     * 错误
+     */
+    public final static int ERROR = -1;
+    /**
+     * 成功
+     */
+    public final static int SUCCESS = 0;
+
+    /**
+     * 警告
+     */
+    public final static int WARNING = 1;
 
 }
