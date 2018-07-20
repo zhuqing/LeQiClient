@@ -76,11 +76,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @Resource(name = "DeleteArticlesCommand")
     private DeleteArticlesCommand deleteArticlesCommand;
 
-    
     @Resource(name = "UpdateArticleStatusCommand")
     private UpdateArticleStatusCommand updateArticleStatusCommand;
-    
-    
+
     public ArticleController() {
     }
 
@@ -125,8 +123,6 @@ public class ArticleController extends FXMLController<ArticleModel> {
         this.queryArticlesCommand.doCommand(value);
 
     }
-
-   
 
     @FXML
     public void openWord(ActionEvent event) {
@@ -181,8 +177,8 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
         updateArticleStatusCommand.doCommand(param);
     }
-    
-     /**
+
+    /**
      * 取消发布按钮点击事件
      *
      * @param event
@@ -205,6 +201,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
      */
     @FXML
     public void delete(ActionEvent event) {
+        if (!AlertUtil.couldDo(AlertUtil.IF_DELETE)) {
+            return;
+        }
         Content article = EventUtil.getEntityFromButton(event);
 
         Map<String, Object> param = new HashMap<>();

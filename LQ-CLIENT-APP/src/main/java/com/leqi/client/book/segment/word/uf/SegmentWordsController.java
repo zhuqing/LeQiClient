@@ -21,6 +21,7 @@ import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
 import static com.leqienglish.client.fw.cf.Command.DATA;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.client.wordpane.WordsPane;
 import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
@@ -59,8 +60,8 @@ public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
 
     @Resource(name = "QuerySegmentWrodsCommand")
     private QuerySegmentWrodsCommand querySegmentWrodsCommand;
-    
-       @Resource(name = "DeleteSegmentWrodsCommand")
+
+    @Resource(name = "DeleteSegmentWrodsCommand")
     private DeleteSegmentWrodsCommand deleteSegmentWrodsCommand;
 
     @Override
@@ -117,10 +118,13 @@ public class SegmentWordsController extends FXMLController<SegmentWordsModel> {
 
     @FXML
     public void deleteWord(ActionEvent event) {
+        if (!AlertUtil.couldDo(AlertUtil.IF_DELETE)) {
+            return;
+        }
         Button button = (Button) event.getSource();
-        
+
         WordAndSegment was = (WordAndSegment) button.getUserData();
-        Map<String,Object> param = new HashMap<>();
+        Map<String, Object> param = new HashMap<>();
         param.put(DATA, was);
         deleteSegmentWrodsCommand.doCommand(param);
     }

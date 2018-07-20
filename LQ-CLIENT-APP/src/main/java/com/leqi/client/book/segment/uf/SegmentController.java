@@ -65,25 +65,21 @@ public class SegmentController extends FXMLController<SegmentModel> {
     @Resource(name = "QuerySegmentsCommand")
     private QuerySegmentsCommand querySegmentsCommand;
 
-
     @Resource(name = "DownLoadFileCommand")
     private DownLoadFileCommand downLoadFileCommand;
 
     @Resource(name = "UpdateSegmentStatusCommand")
     private UpdateSegmentStatusCommand updateSegmentStatusCommand;
 
-
-
     @FXML
     private TimeStemp timeStemp;
-
 
     @Resource(name = "SaveSegmentCommand")
     private SaveSegmentCommand saveSegmentCommand;
 
     @Resource(name = "DeleteSegmentCommand")
     private DeleteSegmentCommand deleteSegmentCommand;
-    
+
     @Resource(name = "ContentModel")
     private ContentModel contentModel;
 
@@ -123,8 +119,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
             }
             getModel().setEditingSegment((Segment) row.getItem());
         });
-        
-        
+
     }
 
     private void editingSegmentChange(Segment segment) {
@@ -198,6 +193,9 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
     public void deleteSegment(ActionEvent event) {
+        if (!AlertUtil.couldDo(AlertUtil.IF_DELETE)) {
+            return;
+        }
         Button button = (Button) event.getSource();
         Segment segment = (Segment) button.getUserData();
         Map<String, Object> map = new HashMap<>();

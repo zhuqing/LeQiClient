@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.input.KeyCode;
@@ -26,6 +27,8 @@ public class AlertUtil {
     public static final String DELETE_SUCCESS = "删除成功";
     public static final String SAVE_SUCCESS = "保存成功";
     public static final String UPDATE_SUCCESS = "更新成功";
+    
+       public static final String IF_DELETE = "是否删除";
 
     public static final ButtonType YES = new ButtonType("是");
     public static final ButtonType NO = new ButtonType("否");
@@ -96,6 +99,15 @@ public class AlertUtil {
         alert.setHeight(height);
         return alert.showAndWait().orElse(null);
 
+    }
+    
+    public static boolean couldDo(String message){
+       ButtonType buttonType= showAlert(AlertType.CONFIRMATION,message,ButtonType.YES,ButtonType.NO);
+       if(buttonType==null){
+           return false;
+       }
+       
+       return buttonType == ButtonType.YES;
     }
 
     /**

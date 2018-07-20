@@ -143,6 +143,9 @@ public class BookController extends FXMLController<BookModel> {
 
     @FXML
     public void delete(ActionEvent event) {
+        if (!AlertUtil.couldDo(AlertUtil.IF_DELETE)) {
+            return;
+        }
         Catalog book = EventUtil.getEntityFromButton(event);
         Map<String, Object> param = new HashMap<String, Object>();
 

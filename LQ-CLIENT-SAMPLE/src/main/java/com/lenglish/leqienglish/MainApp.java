@@ -28,6 +28,7 @@ import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.word.Word;
 import xyz.tobebetter.entity.content.WordAndContent;
 import xyz.tobebetter.entity.english.segment.WordAndSegment;
+import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.recite.UserReciteRecord;
 import xyz.tobebetter.entity.user.recite.UserReciteRecordItem;
 
@@ -39,7 +40,7 @@ import xyz.tobebetter.entity.user.recite.UserReciteRecordItem;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(UserReciteRecordItem.class, UserReciteRecordItem.class, "USER_RECITE_RECORD_ITEM", "Base_Column_List");
+        createMaper(User.class, User.class, "USER", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {
