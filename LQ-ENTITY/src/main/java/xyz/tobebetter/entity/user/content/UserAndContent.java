@@ -5,17 +5,24 @@
  */
 package xyz.tobebetter.entity.user.content;
 
+import xyz.tobebetter.entity.Entity;
+
 /**
  *用户和内容的关系表，用户订阅的内容
  * @author zhuqing
  */
-public class UserAndContent {
+public class UserAndContent extends Entity{
     
     private String userId;
     /**
      * contentId
      */
     private String contentId;
+    
+    /**
+     * w完成率0-100
+     */
+    private Integer finishedPercent;
     
     
 
@@ -46,6 +53,22 @@ public class UserAndContent {
     public void setContentId(String contentId) {
         this.contentId = contentId;
     }
+
+    /**
+     * @return the finishedPercent
+     */
+    public Integer getFinishedPercent() {
+        return finishedPercent;
+    }
+
+    /**
+     * @param finishedPercent the finishedPercent to set
+     */
+    public void setFinishedPercent(Integer finishedPercent) {
+        this.finishedPercent = finishedPercent;
+    }
+
+  
 
     
 }
