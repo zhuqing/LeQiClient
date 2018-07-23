@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
 
 /**
@@ -32,7 +33,7 @@ import xyz.tobebetter.entity.user.content.UserAndContent;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(UserAndContent.class, UserAndContent.class, "USER_AND_CONTENT", "Base_Column_List");
+        createMaper(User.class, User.class, "USER", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {

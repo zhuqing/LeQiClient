@@ -96,5 +96,14 @@ public class Consistent {
      * 警告
      */
     public final static int WARNING = 1;
+    
+    /**
+     * 临时用户标志
+     */
+    public final static int USER_TEMP_STATUS=0;
+    /**
+     * 未保存数据的标志
+     */
+    public final static int UN_SAVED_STATUS= -2;
 
 }

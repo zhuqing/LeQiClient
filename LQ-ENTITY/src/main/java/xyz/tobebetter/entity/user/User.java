@@ -8,25 +8,44 @@ import xyz.tobebetter.entity.Entity;
  */
 public class User extends Entity {
 
+    /**
+     * 匿名
+     */
     private String name;
+    /**
+     * 密码
+     */
     private String password;
+    /**
+     * 邮箱
+     */
     private String email;
+    
+    /**
+     * VIP截止日期
+     */
+    private String vipLastData;
     /**
      * 手机号码
      */
-    private String phonenumber;
+    private String phoneNumber;
 
 
     /**
      * 其他系统的Id
 
      */
-    private String othersysId;
+    private String otherSysId;
     
     /**
      * 最后一次登录时间
      */
     private Long lastLogin;
+    
+    /**
+     * 用户图像
+     */
+    private String imagePath;
 
 
     public String getName() {
@@ -53,25 +72,7 @@ public class User extends Entity {
         this.email = email;
     }
 
-    public String getOthersysId() {
-        return othersysId;
-    }
-
-    public void setOthersysId(String othersysId) {
-        this.othersysId = othersysId;
-    }
-
-    /**
-     * 手机号
-     */
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
+   
     /**
      * 最后一次登录时间
      * @return the lastLogin
@@ -86,5 +87,61 @@ public class User extends Entity {
      */
     public void setLastLogin(Long lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    /**
+     * @return the vipLastData
+     */
+    public String getVipLastData() {
+        return vipLastData;
+    }
+
+    /**
+     * @param vipLastData the vipLastData to set
+     */
+    public void setVipLastData(String vipLastData) {
+        this.vipLastData = vipLastData;
+    }
+
+    /**
+     * @return the imagePath
+     */
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    /**
+     * @param imagePath the imagePath to set
+     */
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    /**
+     * @return the phoneNumber
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * @param phoneNumber the phoneNumber to set
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * @return the otherSysId
+     */
+    public String getOtherSysId() {
+        return otherSysId;
+    }
+
+    /**
+     * @param otherSysId the otherSysId to set
+     */
+    public void setOtherSysId(String otherSysId) {
+        this.otherSysId = otherSysId;
     }
 }
