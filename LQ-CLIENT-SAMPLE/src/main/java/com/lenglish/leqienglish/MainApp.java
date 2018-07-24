@@ -22,6 +22,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.content.ReciteContentVO;
 import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
 
@@ -33,19 +35,20 @@ import xyz.tobebetter.entity.user.content.UserAndContent;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(User.class, User.class, "USER", "Base_Column_List");
+        createMaper(ReciteContentVO.class, ReciteContentVO.class, "CONTENT", "Base_Column_List");
     }
 
-    public static void createMaper(Class entityClaz, Class daoClaz, String tableName, String selectField) throws IOException, TemplateException {
+    public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
         Mapper mapper = new Mapper();
 
         mapper.setParameterType(entityClaz.getName());
         mapper.setTable(tableName);
         mapper.setSelectField(selectField);
-        mapper.setDaoClassPath(daoClaz.getName());
+        mapper.setDaoClassPath(entityClaz.getName() + "Dao");
 
         mapper.setResultMap("BaseResultMap");
         mapper.setWheres(create(getFields(entityClaz)));
+      //  mapper.setWheresVo(create(getFields(voClaz)));
         selectEntity(mapper, "/mapper");
 
     }

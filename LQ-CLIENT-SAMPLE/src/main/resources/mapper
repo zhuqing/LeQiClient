@@ -5,6 +5,8 @@
    <#include "/src/main/resources/resultMap" encoding="Shift_JIS">
 
    <#include "/src/main/resources/sqlbaseColumn">
+   
+    
 
    <#include "/src/main/resources/select">
 

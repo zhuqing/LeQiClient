@@ -1,0 +1,3 @@
+<sql id="${selectField}_VO" >
+     <#list wheresVo as where>t.${where.propertyName} ,</#list>
+</sql>

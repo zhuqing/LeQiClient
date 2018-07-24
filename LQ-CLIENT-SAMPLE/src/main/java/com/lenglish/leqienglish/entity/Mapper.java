@@ -44,6 +44,8 @@ public class Mapper {
     private String table;
     private String selectField;
     private List<WhereIf> wheres;
+    
+    private List<WhereIf> wheresVo;
 
     /**
      * @return the daoMethodName
@@ -141,6 +143,20 @@ public class Mapper {
      */
     public void setDaoClassPath(String daoClassPath) {
         this.daoClassPath = daoClassPath;
+    }
+
+    /**
+     * @return the wheresVo
+     */
+    public List<WhereIf> getWheresVo() {
+        return wheresVo;
+    }
+
+    /**
+     * @param wheresVo the wheresVo to set
+     */
+    public void setWheresVo(List<WhereIf> wheresVo) {
+        this.wheresVo = wheresVo;
     }
 
     
