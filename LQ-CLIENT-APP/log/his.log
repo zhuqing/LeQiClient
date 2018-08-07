@@ -1,18 +1,1512 @@
-[INFO ] 2018-07-21 09:36:42,604(62024454) --> [pool-2-thread-1] org.apache.http.impl.execchain.RetryExec: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://127.0.0.1:8080: The target server failed to respond  
-[INFO ] 2018-07-21 09:36:42,751(62024601) --> [pool-2-thread-1] org.apache.http.impl.execchain.RetryExec: Retrying request to {}->http://127.0.0.1:8080  
-[INFO ] 2018-07-21 09:36:47,567(62029417) --> [pool-2-thread-1] org.apache.http.impl.execchain.RetryExec: I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:8080: Connection reset  
-[INFO ] 2018-07-21 09:36:47,571(62029421) --> [pool-2-thread-1] org.apache.http.impl.execchain.RetryExec: Retrying request to {}->http://127.0.0.1:8080  
-[INFO ] 2018-07-21 09:39:32,980(62194830) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-08-07 11:31:59,831(26) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c997154: startup date [Tue Aug 07 11:31:59 CST 2018]; root of context hierarchy  
+[INFO ] 2018-08-07 11:32:00,086(281) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-08-07 11:32:01,984(2179) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4d891a2e: startup date [Tue Aug 07 11:32:01 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4c997154  
+[INFO ] 2018-08-07 11:32:01,987(2182) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-08-07 11:32:02,423(2618) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-08-07 11:32:02,920(3115) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3: startup date [Tue Aug 07 11:32:02 CST 2018]; root of context hierarchy  
+[INFO ] 2018-08-07 11:32:02,922(3117) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-08-07 11:32:03,186(3381) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5021ac75: startup date [Tue Aug 07 11:32:03 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3  
+[INFO ] 2018-08-07 11:32:03,195(3390) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-08-07 11:32:03,308(3503) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-08-07 11:32:22,749(22944) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
   
-[INFO ] 2018-07-21 09:39:32,993(62194843) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-08-07 11:32:22,753(22948) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
   
-[INFO ] 2018-07-21 09:39:41,710(62203560) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@65174486: startup date [Fri Jul 20 16:23:04 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@3a871bf3  
-[INFO ] 2018-07-21 09:39:41,817(62203667) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@3a871bf3: startup date [Fri Jul 20 16:23:04 CST 2018]; root of context hierarchy  
+[INFO ] 2018-08-07 11:42:36,346(636541) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:42:36,350(636545) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:47:17,039(917234) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:47:17,041(917236) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:53:13,243(1273438) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 8840
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+08760  099%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
+00080  001%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:25,338(1285533) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 373
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00373  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:31,395(1291590) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 6
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00005  083%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00001  017%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:31,609(1291804) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 451
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getAppData()
+00451  100%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:40,064(1300259) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:40,070(1300265) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 1
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00001  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-08-07 11:53:56,646(1316841) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:53:56,648(1316843) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:15,129(1455324) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 5428
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+05427  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:15,244(1455439) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 5499
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+05498  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:21,085(1461280) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:21,085(1461280) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:22,251(1462446) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:22,252(1462447) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:30,010(1470205) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1212
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01211  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:33,063(1473258) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:33,064(1473259) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:33,065(1473260) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:33,066(1473261) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:33,068(1473263) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:44,625(1484820) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:44,628(1484823) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:56:45,108(1485303) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2302
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02301  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:56:59,690(1499885) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 3030
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+03029  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:03,741(1503936) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:03,742(1503937) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:03,743(1503938) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:07,650(1507845) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 629
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00628  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:13,295(1513490) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1762
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01762  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:17,609(1517804) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2066
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02066  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:19,063(1519258) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 945
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00945  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:26,649(1526844) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:26,654(1526849) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:26,656(1526851) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:26,658(1526853) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:29,715(1529910) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 535
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00535  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:32,440(1532635) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 690
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00690  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:40,047(1540242) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:40,049(1540244) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:42,501(1542696) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 537
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00537  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:44,804(1544999) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 751
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00751  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:48,656(1548851) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 825
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00825  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:56,001(1556196) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:56,007(1556202) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:56,008(1556203) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:57:59,035(1559230) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 827
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00827  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:04,833(1565028) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:07,080(1567275) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 568
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00567  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:09,228(1569423) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1646
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01645  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:11,278(1571473) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 826
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00825  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:15,852(1576047) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:15,860(1576055) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:15,860(1576055) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:19,320(1579515) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1925
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01924  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:23,528(1583723) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:26,053(1586248) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 675
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00673  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00002  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:37,464(1597659) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:40,825(1601020) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1519
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01518  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:41,415(1601610) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 680
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00680  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:42,750(1602945) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 843
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00843  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:47,143(1607338) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1568
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01565  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00003  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:58:48,046(1608241) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:58:48,047(1608242) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 11:59:34,865(1655060) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:34,873(1655068) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:34,874(1655069) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:34,874(1655069) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:34,875(1655070) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:37,240(1657435) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1156
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01155  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:38,252(1658447) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 813
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00811  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00002  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:39,905(1660100) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 941
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00940  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:42,280(1662475) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1515
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01509  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00006  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:49,053(1669248) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:49,066(1669261) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:49,070(1669265) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:49,071(1669266) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:51,858(1672053) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 431
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00431  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:56,273(1676468) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1939
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01938  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 11:59:59,533(1679728) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1031
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01027  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00004  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:02,988(1683183) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 962
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00962  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:05,013(1685208) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:05,014(1685209) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:05,015(1685210) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:05,018(1685213) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:08,634(1688829) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1482
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01481  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:09,220(1689415) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 783
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00783  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:12,412(1692607) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:00:12,414(1692609) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:20,771(1760966) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1982
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01979  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00003  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:20,871(1761066) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2177
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02176  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:21,312(1761507) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 545
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00545  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:21,389(1761584) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 519
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00519  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:21,875(1762070) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 563
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00563  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:21,953(1762148) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 563
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00563  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:22,360(1762555) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 485
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00485  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:22,437(1762632) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 484
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00484  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:22,983(1763178) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 623
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00623  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:23,054(1763249) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 617
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00617  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:23,500(1763695) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 515
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00515  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:23,593(1763788) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 538
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00538  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:23,855(1764050) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:01:23,855(1764050) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:01:23,971(1764166) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 472
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00472  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:24,045(1764240) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 452
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00452  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:24,459(1764654) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 488
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00488  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:24,535(1764730) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 489
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00489  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:24,929(1765124) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 467
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00467  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:25,031(1765226) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 496
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00496  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:25,250(1765445) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:01:25,250(1765445) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:01:25,472(1765667) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 546
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00546  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:25,561(1765756) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 529
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00529  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:25,921(1766116) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 448
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00448  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:39,230(1779425) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:39,231(1779426) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:39,232(1779427) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:39,394(1779589) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 263
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
+00263  100%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:41,942(1782137) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 169
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
+00169  100%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:47,845(1788040) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1352
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01351  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:54,009(1794204) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:01:57,726(1797921) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1489
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01489  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:01,246(1801441) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1713
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01713  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:04,087(1804282) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:04,087(1804282) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:07,266(1807461) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1622
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01621  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:09,382(1809577) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1625
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01625  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:11,858(1812053) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:11,862(1812057) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:16,097(1816292) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1890
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01889  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:17,859(1818054) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1864
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01864  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:20,966(1821161) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1780
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01779  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:23,201(1823396) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2012
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02012  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:26,034(1826229) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00001  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:26,038(1826233) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:26,041(1826236) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:26,041(1826236) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:29,237(1829432) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1159
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01159  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:31,429(1831624) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1233
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01233  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:34,589(1834784) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:34,591(1834786) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:39,866(1840061) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1210
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01210  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:43,821(1844016) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:48,054(1848249) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:02:48,055(1848250) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+  
+[INFO ] 2018-08-07 12:02:49,133(1849328) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2689
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02685  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00004  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:55,873(1856068) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2792
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02790  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00002  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:56,474(1856669) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:56,476(1856671) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:02:56,477(1856672) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:00,398(1860593) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1645
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01645  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:01,896(1862091) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1367
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01366  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:05,988(1866183) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1599
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01598  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:08,540(1868735) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:08,542(1868737) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:08,543(1868738) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:10,856(1871051) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 600
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00600  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:14,121(1874316) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1758
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01758  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:17,040(1877235) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2038
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02038  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:19,852(1880047) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1843
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01843  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:22,600(1882795) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2451
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02451  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:23,416(1883611) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:23,417(1883612) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:23,419(1883614) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:23,420(1883615) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:23,421(1883616) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:26,994(1887189) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1463
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01463  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:28,750(1888945) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1517
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01516  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:32,205(1892400) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1912
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01912  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:34,572(1894767) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:34,573(1894768) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:34,574(1894769) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:36,998(1897193) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 523
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00521  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00002  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:39,930(1900125) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1214
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01214  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:44,047(1904242) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1992
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01992  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:45,032(1905227) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:45,032(1905227) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:45,033(1905228) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:48,219(1908414) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1549
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01549  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:50,514(1910709) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1371
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01370  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:53,732(1913927) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:53,733(1913928) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:03:57,973(1918168) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 510
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00509  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:04:01,142(1921337) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1539
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01538  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:04:02,366(1922561) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:04:02,369(1922564) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:04:08,721(1928916) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1633
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01632  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:04:11,031(1931226) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1684
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01684  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
+  
+[INFO ] 2018-08-07 12:07:02,912(2103107) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5021ac75: startup date [Tue Aug 07 11:32:03 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3  
+[INFO ] 2018-08-07 12:07:02,988(2103183) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3: startup date [Tue Aug 07 11:32:02 CST 2018]; root of context hierarchy  

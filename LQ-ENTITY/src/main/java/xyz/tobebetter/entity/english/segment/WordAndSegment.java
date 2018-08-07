@@ -23,6 +23,12 @@ public class WordAndSegment extends Entity {
      * 单词所在的段Id
      */
     private String segmentId;
+    
+    private String contentId;
+    /**
+     * 文章标题
+     */
+    private String contentTitle;
     /**
      * 单词Id
      */
@@ -32,6 +38,11 @@ public class WordAndSegment extends Entity {
      * 单词所在的句子
      */
     private Integer scentenceIndex;
+    
+    /**
+     * 句子
+     */
+    private String scentence;
     
     /**
      * 所在句子音频的开始时间
@@ -156,6 +167,48 @@ public class WordAndSegment extends Entity {
      */
     public void setScentenceIndex(Integer scentenceIndex) {
         this.scentenceIndex = scentenceIndex;
+    }
+
+    /**
+     * @return the scentence
+     */
+    public String getScentence() {
+        return scentence;
+    }
+
+    /**
+     * @param scentence the scentence to set
+     */
+    public void setScentence(String scentence) {
+        this.scentence = scentence;
+    }
+
+    /**
+     * @return the contentId
+     */
+    public String getContentId() {
+        return contentId;
+    }
+
+    /**
+     * @param contentId the contentId to set
+     */
+    public void setContentId(String contentId) {
+        this.contentId = contentId;
+    }
+
+    /**
+     * @return the contentTitle
+     */
+    public String getContentTitle() {
+        return contentTitle;
+    }
+
+    /**
+     * @param contentTitle the contentTitle to set
+     */
+    public void setContentTitle(String contentTitle) {
+        this.contentTitle = contentTitle;
     }
 
 }

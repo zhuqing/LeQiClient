@@ -52,7 +52,10 @@ public class WordMean extends Entity{
            StringBuilder sb = new StringBuilder();
            if(means instanceof JSONArray){
                JSONArray meanArray = (JSONArray) means;
-               meanArray.forEach((m)->sb.append(m.toString()).append(","));
+               for(int j = 0 ; j < meanArray.length() ; j++){
+                   sb.append(meanArray.get(j).toString()).append(",");
+               }
+              
            }
            wordMean.setMeans(sb.substring(0, sb.length()-1));
            wordMeans.add(wordMean);

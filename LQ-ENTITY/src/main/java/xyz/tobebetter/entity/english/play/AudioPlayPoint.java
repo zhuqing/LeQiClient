@@ -37,6 +37,8 @@ public class AudioPlayPoint extends Entity {
      * 播放的中文翻译
      */
     private String chText;
+    
+    private List<short[]> recordList;
 
     public static List<AudioPlayPoint> toAudioPlays(String text) throws Exception {
 
@@ -141,6 +143,20 @@ public class AudioPlayPoint extends Entity {
      */
     public void setIndex(int index) {
         this.index = index;
+    }
+
+    /**
+     * @return the recordList
+     */
+    public List<short[]> getRecordList() {
+        return recordList;
+    }
+
+    /**
+     * @param recordList the recordList to set
+     */
+    public void setRecordList(List<short[]> recordList) {
+        this.recordList = recordList;
     }
 
 }

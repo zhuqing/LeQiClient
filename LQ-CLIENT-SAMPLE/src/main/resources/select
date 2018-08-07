@@ -18,3 +18,8 @@
         from ${table} t
         WHERE t.ID = ${'#{'}id ,jdbcType=VARCHAR${'}'}
 </select>
+ <select id="findUpdateTime" resultType="java.lang.Long" parameterType="java.lang.String">
+        SELECT
+        T.UPDATE_DATE
+        FROM  ${table} T WHERE ID =   ${'#{'}id,jdbcType=VARCHAR${'}'}
+    </select>

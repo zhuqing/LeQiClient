@@ -24,8 +24,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.content.ReciteContentVO;
+import xyz.tobebetter.entity.english.segment.WordAndSegment;
 import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
+import xyz.tobebetter.entity.word.Word;
 
 /**
  * 使用freeMarker，生成mybatis配置xml
@@ -35,7 +37,7 @@ import xyz.tobebetter.entity.user.content.UserAndContent;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(ReciteContentVO.class, ReciteContentVO.class, "CONTENT", "Base_Column_List");
+        createMaper(WordAndSegment.class, WordAndSegment.class, "WORD_AND_SEGMENT", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {

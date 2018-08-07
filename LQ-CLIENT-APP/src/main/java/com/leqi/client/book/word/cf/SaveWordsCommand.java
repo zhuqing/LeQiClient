@@ -88,26 +88,33 @@ public class SaveWordsCommand extends Command {
 
     private void changePath(Word word) throws Exception {
 
-        String path = downAndUpload(word.getAmAudionPath(), word.getWord());
+        String path = downAndUpload(word.getAmAudionPath(), word.getWord(),"am");
         word.setAmAudionPath(path);
 
-        path = downAndUpload(word.getEnAudioPath(), word.getWord());
+        path = downAndUpload(word.getEnAudioPath(), word.getWord(),"en");
         word.setEnAudioPath(path);
 
-        path = downAndUpload(word.getTtsAudioPath(), word.getWord());
+        path = downAndUpload(word.getTtsAudioPath(), word.getWord(),"tts");
         word.setTtsAudioPath(path);
 
     }
 
-    private String downAndUpload(String urlPath, String word) throws IOException, Exception {
-        String localPath = FileUtil.wordFilelPath(word);
-        this.fileService.downLoad(urlPath, localPath, MediaType.ALL);
+    private String downAndUpload(String urlPath, String word,String type) throws IOException, Exception {
+        if(urlPath == null || urlPath.isEmpty()){
+            return null;
+        }
+        String localPath = FileUtil.wordFilelPath(word,type);
+        if(!FileUtil.fileExit(localPath)){
+             this.fileService.downLoad(urlPath, localPath, MediaType.ALL);
 
+        }
+        
         MultiValueMap<String, Object> audioMap = new LinkedMultiValueMap();
         audioMap.add("file", new FileSystemResource(new File(localPath)));
 
         MultiValueMap<String, String> param = new LinkedMultiValueMap();
         param.add("word", word);
+        param.add("type", type);
 
         return this.restClient.upload("/file/uploadWordAudio", audioMap, param, String.class);
 

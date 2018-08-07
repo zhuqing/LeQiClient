@@ -114,11 +114,11 @@ public class FileUtil {
         return sb.toString();
     }
 
-    public static String wordFilelPath(String word) {
+    public static String wordFilelPath(String word,String type) {
         StringBuffer sb = new StringBuffer();
         sb.append(appRootPath()).append(File.separatorChar).append(WORD).append(File.separatorChar).append(word);//
         initDirectory(sb.toString());
-        sb.append(File.separatorChar).append(fileName("mp3"));
+        sb.append(File.separatorChar).append(word).append("_").append(type).append(".").append("mp3");
         return sb.toString();
     }
 
@@ -180,7 +180,7 @@ public class FileUtil {
      * @return
      * @throws IOException
      */
-    public static String writeWordAudioFile(byte[] file, String word, String fileSuffix) throws IOException {
+    public static String writeWordAudioFile(byte[] file, String word, String type,String fileSuffix) throws IOException {
         String path = wordDirectory(word);
 
         if (path == null) {
@@ -188,7 +188,7 @@ public class FileUtil {
         }
 
         String filePath = FileUtil.appRootPath() + File.separator + path + File.separator;
-        String imageFileName = FileUtil.fileName(fileSuffix);
+        String imageFileName = word+"_"+type+"."+fileSuffix;
 
         wirteFile(file, filePath, imageFileName);
         return path + File.separator + imageFileName;
