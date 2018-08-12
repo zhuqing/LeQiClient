@@ -13,6 +13,10 @@ public class User extends Entity {
      */
     private String name;
     /**
+     * 性别
+     */
+    private Integer sex;
+    /**
      * 密码
      */
     private String password;
@@ -143,5 +147,19 @@ public class User extends Entity {
      */
     public void setOtherSysId(String otherSysId) {
         this.otherSysId = otherSysId;
+    }
+
+    /**
+     * @return the sex
+     */
+    public Integer getSex() {
+        return sex;
+    }
+
+    /**
+     * @param sex the sex to set
+     */
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
 }

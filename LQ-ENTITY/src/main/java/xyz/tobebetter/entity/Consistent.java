@@ -101,6 +101,11 @@ public class Consistent {
      * 临时用户标志
      */
     public final static int USER_TEMP_STATUS=0;
+    
+    /**
+     * 临时用户标志
+     */
+    public final static int REGIST_USER=1;
     /**
      * 未保存数据的标志
      */

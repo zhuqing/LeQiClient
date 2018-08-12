@@ -8,7 +8,7 @@ package xyz.tobebetter.entity.english;
 import xyz.tobebetter.entity.Entity;
 
 /**
- *课本，包含有多个章节
+ *课本，分类包含有多个章节
  * @author zhuqing
  */
 public class Catalog extends Entity{

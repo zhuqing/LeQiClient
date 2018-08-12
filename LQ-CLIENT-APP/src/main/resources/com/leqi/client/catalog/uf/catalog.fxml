@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.file.*?>
+
+<?import com.leqienglish.client.fw.callback.*?>
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.view.table.column.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import com.leqienglish.client.control.button.*?>
+<?import com.leqi.client.book.segment.cf.*?>
+<?import com.leqienglish.client.control.combobox.*?>
+
+<StackPane fx:id="content" prefWidth="800" prefHeight="600"  styleClass="businessRoot" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+       
+        <BorderPane fx:id="contentPane">
+            <left>
+                <LQTableView prefWidth="600"  fx:id="catalogTableView">
+                    <columns>
+                        <LQTableColumn  editable="false" prefWidth="90" propertyName="title" text="Title">
+                            <tableCell>
+                                <LQTableTextCell />
+                            </tableCell>
+                        </LQTableColumn>
+                        <!--                        <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
+                            <tableCell>
+                                <LQTableTextCell />
+                            </tableCell>
+                        </LQTableColumn>-->
+                        <LQTableColumn editable="false" prefWidth="240.0" text="操作">
+                            <tableCell>
+                                <LQOperatorTableCell>
+                                    <buttons>
+
+                                        <LQButton id="lunch" text="发布" onAction="#lunch">
+                                        </LQButton>
+                                        <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch">
+                                        </LQButton>
+                                    
+                                        
+                                        <LQButton id="delete" text="Delete" onAction="#delete">
+                                        </LQButton>
+
+                                    </buttons>
+                                    <filterButtonsCallback>
+                                        <FilterOpertorButtonsCallback/>
+                                    </filterButtonsCallback>
+                                </LQOperatorTableCell>
+                            </tableCell>
+                        </LQTableColumn>
+                    </columns>
+                </LQTableView>
+            </left>
+            <center>
+              
+                <LQFormView fx:id="catalogFormView" StackPane.alignment="CENTER"  prefWidth="600" >
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"  prefWidth="60"   />
+                    <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"  prefWidth="400"  />
+                    
+                   
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Description:"   prefWidth="60"/>
+                    <LQTextAreaInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="description"  prefWidth="400"  />
+                
+                    <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="3" text="Image:"   prefWidth="60"/>
+                    <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="3" LQFormView.rowSpan="4"
+                                         propertyName="imagePath" prefWidth="300" prefHeight="400">
+                        <checkFileCallback>
+                            <FileCheckCallback/>
+                        </checkFileCallback>
+                    </LQImagePathFormCell>
+                </LQFormView>
+            </center>
+            <top>
+               
+                <HBox>
+                    <HBox spacing="20" >
+                        <Button text="Create Catalog" onAction="#createCatalog"  />
+                        
+                        <Button text="Save Catalog" onAction="#saveCatalog"  />
+                    </HBox>
+                </HBox>
+            </top>
+            <bottom>
+               
+            </bottom>
+        </BorderPane>
+       
+    </children>
+</StackPane>

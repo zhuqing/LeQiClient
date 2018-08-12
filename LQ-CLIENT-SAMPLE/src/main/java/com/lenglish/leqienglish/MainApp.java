@@ -38,7 +38,7 @@ import xyz.tobebetter.entity.word.Word;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(Suggestion.class, Suggestion.class, "SUGGESTION", "Base_Column_List");
+        createMaper(User.class, User.class, "USER", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
