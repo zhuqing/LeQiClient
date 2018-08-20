@@ -23,11 +23,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 import xyz.tobebetter.entity.english.content.ReciteContentVO;
 import xyz.tobebetter.entity.english.segment.WordAndSegment;
 import xyz.tobebetter.entity.suggestion.Suggestion;
 import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
+import xyz.tobebetter.entity.user.word.UserAndWord;
 import xyz.tobebetter.entity.word.Word;
 
 /**
@@ -38,7 +40,7 @@ import xyz.tobebetter.entity.word.Word;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(User.class, User.class, "USER", "Base_Column_List");
+        createMaper(UserAndWord.class, UserAndWord.class, "USER_AND_WORD", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {

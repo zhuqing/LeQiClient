@@ -5,14 +5,25 @@
  */
 package xyz.tobebetter.entity.user.word;
 
+import xyz.tobebetter.entity.Entity;
+
 /**
- *用户关注的单词
+ *用户添加的单词
  * @author zhuqing
  */
-public class UserAndWord {
+public class UserAndWord extends Entity{
     private String userId;
     private String wordId;
+    
+    /**
+     * 背诵次数
+     */
+    private Integer reciteCount;
 
+    /**
+     * 背诵状态0：未背，1，正在背，2，已背
+     */
+    private Integer type;
     /**
      * @return the userId
      */
@@ -39,6 +50,34 @@ public class UserAndWord {
      */
     public void setWordId(String wordId) {
         this.wordId = wordId;
+    }
+
+    /**
+     * @return the reciteCount
+     */
+    public Integer getReciteCount() {
+        return reciteCount;
+    }
+
+    /**
+     * @param reciteCount the reciteCount to set
+     */
+    public void setReciteCount(Integer reciteCount) {
+        this.reciteCount = reciteCount;
+    }
+
+    /**
+     * @return the type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(Integer type) {
+        this.type = type;
     }
     
 }

@@ -7,7 +7,9 @@ package com.leqi.client.book.article.uf;
 
 import com.leqi.client.book.article.cf.DeleteArticlesCommand;
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
+import com.leqi.client.book.article.cf.QueryContentAndCatalogCommand;
 import com.leqi.client.book.article.cf.SaveArticleCommand;
+import com.leqi.client.book.article.cf.SaveContentAndCatalogCommand;
 import com.leqi.client.book.article.cf.UpdateArticleStatusCommand;
 import com.leqi.client.book.cf.UpdateCatalogStatusCommand;
 import com.leqi.client.book.content.uf.ContentModel;
@@ -43,6 +45,7 @@ import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 
 /**
  *
@@ -57,6 +60,8 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
     @FXML
     private LQTableView<Content> articleTableView;
+    @FXML
+    private LQTableView<ContentAndCatalog> catalogsTableView;
 
     @Resource(name = "ContentModel")
     private ContentModel contentModel;
@@ -79,6 +84,12 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @Resource(name = "UpdateArticleStatusCommand")
     private UpdateArticleStatusCommand updateArticleStatusCommand;
 
+    @Resource(name = "QueryContentAndCatalogCommand")
+    private QueryContentAndCatalogCommand queryContentAndCatalogCommand;
+
+    @Resource(name = "SaveContentAndCatalogCommand")
+    private SaveContentAndCatalogCommand saveContentAndCatalogCommand;
+
     public ArticleController() {
     }
 
@@ -91,7 +102,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
     public void initialize(URL location, ResourceBundle resources) {
         //对当前编辑的Catalog加监听
         JavaFxObservable.changesOf(this.getModel().contentProperty())
-                .subscribe((c) -> this.contentInfoFormView.setValue(c.getNewVal()));
+                .subscribe((c) -> {
+                    articleChange(c.getNewVal());
+                });
 
         JavaFxObservable.changesOf(this.getModel().bookProperty())
                 .subscribe(book -> this.bookChange(book.getNewVal()));
@@ -101,6 +114,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
         JavaFxObservable.changesOf(this.articleTableView.getSelectionModel().selectedItemProperty())
                 .subscribe((c) -> this.getModel().setContent(c.getNewVal()));
+
+        JavaFxObservable.changesOf(this.getModel().getContentAndCatalogs())
+                .subscribe((c) -> this.catalogsTableView.getItems().setAll(this.getModel().getContentAndCatalogs()));
 
         bookChange(this.getModel().getBook());
 
@@ -146,6 +162,14 @@ public class ArticleController extends FXMLController<ArticleModel> {
         Content article = createArticle(this.getModel().getBook().getId());
         this.getModel().setContent(article);
         //this.contentInfoFormView.setValue(article);
+    }
+
+    private void articleChange(Content article) {
+        this.contentInfoFormView.setValue(article);
+        Map<String, Object> map = new HashMap<>();
+        map.put(DATA, article);
+        this.queryContentAndCatalogCommand.doCommand(map);
+
     }
 
     /**
@@ -227,6 +251,33 @@ public class ArticleController extends FXMLController<ArticleModel> {
         this.contentModel.setAddBreadCrumb(sourceItem);
         this.segmentModel.setArticle(article);
         this.segmentModel.setBook(this.getModel().getBook());
+    }
+
+    @FXML
+    public void saveCatalog(ActionEvent event) {
+        Map<String, Object> param = new HashMap<>();
+        param.put(DATA, this.catalogsTableView.getItems());
+        saveContentAndCatalogCommand.doCommand(param);
+    }
+
+    @FXML
+    public void createCatalog(ActionEvent event) {
+        ContentAndCatalog cc = new ContentAndCatalog();
+
+        Content content = this.contentInfoFormView.getValue();
+        if (content == null || content.getId() == null) {
+            AlertUtil.showError("(content == null||content.getId() == null");
+            return;
+        }
+
+        cc.setContentId(content.getId());
+        catalogsTableView.getItems().add(cc);
+
+    }
+
+    @FXML
+    public void deleteCatalog(ActionEvent event) {
+
     }
 
 }

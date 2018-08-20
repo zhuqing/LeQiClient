@@ -5,12 +5,14 @@
  */
 package xyz.tobebetter.entity.english.content;
 
+import xyz.tobebetter.entity.Entity;
+
 /**
  * 文章和分类的关联
  *
  * @author zhuqing
  */
-public class ContentAndCatalog {
+public class ContentAndCatalog extends Entity{
     private String catalogId;
     private String contentId;
 

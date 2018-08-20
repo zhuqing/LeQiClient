@@ -19,6 +19,7 @@ import xyz.tobebetter.entity.english.Content;
 
 import java.util.List;
 import javafx.collections.FXCollections;
+import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 
 /**
  * 创建文章实体
@@ -34,18 +35,20 @@ public class ArticleModel extends FXMLModel {
      */
     private ObjectProperty<Catalog> book;
 
-
-
     /**
      * 实体
      */
     private ObjectProperty<Content> content;
 
-
     /**
      * 书下的文章列表
      */
     private ObservableList<Content> articles;
+
+    /**
+     * 书下的文章列表
+     */
+    private ObservableList<ContentAndCatalog> contentAndCatalogs;
 
     public ArticleModel() {
         setFxmlPath("/com/leqi/client/book/article/uf/Article.fxml");
@@ -98,14 +101,12 @@ public class ArticleModel extends FXMLModel {
         return book;
     }
 
-
-
     public void setBook(Catalog book) {
         this.bookProperty().setValue(book);
     }
 
     public ObservableList<Content> getArticles() {
-        if(this.articles == null){
+        if (this.articles == null) {
             this.articles = FXCollections.observableArrayList();
         }
         return articles;
@@ -113,6 +114,23 @@ public class ArticleModel extends FXMLModel {
 
     public void setArticles(List<Content> articles) {
         this.getArticles().setAll(articles);
+    }
+
+    /**
+     * @return the contentAndCatalogs
+     */
+    public ObservableList<ContentAndCatalog> getContentAndCatalogs() {
+        if (this.contentAndCatalogs == null) {
+            this.contentAndCatalogs = FXCollections.observableArrayList();
+        }
+        return contentAndCatalogs;
+    }
+
+    /**
+     * @param contentAndCatalogs the contentAndCatalogs to set
+     */
+    public void setContentAndCatalogs(ObservableList<ContentAndCatalog> contentAndCatalogs) {
+        this.contentAndCatalogs = contentAndCatalogs;
     }
 
 }

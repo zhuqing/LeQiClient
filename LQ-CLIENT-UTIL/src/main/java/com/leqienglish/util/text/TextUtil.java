@@ -5,13 +5,31 @@
  */
 package com.leqienglish.util.text;
 
-
-
 /**
  *
  * @author zhuqing
  */
 public class TextUtil {
+
+    public static String replace(String str, String src, String target) {
+        String lowStr = src.toLowerCase();
+
+        String[] wordArr = str.split(" ");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < wordArr.length; i++) {
+            String word = wordArr[i];
+            if (word.toLowerCase().equals(lowStr)) {
+                wordArr[i] = target;
+            }
+            stringBuilder.append(word).append(" ");
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
 
     /**
      *
@@ -26,13 +44,13 @@ public class TextUtil {
         }
         return str.split("[ :-]");
     }
-    
-    public static String[] splitWords(String str){
-           if (str == null || str.isEmpty()) {
+
+    public static String[] splitWords(String str) {
+        if (str == null || str.isEmpty()) {
             return null;
         }
         return str.split("[ ';,.\n0-9\\/]");
- 
+
     }
 
     public static int textAllLength(String[] strArr, int endIndex) {
@@ -77,17 +95,17 @@ public class TextUtil {
 
         return textSb.toString();
     }
-    
+
     /**
      * 填充方向
      */
     public enum FILL_DIRACTION {
         HEAD("头"),
         TAIL("尾");
-        
+
         private String desc;
-        
-        private FILL_DIRACTION(String desc){
+
+        private FILL_DIRACTION(String desc) {
             this.desc = desc;
         }
 

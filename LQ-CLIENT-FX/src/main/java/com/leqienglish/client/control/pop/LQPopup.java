@@ -162,13 +162,13 @@ public class LQPopup extends PopupWindow {
         if (!this.getReSetZOrder()) {
             return;
         }
-        NodeUtil.resetZOrder();
+      //  NodeUtil.resetZOrder();
     }
 
     @Override
     public void show(Node ownerNode, double anchorX, double anchorY) {
         super.show(ownerNode, anchorX, anchorY); //To change body of generated methods, choose Tools | Templates.
-        changeTop();
+       // changeTop();
 
     }
 

@@ -1,7 +1,7 @@
 <select id="findByEntity" resultMap="${resultMap}" parameterType="${parameterType}" >
         select
            <include refid="${selectField}" />
-        from ${table} t
+        from ${table} T
         <where>
            <#list wheres as where>
               <if test="${where.filedName} != null" >
@@ -15,8 +15,8 @@
 <select id="findById" resultMap="${resultMap}" parameterType="${parameterType}" >
         select
            <include refid="${selectField}" />
-        from ${table} t
-        WHERE t.ID = ${'#{'}id ,jdbcType=VARCHAR${'}'}
+        from ${table} T
+        WHERE T.ID = ${'#{'}id ,jdbcType=VARCHAR${'}'}
 </select>
  <select id="findUpdateTime" resultType="java.lang.Long" parameterType="java.lang.String">
         SELECT

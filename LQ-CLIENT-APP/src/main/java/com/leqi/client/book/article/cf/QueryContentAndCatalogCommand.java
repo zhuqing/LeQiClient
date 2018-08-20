@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.catalog.cf;
+package com.leqi.client.book.article.cf;
 
 import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.catalog.uf.CatalogModel;
+import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqi.client.book.uf.BookModel;
 import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Arrays;
+import com.leqienglish.util.text.TextUtil;
+import java.util.Collections;
 import java.util.Map;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.Consistent;
-import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
+import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 
 /**
  * 根据catalogId查询文章列表
@@ -25,11 +26,11 @@ import xyz.tobebetter.entity.english.Content;
  * @author zhuqing
  */
 @Lazy
-@Component("QueryCatalogsCommand")
-public class QueryCatalogsCommand extends QueryCommand {
+@Component("QueryContentAndCatalogCommand")
+public class QueryContentAndCatalogCommand extends QueryCommand {
 
-    @Resource(name = "CatalogModel")
-    private CatalogModel catalogModel;
+    @Resource(name = "ArticleModel")
+    private ArticleModel articleModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -38,22 +39,28 @@ public class QueryCatalogsCommand extends QueryCommand {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
+        Content content = (Content) param.get(DATA);
+
+        if (content == null || TextUtil.isNullOrEmpty(content.getId())) {
+            this.putParameters(DATA, null);
+            return;
+        }
         MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
 
-        parameter.add("type", Consistent.CATALOG_TYPE+"");
+        parameter.add("contentId", content.getId());
 
-        Catalog[] contents = this.restClient.get("/english/catalog/getAllCatalogsByType", parameter, Catalog[].class);
-        this.putParameters("datas", contents);
+        ContentAndCatalog[] contents = this.restClient.get("/contentAndCatalog/findByContentId", parameter, ContentAndCatalog[].class);
+        this.putParameters(DATA, contents);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        Catalog[] contents = (Catalog[]) this.getParameters("datas");
+        ContentAndCatalog[] contents = (ContentAndCatalog[]) this.getParameters(DATA);
         if (contents == null || contents.length == 0) {
-            catalogModel.getCatalogs().clear();
+            articleModel.getContentAndCatalogs().clear();
             return;
         }
-        this.catalogModel.setCatalogs(Arrays.asList(contents));
+        articleModel.getContentAndCatalogs().setAll(contents);
 
     }
 

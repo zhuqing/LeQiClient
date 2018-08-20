@@ -25,7 +25,7 @@ import java.util.Objects;
 
 /**
  *
- * @author duyi
+ * @author zhuqing
  */
 public abstract class AbstractApplication extends Application {
 
