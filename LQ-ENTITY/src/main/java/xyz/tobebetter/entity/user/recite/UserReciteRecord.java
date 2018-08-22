@@ -14,7 +14,7 @@ import xyz.tobebetter.entity.Entity;
 public class UserReciteRecord extends Entity{
     private String userId;
     private Long learnTime;
-    private long learnDay;
+    private Long learnDay;
 
     /**
      * @return the userId
@@ -47,14 +47,14 @@ public class UserReciteRecord extends Entity{
     /**
      * @return the learnDay
      */
-    public long getLearnDay() {
+    public Long getLearnDay() {
         return learnDay;
     }
 
     /**
      * @param learnDay the learnDay to set
      */
-    public void setLearnDay(long learnDay) {
+    public void setLearnDay(Long learnDay) {
         this.learnDay = learnDay;
     }
     

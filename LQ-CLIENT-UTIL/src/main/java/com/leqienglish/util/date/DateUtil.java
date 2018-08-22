@@ -18,10 +18,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+
 /**
  * 时间工具类
- *
- * @author duyi
+ * @author zhuleqi
  */
 public class DateUtil {
 

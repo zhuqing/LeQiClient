@@ -110,5 +110,10 @@ public class Consistent {
      * 未保存数据的标志
      */
     public final static int UN_SAVED_STATUS= -2;
+    
+    
+    
+    public final static int MAN= 1;
+    public final static int WOMEN = 0;
 
 }

@@ -5,8 +5,6 @@
  */
 package com.leqienglish.util.date;
 
-
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -22,6 +20,19 @@ import java.util.logging.Logger;
  * @author zhangyingchuang
  */
 public class DateTimeUtil {
+
+    /**
+     * 是否是相同的年月日
+     * @param time1
+     * @param time2
+     * @return 
+     */
+    public static boolean isSameDate(long time1, long time2) {
+        Calendar c1 = DateUtil.toCalendar(time1);
+        Calendar c2 = DateUtil.toCalendar(time2);
+        return c1.get(Calendar.YEAR) == c2.get(Calendar.YEAR) && c1.get(Calendar.MONTH) == c2.get(Calendar.MONTH) && c1.get(Calendar.MONTH) == c2.get(Calendar.MONTH);
+
+    }
 
     /**
      * Date 转 LocalDateTime
