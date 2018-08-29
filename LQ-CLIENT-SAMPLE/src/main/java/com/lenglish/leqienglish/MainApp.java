@@ -31,6 +31,7 @@ import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
 import xyz.tobebetter.entity.user.word.UserAndWord;
 import xyz.tobebetter.entity.word.Word;
+import xyz.tobebetter.version.Version;
 
 /**
  * 使用freeMarker，生成mybatis配置xml
@@ -40,7 +41,7 @@ import xyz.tobebetter.entity.word.Word;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(UserAndWord.class, UserAndWord.class, "USER_AND_WORD", "Base_Column_List");
+        createMaper(Version.class, Version.class, "VERSION", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {

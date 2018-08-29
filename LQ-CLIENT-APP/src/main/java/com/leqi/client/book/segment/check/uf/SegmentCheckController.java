@@ -79,7 +79,7 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
         }
         try {
             Content article = this.getModel().getArticle();
-            String filePath = FileUtil.toLocalFilePath(article.getAudioPath());
+            String filePath = FileUtil.getInstence().toLocalFilePath(article.getAudioPath());
             File file = new File(filePath);
             this.timeStempCheck.setAudioPath(file.toURI().toString());
             this.timeStempCheck.setCheckText(segment.getContent());

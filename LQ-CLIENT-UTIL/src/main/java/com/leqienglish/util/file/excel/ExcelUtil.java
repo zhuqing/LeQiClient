@@ -93,10 +93,10 @@ public class ExcelUtil {
      */
     public static Map<String, Object[][]> readExcel(File file, Integer... startRow) throws IOException {
         Map<String, Object[][]> result = null;
-        if (file != null && "xls".equals(FileUtil.getFileExt(file))) {
+        if (file != null && "xls".equals(FileUtil.getInstence().getFileExt(file))) {
             result = readXls(file, startRow);
             return result;
-        } else if (file != null && "xlsx".equals(FileUtil.getFileExt(file))) {
+        } else if (file != null && "xlsx".equals(FileUtil.getInstence().getFileExt(file))) {
             result = readXlsx(file, startRow);
             return result;
         } else {

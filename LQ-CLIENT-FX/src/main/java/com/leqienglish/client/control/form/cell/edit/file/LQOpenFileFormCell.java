@@ -8,8 +8,11 @@ package com.leqienglish.client.control.form.cell.edit.file;
 import com.leqienglish.client.control.form.cell.LQFormCell;
 import com.leqienglish.client.control.form.cell.edit.LQEditableFormCell;
 import java.io.File;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -55,6 +58,7 @@ public class LQOpenFileFormCell extends LQEditableFormCell<Object, String, Node>
             hBox.setAlignment(Pos.CENTER_LEFT);
             hBox.setPrefWidth(this.getPrefWidth());
             textField = new TextField();
+           
             textField.setEditable(false);
             button = new Button("open file");
             button.setOnAction(fileChooseEvent);

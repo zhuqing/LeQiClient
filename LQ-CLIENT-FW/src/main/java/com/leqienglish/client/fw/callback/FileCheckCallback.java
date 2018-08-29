@@ -33,7 +33,7 @@ public class FileCheckCallback implements Callback<String, String> {
         }
 
         try {
-            String localFilePath = FileUtil.toLocalFilePath(p);
+            String localFilePath = FileUtil.getInstence().toLocalFilePath(p);
             File localFile = new File(localFilePath);
             if (localFile.exists()) {
                 return localFilePath;

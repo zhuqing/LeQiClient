@@ -18,7 +18,27 @@ import org.springframework.util.FileCopyUtils;
  */
 public class FileUtil {
 
-    public static String getFileExt(File file) {
+    public static String EN_WORD_TYPE = "en";
+
+    public static String AM_WORD_TYPE = "am";
+
+    public static String TTS_WORD_TYPE = "tts";
+
+    public static String VERSION_ADNROID_TYPE = "android";
+    public static String VERSION_IOS_TYPE = "ios";
+    public static String VERSION_DES_TYPE = "desktop";
+
+    private final static FileUtil fileUtil = new FileUtil();
+
+    protected FileUtil() {
+
+    }
+
+    public static FileUtil getInstence() {
+        return fileUtil;
+    }
+
+    public String getFileExt(File file) {
         String fileName = file.getName();
         String[] fileNames = fileName.split("\\.");
         return fileNames[fileNames.length - 1];
@@ -28,8 +48,9 @@ public class FileUtil {
     public static final String IMAGE = "image";
     public static final String AUDIO = "audio";
     public static final String WORD = "word";
+    public static final String VERSION = "version";
 
-    public static String appRootPath() {
+    public String appRootPath() {
 
         String userDir = System.getProperties().getProperty("user.home");
         StringBuffer sb = new StringBuffer();
@@ -39,7 +60,7 @@ public class FileUtil {
         return rootpath;
     }
 
-    public static void initDirectory(String rootpath) {
+    public void initDirectory(String rootpath) {
         File file = new File(rootpath);
         if (!file.exists()) {
             synchronized ("initDir") {
@@ -56,16 +77,16 @@ public class FileUtil {
      * @param path
      * @return
      */
-    public static String toLocalFilePath(String path) throws Exception {
+    public String toLocalFilePath(String path) throws Exception {
         LQExceptionUtil.required(!(path == null || path.isEmpty()), "path 参数不能为空");
 
         path = path.replace('/', File.separatorChar);
-        path = FileUtil.appRootPath() + File.separator + path;
-        FileUtil.createDir(path);
+        path = fileUtil.appRootPath() + File.separator + path;
+        fileUtil.createDir(path);
         return path;
     }
 
-    public static void createDir(String filePath) {
+    public void createDir(String filePath) {
         if (filePath.contains(".")) {
             int index = filePath.lastIndexOf(File.separator);
             filePath = filePath.substring(0, index);
@@ -79,7 +100,7 @@ public class FileUtil {
         }
     }
 
-    public static boolean hasFileOrCreate(String filePath) throws IOException {
+    public boolean hasFileOrCreate(String filePath) throws IOException {
 
         File file = new File(filePath);
         if (file.exists()) {
@@ -91,7 +112,7 @@ public class FileUtil {
 
     }
 
-    public static String fileName(String end) {
+    public String fileName(String end) {
         StringBuffer randomName = new StringBuffer();
         synchronized ("fileName") {
             randomName.append(UUID.randomUUID().toString()).append("_").append(System.currentTimeMillis()).append(".").append(end);
@@ -100,11 +121,11 @@ public class FileUtil {
         return randomName.toString();
     }
 
-    public static String imageDirectory() {
+    public String imageDirectory() {
         return createDirectory(IMAGE);
     }
 
-    public static String wordDirectory(String word) {
+    public String wordDirectory(String word) {
         StringBuffer sb = new StringBuffer();
         sb.append(appRootPath()).append(File.separatorChar).append(WORD).append(File.separatorChar).append(word);//
         initDirectory(sb.toString());
@@ -114,7 +135,15 @@ public class FileUtil {
         return sb.toString();
     }
 
-    public static String wordFilelPath(String word,String type) {
+    public String versionRelationPath(String partName) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(VERSION).append(File.separatorChar).append(this.date2DirName());
+        initDirectory(this.appRootPath()+File.separator+sb.toString());
+        sb.append(File.separatorChar).append(UUID.randomUUID().toString()).append("-").append(partName);
+        return sb.toString();
+    }
+
+    public String wordFilelPath(String word, String type) {
         StringBuffer sb = new StringBuffer();
         sb.append(appRootPath()).append(File.separatorChar).append(WORD).append(File.separatorChar).append(word);//
         initDirectory(sb.toString());
@@ -122,7 +151,7 @@ public class FileUtil {
         return sb.toString();
     }
 
-    public static String createDirectory(String dirName) {
+    public String createDirectory(String dirName) {
         StringBuffer sb = new StringBuffer();
         sb.append(dirName).append(File.separatorChar);
         sb.append(date2DirName());
@@ -130,12 +159,12 @@ public class FileUtil {
         return imagePath;
     }
 
-    public static String audioDirectory() {
+    public String audioDirectory() {
 
         return createDirectory(AUDIO);
     }
 
-    public static String date2DirName() {
+    public String date2DirName() {
         Calendar calendar = Calendar.getInstance();
         StringBuffer sb = new StringBuffer();
         sb.append(calendar.get(Calendar.YEAR));
@@ -160,12 +189,12 @@ public class FileUtil {
      * @param fileSuffix
      * @return
      */
-    public static String getPathByFileSuffix(String fileSuffix) {
+    public String getPathByFileSuffix(String fileSuffix) {
         switch (fileSuffix) {
             case "mp3":
-                return FileUtil.audioDirectory();
+                return fileUtil.audioDirectory();
             case "jpg":
-                return FileUtil.imageDirectory();
+                return fileUtil.imageDirectory();
 
         }
 
@@ -180,15 +209,15 @@ public class FileUtil {
      * @return
      * @throws IOException
      */
-    public static String writeWordAudioFile(byte[] file, String word, String type,String fileSuffix) throws IOException {
+    public String writeWordAudioFile(byte[] file, String word, String type, String fileSuffix) throws IOException {
         String path = wordDirectory(word);
 
         if (path == null) {
             return null;
         }
 
-        String filePath = FileUtil.appRootPath() + File.separator + path + File.separator;
-        String imageFileName = word+"_"+type+"."+fileSuffix;
+        String filePath = fileUtil.appRootPath() + File.separator + path + File.separator;
+        String imageFileName = word + "_" + type + "." + fileSuffix;
 
         wirteFile(file, filePath, imageFileName);
         return path + File.separator + imageFileName;
@@ -202,21 +231,38 @@ public class FileUtil {
      * @return
      * @throws IOException
      */
-    public static String writeFile(byte[] file, String fileSuffix) throws IOException {
+    public void writeFileDirectly(byte[] fileBytes, String path) throws IOException {
+        File file = new File(path);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        FileCopyUtils.copy(fileBytes, file);
+    }
+
+    /**
+     * 写入文件
+     *
+     * @param file
+     * @param fileSuffix
+     * @return
+     * @throws IOException
+     */
+    public String writeFile(byte[] file, String fileSuffix) throws IOException {
         String path = getPathByFileSuffix(fileSuffix);
 
         if (path == null) {
             return null;
         }
 
-        String filePath = FileUtil.appRootPath() + File.separator + path + File.separator;
-        String imageFileName = FileUtil.fileName(fileSuffix);
+        String filePath = fileUtil.appRootPath() + File.separator + path + File.separator;
+        String imageFileName = fileUtil.fileName(fileSuffix);
 
         wirteFile(file, filePath, imageFileName);
         return path + File.separator + imageFileName;
     }
 
-    private static void wirteFile(byte[] file, String fileDir, String fileName) throws IOException {
+    private void wirteFile(byte[] file, String fileDir, String fileName) throws IOException {
         File uploadFile = new File(fileDir + File.separator + fileName);
 
         File dir = new File(fileDir);
@@ -239,7 +285,7 @@ public class FileUtil {
      * @param path
      * @return
      */
-    public static boolean fileExit(String path) {
+    public boolean fileExit(String path) {
         if (path == null || path.isEmpty()) {
             return false;
         }

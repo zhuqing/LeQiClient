@@ -42,13 +42,13 @@ public class SaveArticleCommand extends Command {
         //  LQExceptionUtil.required(content.getId() == null, "content已经保存过了");
         //LQExceptionUtil.required(content.getAudioPath() != null, "没有音频文件");
 
-        if (FileUtil.fileExit(content.getImagePath())) {
+        if (FileUtil.getInstence().fileExit(content.getImagePath())) {
             MultiValueMap<String, Object> value = new LinkedMultiValueMap();
             value.add("file", new FileSystemResource(new File(content.getImagePath())));
             this.putParameters("image", value);
         }
 
-        if (FileUtil.fileExit(content.getAudioPath())) {
+        if (FileUtil.getInstence().fileExit(content.getAudioPath())) {
             MultiValueMap<String, Object> audioMap = new LinkedMultiValueMap();
             audioMap.add("file", new FileSystemResource(new File(content.getAudioPath())));
             this.putParameters("audio", audioMap);

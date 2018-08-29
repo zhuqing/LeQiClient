@@ -40,6 +40,19 @@
             </ArrayList>
         </children>
     </SourceItem>
+    
+     <SourceItem>
+        <display>Version</display>
+        <value>UserModel</value>
+        <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>Version</display>
+                    <value>VersionModel</value>
+                </SourceItem>
+            </ArrayList>
+        </children>
+    </SourceItem>
     <SourceItem>
         <display>User</display>
         <value>UserModel</value>

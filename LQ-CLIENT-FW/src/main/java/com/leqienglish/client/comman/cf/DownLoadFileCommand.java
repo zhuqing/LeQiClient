@@ -31,8 +31,8 @@ public class DownLoadFileCommand extends Command {
 
         LQExceptionUtil.required(!(filePath == null || filePath.isEmpty()), "文件路径不能为null");
        
-        filePath = FileUtil.toLocalFilePath(filePath);
-        FileUtil.createDir(filePath);
+        filePath = FileUtil.getInstence().toLocalFilePath(filePath);
+        FileUtil.getInstence().createDir(filePath);
         param.put(REAL_FILE_PATH, filePath);
 
     }
@@ -40,7 +40,7 @@ public class DownLoadFileCommand extends Command {
     @Override
     protected void run(Map<String, Object> param) throws Exception {
         String realFilePath = (String) param.get(REAL_FILE_PATH);
-        if(FileUtil.hasFileOrCreate(realFilePath)){
+        if(FileUtil.getInstence().hasFileOrCreate(realFilePath)){
             return;
         }
         String filePath = (String) param.get(FILE_PATH);

@@ -103,8 +103,8 @@ public class SaveWordsCommand extends Command {
         if(urlPath == null || urlPath.isEmpty()){
             return null;
         }
-        String localPath = FileUtil.wordFilelPath(word,type);
-        if(!FileUtil.fileExit(localPath)){
+        String localPath = FileUtil.getInstence().wordFilelPath(word,type);
+        if(!FileUtil.getInstence().fileExit(localPath)){
              this.fileService.downLoad(urlPath, localPath, MediaType.ALL);
 
         }

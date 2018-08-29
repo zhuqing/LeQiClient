@@ -77,7 +77,7 @@ public class SegmentInfoController extends FXMLController<SegmentInfoModel> {
             timeStemp.setAudioPath(null);
             return;
         }
-        timeStemp.setAudioPath(FileUtil.toLocalFilePath(content.getAudioPath()));
+        timeStemp.setAudioPath(FileUtil.getInstence().toLocalFilePath(content.getAudioPath()));
     }
 
     private void segmentInfoChange(Segment content) throws Exception {

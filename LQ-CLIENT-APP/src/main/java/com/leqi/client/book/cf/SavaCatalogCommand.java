@@ -64,7 +64,7 @@ public class SavaCatalogCommand extends Command {
         Catalog catalog = (Catalog) param.get(DATA);
 
         LQExceptionUtil.required(catalog != null, "catalog不能为null");
-        if (FileUtil.fileExit(catalog.getImagePath())) {
+        if (FileUtil.getInstence().fileExit(catalog.getImagePath())) {
             MultiValueMap<String, Object> value = new LinkedMultiValueMap();
 
             value.add("file", new FileSystemResource(new File(catalog.getImagePath())));

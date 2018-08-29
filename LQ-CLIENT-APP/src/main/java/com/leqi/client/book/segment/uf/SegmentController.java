@@ -125,7 +125,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
     private void editingSegmentChange(Segment segment) {
         try {
             Content article = this.getModel().getArticle();
-            String filePath = FileUtil.toLocalFilePath(article.getAudioPath());
+            String filePath = FileUtil.getInstence().toLocalFilePath(article.getAudioPath());
             File file = new File(filePath);
             timeStemp.setAudioPath(file.toURI().toString());
             timeStemp.setSourceText(segment.getContent());

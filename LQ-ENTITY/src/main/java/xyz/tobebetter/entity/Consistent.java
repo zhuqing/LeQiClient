@@ -115,5 +115,10 @@ public class Consistent {
     
     public final static int MAN= 1;
     public final static int WOMEN = 0;
+    
+    
+    
+    public final static int ANDROID=400;
+    public final static int IOS = 401;
 
 }
