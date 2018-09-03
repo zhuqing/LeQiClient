@@ -25,6 +25,8 @@ public class UserAndContent extends Entity{
     private Integer finishedPercent;
     
     
+    
+    
 
     /**
      * @return the userId

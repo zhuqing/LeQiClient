@@ -5,13 +5,25 @@
  */
 package xyz.tobebetter.entity.english.word.user;
 
+import xyz.tobebetter.entity.Entity;
+
 /**
  *用户已经背诵完成的段
  * @author zhuqing
  */
-public class UserAndSegment {
+public class UserAndSegment extends Entity{
+    /**
+     * 用户Id
+     */
     private String userId;
+    /**
+     * 背诵的段Id
+     */
     private String segmentId;
+    /**
+     * 段所在的文章id
+     */
+    private String contentId;
 
     /**
      * @return the userId
@@ -40,5 +52,21 @@ public class UserAndSegment {
     public void setSegmentId(String segmentId) {
         this.segmentId = segmentId;
     }
+
+    /**
+     * @return the contentId
+     */
+    public String getContentId() {
+        return contentId;
+    }
+
+    /**
+     * @param contentId the contentId to set
+     */
+    public void setContentId(String contentId) {
+        this.contentId = contentId;
+    }
+
+
     
 }

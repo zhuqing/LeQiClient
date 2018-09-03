@@ -20,6 +20,10 @@ public class Segment extends Entity{
      * 阅读数量，默认是0
      */
     private Long readNum = 0L;
+    /**
+     * 序号
+     */
+    private Integer indexNo;
 
     /**
      * @return the title
@@ -92,6 +96,21 @@ public class Segment extends Entity{
     public void setReadNum(Long readNum) {
         this.readNum = readNum;
     }
-    
+
+    /**
+     * @return the indexNo
+     */
+    public Integer getIndexNo() {
+        return indexNo;
+    }
+
+    /**
+     * @param indexNo the indexNo to set
+     */
+    public void setIndexNo(Integer indexNo) {
+        this.indexNo = indexNo;
+    }
+
+   
     
 }
