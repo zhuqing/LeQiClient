@@ -41,8 +41,11 @@ public class Mapper {
     private String daoMethodName;
     private String resultMap;
     private String parameterType;
+    private String className;
     private String table;
     private String selectField;
+    
+    private List<WhereIf>  swiftTypes;
     private List<WhereIf> wheres;
     
     private List<WhereIf> wheresVo;
@@ -157,6 +160,34 @@ public class Mapper {
      */
     public void setWheresVo(List<WhereIf> wheresVo) {
         this.wheresVo = wheresVo;
+    }
+
+    /**
+     * @return the className
+     */
+    public String getClassName() {
+        return className;
+    }
+
+    /**
+     * @param className the className to set
+     */
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    /**
+     * @return the swiftTypes
+     */
+    public List<WhereIf> getSwiftTypes() {
+        return swiftTypes;
+    }
+
+    /**
+     * @param swiftTypes the swiftTypes to set
+     */
+    public void setSwiftTypes(List<WhereIf> swiftTypes) {
+        this.swiftTypes = swiftTypes;
     }
 
     

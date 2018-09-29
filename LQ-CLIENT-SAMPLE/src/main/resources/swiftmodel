@@ -1,0 +1,44 @@
+
+
+import Foundation
+
+class ${className} : Entity{
+    
+   <#list swiftTypes as where>
+   
+           var ${where.filedName}:${where.type}?
+    </#list>
+    
+    override init() {
+        
+    }
+    convenience init(data:[String:AnyObject]) {
+        self.init()
+        setValuesForKeys(data)
+    }
+   
+    override func setValue(_ value: Any?, forKey key: String) {
+        switch key {
+        <#list swiftTypes as where>
+         case "${where.filedName}":
+            self.${where.filedName} = value as? ${where.type}
+    </#list>
+       
+        default:
+            super.setValue(value, forKey: key)
+            break
+        }
+    }
+    
+     override func toDictionary()->[String:NSObject]{
+        var dic = super.toDictionary()
+        
+         <#list swiftTypes as where>
+          if  let v = self.${where.filedName}{
+              dic["${where.filedName}"] = v as NSObject
+              }
+        </#list>
+       
+        return dic
+    }
+}

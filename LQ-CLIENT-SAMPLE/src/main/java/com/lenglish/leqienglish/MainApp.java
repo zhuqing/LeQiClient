@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import xyz.tobebetter.entity.english.Catalog;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.english.content.ContentAndCatalog;
@@ -32,6 +33,7 @@ import xyz.tobebetter.entity.suggestion.Suggestion;
 import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
 import xyz.tobebetter.entity.user.word.UserAndWord;
+import xyz.tobebetter.entity.word.ReciteWordConfig;
 import xyz.tobebetter.entity.word.Word;
 import xyz.tobebetter.version.Version;
 
@@ -43,22 +45,27 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(UserAndSegment.class, UserAndSegment.class, "USER_AND_SEGMENT", "Base_Column_List");
+        createMaper(ReciteWordConfig.class, ReciteWordConfig.class, "RECITE_WORD_CONFIG", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
         Mapper mapper = new Mapper();
 
         mapper.setParameterType(entityClaz.getName());
+        mapper.setClassName(entityClaz.getSimpleName());
         mapper.setTable(tableName);
         mapper.setSelectField(selectField);
         mapper.setDaoClassPath(entityClaz.getName() + "Dao");
 
+         List<Field> fields = getFields(entityClaz);
+        
         mapper.setResultMap("BaseResultMap");
-        mapper.setWheres(create(getFields(entityClaz)));
-      //  mapper.setWheresVo(create(getFields(voClaz)));
+        mapper.setWheres(create(fields));
+        mapper.setSwiftTypes(swiftTypes(entityClaz,fields));
+        //  mapper.setWheresVo(create(getFields(voClaz)));
         selectEntity(mapper, "/mapper");
-
+        System.err.println("========================");
+       selectEntity(mapper, "/swiftmodel");
     }
 
     private static void selectEntity(Mapper select, String path) throws IOException, TemplateException {
@@ -86,6 +93,26 @@ public class MainApp {
         fields.addAll(getFields(claz.getSuperclass()));
         return fields;
 
+    }
+
+    private static List<WhereIf> swiftTypes(Class entityClaz, List<Field> fields) {
+        return fields.stream()
+                .filter((f) -> !Modifier.isStatic(f.getModifiers()))
+                .filter((f) -> f.getDeclaringClass().equals(entityClaz))
+                .map((f) -> {
+                    WhereIf w = new WhereIf();
+                    w.setFiledName(f.getName());
+                    w.setType(getSwiftType(f.getType().getSimpleName()));
+                   
+                    return w;
+                })
+                .filter((w) -> {
+                    if (w.getType() == null) {
+                        System.err.println(w.getPropertyName());
+                    }
+                    return w.getType() != null;
+                })
+                .collect(Collectors.toList());
     }
 
     private static List<WhereIf> create(List<Field> fields) {
@@ -130,6 +157,24 @@ public class MainApp {
             sb.append(c);
         }
         return sb.toString().toUpperCase();
+    }
+    
+     public static String getSwiftType(String type) {
+        switch (type) {
+            case "String":
+                return "String";
+            case "int":
+            case "Integer":
+                return "Int";
+            case "long":
+            case "Long":
+                return "Int64";
+           
+            default:
+                return "??";
+        }
+
+       
     }
 
     public static String getDBType(String type) {

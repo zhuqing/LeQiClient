@@ -35,6 +35,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -61,7 +63,9 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
     private LQFormView<Segment> segmentFormView;
-
+    @FXML
+    private CheckBox isSupportChinease;
+    
     @Resource(name = "QuerySegmentsCommand")
     private QuerySegmentsCommand querySegmentsCommand;
 
@@ -106,6 +110,13 @@ public class SegmentController extends FXMLController<SegmentModel> {
         JavaFxObservable.nullableValuesOf(this.getModel().articleProperty())
                 .subscribe(op -> articleChange(op.orElse(null)));
         articleChange(getModel().getArticle());
+        
+        isSupportChinease.selectedProperty().addListener(new ChangeListener<Boolean>(){
+            @Override
+            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
+                timeStemp.setSuportChineaseChinease(t1);
+            }
+        });
 
         segmentsTableView.setRowMouseEventHandler((MouseEvent event) -> {
             if (event.getClickCount() != 2) {

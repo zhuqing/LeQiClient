@@ -133,7 +133,13 @@ public class TimeStempSkin extends CustomSkin<TimeStemp, TimeStempBehavior<TimeS
      * 给上一个句子加上结束时间
      */
     private void addLastEndPoint() {
+        
         int lastTimeStempIndex = timeStempIndex - 1;
+        
+        if (getSkinnable().isSuportChineaseChinease()) {
+            lastTimeStempIndex = lastTimeStempIndex-1;
+        }
+        
         if (lastTimeStempIndex < 0 || lastTimeStempIndex >= texts.size()) {
             return;
         }
