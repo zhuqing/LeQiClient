@@ -45,7 +45,7 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(ReciteWordConfig.class, ReciteWordConfig.class, "RECITE_WORD_CONFIG", "Base_Column_List");
+        createMaper(Suggestion.class, Suggestion.class, "RECITE_WORD_CONFIG", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
