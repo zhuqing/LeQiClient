@@ -57,6 +57,13 @@ public class ICIBATranslateUtil {
     
    
 
+    /**
+     * 异步加载单词
+     * @param query
+     * @param consumer
+     * @throws InterruptedException
+     * @throws ExecutionException 
+     */
     public static void transResult(String query,final Consumer<String> consumer) throws InterruptedException, ExecutionException {
         String params = buildParams(query);
         String path = TRANS_API_HOST + "?" + params;
@@ -116,5 +123,48 @@ public class ICIBATranslateUtil {
         stringBuffer.append("&").append("type=").append(TYPE);
         stringBuffer.append("&").append("key=").append(KEY);
         return stringBuffer.toString();
+    }
+    
+    
+    public static String transResult(String query) throws InterruptedException, IOException {
+        String params = buildParams(query);
+        String path = TRANS_API_HOST + "?" + params;
+
+
+        //创建一个URL对象
+        URL url = new URL(path);
+        //创建一个HTTP链接
+        HttpURLConnection urlConn = null;
+        try {
+            urlConn = (HttpURLConnection) url.openConnection();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        urlConn.setConnectTimeout(10000);
+        urlConn.connect();
+
+        if (urlConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+
+            return "";
+        }
+
+        InputStream inputStream = urlConn.getInputStream();
+        OutputStream os = new ByteArrayOutputStream(inputStream.available());
+        int length;
+
+        byte[] bytes = new byte[1024];
+        while ((length = inputStream.read(bytes)) != -1) {
+            os.write(bytes, 0, length);
+
+        }
+        String result = os.toString();
+        //关闭流
+        inputStream.close();
+        os.close();
+        os.flush();
+
+        return result;
+
+
     }
 }

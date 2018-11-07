@@ -62,7 +62,7 @@ public class BookController extends FXMLController<BookModel> {
     @FXML
     private TextField filter;
 
-    @Resource(name = "ContentModel")
+    @Resource(name = "BookRootModel")
     private ContentModel contentModel;
 
     @Resource(name = "ArticleModel")

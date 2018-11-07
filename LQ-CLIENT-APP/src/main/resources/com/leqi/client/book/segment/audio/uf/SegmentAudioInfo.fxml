@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.file.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+            <Button text="Save" onAction="#save"/>  
+        </HBox>
+    </top>
+    <center>
+        <VBox >
+     
+            <Label id=""/>  
+     
+            <TimeStemp fx:id="timeStemp">
+            
+            </TimeStemp>
+            <CheckBox fx:id="isSupportChinease" selected="false" text="is support chinease？" /> 
+            
+        </VBox>
+    </center>
+   
+</BorderPane>

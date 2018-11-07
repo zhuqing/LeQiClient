@@ -52,7 +52,8 @@
                         <tableCell>
                             <LQOperatorTableCell>
                                 <buttons>
-                                      
+                                        <LQButton id="audio" text="音频" onAction="#addAudio">
+                                    </LQButton>
                                     <LQButton id="lunch" text="发布" onAction="#lunch">
                                     </LQButton>
                                     <LQButton id="cancelLunch" text="取消发布" onAction="#cancelLunch"/>
@@ -89,13 +90,13 @@
                  <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="No:"  prefWidth="60"   />
                 <LQNumberFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="indexNo"  prefWidth="400"  />
                     
-<!--                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="Map3:"  prefWidth="60" />
-                <LQOpenFileFormCell fx:id="audioPathFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="1" propertyName="audioPath"   prefWidth="400" >
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Map3:"  prefWidth="60" />
+                <LQOpenFileFormCell fx:id="audioPathFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="audioPath"   prefWidth="400" >
 
-                    </LQOpenFileFormCell>     -->
+                </LQOpenFileFormCell>     
                     
-                    <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Content:"   prefWidth="60"/>
-                    <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="content"  prefWidth="400" prefHeight="400" />
+                    <LQTitleFormCell  LQFormView.columnIndex="0" LQFormView.rowIndex="3" text="Content:"   prefWidth="60"/>
+                    <LQTextAreaInputFormCell fx:id="contentFormCell" LQFormView.columnIndex="1" LQFormView.rowIndex="3" propertyName="content"  prefWidth="400" prefHeight="400" />
                 </LQFormView>
                 <TimeStemp fx:id="timeStemp">
             

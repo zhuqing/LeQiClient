@@ -6,6 +6,7 @@
 package com.leqi.client.book.segment.uf;
 
 import com.leqi.client.book.content.uf.ContentModel;
+import com.leqi.client.book.segment.audio.uf.SegmentAudioModel;
 import com.leqi.client.book.segment.cf.DeleteSegmentCommand;
 import com.leqi.client.book.segment.cf.UpdateContentStatusCommand;
 import com.leqi.client.book.segment.cf.QuerySegmentsCommand;
@@ -84,11 +85,14 @@ public class SegmentController extends FXMLController<SegmentModel> {
     @Resource(name = "DeleteSegmentCommand")
     private DeleteSegmentCommand deleteSegmentCommand;
 
-    @Resource(name = "ContentModel")
+    @Resource(name = "BookRootModel")
     private ContentModel contentModel;
 
     @Resource(name = "SegmentCheckModel")
     private SegmentCheckModel segmentCheckModel;
+    
+        @Resource(name = "SegmentAudioModel")
+    private SegmentAudioModel segmentAudioModel;
 
     @Override
     public void refresh() {
@@ -134,17 +138,21 @@ public class SegmentController extends FXMLController<SegmentModel> {
     }
 
     private void editingSegmentChange(Segment segment) {
-        try {
-            Content article = this.getModel().getArticle();
-            String filePath = FileUtil.getInstence().toLocalFilePath(article.getAudioPath());
-            File file = new File(filePath);
-            timeStemp.setAudioPath(file.toURI().toString());
-            timeStemp.setSourceText(segment.getContent());
-            this.segmentFormView.setValue(segment);
-        } catch (Exception ex) {
-            Logger.getLogger(SegmentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+          this.segmentFormView.setValue(segment);
+//        try {
+//            Content article = this.getModel().getArticle();
+//            String filePath = getFilePath(segment,article);
+//            
+//            File file = new File(filePath);
+//            timeStemp.setAudioPath(file.toURI().toString());
+//            timeStemp.setSourceText(segment.getContent());
+//            this.segmentFormView.setValue(segment);
+//        } catch (Exception ex) {
+//            Logger.getLogger(SegmentController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
+    
+   
 
     private void articleChange(Content content) {
         if (content == null) {
@@ -154,8 +162,8 @@ public class SegmentController extends FXMLController<SegmentModel> {
         Map<String, Object> map = new HashMap<>();
         map.put("contentId", content.getId());
         querySegmentsCommand.doCommand(map);
-        map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
-        downLoadFileCommand.doCommand(map);
+//        map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
+//        downLoadFileCommand.doCommand(map);
     }
 
     /**
@@ -222,7 +230,16 @@ public class SegmentController extends FXMLController<SegmentModel> {
         this.segmentCheckModel.setArticle(this.getModel().getArticle());
         contentModel.setAddBreadCrumb(SourceItemUtil.create(segment.getTitle(), "SegmentCheckModel"));
     }
+    
 
+ @FXML
+    public void addAudio(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        Segment segment = (Segment) button.getUserData();
+        segmentAudioModel.setSegment(segment);
+        this.segmentAudioModel.setArticle(this.getModel().getArticle());
+        contentModel.setAddBreadCrumb(SourceItemUtil.create(segment.getTitle(), "SegmentAudioModel"));
+    }
     @FXML
     public void save(ActionEvent event) {
         this.getModel().getEditingSegment().setContent(timeStemp.getTargetText());

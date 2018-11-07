@@ -28,10 +28,13 @@ import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 import xyz.tobebetter.entity.english.content.ReciteContentVO;
 import xyz.tobebetter.entity.english.segment.WordAndSegment;
+import xyz.tobebetter.entity.english.sentence.Sentence;
+import xyz.tobebetter.entity.english.sentence.SentenceAndWord;
 import xyz.tobebetter.entity.english.word.user.UserAndSegment;
 import xyz.tobebetter.entity.suggestion.Suggestion;
 import xyz.tobebetter.entity.user.User;
 import xyz.tobebetter.entity.user.content.UserAndContent;
+import xyz.tobebetter.entity.user.recite.UserReciteRecord;
 import xyz.tobebetter.entity.user.word.UserAndWord;
 import xyz.tobebetter.entity.word.ReciteWordConfig;
 import xyz.tobebetter.entity.word.Word;
@@ -45,7 +48,7 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(Suggestion.class, Suggestion.class, "RECITE_WORD_CONFIG", "Base_Column_List");
+        createMaper(Segment.class, Segment.class, "SENTENCE_AND_WORD", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {

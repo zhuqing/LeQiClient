@@ -5,6 +5,7 @@
  */
 package xyz.tobebetter.entity.word;
 
+import java.util.Objects;
 import xyz.tobebetter.entity.Entity;
 
 /**
@@ -15,6 +16,40 @@ import xyz.tobebetter.entity.Entity;
 public class ReciteWordConfig extends Entity {
 
     private String userId;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.userId);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ReciteWordConfig other = (ReciteWordConfig) obj;
+        if (!Objects.equals(this.userId, other.userId)) {
+            return false;
+        }
+        if (!Objects.equals(this.reciteNumberPerDay, other.reciteNumberPerDay)) {
+            return false;
+        }
+        if (!Objects.equals(this.hasReciteNumber, other.hasReciteNumber)) {
+            return false;
+        }
+        if (!Objects.equals(this.myWordsNumber, other.myWordsNumber)) {
+            return false;
+        }
+        return true;
+    }
     /**
      * 每日背诵的单词数,默认是10个
      */

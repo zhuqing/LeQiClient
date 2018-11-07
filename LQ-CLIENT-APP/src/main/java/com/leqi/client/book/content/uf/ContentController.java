@@ -5,30 +5,17 @@
  */
 package com.leqi.client.book.content.uf;
 
-import com.leqi.client.user.uf.*;
-import com.leqi.client.book.article.cf.QueryArticlesCommand;
-import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.book.cf.QueryCatalogCommand;
-import com.leqi.client.book.info.uf.BookInfoModel;
-import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
 import com.leqienglish.client.control.navigation.LQBreadCrumbBar;
-import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.fw.uf.FXMLModel;
-import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.client.util.sourceitem.SourceItem;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import xyz.tobebetter.entity.english.Catalog;
-import xyz.tobebetter.entity.english.Content;
 
 /**
  *
@@ -56,10 +43,17 @@ public class ContentController extends FXMLController<ContentModel> {
 
         JavaFxObservable.changesOf(this.lqBreadCrumBar.selectedProperty())
                 .subscribe(s -> breadCrumbarSelect(s.getNewVal()));
-        SourceItem item = new SourceItem();
-        item.setDisplay("Book");
-        item.setValue("BookModel");
-         lqBreadCrumBar.add(item);
+        if (this.getModel().getFirstModel() == null) {
+            SourceItem item = new SourceItem();
+            item.setDisplay("Book");
+            item.setValue("BookModel");
+            lqBreadCrumBar.add(item);
+        } else {
+            SourceItem item = new SourceItem();
+            item.setDisplay("Root");
+            item.setValue(this.getModel().getFirstModel());
+            lqBreadCrumBar.add(item);
+        }
 
     }
 

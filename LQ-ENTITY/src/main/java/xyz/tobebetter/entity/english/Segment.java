@@ -17,6 +17,11 @@ public class Segment extends Entity{
     private String userId;
     private String contentId;
     /**
+     * 音频的路径，优先去Segment中的文件
+     * 先判断Segment中有没有音频路径，在判断content中有没有音频文件
+     */
+    private String audioPath;
+    /**
      * 阅读数量，默认是0
      */
     private Long readNum = 0L;
@@ -109,6 +114,20 @@ public class Segment extends Entity{
      */
     public void setIndexNo(Integer indexNo) {
         this.indexNo = indexNo;
+    }
+
+    /**
+     * @return the audioPath
+     */
+    public String getAudioPath() {
+        return audioPath;
+    }
+
+    /**
+     * @param audioPath the audioPath to set
+     */
+    public void setAudioPath(String audioPath) {
+        this.audioPath = audioPath;
     }
 
    

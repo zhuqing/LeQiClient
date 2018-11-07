@@ -13,4 +13,20 @@
             http://activemq.apache.org/schema/core
             http://activemq.apache.org/schema/core/activemq-core-5.9.0.xsd">
     <context:component-scan base-package="com.leqi.client" />
+    <bean id="SentenceRootController" class="com.leqi.client.book.content.uf.ContentController">      
+       
+    </bean>
+      <bean id="SentenceRootModel" class="com.leqi.client.book.content.uf.ContentModel">      
+        <property name="fxmlController"  ref="SentenceRootController"/>
+         <property name="firstModel"  value="SentenceModel"/>
+    </bean>
+    
+    
+     <bean id="BookRootController" class="com.leqi.client.book.content.uf.ContentController">      
+       
+    </bean>
+      <bean id="BookRootModel" class="com.leqi.client.book.content.uf.ContentModel">      
+        <property name="fxmlController"  ref="BookRootController"/>
+         <property name="firstModel"  value="BookModel"/>
+    </bean>
 </beans>

@@ -15,7 +15,7 @@
             <ArrayList>
                 <SourceItem>
                     <display>Book</display>
-                    <value>ContentModel</value>
+                    <value>BookRootModel</value>
                 </SourceItem>
                 <SourceItem>
                     <display>Article</display>
@@ -41,6 +41,23 @@
         </children>
     </SourceItem>
     
+    
+     <SourceItem>
+        <display>Sentence</display>
+        <value>UserModel</value>
+         <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>Edite Sentence</display>
+                    <value>SentenceRootModel</value>
+                </SourceItem>
+            </ArrayList>
+        </children>
+    </SourceItem>
+    <SourceItem>
+        <display>User</display>
+        <value>UserModel</value>
+    </SourceItem>
      <SourceItem>
         <display>Version</display>
         <value>UserModel</value>
@@ -52,10 +69,6 @@
                 </SourceItem>
             </ArrayList>
         </children>
-    </SourceItem>
-    <SourceItem>
-        <display>User</display>
-        <value>UserModel</value>
     </SourceItem>
     <SourceItem>
         <display>Help</display>

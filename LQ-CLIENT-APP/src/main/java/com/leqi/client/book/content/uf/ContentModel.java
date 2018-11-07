@@ -11,6 +11,8 @@ import com.leqienglish.client.util.sourceitem.SourceItem;
 import java.util.List;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.annotation.Resource;
@@ -28,6 +30,7 @@ import xyz.tobebetter.entity.english.Content;
 public class ContentModel extends FXMLModel {
 
     private ObjectProperty<SourceItem> addBreadCrumb;
+    private StringProperty firstModel;
 
     public ContentModel() {
         setFxmlPath("/com/leqi/client/content/uf/content.fxml");
@@ -62,6 +65,30 @@ public class ContentModel extends FXMLModel {
      */
     public void setAddBreadCrumb(SourceItem addBreadCrumb) {
         this.addBreadCrumbProperty().setValue(addBreadCrumb); 
+    }
+
+    /**
+     * @return the firstModel
+     */
+    public String getFirstModel() {
+        return firstModelProperty().getValue();
+    }
+    
+     /**
+     * @return the firstModel
+     */
+    public StringProperty firstModelProperty() {
+        if(firstModel == null){
+            firstModel = new SimpleStringProperty();
+        }
+        return firstModel;
+    }
+
+    /**
+     * @param firstModel the firstModel to set
+     */
+    public void setFirstModel(String firstModel) {
+        this.firstModelProperty().setValue(firstModel);
     }
 
    

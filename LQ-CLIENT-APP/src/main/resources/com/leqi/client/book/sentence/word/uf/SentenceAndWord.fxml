@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.listview.cell.*?>
+<?import com.leqienglish.client.control.view.listview.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.leqienglish.client.control.form.*?>
+
+<?import  com.leqienglish.client.control.form.cell.*?>
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.number.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.file.*?>
+
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.view.table.column.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import com.leqienglish.client.control.button.*?>
+<?import com.leqi.client.book.segment.cf.*?>
+<?import com.leqienglish.client.control.combobox.*?>
+<?import com.leqienglish.client.control.query.listview.QueryListView?>
+
+<?import com.leqienglish.client.fw.callback.*?>
+<BorderPane id="AnchorPane" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox>
+            <HBox prefHeight = "20">
+              
+                
+               
+            </HBox>
+
+        </VBox>
+    </top>
+    <left>
+
+       
+        <StackPane prefWidth="200" >
+            <VBox>
+               
+                <HBox>
+                    <TextField fx:id="filter"></TextField>
+                    <Button text="Query" onAction="#query"></Button>
+                </HBox>
+              
+             
+                <LQTableView  fx:id="wordsTableView">
+                    <columns>
+                        <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
+                            <tableCell>
+                                <LQTableTextCell />
+                            </tableCell>
+                        </LQTableColumn>
+                       
+                        <LQTableColumn editable="false" prefWidth="100.0" text="操作">
+                            <tableCell>
+                                <LQOperatorTableCell>
+                                    <buttons>                              
+
+                                        <LQButton id="addRelationWords" text="添加到句子" onAction="#add2Sentence">
+                                        </LQButton>
+                                    </buttons>
+                                   
+                                </LQOperatorTableCell>
+                            </tableCell>
+                        </LQTableColumn>
+                    </columns>
+                </LQTableView>
+            </VBox>
+
+        </StackPane>
+
+
+    </left>
+    <center>
+        <StackPane >
+            <BorderPane>
+                <top>
+                    <StackPane >
+                        <LQFormView fx:id="sentenceInfoFormView" StackPane.alignment="CENTER">
+                          
+                            <LQFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="english"/>
+
+                          
+                            <LQFormCell  LQFormView.columnIndex="1" LQFormView.rowIndex="1"
+                                         propertyName="chinese"/>
+
+                        </LQFormView>
+                    </StackPane>
+                </top>
+                <center>
+                    <StackPane >
+                        <LQTableView  fx:id="wordAndSentenceTableView">
+                            <columns>
+                                <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
+                                    <tableCell>
+                                        <LQTableTextCell />
+                                    </tableCell>
+                                </LQTableColumn>
+                       
+                                <LQTableColumn editable="false" prefWidth="100.0" text="操作">
+                                    <tableCell>
+                                        <LQOperatorTableCell>
+                                            <buttons>                              
+
+                                                <LQButton id="Delete" text="删除" onAction="#deleteWordAndSentence">
+                                                </LQButton>
+                                            </buttons>
+                                   
+                                        </LQOperatorTableCell>
+                                    </tableCell>
+                                </LQTableColumn>
+                            </columns>
+                        </LQTableView>
+                    </StackPane>
+                </center>
+            </BorderPane>
+           
+        </StackPane>
+    </center>
+
+</BorderPane>

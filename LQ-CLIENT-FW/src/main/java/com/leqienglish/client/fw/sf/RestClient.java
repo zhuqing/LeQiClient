@@ -61,8 +61,8 @@ public class RestClient {
 
     private static RestTemplate restTemplate;
 
-//    private String serverPath = "http://47.104.98.43:80/ToBeBetter";
-    private String serverPath = "http://www.leqienglish.com";
+    private String serverPath = "http://192.168.43.9:8080";
+//    private String serverPath = "http://www.leqienglish.com";
     protected final ObjectMapper mapper = new ObjectMapper();
 
     static {
@@ -167,6 +167,7 @@ public class RestClient {
         if (claz == null) {
             return null;
         }
+        System.err.println(resultMessage.getData());
 
         return mapper.readValue(resultMessage.getData(), claz);
     }

@@ -43,6 +43,8 @@ public abstract class Command extends LogFacade {
 
     public final static String MESSAGE = "MESSAGE";
     public final static String SUCCESS = "SUCCESS";
+    
+     public final static String INSERT = "INSERT";
 
     public final static String CONSUMER = "CONSUMER";
     protected boolean wait = true;

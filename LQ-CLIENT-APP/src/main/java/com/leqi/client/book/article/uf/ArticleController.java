@@ -63,7 +63,7 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @FXML
     private LQTableView<ContentAndCatalog> catalogsTableView;
 
-    @Resource(name = "ContentModel")
+    @Resource(name = "BookRootModel")
     private ContentModel contentModel;
 
     @Resource(name = "SegmentModel")

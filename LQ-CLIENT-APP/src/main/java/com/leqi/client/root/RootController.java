@@ -47,21 +47,20 @@ public class RootController extends FXMLController<RootModel> {
     @FXML
     private StackPane menuPane;
 
-    private String defaultBusinessId = "ContentModel";
+    private String defaultBusinessId = "BookRootModel";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         JavaFxObservable.nullableValuesOf(this.getModel().currentBusinessModelProperty())
                 .map((o) -> o.orElse(defaultBusinessId))
                 .subscribe((businessModeId) -> openModel(businessModeId));
-        
+
         this.menuPane.getChildren().setAll(createMenuBar());
-       
 
     }
-    
-    private void businessModeChange(String businessId){
-       FXMLModel mode =  this.getModel(businessId);
+
+    private void businessModeChange(String businessId) {
+        FXMLModel mode = this.getModel(businessId);
     }
 
     private MenuBar createMenuBar() {
@@ -84,14 +83,14 @@ public class RootController extends FXMLController<RootModel> {
     private List<Menu> createMenus(List<SourceItem> subSourceItems) {
         List<Menu> menus = new ArrayList<>();
         for (SourceItem sourceItem : subSourceItems) {
-           Menu menu = new Menu();
-           menus.add(menu);
+            Menu menu = new Menu();
+            menus.add(menu);
             menu.setText(sourceItem.getDisplay());
             if (sourceItem.getValue() != null) {
                 menu.setId(sourceItem.getValue().toString());
             }
             menu.setUserData(sourceItem);
-           
+
             menu.addEventHandler(MouseEvent.MOUSE_CLICKED, (event)
                     -> getModel().setCurrentBusinessModel(sourceItem.getValue() + "")
             );
@@ -103,28 +102,25 @@ public class RootController extends FXMLController<RootModel> {
 
         return menus;
     }
-    
+
     private List<MenuItem> createMenuItems(List<SourceItem> subSourceItems) {
-         List<MenuItem> menus = new ArrayList<>();
-         for (SourceItem sourceItem : subSourceItems) {
-           MenuItem menu = new MenuItem();
-menus.add(menu);
+        List<MenuItem> menus = new ArrayList<>();
+        for (SourceItem sourceItem : subSourceItems) {
+            MenuItem menu = new MenuItem();
+            menus.add(menu);
             menu.setText(sourceItem.getDisplay());
             if (sourceItem.getValue() != null) {
                 menu.setId(sourceItem.getValue().toString());
             }
             menu.setUserData(sourceItem);
-           
-            menu.setOnAction(new EventHandler<ActionEvent>(){
-               @Override
-               public void handle(ActionEvent event) {
-                  getModel().setCurrentBusinessModel(sourceItem.getValue() + "");
-               }
-           });
-        
-       
 
-           
+            menu.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    getModel().setCurrentBusinessModel(sourceItem.getValue() + "");
+                }
+            });
+
         }
 
         return menus;
