@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.leqienglish.client.control.view.listview.cell.*?>
+<?import com.leqienglish.client.control.view.listview.*?>
+<?import com.leqienglish.client.control.timestemp.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.leqienglish.client.control.form.*?>
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import  com.leqienglish.client.control.form.cell.unedit.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.image.path.*?>
+<?import  com.leqienglish.client.control.form.cell.edit.text.*?>
+
+<?import com.leqienglish.client.control.view.table.cell.text.*?>
+<?import com.leqienglish.client.control.view.table.column.*?>
+<?import com.leqienglish.client.control.view.table.*?>
+<?import com.leqienglish.client.control.view.table.cell.operator.*?>
+<?import com.leqienglish.client.control.button.*?>
+<?import com.leqienglish.client.wordpane.*?>
+<?import com.leqienglish.client.control.combobox.*?>
+<?import com.leqienglish.client.control.query.listview.QueryListView?>
+<BorderPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+                    
+            <Button text="create" onAction="#create"></Button>
+            <Button text="save" onAction="#save"></Button>
+        </HBox>
+                
+    </top>
+    
+    <left>
+        <StackPane prefWidth="500" >
+           
+            <VBox>
+                <HBox>
+                    <TextField fx:id="filter"></TextField>
+                    <Button text="Query" onAction="#query"></Button>
+                </HBox>
+                
+                
+                <LQTableView  fx:id="wordsTableView">
+                    <columns>
+                        <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
+                            <tableCell>
+                                <LQTableTextCell />
+                            </tableCell>
+                        </LQTableColumn>
+                       
+                        <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                            <tableCell>
+                                <LQOperatorTableCell>
+                                    <buttons>
+
+                                    
+                                        <LQButton id="showArticles" text="编辑" onAction="#edit">
+                                        </LQButton>
+
+                                        <LQButton id="delete" text="删除" onAction="#delete">
+                                        </LQButton>
+                                    </buttons>
+                                   
+                                </LQOperatorTableCell>
+                            </tableCell>
+                        </LQTableColumn>
+                    </columns>
+                </LQTableView>
+            </VBox>
+             
+          
+
+        </StackPane>
+    </left>
+    <center>
+        <StackPane >
+         
+            <LQFormView fx:id="wordInfoFormView" StackPane.alignment="CENTER" >
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Word:"   />
+                <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="word"   />
+                    
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="INFO:"   />
+                    
+                <LQTextAreaInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="1" minHeight="50" propertyName="info"   />
+                    
+            </LQFormView>
+           
+        </StackPane>
+    </center>
+    
+    <bottom>
+      
+    </bottom>
+
+</BorderPane>

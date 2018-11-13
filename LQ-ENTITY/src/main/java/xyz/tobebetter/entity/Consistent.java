@@ -120,5 +120,13 @@ public class Consistent {
     
     public final static int ANDROID=400;
     public final static int IOS = 401;
+    
+    
+    public final static int USER_TYPE=0;
+    public final static int USER_TYPE_QQ = 1;
+    public final static int USER_TYPE_WEIXIN = 2;
+    public final static int USER_TYPE_WEIBO=3;
+
+    
 
 }

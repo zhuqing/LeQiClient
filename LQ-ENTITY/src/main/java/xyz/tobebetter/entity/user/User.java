@@ -47,6 +47,11 @@ public class User extends Entity {
     private Long lastLogin;
     
     /**
+     * 用户类型，0注册用户，1QQ用户，2微信用户，3微博用户
+     */
+    private Integer type;
+    
+    /**
      * 用户图像
      */
     private String imagePath;
@@ -161,5 +166,19 @@ public class User extends Entity {
      */
     public void setSex(Integer sex) {
         this.sex = sex;
+    }
+
+    /**
+     * @return the type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

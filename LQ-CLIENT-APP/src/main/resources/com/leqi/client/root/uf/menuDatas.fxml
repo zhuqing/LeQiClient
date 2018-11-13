@@ -54,6 +54,24 @@
             </ArrayList>
         </children>
     </SourceItem>
+    
+      <SourceItem>
+        <display>Word</display>
+        <value>WordModel</value>
+         <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>Edit Word</display>
+                    <value>WordRootPaneModel</value>
+                </SourceItem>
+                <SourceItem>
+                    <display>Edit Short word</display>
+                    <value>ShortWordRootModel</value>
+                </SourceItem>
+            </ArrayList>
+        </children>
+    </SourceItem>
+    
     <SourceItem>
         <display>User</display>
         <value>UserModel</value>

@@ -29,4 +29,22 @@
         <property name="fxmlController"  ref="BookRootController"/>
          <property name="firstModel"  value="BookModel"/>
     </bean>
+    
+     
+     <bean id="WordRootPaneController" class="com.leqi.client.book.content.uf.ContentController">      
+       
+    </bean>
+      <bean id="WordRootPaneModel" class="com.leqi.client.book.content.uf.ContentModel">      
+        <property name="fxmlController"  ref="WordRootPaneController"/>
+         <property name="firstModel"  value="WordModel"/>
+    </bean>
+    
+    
+     <bean id="ShortWordRootController" class="com.leqi.client.book.content.uf.ContentController">      
+       
+    </bean>
+      <bean id="ShortWordRootModel" class="com.leqi.client.book.content.uf.ContentModel">      
+        <property name="fxmlController"  ref="ShortWordRootController"/>
+         <property name="firstModel"  value="ShortWordModel"/>
+    </bean>
 </beans>
