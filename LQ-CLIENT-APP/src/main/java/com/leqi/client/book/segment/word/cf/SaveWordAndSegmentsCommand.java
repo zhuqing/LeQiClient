@@ -50,7 +50,7 @@ public class SaveWordAndSegmentsCommand extends SaveWordsCommand {
 
         for (int i = 0; i < wordIds.size(); i++) {
             WordAndSegment ws = new WordAndSegment();
-            ws.setAudioPath(article.getAudioPath());
+            ws.setAudioPath(segment.getAudioPath());
             ws.setEndTime(audioPlayPoint.getEndTime());
             ws.setContentId(article.getId());
             ws.setContentTitle(article.getTitle());

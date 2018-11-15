@@ -1,903 +1,584 @@
-[INFO ] 2018-11-12 13:37:17,855(11) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a66253f: startup date [Mon Nov 12 13:37:17 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 13:37:18,082(238) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 13:37:19,884(2040) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@101e6ffd: startup date [Mon Nov 12 13:37:19 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@a66253f  
-[INFO ] 2018-11-12 13:37:19,906(2062) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 13:37:20,536(2692) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 13:37:21,400(3556) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 13:37:21 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 13:37:21,403(3559) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 13:37:21,689(3845) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 13:37:21 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 13:37:21,698(3854) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 13:37:21,861(4017) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 13:38:47,646(89802) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 1432
+[INFO ] 2018-11-15 11:03:52,075(8) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6cc9bf68: startup date [Thu Nov 15 11:03:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 11:03:52,144(77) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 11:03:53,620(1553) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@70adce29: startup date [Thu Nov 15 11:03:53 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6cc9bf68  
+[INFO ] 2018-11-15 11:03:53,626(1559) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 11:03:54,219(2152) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 11:03:55,424(3357) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Thu Nov 15 11:03:55 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 11:03:55,426(3359) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 11:03:55,725(3658) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Thu Nov 15 11:03:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
+[INFO ] 2018-11-15 11:03:55,729(3662) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 11:03:55,906(3839) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 11:04:16,049(23982) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 1322
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
 00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
-01429  100%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
-00003  000%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
+01321  100%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
+00001  000%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
   
-[INFO ] 2018-11-12 13:38:50,284(92440) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 124
+[INFO ] 2018-11-15 11:04:18,746(26679) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 289
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
 00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
-00124  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
+00289  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
 00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
   
-[INFO ] 2018-11-12 13:38:52,067(94223) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryContentAndCatalogCommand: StopWatch '': running time (millis) = 120
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.getAppData()
-00119  099%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.getServiceData()
-00001  001%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.doView()
-  
-[INFO ] 2018-11-12 13:38:58,750(100906) --> [JavaFX Application Thread] com.leqi.client.book.sentence.cf.QuerySentenceCommand: StopWatch '': running time (millis) = 149
------------------------------------------
-ms     %     Task name
------------------------------------------
-00004  003%  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getAppData()
-00145  097%  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getServiceData()
-00000  000%  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:05,610(107766) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.QuerySentenceAndWordsCommand: StopWatch '': running time (millis) = 99
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.QuerySentenceAndWordsCommand.getAppData()
-00098  099%  class com.leqi.client.book.sentence.word.cf.QuerySentenceAndWordsCommand.getServiceData()
-00001  001%  class com.leqi.client.book.sentence.word.cf.QuerySentenceAndWordsCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:11,518(113674) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 2140
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00097  005%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-02043  095%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:14,218(116374) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 897
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00083  009%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00814  091%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:15,938(118094) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 905
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00070  008%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00835  092%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:17,545(119701) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 942
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00074  008%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00868  092%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:19,107(121263) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 881
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00177  020%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00704  080%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:20,685(122841) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 858
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00083  010%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00775  090%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:22,469(124625) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 996
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00087  009%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00909  091%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:39:24,066(126222) --> [JavaFX Application Thread] com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand: StopWatch '': running time (millis) = 864
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getAppData()
-00083  010%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.getServiceData()
-00781  090%  class com.leqi.client.book.sentence.word.cf.DeleteSentenceAndWordCommand.doView()
-  
-[INFO ] 2018-11-12 13:45:53,976(516132) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 13:37:21 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 13:45:53,991(516147) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 13:37:21 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 13:46:05,577(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ea0fabc: startup date [Mon Nov 12 13:46:05 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 13:46:05,681(117) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 13:46:06,877(1313) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1e987681: startup date [Mon Nov 12 13:46:06 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@ea0fabc  
-[INFO ] 2018-11-12 13:46:06,879(1315) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 13:46:07,438(1874) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 13:46:08,180(2616) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 13:46:08 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 13:46:08,182(2618) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 13:46:08,450(2886) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 13:46:08 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 13:46:08,452(2888) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 13:46:08,583(3019) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[ERROR] 2018-11-12 13:46:17,180(11616) --> [JavaFX Application Thread] com.leqi.client.word.uf.WordRootModel: 初始化页面错误！！！  
-java.lang.IllegalStateException: Location is not set.
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2434)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.book.content.uf.ContentController.breadCrumbarSelect(ContentController.java:79)
-	at com.leqi.client.book.content.uf.ContentController.lambda$initialize$1(ContentController.java:45)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$6(ObservableValueSource.java:61)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
-	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
-	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:146)
-	at javafx.beans.property.ObjectProperty.setValue(ObjectProperty.java:69)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.setSelected(LQBreadCrumbBar.java:105)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.add(LQBreadCrumbBar.java:68)
-	at com.leqi.client.book.content.uf.ContentController.initialize(ContentController.java:55)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.root.RootController.openModel(RootController.java:158)
-	at com.leqi.client.root.RootController.lambda$initialize$1(RootController.java:56)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableMap$MapObserver.onNext(ObservableMap.java:64)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$3(ObservableValueSource.java:49)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.StringPropertyBase.fireValueChangedEvent(StringPropertyBase.java:103)
-	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:110)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:144)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:49)
-	at javafx.beans.property.StringProperty.setValue(StringProperty.java:65)
-	at com.leqi.client.root.RootModel.setCurrentBusinessModel(RootModel.java:151)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:120)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:117)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.scene.control.GlobalMenuAdapter.lambda$bindMenuItemProperties$20(GlobalMenuAdapter.java:153)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.tk.quantum.GlassSystemMenu$1.action(GlassSystemMenu.java:238)
-[INFO ] 2018-11-12 13:59:31,193(805629) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 13:46:08 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 13:59:31,204(805640) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 13:46:08 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 14:00:16,695(10) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4596ea05: startup date [Mon Nov 12 14:00:16 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 14:00:16,904(219) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 14:00:18,392(1707) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1cb5e91b: startup date [Mon Nov 12 14:00:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4596ea05  
-[INFO ] 2018-11-12 14:00:18,398(1713) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 14:18:12,382(37) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@50b9679: startup date [Mon Nov 12 14:18:12 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 14:18:12,612(267) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 14:18:14,599(2254) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5dcc50f: startup date [Mon Nov 12 14:18:14 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@50b9679  
-[INFO ] 2018-11-12 14:18:14,603(2258) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 14:21:21,653(10) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c997154: startup date [Mon Nov 12 14:21:21 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 14:21:21,887(244) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 14:21:23,503(1860) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5709ab69: startup date [Mon Nov 12 14:21:23 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4c997154  
-[INFO ] 2018-11-12 14:21:23,507(1864) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 14:21:23,849(2206) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 14:21:24,626(2983) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 14:21:24 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 14:21:24,628(2985) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 14:21:24,985(3342) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 14:21:24 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 14:21:24,989(3346) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 14:21:25,326(3683) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 14:24:06,798(165155) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 948
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
-00942  099%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
-00006  001%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
-  
-[INFO ] 2018-11-12 14:24:11,484(169841) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 143
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
-00143  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
-00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
-  
-[INFO ] 2018-11-12 14:24:12,530(170887) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryContentAndCatalogCommand: StopWatch '': running time (millis) = 100
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.getAppData()
-00099  099%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.getServiceData()
-00001  001%  class com.leqi.client.book.article.cf.QueryContentAndCatalogCommand.doView()
-  
-[INFO ] 2018-11-12 14:24:13,667(172024) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 103
+[INFO ] 2018-11-15 11:04:20,243(28176) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 203
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
 00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getAppData()
-00102  099%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
-00001  001%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
+00203  100%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
   
-[INFO ] 2018-11-12 14:24:22,286(180643) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 4
+[INFO ] 2018-11-15 11:04:22,474(30407) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 3
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
-00004  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00003  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
 00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
   
-[INFO ] 2018-11-12 14:24:22,289(180646) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 7
+[INFO ] 2018-11-15 11:04:22,477(30410) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00003  043%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
-00004  057%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-11-15 11:04:27,099(35032) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand: StopWatch '': running time (millis) = 459
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getAppData()
+00459  100%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 11:04:27,267(35200) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand: StopWatch '': running time (millis) = 622
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getAppData()
+00622  100%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 11:04:28,775(36708) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 443
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00442  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
+00001  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
+  
+[INFO ] 2018-11-15 11:04:32,257(40190) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand: StopWatch '': running time (millis) = 2509
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getAppData()
+00639  025%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getServiceData()
+01870  075%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 11:04:35,140(43073) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand: StopWatch '': running time (millis) = 1627
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getAppData()
+00405  025%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getServiceData()
+01222  075%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 16:25:14,614(19282547) --> [JavaFX Application Thread] com.leqi.client.book.sentence.cf.QuerySentenceCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getAppData()
+  
+[INFO ] 2018-11-15 16:25:14,617(19282550) --> [JavaFX Application Thread] com.leqi.client.book.sentence.cf.QuerySentenceCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getAppData()
+  
+[INFO ] 2018-11-15 16:26:23,550(19351483) --> [JavaFX Application Thread] com.leqi.client.book.sentence.cf.QuerySentenceCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getAppData()
+  
+[INFO ] 2018-11-15 16:26:23,553(19351486) --> [JavaFX Application Thread] com.leqi.client.book.sentence.cf.QuerySentenceCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.sentence.cf.QuerySentenceCommand.getAppData()
+  
+[INFO ] 2018-11-15 16:27:17,304(19405237) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Thu Nov 15 11:03:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
+[INFO ] 2018-11-15 16:27:17,458(19405391) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Thu Nov 15 11:03:55 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 16:28:15,443(13) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a66253f: startup date [Thu Nov 15 16:28:15 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 16:28:15,529(99) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 16:28:16,848(1418) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@101e6ffd: startup date [Thu Nov 15 16:28:16 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@a66253f  
+[INFO ] 2018-11-15 16:28:16,851(1421) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 16:28:17,109(1679) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 16:28:18,094(2664) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Thu Nov 15 16:28:18 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 16:28:18,096(2666) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 16:28:18,302(2872) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Thu Nov 15 16:28:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
+[INFO ] 2018-11-15 16:28:18,305(2875) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 16:28:18,457(3027) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 16:30:56,585(161155) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 143032
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+143021  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
+00011  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
+  
+[INFO ] 2018-11-15 16:31:38,184(202754) --> [JavaFX Application Thread] com.leqi.client.word.shortword.sentence.cf.QueryShortWordSentenceCommand: StopWatch '': running time (millis) = 879
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.word.shortword.sentence.cf.QueryShortWordSentenceCommand.getAppData()
+00879  100%  class com.leqi.client.word.shortword.sentence.cf.QueryShortWordSentenceCommand.getServiceData()
+00000  000%  class com.leqi.client.word.shortword.sentence.cf.QueryShortWordSentenceCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:07,703(232273) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 960
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+00957  100%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
+00003  000%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:37,426(261996) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 377
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00377  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:39,774(264344) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 1004
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getAppData()
+01003  100%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:42,554(267124) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 8
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00008  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
 00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
   
-[INFO ] 2018-11-12 14:52:44,358(1882715) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 423
+[INFO ] 2018-11-15 16:32:42,557(267127) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:45,232(269802) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand: StopWatch '': running time (millis) = 1107
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getAppData()
+01106  100%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:45,676(270246) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand: StopWatch '': running time (millis) = 1556
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getAppData()
+01554  100%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.getServiceData()
+00002  000%  class com.leqi.client.book.segment.shortword.cf.QuerySegmentAndShortWordCommand.doView()
+  
+[INFO ] 2018-11-15 16:32:47,722(272292) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 1114
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+01111  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
+00003  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
+  
+[INFO ] 2018-11-15 16:33:03,761(288331) --> [JavaFX Application Thread] com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand: StopWatch '': running time (millis) = 7340
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getAppData()
+02202  030%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.getServiceData()
+05138  070%  class com.leqi.client.book.segment.shortword.cf.SaveSegmentAndShortWordCommand.doView()
+  
+[ERROR] 2018-11-15 19:12:54,303(9878873) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.uf.SegmentWordsModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: Error resolving onAction='#deleteWord', either the event handler is not in the Namespace or there is an error in the script.
+/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/build/resources/main/com/leqi/client/book/segment/word/uf/SegmentWords.fxml:60
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597)
+	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103)
+	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:770)
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.dialog.LQDialog.openDialog(LQDialog.java:32)
+	at com.leqi.client.book.segment.check.uf.SegmentCheckController.addWords(SegmentCheckController.java:109)
+	at com.leqi.client.book.segment.check.uf.SegmentCheckController.lambda$initialize$3(SegmentCheckController.java:86)
+	at com.leqienglish.client.control.timestemp.check.TimeStempCheckSkin.lambda$addWordsButton$1(TimeStempCheckSkin.java:190)
+	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
+	at io.reactivex.internal.operators.observable.ObservableFilter$FilterObserver.onNext(ObservableFilter.java:52)
+	at io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver.onNext(ObservableSubscribeOn.java:63)
+	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+[ERROR] 2018-11-15 20:45:40,863(15445433) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.uf.SegmentWordsModel: 初始化页面错误！！！  
+javafx.fxml.LoadException: Error resolving onAction='#deleteWord', either the event handler is not in the Namespace or there is an error in the script.
+/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/build/resources/main/com/leqi/client/book/segment/word/uf/SegmentWords.fxml:60
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597)
+	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103)
+	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:770)
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
+	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
+	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
+	at com.leqienglish.client.fw.dialog.LQDialog.openDialog(LQDialog.java:32)
+	at com.leqi.client.book.segment.check.uf.SegmentCheckController.addWords(SegmentCheckController.java:109)
+	at com.leqi.client.book.segment.check.uf.SegmentCheckController.lambda$initialize$3(SegmentCheckController.java:86)
+	at com.leqienglish.client.control.timestemp.check.TimeStempCheckSkin.lambda$addWordsButton$1(TimeStempCheckSkin.java:190)
+	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
+	at io.reactivex.internal.operators.observable.ObservableFilter$FilterObserver.onNext(ObservableFilter.java:52)
+	at io.reactivex.internal.operators.observable.ObservableSubscribeOn$SubscribeOnObserver.onNext(ObservableSubscribeOn.java:63)
+	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$353(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+[INFO ] 2018-11-15 20:45:43,647(15448217) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Thu Nov 15 16:28:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
+[INFO ] 2018-11-15 20:45:43,804(15448374) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Thu Nov 15 16:28:18 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:46:29,111(45) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5: startup date [Thu Nov 15 20:46:29 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:46:29,245(179) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:46:30,803(1737) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3c0ccdb5: startup date [Thu Nov 15 20:46:30 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5  
+[INFO ] 2018-11-15 20:46:30,807(1741) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:46:31,125(2059) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:46:31,753(2687) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Thu Nov 15 20:46:31 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:46:31,754(2688) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:46:31,979(2913) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Thu Nov 15 20:46:31 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
+[INFO ] 2018-11-15 20:46:31,981(2915) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:46:32,117(3051) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:47:45,005(75939) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Thu Nov 15 20:46:31 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
+[INFO ] 2018-11-15 20:47:45,023(75957) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Thu Nov 15 20:46:31 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:49:52,984(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c997154: startup date [Thu Nov 15 20:49:52 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:49:53,054(84) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:49:54,314(1344) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5709ab69: startup date [Thu Nov 15 20:49:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4c997154  
+[INFO ] 2018-11-15 20:49:54,316(1346) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:49:54,491(1521) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:49:55,022(2052) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Thu Nov 15 20:49:55 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:49:55,024(2054) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:49:55,284(2314) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Thu Nov 15 20:49:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
+[INFO ] 2018-11-15 20:49:55,285(2315) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:49:55,389(2419) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:50:46,081(53111) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-11-15 20:50:46,085(53115) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+  
+[INFO ] 2018-11-15 20:50:58,815(65845) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Thu Nov 15 20:49:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
+[INFO ] 2018-11-15 20:50:58,825(65855) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Thu Nov 15 20:49:55 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:52:04,412(22) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15274ec2: startup date [Thu Nov 15 20:52:04 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:52:04,621(231) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:52:06,930(2540) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@54feccb9: startup date [Thu Nov 15 20:52:06 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@15274ec2  
+[INFO ] 2018-11-15 20:52:06,934(2544) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:52:07,425(3035) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:52:08,158(3768) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7dcaf7ee: startup date [Thu Nov 15 20:52:08 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:52:08,160(3770) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:52:08,498(4108) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@26ff7161: startup date [Thu Nov 15 20:52:08 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@7dcaf7ee  
+[INFO ] 2018-11-15 20:52:08,501(4111) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:52:08,679(4289) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:52:18,117(13727) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 1213
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+01210  100%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
+00003  000%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
+  
+[INFO ] 2018-11-15 20:52:23,147(18757) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 510
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00510  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
+  
+[INFO ] 2018-11-15 20:52:25,057(20667) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 311
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getAppData()
+00311  100%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
+  
+[INFO ] 2018-11-15 20:52:28,094(23704) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 2
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00002  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-11-15 20:52:28,095(23705) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 0
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
+  
+[INFO ] 2018-11-15 20:52:29,994(25604) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 299
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
 00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
-00421  100%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getServiceData()
-00002  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.doView()
+00299  100%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.doView()
   
-[INFO ] 2018-11-12 15:11:54,902(3033259) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 14:21:24 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 15:11:54,914(3033271) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 14:21:24 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:26:50,747(25) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@191e0c4c: startup date [Mon Nov 12 15:26:50 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:26:50,978(256) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:26:52,816(2094) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@31b6e02b: startup date [Mon Nov 12 15:26:52 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@191e0c4c  
-[INFO ] 2018-11-12 15:26:52,820(2098) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:26:53,096(2374) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:26:53,882(3160) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 15:26:53 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:26:53,883(3161) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:26:54,190(3468) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 15:26:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 15:26:54,193(3471) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:26:54,338(3616) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:27:35,939(45217) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 15:26:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 15:27:35,951(45229) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 15:26:53 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:27:52,428(36) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@557e36a2: startup date [Mon Nov 12 15:27:52 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:27:52,660(268) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:27:54,512(2120) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@29127b67: startup date [Mon Nov 12 15:27:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@557e36a2  
-[INFO ] 2018-11-12 15:27:54,515(2123) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:27:54,786(2394) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:27:55,430(3038) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Mon Nov 12 15:27:55 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:27:55,431(3039) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:27:55,768(3376) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Mon Nov 12 15:27:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
-[INFO ] 2018-11-12 15:27:55,772(3380) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:27:55,960(3568) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[ERROR] 2018-11-12 15:28:26,485(34093) --> [JavaFX Application Thread] com.leqi.client.word.shortword.uf.ShortWordModel: 初始化页面错误！！！  
-java.lang.IllegalStateException: Location is not set.
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2434)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.root.RootController.openModel(RootController.java:158)
-	at com.leqi.client.root.RootController.lambda$initialize$1(RootController.java:56)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableMap$MapObserver.onNext(ObservableMap.java:64)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$3(ObservableValueSource.java:49)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.StringPropertyBase.fireValueChangedEvent(StringPropertyBase.java:103)
-	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:110)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:144)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:49)
-	at javafx.beans.property.StringProperty.setValue(StringProperty.java:65)
-	at com.leqi.client.root.RootModel.setCurrentBusinessModel(RootModel.java:151)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:120)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:117)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.scene.control.GlobalMenuAdapter.lambda$bindMenuItemProperties$20(GlobalMenuAdapter.java:153)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.tk.quantum.GlassSystemMenu$1.action(GlassSystemMenu.java:238)
-[INFO ] 2018-11-12 15:29:35,796(103404) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Mon Nov 12 15:27:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
-[INFO ] 2018-11-12 15:29:35,810(103418) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Mon Nov 12 15:27:55 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:29:48,282(20) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d94b2b: startup date [Mon Nov 12 15:29:48 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:29:48,375(113) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:29:49,801(1539) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5771c44b: startup date [Mon Nov 12 15:29:49 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1d94b2b  
-[INFO ] 2018-11-12 15:29:49,803(1541) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:29:50,107(1845) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:29:50,698(2436) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 15:29:50 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:29:50,700(2438) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:29:50,984(2722) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 15:29:50 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 15:29:50,985(2723) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:29:51,101(2839) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[ERROR] 2018-11-12 15:29:58,447(10185) --> [JavaFX Application Thread] com.leqi.client.word.shortword.uf.ShortWordModel: 初始化页面错误！！！  
-java.lang.IllegalStateException: Location is not set.
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2434)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.root.RootController.openModel(RootController.java:158)
-	at com.leqi.client.root.RootController.lambda$initialize$1(RootController.java:56)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableMap$MapObserver.onNext(ObservableMap.java:64)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$3(ObservableValueSource.java:49)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.StringPropertyBase.fireValueChangedEvent(StringPropertyBase.java:103)
-	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:110)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:144)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:49)
-	at javafx.beans.property.StringProperty.setValue(StringProperty.java:65)
-	at com.leqi.client.root.RootModel.setCurrentBusinessModel(RootModel.java:151)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:120)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:117)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.scene.control.GlobalMenuAdapter.lambda$bindMenuItemProperties$20(GlobalMenuAdapter.java:153)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.tk.quantum.GlassSystemMenu$1.action(GlassSystemMenu.java:238)
-[INFO ] 2018-11-12 15:32:28,440(160178) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 15:29:50 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 15:32:28,462(160200) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 15:29:50 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:32:40,487(19) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5: startup date [Mon Nov 12 15:32:40 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:32:40,655(187) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:32:42,595(2127) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3c0ccdb5: startup date [Mon Nov 12 15:32:42 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5  
-[INFO ] 2018-11-12 15:32:42,606(2138) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:32:42,915(2447) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:32:43,493(3025) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 15:32:43 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:32:43,494(3026) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:32:43,825(3357) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 15:32:43 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 15:32:43,831(3363) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:32:44,057(3589) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[ERROR] 2018-11-12 15:34:42,339(121871) --> [JavaFX Application Thread] com.leqi.client.word.shortword.uf.ShortWordModel: 初始化页面错误！！！  
-javafx.fxml.LoadException: Error resolving onAction='#create', either the event handler is not in the Namespace or there is an error in the script.
-/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/build/resources/main/com/leqi/client/word/shortword/uf/ShortWord.fxml:37
-
-	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597)
-	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103)
-	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
-	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:770)
-	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.book.content.uf.ContentController.breadCrumbarSelect(ContentController.java:79)
-	at com.leqi.client.book.content.uf.ContentController.lambda$initialize$1(ContentController.java:45)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$6(ObservableValueSource.java:61)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
-	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
-	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:146)
-	at javafx.beans.property.ObjectProperty.setValue(ObjectProperty.java:69)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.setSelected(LQBreadCrumbBar.java:105)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.add(LQBreadCrumbBar.java:68)
-	at com.leqi.client.book.content.uf.ContentController.initialize(ContentController.java:55)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.root.RootController.openModel(RootController.java:158)
-	at com.leqi.client.root.RootController.lambda$initialize$1(RootController.java:56)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableMap$MapObserver.onNext(ObservableMap.java:64)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$3(ObservableValueSource.java:49)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.StringPropertyBase.fireValueChangedEvent(StringPropertyBase.java:103)
-	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:110)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:144)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:49)
-	at javafx.beans.property.StringProperty.setValue(StringProperty.java:65)
-	at com.leqi.client.root.RootModel.setCurrentBusinessModel(RootModel.java:151)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:120)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:117)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.scene.control.GlobalMenuAdapter.lambda$bindMenuItemProperties$20(GlobalMenuAdapter.java:153)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.tk.quantum.GlassSystemMenu$1.action(GlassSystemMenu.java:238)
-[INFO ] 2018-11-12 15:36:30,691(230223) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 15:32:43 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 15:36:30,704(230236) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 15:32:43 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:36:53,337(10) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@792d8812: startup date [Mon Nov 12 15:36:53 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:36:53,474(147) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:36:55,157(1830) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5378ca8d: startup date [Mon Nov 12 15:36:55 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@792d8812  
-[INFO ] 2018-11-12 15:36:55,171(1844) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:36:55,712(2385) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:36:58,773(5446) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1e51b1a2: startup date [Mon Nov 12 15:36:58 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:36:58,779(5452) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:36:59,461(6134) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@439ff5a2: startup date [Mon Nov 12 15:36:59 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1e51b1a2  
-[INFO ] 2018-11-12 15:36:59,463(6136) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:36:59,708(6381) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[ERROR] 2018-11-12 15:37:56,420(63093) --> [JavaFX Application Thread] com.leqi.client.word.shortword.uf.ShortWordModel: 初始化页面错误！！！  
-javafx.fxml.LoadException: Error resolving onAction='#wordEdit', either the event handler is not in the Namespace or there is an error in the script.
-/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-APP/build/resources/main/com/leqi/client/word/shortword/uf/ShortWord.fxml:68
-
-	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597)
-	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103)
-	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:610)
-	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:770)
-	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.book.content.uf.ContentController.breadCrumbarSelect(ContentController.java:79)
-	at com.leqi.client.book.content.uf.ContentController.lambda$initialize$1(ContentController.java:45)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$6(ObservableValueSource.java:61)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
-	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
-	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:146)
-	at javafx.beans.property.ObjectProperty.setValue(ObjectProperty.java:69)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.setSelected(LQBreadCrumbBar.java:105)
-	at com.leqienglish.client.control.navigation.LQBreadCrumbBar.add(LQBreadCrumbBar.java:68)
-	at com.leqi.client.book.content.uf.ContentController.initialize(ContentController.java:55)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409)
-	at com.leqienglish.client.fw.uf.FXMLModel.initRoot(FXMLModel.java:67)
-	at com.leqienglish.client.fw.uf.FXMLModel.getRoot(FXMLModel.java:55)
-	at com.leqi.client.root.RootController.openModel(RootController.java:158)
-	at com.leqi.client.root.RootController.lambda$initialize$1(RootController.java:56)
-	at io.reactivex.internal.observers.LambdaObserver.onNext(LambdaObserver.java:59)
-	at io.reactivex.internal.operators.observable.ObservableMap$MapObserver.onNext(ObservableMap.java:64)
-	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:67)
-	at io.reactivex.rxjavafx.sources.ObservableValueSource.lambda$null$3(ObservableValueSource.java:49)
-	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:182)
-	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
-	at javafx.beans.property.StringPropertyBase.fireValueChangedEvent(StringPropertyBase.java:103)
-	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:110)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:144)
-	at javafx.beans.property.StringPropertyBase.set(StringPropertyBase.java:49)
-	at javafx.beans.property.StringProperty.setValue(StringProperty.java:65)
-	at com.leqi.client.root.RootModel.setCurrentBusinessModel(RootModel.java:151)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:120)
-	at com.leqi.client.root.RootController$1.handle(RootController.java:117)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.scene.control.GlobalMenuAdapter.lambda$bindMenuItemProperties$20(GlobalMenuAdapter.java:153)
-	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
-	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
-	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
-	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
-	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
-	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
-	at javafx.event.Event.fireEvent(Event.java:198)
-	at javafx.scene.control.MenuItem.fire(MenuItem.java:462)
-	at com.sun.javafx.tk.quantum.GlassSystemMenu$1.action(GlassSystemMenu.java:238)
-[INFO ] 2018-11-12 15:40:10,158(196831) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@439ff5a2: startup date [Mon Nov 12 15:36:59 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1e51b1a2  
-[INFO ] 2018-11-12 15:40:10,182(196855) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1e51b1a2: startup date [Mon Nov 12 15:36:58 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:40:23,006(44) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64cf50e6: startup date [Mon Nov 12 15:40:22 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:40:23,171(209) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:40:25,233(2271) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@735ef73: startup date [Mon Nov 12 15:40:25 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@64cf50e6  
-[INFO ] 2018-11-12 15:40:25,243(2281) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:40:25,824(2862) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:40:26,618(3656) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 15:40:26 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:40:26,620(3658) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:40:26,949(3987) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 15:40:26 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 15:40:26,952(3990) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:40:27,107(4145) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:47:21,294(418332) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 15:40:26 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 15:47:21,313(418351) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 15:40:26 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:47:34,329(152) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f36cd1b: startup date [Mon Nov 12 15:47:34 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:47:34,882(705) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:47:37,048(2871) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@183e4051: startup date [Mon Nov 12 15:47:37 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5f36cd1b  
-[INFO ] 2018-11-12 15:47:37,052(2875) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:47:37,455(3278) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 15:47:38,325(4148) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Mon Nov 12 15:47:38 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 15:47:38,327(4150) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 15:47:38,629(4452) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Mon Nov 12 15:47:38 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
-[INFO ] 2018-11-12 15:47:38,637(4460) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 15:47:38,937(4760) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 17:00:17,895(4363718) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Mon Nov 12 15:47:38 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
-[INFO ] 2018-11-12 17:00:18,168(4363991) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Mon Nov 12 15:47:38 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:40:14,846(26) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64cf50e6: startup date [Mon Nov 12 18:40:14 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:40:15,110(290) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:40:17,031(2211) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@735ef73: startup date [Mon Nov 12 18:40:17 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@64cf50e6  
-[INFO ] 2018-11-12 18:40:17,033(2213) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:40:17,326(2506) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:40:18,075(3255) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 18:40:18 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:40:18,077(3257) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:40:18,507(3687) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 18:40:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 18:40:18,510(3690) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:40:18,779(3959) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:41:50,284(95464) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 2
+[INFO ] 2018-11-15 20:53:27,583(83193) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00002  100%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:41:50,287(95467) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 2
+[INFO ] 2018-11-15 20:53:27,588(83198) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00002  100%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:42:03,372(108552) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:53:29,561(85171) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:42:03,376(108556) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:53:29,562(85172) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:42:38,927(144107) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2001fdca: startup date [Mon Nov 12 18:40:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4  
-[INFO ] 2018-11-12 18:42:38,939(144119) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@2a1ea3c4: startup date [Mon Nov 12 18:40:18 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:42:57,695(16) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@191e0c4c: startup date [Mon Nov 12 18:42:57 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:42:57,934(255) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:43:00,042(2363) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@31b6e02b: startup date [Mon Nov 12 18:43:00 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@191e0c4c  
-[INFO ] 2018-11-12 18:43:00,047(2368) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:43:00,310(2631) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:43:00,956(3277) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 18:43:00 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:43:00,958(3279) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:43:01,252(3573) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 18:43:01 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 18:43:01,254(3575) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:43:01,383(3704) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:44:03,282(65603) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 1
+[INFO ] 2018-11-15 20:53:52,899(108509) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@26ff7161: startup date [Thu Nov 15 20:52:08 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@7dcaf7ee  
+[INFO ] 2018-11-15 20:53:52,936(108546) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@7dcaf7ee: startup date [Thu Nov 15 20:52:08 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:54:17,799(21) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4dd34f26: startup date [Thu Nov 15 20:54:17 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:54:17,948(170) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:54:19,900(2122) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4d896c0d: startup date [Thu Nov 15 20:54:19 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4dd34f26  
+[INFO ] 2018-11-15 20:54:19,909(2131) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:54:20,197(2419) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:54:20,860(3082) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Thu Nov 15 20:54:20 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 20:54:20,861(3083) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
+[INFO ] 2018-11-15 20:54:21,093(3315) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Thu Nov 15 20:54:21 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
+[INFO ] 2018-11-15 20:54:21,095(3317) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
+[INFO ] 2018-11-15 20:54:21,201(3423) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
+[INFO ] 2018-11-15 20:54:49,360(31582) --> [JavaFX Application Thread] com.leqi.client.book.cf.QueryCatalogCommand: StopWatch '': running time (millis) = 2143
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00001  100%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  000%  class com.leqi.client.book.cf.QueryCatalogCommand.getAppData()
+02140  100%  class com.leqi.client.book.cf.QueryCatalogCommand.getServiceData()
+00003  000%  class com.leqi.client.book.cf.QueryCatalogCommand.doView()
   
-[INFO ] 2018-11-12 18:44:03,286(65607) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 1
+[INFO ] 2018-11-15 20:54:55,048(37270) --> [JavaFX Application Thread] com.leqi.client.book.article.cf.QueryArticlesCommand: StopWatch '': running time (millis) = 999
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00001  100%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getAppData()
+00999  100%  class com.leqi.client.book.article.cf.QueryArticlesCommand.getServiceData()
+00000  000%  class com.leqi.client.book.article.cf.QueryArticlesCommand.doView()
   
-[INFO ] 2018-11-12 18:45:41,208(163529) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 18:43:01 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 18:45:41,220(163541) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 18:43:00 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:45:51,774(9) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6cc9bf68: startup date [Mon Nov 12 18:45:51 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:45:51,896(131) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:45:53,515(1750) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@70adce29: startup date [Mon Nov 12 18:45:53 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6cc9bf68  
-[INFO ] 2018-11-12 18:45:53,519(1754) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:45:54,033(2268) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:45:54,491(2726) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3: startup date [Mon Nov 12 18:45:54 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:45:54,493(2728) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:45:54,735(2970) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7d3e50: startup date [Mon Nov 12 18:45:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3  
-[INFO ] 2018-11-12 18:45:54,737(2972) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:45:54,870(3105) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:49:09,006(197241) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 5999
+[INFO ] 2018-11-15 20:54:57,836(40058) --> [JavaFX Application Thread] com.leqi.client.book.segment.cf.QuerySegmentsCommand: StopWatch '': running time (millis) = 1467
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00006  000%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
-04039  067%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getServiceData()
-01954  033%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.doView()
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getAppData()
+01467  100%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.cf.QuerySegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:49:16,709(204944) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:00,026(42248) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 1
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00001  100%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  000%  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
   
-[INFO ] 2018-11-12 18:49:16,711(204946) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:00,037(42259) --> [JavaFX Application Thread] com.leqienglish.client.comman.cf.DownLoadFileCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getAppData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.getServiceData()
+00000  �  class com.leqienglish.client.comman.cf.DownLoadFileCommand.doView()
   
-[INFO ] 2018-11-12 18:49:55,710(243945) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:02,253(44475) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand: StopWatch '': running time (millis) = 715
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getAppData()
+00715  100%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.QuerySegmentWrodsCommand.doView()
   
-[INFO ] 2018-11-12 18:49:55,715(243950) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:06,738(48960) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 2901
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+02900  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:50:35,438(283673) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 3012
+[INFO ] 2018-11-15 20:55:11,792(54014) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 3794
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
-01427  047%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getServiceData()
-01585  053%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.doView()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+03794  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:50:39,282(287517) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:15,465(57687) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:50:39,282(287517) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:15,471(57693) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:50:45,728(293963) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:26,215(68437) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 4481
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+04480  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 18:50:45,731(293966) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:34,471(76693) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:52:33,268(401503) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1d7d3e50: startup date [Mon Nov 12 18:45:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3  
-[INFO ] 2018-11-12 18:52:33,282(401517) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@6b39ffd3: startup date [Mon Nov 12 18:45:54 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:52:51,716(21) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@15274ec2: startup date [Mon Nov 12 18:52:51 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:52:51,938(243) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:52:53,686(1991) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@54feccb9: startup date [Mon Nov 12 18:52:53 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@15274ec2  
-[INFO ] 2018-11-12 18:52:53,689(1994) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:52:53,960(2265) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:52:54,522(2827) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 18:52:54 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 18:52:54,525(2830) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 18:52:54,778(3083) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 18:52:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 18:52:54,780(3085) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 18:52:54,911(3216) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 18:53:13,366(21671) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:55:34,474(76696) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
   
-[INFO ] 2018-11-12 18:53:13,369(21674) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:56:09,444(111666) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 19:14:24,761(1293066) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.SaveShortWordCommand: StopWatch '': running time (millis) = 1241422
+[INFO ] 2018-11-15 20:56:09,450(111672) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00007  000%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getAppData()
-05204  000%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.getServiceData()
-1236211  100%  class com.leqi.client.word.shortword.cf.SaveShortWordCommand.doView()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00000  �  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 19:17:19,816(1468121) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
+[INFO ] 2018-11-15 20:56:13,301(115523) --> [JavaFX Application Thread] com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand: StopWatch '': running time (millis) = 1016
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
+00000  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getAppData()
+01015  100%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.getServiceData()
+00001  000%  class com.leqi.client.book.segment.word.cf.SaveWordAndSegmentsCommand.doView()
   
-[INFO ] 2018-11-12 19:17:19,826(1468131) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:17:22,727(1471032) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:17:22,728(1471033) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:20:33,057(1661362) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:20:33,061(1661366) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:22:50,673(1798978) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 686
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-00666  097%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
-00020  003%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
-  
-[INFO ] 2018-11-12 19:22:52,932(1801237) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 18:52:54 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 19:22:53,041(1801346) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 18:52:54 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:23:15,732(34) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f36cd1b: startup date [Mon Nov 12 19:23:15 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:23:15,994(296) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:23:17,811(2113) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@183e4051: startup date [Mon Nov 12 19:23:17 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5f36cd1b  
-[INFO ] 2018-11-12 19:23:17,813(2115) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:23:18,046(2348) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:23:18,614(2916) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 19:23:18 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:23:18,616(2918) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:23:18,904(3206) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 19:23:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 19:23:18,906(3208) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:23:19,074(3376) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:24:10,271(54573) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 1288
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-01284  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
-00004  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
-  
-[INFO ] 2018-11-12 19:24:24,880(69182) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:24:24,883(69185) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 0
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  �  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:25:13,598(117900) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 19:23:18 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 19:25:13,611(117913) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 19:23:18 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:25:27,223(34) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@557e36a2: startup date [Mon Nov 12 19:25:27 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:25:27,328(139) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:25:28,797(1608) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@29127b67: startup date [Mon Nov 12 19:25:28 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@557e36a2  
-[INFO ] 2018-11-12 19:25:28,799(1610) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:25:29,117(1928) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:25:29,829(2640) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@421b4757: startup date [Mon Nov 12 19:25:29 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:25:29,831(2642) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:25:30,180(2991) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@22117642: startup date [Mon Nov 12 19:25:30 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@421b4757  
-[INFO ] 2018-11-12 19:25:30,182(2993) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:25:30,408(3219) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:25:51,953(24764) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 1573
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-01571  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
-00002  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
-  
-[INFO ] 2018-11-12 19:26:11,658(44469) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 1
------------------------------------------
-ms     %     Task name
------------------------------------------
-00001  100%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:26:11,662(44473) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 1
------------------------------------------
-ms     %     Task name
------------------------------------------
-00001  100%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-  
-[INFO ] 2018-11-12 19:27:12,010(104821) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@22117642: startup date [Mon Nov 12 19:25:30 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@421b4757  
-[INFO ] 2018-11-12 19:27:12,024(104835) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@421b4757: startup date [Mon Nov 12 19:25:29 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:27:30,537(10) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@385bdec8: startup date [Mon Nov 12 19:27:30 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:27:30,696(169) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:27:32,465(1938) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@240d95f: startup date [Mon Nov 12 19:27:32 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@385bdec8  
-[INFO ] 2018-11-12 19:27:32,543(2016) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:27:32,932(2405) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:27:33,940(3413) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 19:27:33 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:27:33,942(3415) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:27:34,275(3748) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 19:27:34 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 19:27:34,279(3752) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:27:34,484(3957) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:27:47,935(17408) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 1145
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-01142  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
-00003  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
-  
-[INFO ] 2018-11-12 19:27:53,228(22701) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 2474
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-00698  028%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getServiceData()
-01776  072%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.doView()
-  
-[INFO ] 2018-11-12 19:29:14,829(104302) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@5ebe2946: startup date [Mon Nov 12 19:27:34 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5  
-[INFO ] 2018-11-12 19:29:14,841(104314) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@1ccdd8a5: startup date [Mon Nov 12 19:27:33 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:29:36,837(14) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5: startup date [Mon Nov 12 19:29:36 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:29:36,936(113) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:29:38,599(1776) --> [JavaFX-Launcher] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3c0ccdb5: startup date [Mon Nov 12 19:29:38 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@7f991f5  
-[INFO ] 2018-11-12 19:29:38,606(1783) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:29:38,960(2137) --> [JavaFX-Launcher] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:29:39,658(2835) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 19:29:39 CST 2018]; root of context hierarchy  
-[INFO ] 2018-11-12 19:29:39,659(2836) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [fwBeans.xml]  
-[INFO ] 2018-11-12 19:29:39,920(3097) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 19:29:39 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 19:29:39,924(3101) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from class path resource [beans.xml]  
-[INFO ] 2018-11-12 19:29:40,062(3239) --> [JavaFX Application Thread] org.springframework.beans.factory.xml.XmlBeanDefinitionReader: Loading XML bean definitions from URL [jar:file:/Users/zhuleqi/GitHub/LeQiClient/LQ-CLIENT-FW/build/libs/LQ-CLIENT-FW-1.0-SNAPSHOT.jar!/config/uf/fw.xml]  
-[INFO ] 2018-11-12 19:29:51,264(14441) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.QueryShortWordsCommand: StopWatch '': running time (millis) = 1096
------------------------------------------
-ms     %     Task name
------------------------------------------
-00000  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getAppData()
-01093  100%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.getServiceData()
-00003  000%  class com.leqi.client.word.shortword.cf.QueryShortWordsCommand.doView()
-  
-[INFO ] 2018-11-12 19:29:57,366(20543) --> [JavaFX Application Thread] com.leqi.client.word.shortword.cf.DeleteShortWordCommand: StopWatch '': running time (millis) = 1716
------------------------------------------
-ms     %     Task name
------------------------------------------
-00001  000%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getAppData()
-00301  018%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.getServiceData()
-01414  082%  class com.leqi.client.word.shortword.cf.DeleteShortWordCommand.doView()
-  
-[INFO ] 2018-11-12 19:29:59,602(22779) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@37fb3a59: startup date [Mon Nov 12 19:29:39 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5  
-[INFO ] 2018-11-12 19:29:59,606(22783) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4019ea5: startup date [Mon Nov 12 19:29:39 CST 2018]; root of context hierarchy  
+[INFO ] 2018-11-15 22:24:48,303(5430525) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@52bab483: startup date [Thu Nov 15 20:54:21 CST 2018]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f  
+[INFO ] 2018-11-15 22:24:48,398(5430620) --> [JavaFX Application Thread] org.springframework.context.support.ClassPathXmlApplicationContext: Closing org.springframework.context.support.ClassPathXmlApplicationContext@4539d61f: startup date [Thu Nov 15 20:54:20 CST 2018]; root of context hierarchy  

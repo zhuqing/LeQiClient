@@ -30,15 +30,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-validation-0.9.1-b128.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-fields-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -49,6 +40,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-common-0.9.1-b128.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-validation-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

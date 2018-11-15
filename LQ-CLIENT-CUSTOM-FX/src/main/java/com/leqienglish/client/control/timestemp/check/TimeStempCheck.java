@@ -12,9 +12,12 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 import xyz.tobebetter.entity.english.play.AudioPlayPoint;
+
+
 
 /**
  *
@@ -28,7 +31,7 @@ public class TimeStempCheck extends Control {
     /**
      * 对单独的句子处理
      */
-    private Consumer<AudioPlayPoint> sentenceConsumer;
+    private Consumer<Button> sentenceConsumer;
     /**
      * 是否支持中文
      */
@@ -143,14 +146,14 @@ public class TimeStempCheck extends Control {
     /**
      * @return the sentenceConsumer
      */
-    public Consumer<AudioPlayPoint> getSentenceConsumer() {
+    public Consumer<Button> getSentenceConsumer() {
         return sentenceConsumer;
     }
 
     /**
      * @param sentenceConsumer the sentenceConsumer to set
      */
-    public void setSentenceConsumer(Consumer<AudioPlayPoint> sentenceConsumer) {
+    public void setSentenceConsumer(Consumer<Button> sentenceConsumer) {
         this.sentenceConsumer = sentenceConsumer;
     }
 

@@ -79,6 +79,7 @@ public class SaveSentenceCommand extends Command {
         if(isInsert){
             this.sentenceModel.getSentences().add(sentence);
             AlertUtil.showInformation(AlertUtil.SAVE_SUCCESS);
+            this.sentenceModel.setCurrentSentence(new Sentence());
         }else{
             Sentence[] arr = this.sentenceModel.getSentences().toArray(new Sentence[0]);
             this.sentenceModel.getSentences().clear();

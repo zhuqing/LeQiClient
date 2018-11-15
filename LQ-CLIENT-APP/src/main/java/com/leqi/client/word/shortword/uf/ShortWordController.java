@@ -5,6 +5,8 @@
  */
 package com.leqi.client.word.shortword.uf;
 
+import com.leqi.client.book.content.uf.ContentModel;
+import com.leqi.client.word.shortword.sentence.uf.ShortWordAndSentenceModel;
 import com.leqi.client.word.uf.*;
 import com.leqi.client.book.word.cf.SaveWordsCommand;
 import com.leqi.client.word.shortword.cf.DeleteShortWordCommand;
@@ -17,6 +19,7 @@ import static com.leqienglish.client.fw.cf.Command.ID;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.client.util.event.EventUtil;
+import com.leqienglish.client.util.sourceitem.SourceItem;
 import com.leqienglish.client.wordpane.WordsPane;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.net.URL;
@@ -61,7 +64,13 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
       @Resource(name = "DeleteShortWordCommand")
     protected DeleteShortWordCommand deleteShortWordCommand;
 
-    
+    @Resource(name = "ShortWordRootModel")
+    private ContentModel contentModel;
+
+    @Resource(name = "ShortWordAndSentenceModel")
+    private ShortWordAndSentenceModel shortWordAndSentenceModel;
+
+
     @Override
     public void refresh() {
         
@@ -98,7 +107,8 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
     
      @FXML
     public void edit(ActionEvent event){
-      
+         ShortWord shortWord = EventUtil.getEntityFromButton(event);
+         this.getModel().setEditingData(shortWord);
     }
       @FXML
     public void delete(ActionEvent event){
@@ -110,5 +120,14 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
         param.put(DATA, shortWord);
         deleteShortWordCommand.doCommand(param);
     }
+
+    @FXML
+    public void   addSentence(ActionEvent event){
+        ShortWord shortWord = EventUtil.getEntityFromButton(event);
+        this.shortWordAndSentenceModel.setCurrentData(shortWord);
+        this.contentModel.setAddBreadCrumb(new SourceItem(shortWord.getId(),shortWord.getWord(),"ShortWordAndSentenceModel"));
+
+    }
+
     
 }

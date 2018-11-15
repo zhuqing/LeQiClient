@@ -20,7 +20,10 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import javax.annotation.Resource;
+
+
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Component;
@@ -64,6 +67,10 @@ public class QueryShortWordsCommand extends Command {
     protected void doView(Map<String, Object> param) throws Exception {
 
         ShortWord[] arr = (ShortWord[]) this.getParameters(DATA);
+        if(param.get(CONSUMER)!=null){
+            Consumer consumer = (Consumer) param.get(CONSUMER);
+            consumer.accept(arr);
+        }
 
         this.shortWordModel.getWords().setAll(arr);
 

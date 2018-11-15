@@ -30,13 +30,10 @@
 <?import com.leqienglish.client.wordpane.*?>
 <?import com.leqienglish.client.control.combobox.*?>
 <?import com.leqienglish.client.control.query.listview.QueryListView?>
+<?import com.leqienglish.client.control.form.cell.LQFormCell?>
 <BorderPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox>
-                    
-            <Button text="create" onAction="#create"></Button>
-            <Button text="save" onAction="#save"></Button>
-        </HBox>
+
                 
     </top>
     
@@ -50,9 +47,9 @@
                 </HBox>
                 
                 
-                <LQTableView  fx:id="wordsTableView">
+                <LQTableView  fx:id="shortWordsTableView">
                     <columns>
-                        <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Word">
+                        <LQTableColumn  editable="false" prefWidth="100" propertyName="word" text="Scentence">
                             <tableCell>
                                 <LQTableTextCell />
                             </tableCell>
@@ -64,13 +61,10 @@
                                     <buttons>
 
                                     
-                                        <LQButton id="showArticles" text="编辑" onAction="#edit">
+                                        <LQButton id="add" text="添加" onAction="#add2Segments">
                                         </LQButton>
 
-                                        <LQButton id="showArticles" text="添加句子" onAction="#addSentence">
-                                        </LQButton>
-                                        <LQButton id="delete" text="删除" onAction="#delete">
-                                        </LQButton>
+
                                     </buttons>
                                    
                                 </LQOperatorTableCell>
@@ -86,17 +80,51 @@
     </left>
     <center>
         <StackPane >
+            <BorderPane>
+                <top>
+                    <StackPane>
+                        <LQFormView fx:id="audioPlayerPointFormView" StackPane.alignment="CENTER" >
+
+                            <LQFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="enText"   />
+
+
+
+                            <LQFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="1" minHeight="50" propertyName="chText"   />
+
+                        </LQFormView>
+
+                    </StackPane>
+                </top>
+
+                <center>
+                    <LQTableView  fx:id="shortWordSegmentsTableView">
+                        <columns>
+                            <LQTableColumn  editable="false" prefWidth="700" propertyName="word" text="Short Word">
+                                <tableCell>
+                                    <LQTableTextCell />
+                                </tableCell>
+                            </LQTableColumn>
+
+                            <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                                <tableCell>
+                                    <LQOperatorTableCell>
+                                        <buttons>
+
+
+
+                                            <LQButton id="delete" text="删除" onAction="#deleteSegmentAndShortWord">
+                                            </LQButton>
+                                        </buttons>
+
+                                    </LQOperatorTableCell>
+                                </tableCell>
+                            </LQTableColumn>
+                        </columns>
+                    </LQTableView>
+                </center>
+            </BorderPane>
          
-            <LQFormView fx:id="wordInfoFormView" StackPane.alignment="CENTER" >
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Word:"   />
-                <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="word"   />
-                    
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="1" text="INFO:"   />
-                    
-                <LQTextAreaInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="1" minHeight="50" propertyName="info"   />
-                    
-            </LQFormView>
-           
+
         </StackPane>
     </center>
     

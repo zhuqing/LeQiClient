@@ -5,13 +5,17 @@
  */
 package com.leqi.client.book.segment.check.uf;
 
+import com.leqi.client.book.content.uf.ContentModel;
+import com.leqi.client.book.segment.shortword.uf.SegmentAndShortWordsModel;
 import com.leqi.client.book.segment.word.uf.SegmentWordsModel;
 import com.leqienglish.client.comman.cf.DownLoadFileCommand;
 
+import com.leqienglish.client.control.audio.AudioPlay;
 import com.leqienglish.client.control.timestemp.check.TimeStempCheck;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.dialog.LQDialog;
 import com.leqienglish.client.fw.uf.FXMLController;
+import com.leqienglish.client.util.sourceitem.SourceItemUtil;
 import com.leqienglish.util.file.FileUtil;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
 import java.io.File;
@@ -29,6 +33,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.entity.english.Segment;
+import xyz.tobebetter.entity.english.play.AudioPlayPoint;
 
 /**
  *
@@ -47,6 +52,13 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
     @Resource(name = "SegmentWordsModel")
     private SegmentWordsModel segmentWordsModel;
 
+
+    @Resource(name = "SegmentAndShortWordsModel")
+    private SegmentAndShortWordsModel segmentAndShortWordsModel;
+
+    @Resource(name = "BookRootModel")
+    private ContentModel contentModel;
+
     @Override
     public void refresh() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -63,14 +75,38 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
                 .subscribe(op -> articleChange(op.orElse(null)));
         articleChange(getModel().getArticle());
 
-        this.timeStempCheck.setSentenceConsumer((a) -> {
-            segmentWordsModel.setSegment(this.getModel().getSegment());
-            segmentWordsModel.setAudioPlayPoint(a);
-            segmentWordsModel.setArticle(this.getModel().getArticle());
-            LQDialog.openDialog("", segmentWordsModel, timeStempCheck, ButtonType.CLOSE);
+        this.timeStempCheck.setSentenceConsumer((button) -> {
+            AudioPlayPoint a = (AudioPlayPoint) button.getUserData();
+            Integer value = (Integer) button.getProperties().get("DATA");
+            if(value == null){
+                return;
+            }
+
+            if(value == 1){
+                addWords(a);
+            }else{
+                this.addShortWords(a);
+            }
+
         });
         segmentChange(this.getModel().getSegment());
 
+    }
+
+    private void addShortWords(AudioPlayPoint audioPlayPoint){
+
+        segmentAndShortWordsModel.setArticle(this.getModel().getArticle());
+        segmentAndShortWordsModel.setSegment(this.getModel().getSegment());
+        segmentAndShortWordsModel.setAudioPlayPoint(audioPlayPoint);
+
+        contentModel.setAddBreadCrumb(SourceItemUtil.create("Add Short Word","SegmentAndShortWordsModel"));
+    }
+
+    private void addWords(AudioPlayPoint a){
+        segmentWordsModel.setSegment(this.getModel().getSegment());
+        segmentWordsModel.setAudioPlayPoint(a);
+        segmentWordsModel.setArticle(this.getModel().getArticle());
+        LQDialog.openDialog("", segmentWordsModel, timeStempCheck, ButtonType.CLOSE);
     }
 
     private void segmentChange(Segment segment) {
@@ -78,8 +114,10 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
             return;
         }
         try {
-            Content article = this.getModel().getArticle();
-            String filePath = FileUtil.getInstence().toLocalFilePath(article.getAudioPath());
+           if(segment.getAudioPath() == null){
+               return;
+           }
+            String filePath = FileUtil.getInstence().toLocalFilePath(segment.getAudioPath());
             File file = new File(filePath);
             this.timeStempCheck.setAudioPath(file.toURI().toString());
             this.timeStempCheck.setCheckText(segment.getContent());
@@ -94,8 +132,9 @@ public class SegmentCheckController extends FXMLController<SegmentCheckModel> {
 
             return;
         }
+
         Map<String, Object> map = new HashMap<>();
-        map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
+        map.put(DownLoadFileCommand.FILE_PATH, this.getModel().getSegment().getAudioPath());
         downLoadFileCommand.doCommand(map);
     }
 

@@ -33,6 +33,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import org.omg.CORBA.DATA_CONVERSION;
 import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.play.AudioPlayPoint;
 
@@ -51,6 +52,8 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
     private boolean isAddTimePoint = false;
 
     public int currentPlayIndex = -1;
+
+    private HBox currentHbox;
 
     private BorderPane rootPane;
 
@@ -139,7 +142,8 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
         timeHBoxs.add(timeBox);
         Label scentens = null;
         if (playPoint.getChText() != null) {
-            scentens = new Label(playPoint.getEnText() + "<>" + playPoint.getChText());
+            scentens = new Label(playPoint.getEnText() + "\n" + playPoint.getChText());
+            scentens.setMinHeight(50);
         } else {
             scentens = new Label(playPoint.getEnText());
         }
@@ -163,18 +167,31 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
      * 单词所在的句子的音频
      *
      * @param hbox
-     * @param textField
+     * @param audioPlayPoint
      */
-    private void addWordsButton(HBox hbox, AudioPlayPoint textField) {
+    private void addWordsButton(HBox hbox, AudioPlayPoint audioPlayPoint) {
         if (this.getSkinnable().getSentenceConsumer() == null) {
             return;
         }
         Button button = new Button("编辑单词");
-        hbox.getChildren().add(button);
+        button.setMinWidth(20);
+        button.setUserData(audioPlayPoint);
+        button.getProperties().put("DATA",1);
+
+        Button shortWordButon = new Button("相关短语");
+        shortWordButon.setMinWidth(20);
+        shortWordButon.setUserData(audioPlayPoint);
+        shortWordButon.getProperties().put("DATA",2);
+
+        hbox.getChildren().addAll(button,shortWordButon);
 
         JavaFxObservable.eventsOf(button, MouseEvent.MOUSE_CLICKED)
                 .filter(e -> e.getClickCount() == 1)
-                .subscribe(e -> getSkinnable().getSentenceConsumer().accept(textField));
+                .subscribe(e -> getSkinnable().getSentenceConsumer().accept(button));
+
+        JavaFxObservable.eventsOf(shortWordButon, MouseEvent.MOUSE_CLICKED)
+                .filter(e -> e.getClickCount() == 1)
+                .subscribe(e -> getSkinnable().getSentenceConsumer().accept(shortWordButon));
     }
 
     private void initListener() {
@@ -196,7 +213,7 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
 
         AudioPlayPoint currentPlayPoint = null;
         for (AudioPlayPoint app : this.audioPlayPoints) {
-            if (app.getStartTime() < currentTime && app.getEndTime() > currentTime) {
+            if (app.getStartTime() <= currentTime && app.getEndTime() >= currentTime) {
                 currentPlayPoint = app;
                 break;
             }
@@ -213,7 +230,10 @@ public class TimeStempCheckSkin extends CustomSkin<TimeStempCheck, TimeStempChec
             return;
         }
         currentPlayIndex = index;
-        HBox currentHbox = this.timeHBoxs.get(index);
+        if(this.currentHbox == this.timeHBoxs.get(index)){
+            return;
+        }
+        currentHbox = this.timeHBoxs.get(index);
         currentHbox.getChildren().clear();
         currentHbox.getChildren().add(this.currentPlay);
 

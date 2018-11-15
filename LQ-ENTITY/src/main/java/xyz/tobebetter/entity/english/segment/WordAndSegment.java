@@ -40,9 +40,10 @@ public class WordAndSegment extends Entity {
     private Integer scentenceIndex;
     
     /**
-     * 句子
+     * 句子，名字拼写错误
      */
     private String scentence;
+    private String chSentence;
     
     /**
      * 所在句子音频的开始时间
@@ -211,4 +212,14 @@ public class WordAndSegment extends Entity {
         this.contentTitle = contentTitle;
     }
 
+    /**
+     * 中文句子
+     */
+    public String getChSentence() {
+        return chSentence;
+    }
+
+    public void setChSentence(String chSentence) {
+        this.chSentence = chSentence;
+    }
 }

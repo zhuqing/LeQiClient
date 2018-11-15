@@ -158,6 +158,7 @@ public class RestClient {
 
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(serverPath + "/" + path).queryParams(parameter);
         HttpEntity entity = new HttpEntity(obj, initHeaders());
+        System.err.println(builder.toUriString());
         ResponseEntity resEntity = restTemplate.exchange(builder.toUriString(), method, entity, Message.class);
         Message resultMessage = (Message) resEntity.getBody();
 

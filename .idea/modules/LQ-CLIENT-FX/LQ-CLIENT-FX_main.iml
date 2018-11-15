@@ -30,43 +30,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-validation-0.9.1-b128.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-FX/lib/jidefx-common-0.9.1-b128.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-FX/lib/jidefx-fields-0.9.1-b128.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-decoration-0.9.1-b128.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-common-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -93,6 +57,15 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-FX/lib/jidefx-fields-0.9.1-b128.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-converters-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -111,6 +84,24 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-validation-0.9.1-b128.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-decoration-0.9.1-b128.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-FX/lib/jidefx-validation-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -121,6 +112,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-FX/lib/jidefx-decoration-0.9.1-b128.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../LQ-CLIENT-UTIL/lib/jidefx-common-0.9.1-b128.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -181,7 +181,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.4.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.belerweb:pinyin4j:2.5.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.github.xuwei-k:html2image:0.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.controlsfx:controlsfx:8.20.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.controlsfx:controlsfx:8.40.14" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: io.reactivex:rxjavafx:2.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: net.java.dev.jna:jna:4.5.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: net.java.dev.jna:jna-platform:4.5.1" level="project" />
@@ -200,7 +200,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-net:commons-net:3.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.json:json:20180130" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.controlsfx:openjfx-dialogs:1.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: io.reactivex.rxjava2:rxjava:2.0.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.github.jsqlparser:jsqlparser:0.9.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: log4j:log4j:1.2.17" level="project" />

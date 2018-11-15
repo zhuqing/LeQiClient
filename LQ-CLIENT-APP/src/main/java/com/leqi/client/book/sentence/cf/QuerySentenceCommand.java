@@ -9,7 +9,10 @@ import com.leqi.client.book.sentence.uf.SentenceModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.util.exception.LQExceptionUtil;
 import java.util.Map;
+import java.util.function.Consumer;
 import javax.annotation.Resource;
+
+
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -49,8 +52,14 @@ public class QuerySentenceCommand extends Command {
 
      
         Sentence[] sentences = (Sentence[]) this.getParameters(DATA);
-        if (sentences!=null) {
 
+        if(param.get(CONSUMER)!=null){
+            Consumer consumer = (Consumer) param.get(CONSUMER);
+            consumer.accept(sentences);
+            return;
+        }
+
+        if (sentences!=null) {
             this.sentenceModel.getSentences().setAll(sentences);
           
         }
