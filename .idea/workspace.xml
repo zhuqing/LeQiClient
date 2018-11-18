@@ -2,52 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebbec488-f063-42f3-b1d1-1d3e9eceb071" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_controlsfx_controlsfx_8_40_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/DeleteSegmentAndShortWordCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/QuerySegmentAndShortWordCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/SaveSegmentAndShortWordCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWordsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWordsModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/cf/DeleteShortWordAndSentenceCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/cf/QueryShortWordSentenceCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/cf/SaveShortWordAndSentenceCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordAndSentenceController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordAndSentenceModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndSentence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndSentenceVO.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_controlsfx_controlsfx_8_20_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_controlsfx_openjfx_dialogs_1_0_2.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/lenglish/leqienglish/entity/Mapper.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/leqienglish/entity/Mapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/lenglish/leqienglish/entity/WhereIf.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/leqienglish/entity/WhereIf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-APP/LQ-CLIENT-APP_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-CUSTOM-FX/LQ-CLIENT-CUSTOM-FX_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FW/LQ-CLIENT-FW_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-FX/LQ-CLIENT-FX_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-SAMPLE/LQ-CLIENT-SAMPLE_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/LQ-CLIENT-UTIL/LQ-CLIENT-UTIL_test.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/DeleteShortWordAndWordsCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/QueryShortWordAndWordsCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/SaveShortWordAndWordsCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWord.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWordVO.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" afterPath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/log/his.log" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/log/his.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/check/uf/SegmentCheckController.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/check/uf/SegmentCheckController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/SaveWordAndSegmentsCommand.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/SaveWordAndSegmentsCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/sentence/cf/QuerySentenceCommand.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/sentence/cf/QuerySentenceCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/sentence/cf/SaveSentenceCommand.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/sentence/cf/SaveSentenceCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/QueryShortWordsCommand.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/QueryShortWordsCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/content/uf/content.fxml" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/content/uf/content.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml" afterPath="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/timestemp/check/TimeStempCheck.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/timestemp/check/TimeStempCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/timestemp/check/TimeStempCheckSkin.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/timestemp/check/TimeStempCheckSkin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/lenglish/leqienglish/MainApp.java" afterPath="$PROJECT_DIR$/LQ-CLIENT-SAMPLE/src/main/java/com/lenglish/leqienglish/MainApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/segment/WordAndSegment.java" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/segment/WordAndSegment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/SegmentAndShortWord.java" afterPath="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/SegmentAndShortWord.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -194,11 +163,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeleteSegmentAndShortWordCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/DeleteSegmentAndShortWordCommand.java">
+      <file leaf-file-name="ShortWordAndWordController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="85" column="92" lean-forward="false" selection-start-line="85" selection-start-column="92" selection-end-line="85" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,98 +175,123 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/word/Word.java">
+      <file leaf-file-name="ShortWordAndWordVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWordVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#240#241#0" expanded="true" />
+                <element signature="e#267#268#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SegmentWordsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/uf/SegmentWordsController.java">
+      <file leaf-file-name="DeleteShortWordAndWordsCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/DeleteShortWordAndWordsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="379">
+              <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SegmentWordsModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/uf/SegmentWordsModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SegmentWords.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/word/uf/SegmentWords.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
+      <file leaf-file-name="ShortWordAndWord.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWord.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SegmentAndShortWord.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWord.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+            <state relative-caret-position="330">
+              <caret line="102" column="68" lean-forward="false" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryShortWordAndWordsCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/QueryShortWordAndWordsCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaveShortWordAndWordsCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/SaveShortWordAndWordsCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShortWordAndWordModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#2854#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1432#1433#0" expanded="false" />
+                <element signature="e#1488#1489#0" expanded="false" />
+                <element signature="e#1804#1805#0" expanded="false" />
+                <element signature="e#1849#1850#0" expanded="false" />
+                <element signature="e#1937#1938#0" expanded="false" />
+                <element signature="e#1997#1998#0" expanded="false" />
+                <element signature="e#2387#2388#0" expanded="false" />
+                <element signature="e#2451#2452#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShortWord.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveWordAndSegmentsCommand.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/SaveWordAndSegmentsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-256">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="1065">
+              <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaveWordsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/word/cf/SaveWordsCommand.java">
+      <file leaf-file-name="ShortWordController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteSegmentWrodsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/DeleteSegmentWrodsCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuerySegmentWrodsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/QuerySegmentWrodsCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="1500">
+              <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#4945#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1809,22 +1803,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/query/listview/QueryListView.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/query/listview/QueryTableView.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-CUSTOM-FX/src/main/java/com/leqienglish/client/control/query/tableview/QueryTableView.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/uf/Book.fxml" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/build.gradle" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/word/cf/DeleteWordAndContentCommand.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-FX/src/main/java/com/leqienglish/client/control/navigation/LQBreadCrumbBar.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-FX/src/main/java/com/leqienglish/client/control/navigation/LQBreadCrumbBarT.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/sentence/uf/ShortWordSentence.fxml" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordController.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordModel.java" />
         <option value="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndSentence.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/sentence/uf/ShortWordAndSentence.fxml" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/cf/QueryShortWordSentenceCommand.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordModel.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/SaveShortWordCommand.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/DeleteShortWordCommand.java" />
@@ -1852,7 +1835,6 @@
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/QueryShortWordsCommand.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWordsModel.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/QuerySegmentAndShortWordCommand.java" />
-        <option value="$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/DeleteSegmentAndShortWordCommand.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWordsController.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWord.fxml" />
@@ -1860,6 +1842,18 @@
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/DeleteSegmentWrodsCommand.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/QuerySegmentWrodsCommand.java" />
         <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/SaveWordAndSegmentsCommand.java" />
+        <option value="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWord.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/QueryShortWordAndWordsCommand.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordModel.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java" />
+        <option value="$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWordVO.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/SaveShortWordAndWordsCommand.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWord.fxml" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/DeleteShortWordAndWordsCommand.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordController.java" />
+        <option value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/QueryShortWordAndWordsCommand.java" />
       </list>
     </option>
   </component>
@@ -1873,7 +1867,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="92" />
+    <option name="x" value="165" />
+    <option name="y" value="91" />
     <option name="width" value="1440" />
     <option name="height" value="793" />
   </component>
@@ -1895,6 +1890,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1949,23 +1947,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-ENTITY" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tobebetter" />
+              <option name="myItemId" value="LQ-CLIENT-FW" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1979,7 +1961,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-ENTITY" />
+              <option name="myItemId" value="LQ-CLIENT-FW" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LEQI-CLIENT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LeQiClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LQ-CLIENT-FW" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1995,11 +1999,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tobebetter" />
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="fw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2013,7 +2017,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-ENTITY" />
+              <option name="myItemId" value="LQ-CLIENT-FW" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2029,15 +2033,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tobebetter" />
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="fw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="word" />
+              <option name="myItemId" value="sf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2051,7 +2055,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-ENTITY" />
+              <option name="myItemId" value="LQ-CLIENT-FW" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2067,15 +2071,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tobebetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2164,120 +2160,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEQI-CLIENT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeQiClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-CLIENT-APP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEQI-CLIENT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeQiClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-CLIENT-APP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="segment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEQI-CLIENT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeQiClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-CLIENT-APP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="segment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2344,80 +2226,12 @@
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEQI-CLIENT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeQiClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-CLIENT-APP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LEQI-CLIENT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeQiClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LQ-CLIENT-APP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="segment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="word" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shortwordAndWord" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2455,15 +2269,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="segment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="word" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shortwordAndWord" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2500,20 +2310,9 @@
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="segment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2525,18 +2324,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.leqi.client.word.shortwordAndWord.cf" />
+      <recent name="com.leqi.client.word.shortwordAndWord.uf" />
       <recent name="com.leqi.client.book.segment.shortword.cf" />
       <recent name="com.leqi.client.book.segment.shortword.uf.cf" />
       <recent name="com.leqi.client.word.shortword.sentence.cf" />
-      <recent name="com.leqi.client.word.shortword.sentence.uf.cf" />
-      <recent name="com.leqienglish.client.control.navigation" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortwordAndWord/uf" />
       <recent name="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/shortword.uf" />
       <recent name="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/uf" />
       <recent name="$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf" />
@@ -3101,11 +2901,14 @@
       <workItem from="1542078447743" duration="13248000" />
       <workItem from="1542161591327" duration="16267000" />
       <workItem from="1542245802613" duration="3771000" />
+      <workItem from="1542338740693" duration="1158000" />
+      <workItem from="1542448490290" duration="5834000" />
+      <workItem from="1542516865579" duration="4163000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44941000" />
+    <option name="totallyTimeSpent" value="56096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3117,7 +2920,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="92" width="1440" height="793" extended-state="0" />
+    <frame x="165" y="91" width="1440" height="793" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3137,11 +2940,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281027" sideWeight="0.48569384" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281027" sideWeight="0.48569384" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35622317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37124464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281027" sideWeight="0.49722221" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -3152,7 +2956,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281027" sideWeight="0.49722221" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -3172,126 +2975,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/cf/SaveShortWordAndSentenceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndSentenceVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/sentence/uf/ShortWordAndSentence.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" column="80" lean-forward="false" selection-start-line="104" selection-start-column="80" selection-end-line="104" selection-end-column="80" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/cf/QueryShortWordSentenceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordAndSentenceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="148" column="19" lean-forward="false" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/sentence/cf/SaveSentenceCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/sentence/Sentence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/word/ReciteWordConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/user/word/UserAndWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/user/content/UserAndContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/Segment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/word/user/UserAndSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-UTIL/src/main/java/com/leqienglish/util/exception/LQExceptionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/comman/cf/DownLoadFileCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/content/uf/content.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.0.6/b65373443c52d95b6ccb0e83f303f6a6d438fbc0/rxjava-2.0.6-sources.jar!/io/reactivex/functions/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/cf/QueryCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -3303,7 +2986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3366,9 +3048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="173" column="19" lean-forward="false" selection-start-line="173" selection-start-column="19" selection-end-line="173" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3390,7 +3069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="101" column="91" lean-forward="false" selection-start-line="101" selection-start-column="91" selection-end-line="101" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3412,17 +3090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/QueryShortWordsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3430,29 +3097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#2385#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1347#1348#0" expanded="false" />
-            <element signature="e#1403#1404#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1774#1775#0" expanded="false" />
-            <element signature="e#1862#1863#0" expanded="false" />
-            <element signature="e#1922#1923#0" expanded="false" />
-            <element signature="e#2312#2313#0" expanded="false" />
-            <element signature="e#2376#2377#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="89" column="45" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="89" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#4467#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3460,20 +3104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
           <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#4459#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2021#2022#0" expanded="false" />
-            <element signature="e#2072#2073#0" expanded="false" />
-            <element signature="e#2449#2450#0" expanded="false" />
-            <element signature="e#2505#2506#0" expanded="false" />
-            <element signature="e#2600#2601#0" expanded="false" />
-            <element signature="e#2651#2652#0" expanded="false" />
-            <element signature="e#3018#3019#0" expanded="false" />
-            <element signature="e#3074#3075#0" expanded="false" />
-            <element signature="e#3173#3174#0" expanded="false" />
-            <element signature="e#3231#3232#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3481,21 +3111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="42" column="58" lean-forward="false" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#1863#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="160" column="48" lean-forward="false" selection-start-line="160" selection-start-column="48" selection-end-line="160" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#9450#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3503,9 +3118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
           <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#6479#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3513,94 +3125,330 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/shortword/cf/DeleteSegmentAndShortWordCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/shortword/uf/SegmentAndShortWord.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/word/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="885">
+          <caret line="67" column="23" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#6216#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2849#2850#0" expanded="false" />
+            <element signature="e#2876#2877#0" expanded="false" />
+            <element signature="e#2967#2968#0" expanded="false" />
+            <element signature="e#2999#3000#0" expanded="false" />
+            <element signature="e#3074#3075#0" expanded="false" />
+            <element signature="e#3103#3104#0" expanded="false" />
+            <element signature="e#3202#3203#0" expanded="false" />
+            <element signature="e#3238#3239#0" expanded="false" />
+            <element signature="e#3345#3346#0" expanded="false" />
+            <element signature="e#3379#3380#0" expanded="false" />
+            <element signature="e#3520#3521#0" expanded="false" />
+            <element signature="e#3566#3567#0" expanded="false" />
+            <element signature="e#3645#3646#0" expanded="false" />
+            <element signature="e#3676#3677#0" expanded="false" />
+            <element signature="e#3783#3784#0" expanded="false" />
+            <element signature="e#3823#3824#0" expanded="false" />
+            <element signature="e#3902#3903#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="false" />
+            <element signature="e#4040#4041#0" expanded="false" />
+            <element signature="e#4080#4081#0" expanded="false" />
+            <element signature="e#4155#4156#0" expanded="false" />
+            <element signature="e#4184#4185#0" expanded="false" />
+            <element signature="e#4283#4284#0" expanded="false" />
+            <element signature="e#4319#4320#0" expanded="false" />
+            <element signature="e#4396#4397#0" expanded="false" />
+            <element signature="e#4426#4427#0" expanded="false" />
+            <element signature="e#4529#4530#0" expanded="false" />
+            <element signature="e#4567#4568#0" expanded="false" />
+            <element signature="e#4640#4641#0" expanded="false" />
+            <element signature="e#4668#4669#0" expanded="false" />
+            <element signature="e#4763#4764#0" expanded="false" />
+            <element signature="e#4797#4798#0" expanded="false" />
+            <element signature="e#4884#4885#0" expanded="false" />
+            <element signature="e#4919#4920#0" expanded="false" />
+            <element signature="e#5042#5043#0" expanded="false" />
+            <element signature="e#5090#5091#0" expanded="false" />
+            <element signature="e#5161#5162#0" expanded="false" />
+            <element signature="e#5188#5189#0" expanded="false" />
+            <element signature="e#5279#5280#0" expanded="false" />
+            <element signature="e#5311#5312#0" expanded="false" />
+            <element signature="e#5382#5383#0" expanded="false" />
+            <element signature="e#5409#5410#0" expanded="false" />
+            <element signature="e#5500#5501#0" expanded="false" />
+            <element signature="e#5532#5533#0" expanded="false" />
+            <element signature="e#5619#5620#0" expanded="false" />
+            <element signature="e#5654#5655#0" expanded="false" />
+            <element signature="e#5777#5778#0" expanded="false" />
+            <element signature="e#5825#5826#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/book/segment/word/uf/SegmentWords.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="21" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/uf/SegmentWordsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/uf/SegmentWordsModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
+        <state relative-caret-position="525">
           <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/DeleteSegmentWrodsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/QuerySegmentWrodsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/word/cf/SaveWordsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/SaveWordAndSegmentsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/word/cf/SaveWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/DeleteSegmentWrodsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/book/segment/word/cf/QuerySegmentWrodsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="e#278#279#0" expanded="false" />
+            <element signature="e#312#313#0" expanded="false" />
+            <element signature="e#366#367#0" expanded="false" />
+            <element signature="e#412#413#0" expanded="false" />
+            <element signature="e#445#446#0" expanded="false" />
+            <element signature="e#474#475#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/sentence/uf/ShortWordAndSentenceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="156" column="5" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="156" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/QueryShortWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/info/cf/UpdateWordCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/cf/LQQueryWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/DeleteShortWordCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#2376#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/cf/SaveShortWordCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#3013#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2854#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1432#1433#0" expanded="false" />
+            <element signature="e#1488#1489#0" expanded="false" />
+            <element signature="e#1804#1805#0" expanded="false" />
+            <element signature="e#1849#1850#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="false" />
+            <element signature="e#1997#1998#0" expanded="false" />
+            <element signature="e#2387#2388#0" expanded="false" />
+            <element signature="e#2451#2452#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortword/uf/ShortWord.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="97" lean-forward="false" selection-start-line="71" selection-start-column="97" selection-end-line="71" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortword/uf/ShortWordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#4945#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndWordVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/SaveShortWordAndWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-FW/src/main/java/com/leqienglish/client/fw/sf/RestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-ENTITY/src/main/java/xyz/tobebetter/entity/english/shortword/ShortWordAndSentenceVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/resources/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWord.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="102" column="68" lean-forward="false" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/DeleteShortWordAndWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/uf/ShortWordAndWordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="85" column="92" lean-forward="false" selection-start-line="85" selection-start-column="92" selection-end-line="85" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LQ-CLIENT-APP/src/main/java/com/leqi/client/word/shortwordAndWord/cf/QueryShortWordAndWordsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
           <folding />
         </state>
       </provider>

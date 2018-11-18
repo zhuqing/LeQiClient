@@ -7,6 +7,7 @@ package com.leqi.client.word.shortword.uf;
 
 import com.leqi.client.book.content.uf.ContentModel;
 import com.leqi.client.word.shortword.sentence.uf.ShortWordAndSentenceModel;
+import com.leqi.client.word.shortwordAndWord.uf.ShortWordAndWordModel;
 import com.leqi.client.word.uf.*;
 import com.leqi.client.book.word.cf.SaveWordsCommand;
 import com.leqi.client.word.shortword.cf.DeleteShortWordCommand;
@@ -70,6 +71,8 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
     @Resource(name = "ShortWordAndSentenceModel")
     private ShortWordAndSentenceModel shortWordAndSentenceModel;
 
+    @Resource(name = "ShortWordAndWordModel")
+    private ShortWordAndWordModel shortWordAndWordModel;
 
     @Override
     public void refresh() {
@@ -129,5 +132,13 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
 
     }
 
+
+    @FXML
+    public void   addWord(ActionEvent event){
+        ShortWord shortWord = EventUtil.getEntityFromButton(event);
+        this.shortWordAndWordModel.setCurrentData(shortWord);
+        this.contentModel.setAddBreadCrumb(new SourceItem(shortWord.getId(),"添加单词","ShortWordAndWordModel"));
+
+    }
     
 }

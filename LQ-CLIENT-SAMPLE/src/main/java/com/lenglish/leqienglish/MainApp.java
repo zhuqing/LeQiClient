@@ -34,6 +34,7 @@ import xyz.tobebetter.entity.english.shortword.SegmentAndShortWord;
 import xyz.tobebetter.entity.english.shortword.ShortWord;
 import xyz.tobebetter.entity.english.shortword.ShortWordAndSentence;
 import xyz.tobebetter.entity.english.shortword.ShortWordAndSentenceVO;
+import xyz.tobebetter.entity.english.shortword.ShortWordAndWord;
 import xyz.tobebetter.entity.english.word.user.UserAndSegment;
 import xyz.tobebetter.entity.suggestion.Suggestion;
 import xyz.tobebetter.entity.user.User;
@@ -52,7 +53,7 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(SegmentAndShortWord.class, SegmentAndShortWord.class, "SEGMENT_AND_SHORT_WORD", "Base_Column_List");
+        createMaper(ShortWordAndWord.class, ShortWordAndWord.class, "SHORT_WORD_AND_WORD", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
