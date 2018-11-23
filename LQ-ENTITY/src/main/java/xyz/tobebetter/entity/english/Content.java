@@ -24,6 +24,7 @@ public class Content extends Entity {
      * 图片路
      */
     private String imagePath;
+    private String widthImagePath;
     /**
      * 音频路径
      */
@@ -173,4 +174,14 @@ public class Content extends Entity {
         this.readNum = readNum;
     }
 
+    /**
+     * 宽图片的路径
+     */
+    public String getWidthImagePath() {
+        return widthImagePath;
+    }
+
+    public void setWidthImagePath(String widthImagePath) {
+        this.widthImagePath = widthImagePath;
+    }
 }
