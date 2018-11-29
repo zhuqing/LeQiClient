@@ -3,19 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leqi.client.book.article.cf;
+package com.leqi.client.book.article.catalog.cf;
 
 
+import com.leqi.client.book.article.catalog.uf.CatalogAndArticleModel;
 import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.util.text.TextUtil;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.content.ContentAndCatalog;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -25,8 +27,8 @@ import xyz.tobebetter.entity.english.content.ContentAndCatalog;
 @Component("SaveContentAndCatalogCommand")
 public class SaveContentAndCatalogCommand extends Command {
 
-    @Resource(name = "ArticleModel")
-    private ArticleModel articleModel;
+    @Resource(name = "CatalogAndArticleModel")
+    private CatalogAndArticleModel catalogAndArticleModel;
 
     @Override
     protected void getAppData(Map<String, Object> param) throws Exception {
@@ -36,28 +38,22 @@ public class SaveContentAndCatalogCommand extends Command {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
-        List<ContentAndCatalog> ccs = (List<ContentAndCatalog>) param.get(DATA);
+        ContentAndCatalog ccs = (ContentAndCatalog) param.get(DATA);
 
-        for(int i = 0 ; i < ccs.size() ; i++){
-            ContentAndCatalog cc = ccs.get(i);
-            if(!TextUtil.isNullOrEmpty(cc.getId())){
-                continue;
-            }
-            ContentAndCatalog newcc = this.restClient.post("/contentAndCatalog/create", cc, null, ContentAndCatalog.class);
-            
-            ccs.set(i, newcc);
 
-        }
-       
+      ContentAndCatalog newcc = this.restClient.post("/contentAndCatalog/create", ccs, null, ContentAndCatalog.class);
 
-        this.putParameters(DATA, ccs);
+
+        newcc.setCatalogName(ccs.getCatalogName());
+
+        this.putParameters(DATA, newcc);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        List<ContentAndCatalog> ccs = (List<ContentAndCatalog>) this.getParameters(DATA);
-        articleModel.getContentAndCatalogs().setAll(ccs);
-        AlertUtil.showError(AlertUtil.SAVE_SUCCESS);
+        ContentAndCatalog ccs = (ContentAndCatalog) this.getParameters(DATA);
+        catalogAndArticleModel.getContentAndCatalogs().add(ccs);
+        AlertUtil.showInformation(AlertUtil.SAVE_SUCCESS);
 
     }
 

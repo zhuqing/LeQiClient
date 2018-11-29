@@ -45,66 +45,24 @@
                     
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Content:"   prefWidth="60"/>
                 <LQTextAreaInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" propertyName="content"  prefWidth="400"  />
-                
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="3" text="Image:"   prefWidth="60"/>
+
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="3" text="WidthImage:"/>
                 <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="3" LQFormView.rowSpan="4"
+                                     propertyName="widthImagePath" prefWidth="400" prefHeight="241">
+                    <checkFileCallback>
+                        <FileCheckCallback/>
+                    </checkFileCallback>
+                </LQImagePathFormCell>
+
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="7" text="Image:"   prefWidth="60"/>
+                <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="7" LQFormView.rowSpan="4"
                                       propertyName="imagePath" prefWidth="300" prefHeight="400">
                     <checkFileCallback>
                         <FileCheckCallback/>
                     </checkFileCallback>
                 </LQImagePathFormCell>
             </LQFormView>
-            <HBox>
-                <Button text="Save Catalog" onAction="#saveCatalog"/>     
-                <Button text="Create Catalog" onAction="#createCatalog"/>
-            </HBox>
-            <LQEditTableView  fx:id="catalogsTableView">
-                <hipFormView>
-                    
-                    <LQFormView>
-                        <LQFilterableComboBoxFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="catalogId"  prefWidth="400"  >
-                            <customDataSourceCallback>
-                                <LQCallback beanId = "CatalogSourceItemsCallback"></LQCallback>
-                            </customDataSourceCallback>
-                        </LQFilterableComboBoxFormCell>
-                    
-              
-                    </LQFormView>
-                </hipFormView>
-                <columns>
-                    <LQTableColumn  editable="false" prefWidth="90" propertyName="catalogId" text="Cotalog">
-                        <tableCell>
-                            <LQDataSourceTableCell >
-                                <customDataSourceCallback>
-                                    <LQCallback beanId = "CatalogSourceItemsCallback"></LQCallback>
-                                </customDataSourceCallback>
-                            </LQDataSourceTableCell>
-                        </tableCell>
-                    </LQTableColumn>
-                    <!--                        <LQTableColumn  editable="false" prefWidth="40" propertyName="readNum" text="readNum">
-                        <tableCell>
-                            <LQTableTextCell />
-                        </tableCell>
-                    </LQTableColumn>-->
-                    <LQTableColumn editable="false" prefWidth="240.0" text="操作">
-                        <tableCell>
-                            <LQOperatorTableCell>
-                                <buttons>
 
-                                    
-                                 
-                                    <LQButton id="delete" text="Delete" onAction="#deleteCatalog">
-                                    </LQButton>
-
-                                </buttons>
-                                <filterButtonsCallback>
-                                    <FilterOpertorButtonsCallback/>
-                                </filterButtonsCallback>
-                            </LQOperatorTableCell>
-                        </tableCell>
-                    </LQTableColumn>
-                </columns>
-            </LQEditTableView>
         </VBox>
     </center>
 
@@ -123,7 +81,7 @@
                             <LQTableTextCell />
                         </tableCell>
                     </LQTableColumn>-->
-                    <LQTableColumn editable="false" prefWidth="240.0" text="操作">
+                    <LQTableColumn editable="false" prefWidth="300.0" text="操作">
                         <tableCell>
                             <LQOperatorTableCell>
                                 <buttons>
@@ -139,6 +97,9 @@
                                     <LQButton id="openWord" text="单词" onAction="#openWord">
                                     </LQButton>
                                     <LQButton id="delete" text="Delete" onAction="#delete">
+                                    </LQButton>
+
+                                    <LQButton id="addCatalogs" text="添加分类" onAction="#addCatalogs">
                                     </LQButton>
 
                                 </buttons>

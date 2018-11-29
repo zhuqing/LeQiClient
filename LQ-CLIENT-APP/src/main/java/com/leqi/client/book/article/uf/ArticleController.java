@@ -5,11 +5,12 @@
  */
 package com.leqi.client.book.article.uf;
 
+import com.leqi.client.book.article.catalog.uf.CatalogAndArticleModel;
 import com.leqi.client.book.article.cf.DeleteArticlesCommand;
 import com.leqi.client.book.article.cf.QueryArticlesCommand;
-import com.leqi.client.book.article.cf.QueryContentAndCatalogCommand;
+
 import com.leqi.client.book.article.cf.SaveArticleCommand;
-import com.leqi.client.book.article.cf.SaveContentAndCatalogCommand;
+
 import com.leqi.client.book.article.cf.UpdateArticleStatusCommand;
 import com.leqi.client.book.cf.UpdateCatalogStatusCommand;
 import com.leqi.client.book.content.uf.ContentModel;
@@ -69,6 +70,9 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @Resource(name = "SegmentModel")
     private SegmentModel segmentModel;
 
+    @Resource(name = "CatalogAndArticleModel")
+    private CatalogAndArticleModel catalogAndArticleModel;
+
     @Resource(name = "WordModel")
     private WordModel wordModel;
 
@@ -84,11 +88,7 @@ public class ArticleController extends FXMLController<ArticleModel> {
     @Resource(name = "UpdateArticleStatusCommand")
     private UpdateArticleStatusCommand updateArticleStatusCommand;
 
-    @Resource(name = "QueryContentAndCatalogCommand")
-    private QueryContentAndCatalogCommand queryContentAndCatalogCommand;
 
-    @Resource(name = "SaveContentAndCatalogCommand")
-    private SaveContentAndCatalogCommand saveContentAndCatalogCommand;
 
     public ArticleController() {
     }
@@ -166,9 +166,7 @@ public class ArticleController extends FXMLController<ArticleModel> {
 
     private void articleChange(Content article) {
         this.contentInfoFormView.setValue(article);
-        Map<String, Object> map = new HashMap<>();
-        map.put(DATA, article);
-        this.queryContentAndCatalogCommand.doCommand(map);
+
 
     }
 
@@ -253,25 +251,16 @@ public class ArticleController extends FXMLController<ArticleModel> {
         this.segmentModel.setBook(this.getModel().getBook());
     }
 
-    @FXML
-    public void saveCatalog(ActionEvent event) {
-        Map<String, Object> param = new HashMap<>();
-        param.put(DATA, this.catalogsTableView.getItems());
-        saveContentAndCatalogCommand.doCommand(param);
-    }
 
     @FXML
-    public void createCatalog(ActionEvent event) {
-        ContentAndCatalog cc = new ContentAndCatalog();
+    public void addCatalogs(ActionEvent event) {
+        Content article = EventUtil.getEntityFromButton(event);
 
-        Content content = this.contentInfoFormView.getValue();
-        if (content == null || content.getId() == null) {
-            AlertUtil.showError("(content == null||content.getId() == null");
-            return;
-        }
-
-        cc.setContentId(content.getId());
-        catalogsTableView.getItems().add(cc);
+        SourceItem sourceItem = new SourceItem();
+        sourceItem.setDisplay("添加分类");
+        sourceItem.setValue("CatalogAndArticleModel");
+        this.contentModel.setAddBreadCrumb(sourceItem);
+        this.catalogAndArticleModel.setContent(article);
 
     }
 

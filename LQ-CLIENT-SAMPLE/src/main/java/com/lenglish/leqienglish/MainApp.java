@@ -53,7 +53,7 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(ShortWordAndWord.class, ShortWordAndWord.class, "SHORT_WORD_AND_WORD", "Base_Column_List");
+        createMaper(Catalog.class, Catalog.class, "CATALOG", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
@@ -72,7 +72,7 @@ public class MainApp {
         mapper.setSwiftTypes(swiftTypes(entityClaz,fields));
         //  mapper.setWheresVo(create(getFields(voClaz)));
         selectEntity(mapper, "/mapper");
-        System.err.println("========================");
+      //  System.err.println("========================");
        selectEntity(mapper, "/swiftmodel");
     }
 

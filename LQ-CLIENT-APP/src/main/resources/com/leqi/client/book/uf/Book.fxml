@@ -100,9 +100,16 @@
                 <LQTextAreaInputFormCell rowCount="5" LQFormView.columnIndex="1" LQFormView.rowIndex="1"
                                          propertyName="description"/>
 
-
-                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="Image:"/>
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="2" text="WidthImage:"/>
                 <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="2" LQFormView.rowSpan="4"
+                                     propertyName="widthImagePath" prefWidth="400" prefHeight="241">
+                    <checkFileCallback>
+                        <FileCheckCallback/>
+                    </checkFileCallback>
+                </LQImagePathFormCell>
+
+                <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="6" text="Image:"/>
+                <LQImagePathFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="6" LQFormView.rowSpan="4"
                                      propertyName="imagePath" prefWidth="300" prefHeight="400">
                     <checkFileCallback>
                         <FileCheckCallback/>

@@ -10,6 +10,7 @@ import com.leqi.client.catalog.uf.CatalogModel;
 import com.leqienglish.client.fw.cf.QueryCommand;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Consumer;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -43,12 +44,17 @@ public class QueryCatalogsCommand extends QueryCommand {
         parameter.add("type", Consistent.CATALOG_TYPE+"");
 
         Catalog[] contents = this.restClient.get("/english/catalog/getAllCatalogsByType", parameter, Catalog[].class);
-        this.putParameters("datas", contents);
+        this.putParameters(DATA, contents);
     }
 
     @Override
     protected void doView(Map<String, Object> param) throws Exception {
-        Catalog[] contents = (Catalog[]) this.getParameters("datas");
+        Catalog[] contents = (Catalog[]) this.getParameters(DATA);
+        if(param.get(CONSUMER)!=null){
+            Consumer consumer = (Consumer) param.get(CONSUMER);
+            consumer.accept(contents);
+            return;
+        }
         if (contents == null || contents.length == 0) {
             catalogModel.getCatalogs().clear();
             return;

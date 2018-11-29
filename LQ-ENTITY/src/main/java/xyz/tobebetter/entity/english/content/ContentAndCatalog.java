@@ -5,6 +5,7 @@
  */
 package xyz.tobebetter.entity.english.content;
 
+
 import xyz.tobebetter.entity.Entity;
 
 /**
@@ -15,6 +16,7 @@ import xyz.tobebetter.entity.Entity;
 public class ContentAndCatalog extends Entity{
     private String catalogId;
     private String contentId;
+    private String catalogName;
 
     /**
      * @return the catalogId
@@ -43,5 +45,12 @@ public class ContentAndCatalog extends Entity{
     public void setContentId(String contentId) {
         this.contentId = contentId;
     }
-    
+
+    public String getCatalogName() {
+        return catalogName;
+    }
+
+    public void setCatalogName(String catalogName) {
+        this.catalogName = catalogName;
+    }
 }

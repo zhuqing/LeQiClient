@@ -48,6 +48,12 @@ public class SaveArticleCommand extends Command {
             this.putParameters("image", value);
         }
 
+        if (FileUtil.getInstence().fileExit(content.getWidthImagePath())) {
+            MultiValueMap<String, Object> value = new LinkedMultiValueMap();
+            value.add("file", new FileSystemResource(new File(content.getWidthImagePath())));
+            this.putParameters("widthImage", value);
+        }
+
         if (FileUtil.getInstence().fileExit(content.getAudioPath())) {
             MultiValueMap<String, Object> audioMap = new LinkedMultiValueMap();
             audioMap.add("file", new FileSystemResource(new File(content.getAudioPath())));
@@ -73,6 +79,13 @@ public class SaveArticleCommand extends Command {
             paramMap.put("type", "jpg");
             String path = this.restClient.upload("/file/uploadImage", (MultiValueMap<String, Object>) this.getParameters("image"), null, String.class);
             content.setImagePath(path);
+        }
+
+        if (this.getParameters("widthImage") != null) {
+            Map<String, String> paramMap = new HashMap<String, String>();
+            paramMap.put("type", "jpg");
+            String path = this.restClient.upload("/file/uploadImage", (MultiValueMap<String, Object>) this.getParameters("widthImage"), null, String.class);
+            content.setWidthImagePath(path);
         }
 
         if (content.getId() == null) {
