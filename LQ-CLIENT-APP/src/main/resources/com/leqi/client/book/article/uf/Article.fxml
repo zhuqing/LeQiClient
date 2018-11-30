@@ -29,13 +29,12 @@
     <top>
         <HBox spacing="20" >
             <Button text="Create Article" onAction="#createArticle"  />
+            <Button text="Save" onAction="#save"/>
         </HBox>
     </top>
     <center>
         <VBox >
-            <HBox>
-                <Button text="Save" onAction="#save"/>  
-            </HBox>
+
             <LQFormView fx:id="contentInfoFormView" StackPane.alignment="CENTER"  prefWidth="600" >
                 <LQTitleFormCell LQFormView.columnIndex="0" LQFormView.rowIndex="0" text="Title:"  prefWidth="60"   />
                 <LQTextInputFormCell LQFormView.columnIndex="1" LQFormView.rowIndex="0" propertyName="title"  prefWidth="400"  />

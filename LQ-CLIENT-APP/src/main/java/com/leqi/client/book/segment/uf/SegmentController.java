@@ -64,8 +64,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
 
     @FXML
     private LQFormView<Segment> segmentFormView;
-    @FXML
-    private CheckBox isSupportChinease;
+
     
     @Resource(name = "QuerySegmentsCommand")
     private QuerySegmentsCommand querySegmentsCommand;
@@ -76,8 +75,6 @@ public class SegmentController extends FXMLController<SegmentModel> {
     @Resource(name = "UpdateSegmentStatusCommand")
     private UpdateSegmentStatusCommand updateSegmentStatusCommand;
 
-    @FXML
-    private TimeStemp timeStemp;
 
     @Resource(name = "SaveSegmentCommand")
     private SaveSegmentCommand saveSegmentCommand;
@@ -115,12 +112,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
                 .subscribe(op -> articleChange(op.orElse(null)));
         articleChange(getModel().getArticle());
         
-        isSupportChinease.selectedProperty().addListener(new ChangeListener<Boolean>(){
-            @Override
-            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
-                timeStemp.setSuportChineaseChinease(t1);
-            }
-        });
+
 
         segmentsTableView.setRowMouseEventHandler((MouseEvent event) -> {
             if (event.getClickCount() != 2) {
@@ -162,6 +154,7 @@ public class SegmentController extends FXMLController<SegmentModel> {
         Map<String, Object> map = new HashMap<>();
         map.put("contentId", content.getId());
         querySegmentsCommand.doCommand(map);
+        segmentFormView.setValue(null);
 //        map.put(DownLoadFileCommand.FILE_PATH, content.getAudioPath());
 //        downLoadFileCommand.doCommand(map);
     }
@@ -242,10 +235,10 @@ public class SegmentController extends FXMLController<SegmentModel> {
     }
     @FXML
     public void save(ActionEvent event) {
-        this.getModel().getEditingSegment().setContent(timeStemp.getTargetText());
+
         Map<String, Object> map = new HashMap<>();
         map.put(Command.DATA, this.getModel().getEditingSegment());
-        timeStemp.setPlaying(Boolean.FALSE);
+
         saveSegmentCommand.doCommand(map);
     }
 
