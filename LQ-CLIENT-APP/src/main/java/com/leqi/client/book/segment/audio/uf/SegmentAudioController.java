@@ -24,6 +24,9 @@ import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.control.view.table.row.LQTableRow;
 import com.leqienglish.client.fw.cf.Command;
 import static com.leqienglish.client.fw.cf.Command.ID;
+
+import com.leqienglish.client.fw.sf.RestClient;
+import com.leqienglish.client.fw.sf.Service;
 import com.leqienglish.client.fw.uf.FXMLController;
 import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.client.util.sourceitem.SourceItemUtil;
@@ -34,6 +37,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
@@ -78,6 +82,9 @@ public class SegmentAudioController extends FXMLController<SegmentAudioModel> {
 
     @Resource(name = "SegmentCheckModel")
     private SegmentCheckModel segmentCheckModel;
+    @Resource(name = "RestClient")
+    private RestClient restClient;
+
 
     @Override
     public void refresh() {
@@ -126,6 +133,16 @@ public class SegmentAudioController extends FXMLController<SegmentAudioModel> {
              if(filePath == null){
   
                  filePath = FileUtil.getInstence().toLocalFilePath(content.getAudioPath());
+             }
+
+           File file =   new File(filePath);
+             if(!file.exists()){
+                this.restClient.downLoad("file/download?path="+segment.getAudioPath(), filePath, new Consumer<Double>() {
+                    @Override
+                    public void accept(Double aDouble) {
+
+                    }
+                });
              }
              return filePath;
     }

@@ -104,6 +104,11 @@ public class ShortWordController extends  FXMLController<ShortWordModel> {
     @FXML
     public void save(ActionEvent event){
         Map<String,Object> param = new HashMap<>();
+        ShortWord shortWord = this.getModel().getEditingData();
+        if(shortWord.getWord()!=null){
+            shortWord.setWord(shortWord.getWord().trim());
+        }
+
         param.put(DATA, this.getModel().getEditingData());
       saveShortWordCommand.doCommand(param);
     }

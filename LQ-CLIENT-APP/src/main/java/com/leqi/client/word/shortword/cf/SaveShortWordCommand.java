@@ -77,6 +77,7 @@ public class SaveShortWordCommand extends Command {
         if(isInsert){
              AlertUtil.showInformation(AlertUtil.SAVE_SUCCESS);
               this.shortWordModel.getWords().add(content);
+              this.shortWordModel.setEditingData(new ShortWord());
         }else{
              AlertUtil.showInformation(AlertUtil.UPDATE_SUCCESS);
              ShortWord[] arr = this.shortWordModel.getWords().toArray(new ShortWord[0]);

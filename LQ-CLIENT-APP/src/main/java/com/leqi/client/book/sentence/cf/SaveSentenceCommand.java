@@ -42,6 +42,13 @@ public class SaveSentenceCommand extends Command {
     @Override
     protected void run(Map<String, Object> param) throws Exception {
         Sentence sentence = sentenceModel.getCurrentSentence();
+        if(sentence.getEnglish() != null){
+            sentence.setEnglish(sentence.getEnglish().trim());
+        }
+
+        if(sentence.getChinese() != null){
+            sentence.setChinese(sentence.getChinese().trim());
+        }
         
         //上传音频文件
         if (FileUtil.getInstence().fileExit(sentence.getAudioPath())) {

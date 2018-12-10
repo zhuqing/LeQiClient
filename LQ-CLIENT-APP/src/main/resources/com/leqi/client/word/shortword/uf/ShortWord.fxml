@@ -58,7 +58,7 @@
                             </tableCell>
                         </LQTableColumn>
                        
-                        <LQTableColumn editable="false" prefWidth="125.0" text="操作">
+                        <LQTableColumn editable="false" prefWidth="325.0" text="操作">
                             <tableCell>
                                 <LQOperatorTableCell>
                                     <buttons>

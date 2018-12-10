@@ -108,10 +108,12 @@ public class SegmentAndShortWordsController extends FXMLController<SegmentAndSho
     }
 
     private void segmentInfoChange(Segment segment){
+        shortWordSegmentsTableView.getItems().clear();
         if (segment == null) {
             this.getModel().getSegmentAndShortWords().clear();
             return;
         }
+
         Map<String, Object> map = new HashMap<>();
         map.put(DATA, segment.getId());
        querySegmentAndShortWordCommand.doCommand(map);

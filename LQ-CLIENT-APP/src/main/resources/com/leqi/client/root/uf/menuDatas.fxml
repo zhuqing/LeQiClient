@@ -51,6 +51,11 @@
                     <display>Edite Sentence</display>
                     <value>SentenceRootModel</value>
                 </SourceItem>
+
+                <SourceItem>
+                    <display>SentenceTool</display>
+                    <value>SentenceToolModel</value>
+                </SourceItem>
             </ArrayList>
         </children>
     </SourceItem>
@@ -67,6 +72,11 @@
                 <SourceItem>
                     <display>Edit Short word</display>
                     <value>ShortWordRootModel</value>
+                </SourceItem>
+
+                <SourceItem>
+                    <display>word Tool</display>
+                    <value>WordToolModel</value>
                 </SourceItem>
             </ArrayList>
         </children>

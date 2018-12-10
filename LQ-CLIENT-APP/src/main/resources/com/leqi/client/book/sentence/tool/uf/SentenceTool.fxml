@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<BorderPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+          <HBox>
+                    
+
+                     <Button text="save" onAction="#save"></Button>
+                </HBox>
+                
+    </top>
+    
+    <left>
+
+          
+
+
+    </left>
+    <center>
+      <StackPane >
+         <TextArea fx:id="textArea">
+
+         </TextArea>
+           
+        </StackPane>
+    </center>
+    
+    <bottom>
+      
+    </bottom>
+
+</BorderPane>
