@@ -6,13 +6,11 @@
 package com.leqi.client.book.segment.shortword.cf;
 
 import com.leqi.client.book.segment.shortword.uf.SegmentAndShortWordsModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.PageCommand;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.english.Segment;
 import xyz.tobebetter.entity.english.shortword.SegmentAndShortWord;
 
 import javax.annotation.Resource;
@@ -24,7 +22,7 @@ import java.util.Map;
  */
 @Lazy
 @Component("QuerySegmentAndShortWordCommand")
-public class QuerySegmentAndShortWordCommand extends QueryCommand {
+public class QuerySegmentAndShortWordCommand extends PageCommand {
 
     @Resource(name = "SegmentAndShortWordsModel")
     private SegmentAndShortWordsModel segmentAndShortWordsModel;

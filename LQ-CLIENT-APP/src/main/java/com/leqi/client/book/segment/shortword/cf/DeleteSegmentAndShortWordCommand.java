@@ -6,7 +6,7 @@
 package com.leqi.client.book.segment.shortword.cf;
 
 import com.leqi.client.book.segment.shortword.uf.SegmentAndShortWordsModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.util.exception.LQExceptionUtil;
 import org.springframework.context.annotation.Lazy;
@@ -24,7 +24,7 @@ import java.util.Map;
  */
 @Lazy
 @Component("DeleteSegmentAndShortWordCommand")
-public class DeleteSegmentAndShortWordCommand extends QueryCommand {
+public class DeleteSegmentAndShortWordCommand extends Command {
 
     @Resource(name = "SegmentAndShortWordsModel")
     private SegmentAndShortWordsModel segmentAndShortWordsModel;

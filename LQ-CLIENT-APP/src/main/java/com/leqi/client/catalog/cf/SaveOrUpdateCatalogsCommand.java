@@ -6,14 +6,14 @@
 package com.leqi.client.catalog.cf;
 
 import com.leqi.client.catalog.uf.CatalogModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.english.Catalog;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 根据catalogId查询文章列表
@@ -22,7 +22,7 @@ import xyz.tobebetter.entity.english.Catalog;
  */
 @Lazy
 @Component("SaveOrUpdateCatalogsCommand")
-public class SaveOrUpdateCatalogsCommand extends QueryCommand {
+public class SaveOrUpdateCatalogsCommand extends Command {
 
     @Resource(name = "CatalogModel")
     private CatalogModel catalogModel;

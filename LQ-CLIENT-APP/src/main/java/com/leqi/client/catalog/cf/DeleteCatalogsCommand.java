@@ -6,17 +6,16 @@
 package com.leqi.client.catalog.cf;
 
 import com.leqi.client.catalog.uf.CatalogModel;
-import static com.leqienglish.client.fw.cf.Command.DATA;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
-import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Catalog;
-import xyz.tobebetter.entity.word.Word;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 根据catalogId查询文章列表
@@ -25,7 +24,7 @@ import xyz.tobebetter.entity.word.Word;
  */
 @Lazy
 @Component("DeleteCatalogsCommand")
-public class DeleteCatalogsCommand extends QueryCommand {
+public class DeleteCatalogsCommand extends Command {
     
     @Resource(name = "CatalogModel")
     private CatalogModel catalogModel;

@@ -26,6 +26,8 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javax.annotation.Resource;
 import org.controlsfx.dialog.ExceptionDialog;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.util.StopWatch;
 
 /**
@@ -165,6 +167,12 @@ public abstract class Command extends LogFacade {
             threadPool = LQExecutors.getSingleThreadExecutor();
         }
         return threadPool;
+    }
+
+    protected MultiValueMap<String, String> getPageMultiValueMap(){
+        MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
+
+        return parameter;
     }
 
     protected FXMLModel getModel(String key) {

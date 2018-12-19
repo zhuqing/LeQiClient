@@ -47,4 +47,13 @@
         <property name="fxmlController"  ref="ShortWordRootController"/>
          <property name="firstModel"  value="ShortWordModel"/>
     </bean>
+
+
+    <bean id="UserManagerRootController" class="com.leqi.client.book.content.uf.ContentController">
+
+    </bean>
+    <bean id="UserManagerRootModel" class="com.leqi.client.book.content.uf.ContentModel">
+        <property name="fxmlController"  ref="UserManagerRootController"/>
+        <property name="firstModel"  value="UserManagerModel"/>
+    </bean>
 </beans>

@@ -6,16 +6,16 @@
 package com.leqi.client.book.segment.cf;
 
 import com.leqi.client.book.segment.uf.SegmentModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
-import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Content;
-import xyz.tobebetter.entity.english.Segment;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  *
@@ -23,7 +23,7 @@ import xyz.tobebetter.entity.english.Segment;
  */
 @Lazy
 @Component("DeleteSegmentCommand")
-public class DeleteSegmentCommand extends QueryCommand {
+public class DeleteSegmentCommand extends Command {
 
     @Resource(name = "SegmentModel")
     private SegmentModel segmentModel;

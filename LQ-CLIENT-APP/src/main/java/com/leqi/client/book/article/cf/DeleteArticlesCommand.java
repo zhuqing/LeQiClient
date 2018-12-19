@@ -6,17 +6,16 @@
 package com.leqi.client.book.article.cf;
 
 import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
-import com.leqi.client.book.uf.BookModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.util.alert.AlertUtil;
-import java.util.Map;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Content;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 根据catalogId查询文章列表
@@ -25,7 +24,7 @@ import xyz.tobebetter.entity.english.Content;
  */
 @Lazy
 @Component("DeleteArticlesCommand")
-public class DeleteArticlesCommand extends QueryCommand {
+public class DeleteArticlesCommand extends Command {
 
     @Resource(name = "ArticleModel")
     private ArticleModel articleModel;

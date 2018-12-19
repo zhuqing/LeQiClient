@@ -5,42 +5,35 @@
  */
 package com.leqi.client.book.uf;
 
-import com.leqi.client.book.article.cf.QueryArticlesCommand;
 import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqi.client.book.cf.DeleteCatalogCommand;
-import com.leqi.client.book.content.uf.ContentModel;
 import com.leqi.client.book.cf.QueryCatalogCommand;
 import com.leqi.client.book.cf.SavaCatalogCommand;
 import com.leqi.client.book.cf.UpdateCatalogStatusCommand;
-import com.leqi.client.book.info.uf.BookInfoModel;
-import com.leqi.client.book.segment.info.uf.SegmentInfoModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
+import com.leqi.client.book.content.uf.ContentModel;
 import com.leqienglish.client.control.form.LQFormView;
-import com.leqienglish.client.control.view.listview.LQListView;
 import com.leqienglish.client.control.view.table.LQTableView;
 import com.leqienglish.client.fw.cf.Command;
 import com.leqienglish.client.fw.uf.FXMLController;
-import com.leqienglish.client.fw.uf.FXMLModel;
 import com.leqienglish.client.util.alert.AlertUtil;
 import com.leqienglish.client.util.event.EventUtil;
 import com.leqienglish.client.util.sourceitem.SourceItem;
 import io.reactivex.rxjavafx.observables.JavaFxObservable;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javax.annotation.Resource;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
-import xyz.tobebetter.entity.english.Content;
-import xyz.tobebetter.entity.english.Segment;
+
+import javax.annotation.Resource;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -114,7 +107,7 @@ public class BookController extends FXMLController<BookModel> {
 
         param.put(Command.DATA, filter.getText());
         param.put("type", Consistent.BOOK_TYPE);
-        queryCatalogCommand.setPageNum(page);
+        queryCatalogCommand.setPage(page);
         queryCatalogCommand.setPageSize(pageSize);
         queryCatalogCommand.doCommand(param);
     }

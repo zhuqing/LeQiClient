@@ -5,20 +5,14 @@
  */
 package com.leqi.client.version.cf;
 
-import com.leqi.client.book.article.cf.*;
-import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
-import com.leqi.client.book.uf.BookModel;
 import com.leqi.client.version.uf.VersionModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Map;
-import javax.annotation.Resource;
+import com.leqienglish.client.fw.cf.PageCommand;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import xyz.tobebetter.entity.english.Content;
 import xyz.tobebetter.version.Version;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 根据catalogId查询文章列表
@@ -27,7 +21,7 @@ import xyz.tobebetter.version.Version;
  */
 @Lazy
 @Component("QueryVersionsCommand")
-public class QueryVersionsCommand extends QueryCommand {
+public class QueryVersionsCommand extends PageCommand {
 
     @Resource(name = "VersionModel")
     private VersionModel versionModel;

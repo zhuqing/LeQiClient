@@ -5,20 +5,19 @@
  */
 package com.leqi.client.catalog.cf;
 
-import com.leqi.client.book.article.uf.ArticleModel;
 import com.leqi.client.catalog.uf.CatalogModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.function.Consumer;
-import javax.annotation.Resource;
+import com.leqienglish.client.fw.cf.PageCommand;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
-import xyz.tobebetter.entity.english.Content;
+
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * 根据catalogId查询文章列表
@@ -27,7 +26,7 @@ import xyz.tobebetter.entity.english.Content;
  */
 @Lazy
 @Component("QueryCatalogsCommand")
-public class QueryCatalogsCommand extends QueryCommand {
+public class QueryCatalogsCommand extends PageCommand {
 
     @Resource(name = "CatalogModel")
     private CatalogModel catalogModel;

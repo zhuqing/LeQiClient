@@ -6,16 +6,15 @@
 package com.leqi.client.book.article.cf;
 
 import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqi.client.book.segment.uf.SegmentModel;
-import com.leqi.client.book.uf.BookModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Map;
-import javax.annotation.Resource;
+import com.leqienglish.client.fw.cf.PageCommand;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.english.Content;
+
+import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 根据catalogId查询文章列表
@@ -24,7 +23,7 @@ import xyz.tobebetter.entity.english.Content;
  */
 @Lazy
 @Component("QueryArticlesCommand")
-public class QueryArticlesCommand extends QueryCommand {
+public class QueryArticlesCommand extends PageCommand {
 
     @Resource(name = "ArticleModel")
     private ArticleModel articleModel;
@@ -36,11 +35,7 @@ public class QueryArticlesCommand extends QueryCommand {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
-        MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
-
-        parameter.add("page", this.getPageNum() + "");
-        parameter.add("pageSize", this.getPageSize() + "");
-
+        MultiValueMap<String, String> parameter = this.getPageMultiValueMap();
         if (param.get(ID) != null) {
             parameter.add("catalogId", (String) param.get(ID));
         }

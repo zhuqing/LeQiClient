@@ -7,7 +7,8 @@ package com.leqi.client.book.article.catalog.cf;
 
 import com.leqi.client.book.article.catalog.uf.CatalogAndArticleModel;
 import com.leqi.client.book.article.uf.ArticleModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
+import com.leqienglish.client.fw.cf.PageCommand;
+import com.leqienglish.client.fw.cf.PageCommand;
 import com.leqienglish.util.text.TextUtil;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -28,7 +29,7 @@ import java.util.Objects;
  */
 @Lazy
 @Component("QueryContentAndCatalogCommand")
-public class QueryContentAndCatalogCommand extends QueryCommand {
+public class QueryContentAndCatalogCommand extends PageCommand {
 
     @Resource(name = "CatalogAndArticleModel")
     private CatalogAndArticleModel catalogAndArticleModel;

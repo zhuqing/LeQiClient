@@ -12,6 +12,12 @@ package xyz.tobebetter.entity;
  */
 public class Consistent {
 
+
+    /**
+     * 密码
+     */
+    public final static String PASSWORD = "0110151510";
+
     public static final String SLIP_TIME_AND_TEXT = "-->";
     public static final String SLIP_START_AND_END = "==>";
     public static final String SLIP_EN_AND_CH = ">::<";

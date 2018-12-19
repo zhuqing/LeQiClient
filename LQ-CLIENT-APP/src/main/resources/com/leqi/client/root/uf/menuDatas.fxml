@@ -85,6 +85,16 @@
     <SourceItem>
         <display>User</display>
         <value>UserModel</value>
+
+        <children>
+            <ArrayList>
+                <SourceItem>
+                    <display>User Manager</display>
+                    <value>UserManagerRootModel</value>
+                </SourceItem>
+
+            </ArrayList>
+        </children>
     </SourceItem>
      <SourceItem>
         <display>Version</display>

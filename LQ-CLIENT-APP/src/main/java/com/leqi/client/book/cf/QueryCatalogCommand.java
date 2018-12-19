@@ -6,16 +6,16 @@
 package com.leqi.client.book.cf;
 
 import com.leqi.client.book.uf.BookModel;
-import com.leqienglish.client.fw.cf.QueryCommand;
-import java.util.Arrays;
-import java.util.Map;
-import javax.annotation.Resource;
+import com.leqienglish.client.fw.cf.PageCommand;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import xyz.tobebetter.entity.Consistent;
 import xyz.tobebetter.entity.english.Catalog;
+
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  *
@@ -23,7 +23,7 @@ import xyz.tobebetter.entity.english.Catalog;
  */
 @Lazy
 @Component("QueryCatalogCommand")
-public class QueryCatalogCommand extends QueryCommand {
+public class QueryCatalogCommand extends PageCommand {
 
     @Resource(name = "BookModel")
     private BookModel bookModel;
@@ -35,10 +35,7 @@ public class QueryCatalogCommand extends QueryCommand {
 
     @Override
     protected void run(Map<String, Object> param) throws Exception {
-        MultiValueMap<String, String> parameter = new LinkedMultiValueMap<>();
-
-        parameter.add("page", this.getPageNum() + "");
-        parameter.add("pageSize", this.getPageSize() + "");
+        MultiValueMap<String, String> parameter = this.getPageMultiValueMap();
         parameter.add("type", (Integer) param.get("type") + "");
 
         if (param.get("parentId") != null) {
