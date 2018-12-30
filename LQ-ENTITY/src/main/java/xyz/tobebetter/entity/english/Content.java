@@ -48,6 +48,10 @@ public class Content extends Entity {
      * 阅读数
      */
     private Long readNum ;
+    /**
+     * 点赞数
+     */
+    private Long awesomeNum;
 
     /**
      * @return the content
@@ -183,5 +187,16 @@ public class Content extends Entity {
 
     public void setWidthImagePath(String widthImagePath) {
         this.widthImagePath = widthImagePath;
+    }
+
+    /**
+     * 点赞数
+     */
+    public Long getAwesomeNum() {
+        return awesomeNum;
+    }
+
+    public void setAwesomeNum(Long awesomeNum) {
+        this.awesomeNum = awesomeNum;
     }
 }

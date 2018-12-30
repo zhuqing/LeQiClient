@@ -56,7 +56,7 @@ import xyz.tobebetter.version.Version;
 public class MainApp {
 
     public static void main(String[] args) throws IOException, TemplateException {
-        createMaper(SegmentPlayEntity.class, SegmentPlayEntity.class, "USER_TODO", "Base_Column_List");
+        createMaper(Content.class, Content.class, "USER_TODO", "Base_Column_List");
     }
 
     public static void createMaper(Class entityClaz, Class voClaz, String tableName, String selectField) throws IOException, TemplateException {
