@@ -133,6 +133,12 @@ public class Consistent {
     public final static int USER_TYPE_WEIXIN = 2;
     public final static int USER_TYPE_WEIBO=3;
 
-    
+       // 0:content,1:Segment
+     public final static int CONTENT_TYPE_CONTENT=0;
+     public final static int CONTENT_TYPE_SEGMENT=1;
+      
+     public final static int SENTENCE_TYPE_NORMAL=0;
+     public final static int SENTENCE_TYPE_FAUMOUS=1;
+
 
 }

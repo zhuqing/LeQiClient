@@ -29,6 +29,11 @@ public class Segment extends Entity{
      * 序号
      */
     private Integer indexNo;
+    
+    /**
+     * 点赞数
+     */
+    private Integer awesomeNum;
 
     /**
      * @return the title
@@ -128,6 +133,20 @@ public class Segment extends Entity{
      */
     public void setAudioPath(String audioPath) {
         this.audioPath = audioPath;
+    }
+
+    /**
+     * @return the awesomeNum
+     */
+    public Integer getAwesomeNum() {
+        return awesomeNum;
+    }
+
+    /**
+     * @param awesomeNum the awesomeNum to set
+     */
+    public void setAwesomeNum(Integer awesomeNum) {
+        this.awesomeNum = awesomeNum;
     }
 
    
