@@ -62,7 +62,7 @@ public class RestClient {
     private static RestTemplate restTemplate;
 
 //    private String serverPath = "http://localhost:8080";
-    private String serverPath = "http://www.leqienglish.com";
+    private String serverPath = "https://www.leqienglish.com";
     protected final ObjectMapper mapper = new ObjectMapper();
 
     static {
